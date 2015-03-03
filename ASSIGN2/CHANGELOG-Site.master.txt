@@ -1,0 +1,12 @@
+## Changelog Site.master ##
+
+Revision 1 - March 2, 2015
+1  Line 55  		Contacts link has been removed
+	   		Added Dropdown menu. Text: Movies
+2  Line 59-107		Added 3 Cols (Now showing, Top rating, Genres)
+			Added Contents to each Col - #TODO: Database line must go here that will import usefull data
+3  Line 111-114		Right Hand nav bar has been changes. (Removed Login and Register)
+			Added TextBoxID:SearchBox
+			Added ButtonID:SearchButton
+
+
