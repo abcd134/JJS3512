@@ -1,6 +1,6 @@
 ## Changelog Site.master ##
 
-Revision 1 - March 2, 2015
+Joseph - Revision 1 - March 2, 2015
 1  Line 55  		Contacts link has been removed
 	   		Added Dropdown menu. Text: Movies
 2  Line 59-107		Added 3 Cols (Now showing, Top rating, Genres)
