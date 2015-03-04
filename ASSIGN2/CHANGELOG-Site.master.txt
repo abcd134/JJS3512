@@ -10,3 +10,7 @@ Revision 1 - March 2, 2015
 			Added ButtonID:SearchButton
 
 
+Revision 2 - March 4, 2015
+1 Line 59			Added Second Navbar
+2 Line 60			Moved Home, About, Movies Tabs
+3 Line 60			Added People Tab

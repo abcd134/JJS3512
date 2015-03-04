@@ -49,13 +49,22 @@
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                  
+                    <ul class="nav navbar-nav navbar-right spaceabove">
+                        <li><asp:TextBox ID="SearchBox" runat="server" Height="45px"></asp:TextBox></li>
+                        <li><asp:Button ID="SearchButton" runat="server"  class="btn btn-lg" Text="Search"/> </li>   
+                    </ul>
+                </div>
+
+                <div class="nav navbar">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li class="dropdown open">
+                        <li><a runat="server" href="~/About">People</a></li>
+                        <li><a runat="server" href="~/About">Movies</a></li>
+                        <li class="dropdown">
                             <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
                                 <div class="dropdown-menu dropdown-adjust" role="menu">
-                                 
                                         <div class="col-xs-4 subnav">
                                             <ul class="nav">
                                                 <li><strong>NOW SHOWING</strong></li>
@@ -105,12 +114,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                             
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right spaceabove">
-                        <li><asp:TextBox ID="SearchBox" runat="server" Height="45px"></asp:TextBox></li>
-                        <li><asp:Button ID="SearchButton" runat="server"  class="btn btn-lg" Text="Search"/> </li>   
                     </ul>
                 </div>
             </div>
