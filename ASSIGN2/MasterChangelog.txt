@@ -33,4 +33,12 @@ Site.master - Revision 2 - March 4, 2015
 
 Content/Site.css - Revision 1 - March 2, 2015
 1 Line 32			Added class .dropdown-adjust@600px
-2 Line 36			Added class .align-right Aligns items to the right
+
+Content/Site.css - Revision 1 - March 4, 2015
+1 Line 36			Added class .align-right Aligns items to the right
+
+App_Data/movies.accdb - Revision 1 - March 4, 2015
+1 Database added	*IMPORTANT DOWNLOAD. YOU NEED THIS INORDER TO INTERFACE WITH THE ACCESS DB - Microsoft Access Database Engine 2010 Redistributable
+						-http://www.microsoft.com/en-us/download/details.aspx?id=13255
+					*IF THE FIRST FILE DOES NOT WORK (YOU CANNOT CONNECT TO DATABASE). DOWNLOAD SECOND LINK AND INSTALL
+						-http://www.microsoft.com/en-us/download/confirmation.aspx?id=23734
