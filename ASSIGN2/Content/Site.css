@@ -23,15 +23,16 @@ textarea {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
 
-.dropdown-adjust{
+.dropdown-adjust {
     width: 600px;
-    }
+}
 
-.addPad5{
-
-    }
+.align-right {
+    text-align: right;
+}
