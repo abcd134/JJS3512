@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -49,71 +49,73 @@
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                  
                     <ul class="nav navbar-nav navbar-right spaceabove">
-                        <li><asp:TextBox ID="SearchBox" runat="server" Height="45px"></asp:TextBox></li>
-                        <li><asp:Button ID="SearchButton" runat="server"  class="btn btn-lg" Text="Search"/> </li>   
+                        <li>
+                            <asp:TextBox ID="SearchBox" runat="server" Height="35px" class="form-control"></asp:TextBox></li>
+                        <li>
+                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" />
+                        </li>
                     </ul>
                 </div>
-
                 <div class="nav navbar">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/About">People</a></li>
-                        <li><a runat="server" href="~/About">Movies</a></li>
-                        <li class="dropdown">
-                            <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
-                                <div class="dropdown-menu dropdown-adjust" role="menu">
-                                        <div class="col-xs-4 subnav">
-                                            <ul class="nav">
-                                                <li><strong>NOW SHOWING</strong></li>
-                                                <li>Movie asd </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <!-- INSERT DATABASE QUERY FOR NOW SHOWING FILMS !-->
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-4 subnav">
-                                            <ul class="nav">
-                                                <li><strong>Top Rating</strong></li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <li>Movie </li>
-                                                <!-- INSERT DATABASE QUERY FOR TOP 10 !-->
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-4 subnav">
-                                            <ul class="nav">
-                                                <li><strong>Genres</strong></li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <li>Genre </li>
-                                                <!-- INSERT DATABASE QUERY FOR famous top 10 !-->
-                                            </ul>
-                                        </div>
-                                    </div>
+                        <li><a runat="server" href="~/SPerson/SPerson.aspx">People</a></li>
+                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
+                            <div class="dropdown-menu dropdown-adjust" role="menu">
+                                <div class="col-xs-4 subnav">
+                                    <ul class="nav">
+                                        <li><strong>NOW SHOWING</strong></li>
+                                        <li>Movie asd </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <!-- INSERT DATABASE QUERY FOR NOW SHOWING FILMS !-->
+                                    </ul>
+                                </div>
+                                <div class="col-xs-4 subnav">
+                                    <ul class="nav">
+                                        <li><strong>Top Rating</strong></li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <li>Movie </li>
+                                        <!-- INSERT DATABASE QUERY FOR TOP 10 !-->
+                                    </ul>
+                                </div>
+                                <div class="col-xs-4 subnav">
+                                    <ul class="nav">
+                                        <li><strong>Genres</strong></li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <li>Genre </li>
+                                        <!-- INSERT DATABASE QUERY FOR famous top 10 !-->
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 subnav align-right">
+                                    <a href="/SMovie/SMovie.aspx"><strong>View all movies</strong></a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -14,3 +14,12 @@ Revision 2 - March 4, 2015
 1 Line 59			Added Second Navbar
 2 Line 60			Moved Home, About, Movies Tabs
 3 Line 60			Added People Tab
+4 Line 67			Attached Linked (People tab with ~/SPerson/SPerson.aspx)
+5 Line 54-55		Added Bootstarp theme too textbox and button
+						- reduced textbox size by 10px (from 45)
+						- changed text class to btn btn-primary btn-md from btn btn-lg
+6 Line 115 - 117	Added "View All Movies Link" inside sub navigation
+
+7 CHANGELOG IS TRANSFERED TO MASTERCHANGELOG.TXT
+
+****** END OF CHANGE LOG *******
