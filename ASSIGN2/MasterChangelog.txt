@@ -1,0 +1,36 @@
+﻿**** MASTER CHANGELOG FORMAT (suggested: For Review) **** 
+
+# [FILENAME.ASPX] - REVISION [NUMBER] - [DATE]
+# [Number] LINE [LINE NUMBER AND RANGE] - [SUMMARY CHANGE]
+# Example
+# 
+#
+#
+# Site.master - Revision 1 - March 1 1970
+# 1 Line 9000 - 9001 - Power Level indentified 
+
+*********************************************************
+
+Site.master - Revision 1 - March 2, 2015
+1  Line 55  		Contacts link has been removed
+	   		Added Dropdown menu. Text: Movies
+2  Line 59-107		Added 3 Cols (Now showing, Top rating, Genres)
+			Added Contents to each Col - #TODO: Database line must go here that will import usefull data
+3  Line 111-114		Right Hand nav bar has been changes. (Removed Login and Register)
+			Added TextBoxID:SearchBox
+			Added ButtonID:SearchButton
+
+
+Site.master - Revision 2 - March 4, 2015
+1 Line 59			Added Second Navbar
+2 Line 60			Moved Home, About, Movies Tabs
+3 Line 60			Added People Tab
+4 Line 67			Attached Linked (People tab with ~/SPerson/SPerson.aspx)
+5 Line 54-55		Added Bootstarp theme too textbox and button
+						- reduced textbox size by 10px (from 45)
+						- changed text class to btn btn-primary btn-md from btn btn-lg
+6 Line 115 - 117	Added "View All Movies Link" inside sub navigation
+
+Content/Site.css - Revision 1 - March 2, 2015
+1 Line 32			Added class .dropdown-adjust@600px
+2 Line 36			Added class .align-right Aligns items to the right
