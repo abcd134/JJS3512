@@ -1,6 +1,6 @@
 ﻿**** MASTER CHANGELOG FORMAT (suggested: For Review) **** 
 
-# [FILENAME.ASPX] - REVISION [NUMBER] - [DATE]
+# [Name] - [FILENAME.ASPX] - REVISION [NUMBER] - [DATE]
 # [Number] LINE [LINE NUMBER AND RANGE] - [SUMMARY CHANGE]
 # Example
 # 
@@ -11,7 +11,7 @@
 
 *********************************************************
 
-Site.master - Revision 1 - March 2, 2015
+Joseph - Site.master - Revision 1 - March 2, 2015
 1  Line 55  		Contacts link has been removed
 	   		Added Dropdown menu. Text: Movies
 2  Line 59-107		Added 3 Cols (Now showing, Top rating, Genres)
@@ -21,7 +21,7 @@ Site.master - Revision 1 - March 2, 2015
 			Added ButtonID:SearchButton
 
 
-Site.master - Revision 2 - March 4, 2015
+Joseph - Site.master - Revision 2 - March 4, 2015
 1 Line 59			Added Second Navbar
 2 Line 60			Moved Home, About, Movies Tabs
 3 Line 60			Added People Tab
@@ -31,14 +31,23 @@ Site.master - Revision 2 - March 4, 2015
 						- changed text class to btn btn-primary btn-md from btn btn-lg
 6 Line 115 - 117	Added "View All Movies Link" inside sub navigation
 
-Content/Site.css - Revision 1 - March 2, 2015
+Joseph - Content/Site.css - Revision 1 - March 2, 2015
 1 Line 32			Added class .dropdown-adjust@600px
 
 Content/Site.css - Revision 1 - March 4, 2015
 1 Line 36			Added class .align-right Aligns items to the right
 
-App_Data/movies.accdb - Revision 1 - March 4, 2015
+Joseph - App_Data/movies.accdb - Revision 1 - March 4, 2015
 1 Database added	*IMPORTANT DOWNLOAD. YOU NEED THIS INORDER TO INTERFACE WITH THE ACCESS DB - Microsoft Access Database Engine 2010 Redistributable
 						-http://www.microsoft.com/en-us/download/details.aspx?id=13255
 					*IF THE FIRST FILE DOES NOT WORK (YOU CANNOT CONNECT TO DATABASE). DOWNLOAD SECOND LINK AND INSTALL
 						-http://www.microsoft.com/en-us/download/confirmation.aspx?id=23734
+
+Joseph - Site.master - Revision 3 - March 5, 2015
+1 Line 20 - 22		Added SqlDataSourceID:NowShowingDB , SqlDataSourceID:TopRatingDB, SqlDataSourceID:TopGrossing.
+2 Line 75			Replaced Blank li's with a repeater
+					Created RepeaterID:NowShowingRepeater
+3 Line 85			Changed title to Top Rating 2014
+2 Line 86			Replaced Blank li's with a repeater
+					Created RepeaterID:TopRatingRepeater
+5 Line 96			Changed to Top Grossing 2014 from Genre
