@@ -51,3 +51,7 @@ Joseph - Site.master - Revision 3 - March 5, 2015
 2 Line 86			Replaced Blank li's with a repeater
 					Created RepeaterID:TopRatingRepeater
 5 Line 96			Changed to Top Grossing 2014 from Genre
+
+Joseph - Site.master - Revision 4 - March 5, 2015
+1 Line 74 - 100		Changed layout grid to tables
+					BUG - second col displaying 12 elements instead of 10 
