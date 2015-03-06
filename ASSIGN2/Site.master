@@ -19,8 +19,8 @@
     <form runat="server">
         <asp:SqlDataSource ID="NowShowingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie ORDER BY release_date DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopRatingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY vote_average DESC"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="TopGrossing" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY vote_average DESC"></asp:SqlDataSource>
-        
+        <asp:SqlDataSource ID="TopGrossingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY revenue DESC"></asp:SqlDataSource>
+
 
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -70,44 +70,35 @@
                         <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust" role="menu">
                                 <div class="col-xs-4 subnav">
-                                    <ul class="nav">
-                                        <li><strong>NOW SHOWING</strong></li>
-                                        <asp:Repeater ID="NowShowingRepeater" DataSourceID="NowShowingDB" runat="server">
-                                            <ItemTemplate>
-                                                <li> <a href="SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"> <%#DataBinder.Eval( Container.DataItem, "title") %> </a> </li>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
-                                        <!-- INSERT DATABASE QUERY FOR NOW SHOWING FILMS !-->
-                                    </ul>
+                                    <h3>Top Rating 2014</h3>
+                                    <asp:Repeater ID="NowShowingRepeater" DataSourceID="NowShowingDB" runat="server">
+                                        <ItemTemplate>
+                                            <table>
+                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                            </table>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                                 <div class="col-xs-4 subnav">
-                                    <ul class="nav">
-                                        <li><strong>Top Rating 2014</strong></li>
-                                        <asp:Repeater ID="TopRatingRepeater" DataSourceID="TopRatingDB" runat="server">
-                                            <ItemTemplate>
-                                                <li><a href="SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></li>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
-                                        <!-- INSERT DATABASE QUERY FOR TOP 10 !-->
-                                    </ul>
+                                    <h3>Top Rating 2014</h3>
+                                    <asp:Repeater ID="TopRatingRepeater" DataSourceID="TopRatingDB" runat="server">
+                                        <ItemTemplate>
+                                            <table>
+                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                            </table>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                                 <div class="col-xs-4 subnav">
-                                    <ul class="nav">
-                                        <li><strong>Top Grossing 2014</strong></li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <li>Genre </li>
-                                        <!-- INSERT DATABASE QUERY FOR famous top 10 !-->
-                                    </ul>
+                                    <h3>Top Grossing 2014</h3>
+                                    <asp:Repeater ID="Repeater1" DataSourceID="TopGrossingDB" runat="server">
+                                        <ItemTemplate>
+                                            <table>
+                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                            </table>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
-                                
                             </div>
                         </li>
                     </ul>

@@ -29,9 +29,11 @@ textarea {
     }
 }
 
+/* used to determine the size of the dropdown box located in the master file*/
 .dropdown-adjust {
     width: 800px;
 }
+
 
 .align-right {
     text-align: right;
