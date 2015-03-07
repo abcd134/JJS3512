@@ -55,3 +55,15 @@ Joseph - Site.master - Revision 3 - March 5, 2015
 Joseph - Site.master - Revision 4 - March 5, 2015
 1 Line 74 - 100		Changed layout grid to tables
 					BUG - second col displaying 12 elements instead of 10 
+
+James - About Page - Revision 1 - March 6, 2015
+1 lines 12 - 33		Added in page style - will need to xfer to CSS file when ready
+2 lines	41 - 42		Added alt, title to image
+3 lines 45, 55, 142	Added in page links
+4 lines 45 - 57		Edited content
+5 lines 59 - 127	Added Team Bio's
+6 lines 157 - 164	Added citations including links if apprpriate
+7 lines 169 - 219	Added structure for documentation
+8 lines	181 - 183	Added documentation for about page
+
+James - Images Folder	Added cat pictures
