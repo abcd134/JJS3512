@@ -67,3 +67,13 @@ James - About Page - Revision 1 - March 6, 2015
 8 lines	181 - 183	Added documentation for about page
 
 James - Images Folder	Added cat pictures
+
+James - About Page - Revision 2 - March 7, 2015
+					Added alt and title tags
+					Added itra page links to documentation
+					Added images for home, error, browse, sMovie, sPerson
+					Set up each pages documentation section with
+					  images, titling (including lead developer) and space 
+					  for actual documentation. 
+					Added figure tags
+					Made most images responsive (need to work on the cat pictures)

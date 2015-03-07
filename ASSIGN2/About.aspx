@@ -7,39 +7,44 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        .img-circle {
-            float: left;
-            margin-right: 1em;
-        }
-        p {text-indent: 2em;}
-        .firstWord {font: bold;
-                    font-style:italic;
-                    font-size:larger;
-                    color:blueviolet;
-        }
-        .well {background-color:gold;}
-        .innerWell {
-            background-color: lightgoldenrodyellow;
-        }
-        .pageImg {
-            padding: .5em;
-        }
-        .documentation {
-            padding-right: 4em;
-        }
-        .panel-heading{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                       font-size:large;
-        }
-    </style>
-    <h2><%: Title %>.</h2>
+<style>
+    .img-circle {
+        float: left;
+        margin-right: 1em;
+    }
+    p {text-indent: 2em;}
+    .firstWord {font: bold;
+                font-style:italic;
+                font-size:larger;
+                color:blueviolet;
+    }
+    .well {background-color:gold;}
+    .innerWell {
+        background-color: lightgoldenrodyellow;
+    }
+    .pageImg {
+        padding: .5em;
+    }
+    .documentation {
+        padding-right: 4em;
+    }
+    .panel-heading{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    font-size:large;
+    }
+    .title {font-size:small;}
+    figcaption {text-align:center;}
+</style>
+<h2><%: Title %>.</h2>
 
-        <h3 class="center">Your Complete Movie Information Source</h3>
-    <div class ="row">
+<h3 class="center">Your Complete Movie Information Source</h3>
+<div class ="row">
         <div class="col-md-3">
-            <img src="/images/naxos.jpg" width="200" 
-                title="Thinking of Greece - Naxos"
-                alt="Naxos,Greece"/>
+            <figure>
+                <img src="/images/naxos.jpg" width="200"
+                    class="img-responsive img-rounded" 
+                    title="Thinking of Greece - Naxos"
+                    alt="Naxos,Greece"/>
+            </figure>
         </div>
         <div class="col-md-9">
             <p>This site was designed by <A href="#joseph">Joseph</A>, <A href="#james">James</A> and <A href="#sonia" >Sonia</A>
@@ -59,12 +64,13 @@
             <div class="row well">
                 <div class="col-md-10 col-md-offset-1 innerWell">
                     <h3 id="joseph">Joseph Balabat</h3>
-                        <img src="/images/joseph.jpg" 
-                             alt="Joseph Balabat"
-                             title="Joseph Balabat - The Cat"
-                             class="img-circle" 
-                             width="175" />
-
+                        <figure>
+                            <img src="/images/joseph.jpg" 
+                                 alt="Joseph Balabat"
+                                 title="Joseph Balabat - The Cat"
+                                 class="img-circle" 
+                                 width="175" />
+                        </figure>
                         <p><span class="firstWord">Joseph</span>, worked tirelessly to not only help design and implement
                             the web page, his joie de vivre inspired the team.  A key member
                             of the team who took every opportunity to lead the team and to
@@ -81,12 +87,13 @@
                 <br />
                 <div class="col-md-10 col-md-offset-1 innerWell">
                     <h3 id="james">James Bergeron</h3>
-                        <img src="/images/james.jpg" 
-                             alt="James Bergeron"
-                             title="James Bergeron - The Cat"
-                             class="img-circle" 
-                             width="175" />
-
+                        <figure>
+                            <img src="/images/james.jpg" 
+                                 alt="James Bergeron"
+                                 title="James Bergeron - The Cat"
+                                 class="img-circle" 
+                                 width="175" />
+                        </figure>
                         <p><span class="firstWord">James</span>, the cat in the middle, was 
                             nurtured and protected by both Joseph and Sonia.  James was a 
                             pain in the ... when it came to organizational and documentation
@@ -104,12 +111,13 @@
                                 <br />
                 <div class="col-md-10 col-md-offset-1 innerWell">
                     <h3 id="sonia">Sonia Pitrola</h3>
-                        <img src="/images/sonia.jpg" 
-                             alt="Sonia Pitrola"
-                             title="Sonia Pitrola- The Cat"
-                             class="img-circle" 
-                             width="175" />
-
+                        <figure>
+                            <img src="/images/sonia.jpg" 
+                                 alt="Sonia Pitrola"
+                                 title="Sonia Pitrola- The Cat"
+                                 class="img-circle" 
+                                 width="175" />
+                        </figure>
                         <p><span class="firstWord">Sonia</span>, tireless, design focussed,
                             led the development effort on the single movie page.  In addition
                             Sonia developed and provided to tema members clear, concise instructions
@@ -127,27 +135,39 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <p>Home Page Initial Design</p>
-            <img src="/images/homePage.jpg" width="200"/>
+            <br /><br />
+            <figure>
+                <figcaption>Initial Design of Browse Page</figcaption>          
+                <img src="/images/browse.jpg"
+                     class="img-responsive" 
+                     alt="Initial Design of Browse Page"
+                     title="Initial Design of Browse Page"/>
+            </figure>
         </div>
         <div class ="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">The Movie Web Site Documentation Pages</div>
-            <div class="panel-body">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="#">home page</a></li>
-                <li class="list-group-item"><a href="#">browse movies</a></li>
-                <li class="list-group-item"><a href="#">Detailed info on one movie</a></li>
-                <li class="list-group-item"><a href="#">Detailed info on one person</a></li>
-                <li class="list-group-item"><a href="#aboutPage">This about us page, and</a></li>
-                <li class="list-group-item"><a href="#">An error page</a></li>
-            </ul>
+            <div class="panel panel-default">
+                <div class="panel-heading">The Movie Web Site Documentation Pages</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#homePage">Home Page</a></li>
+                        <li class="list-group-item"><a href="#browse">Browse Movies</a></li>
+                        <li class="list-group-item"><a href="#sMovie">Detailed info on one movie</a></li>
+                        <li class="list-group-item"><a href="#sPerson">Detailed info on one person</a></li>
+                        <li class="list-group-item"><a href="#about">This about us page, and</a></li>
+                        <li class="list-group-item"><a href="#error">An error page</a></li>
+                    </ul>
+                </div>
             </div>
-            </div>
-            </div>
+        </div>
         <div class="col-md-3">
-            <p>About Page Initial Design</p>
-            <img src="/images/about.jpg" width="200"/>
+            <br /><br />
+            <figure>
+                <figcaption>Initial Design of Single Movie</figcaption>
+                <img src="/images/sMovie.jpg"
+                     title="Initial Design of Single Movie" 
+                     alt="Initial Design of Single Movie"
+                     class="img-responsive"/>
+            </figure>
         </div>
         </div>
     <div class="panel panel-info">
@@ -170,51 +190,131 @@
     <div class="panel panel-info">
         <div class="panel-heading">Team Development Efforts</div>
         <div class="panel-body">
-            <h4>The Home Page</h4>
-            <br />
-            <h4>The Browse Page</h4>
-            <br />
-            <h4>The Single Movie Page</h4>
-            <br />
-            <h4>The Single Person Page</h4>
-            <br />
             <div class="panel panel-primary">
-                <div class="panel-heading" id="aboutPage">The About Page</div>
+                <div class="panel-heading" id="homePage">The Home Page<br />
+                    <div class="title">Lead Developer: Joseph Balabat</div>
+                </div>
                 <div class="row">
                     <div class="col-md-4 ">
-                        <img src="/images/about.jpg" class="img-responsive pageImg"/>
+                        <img src="/images/homePage.jpg" 
+                            class="img-responsive pageImg"
+                            alt="Initital Design of Home Page"
+                            title="Initital Design of Home Page"/>
                     </div>
                     <div class="col-md-8 documentation">
-                        <br />
-                        <p>The initial design of the about page is shown at left.
-                              From the initial design, there were numerous
-                              design and implementation decisons, that included:
-                        </p>
-                        <div class="row">
-                            <div class="col-md-5 col-md-offset-4">
-                                in page links, <br />
-                                grid set up, <br />
-                                ensuring that the page worked with the site master, <br />
-                                assuring accurate and complete citations, and <br />
-                                developing the content.  
-                            </div>
-                        </div>
-                        <br />
-                        <p>Chosing the right level of detail for the documentation was a
-                            challenge.  Finding the "right" pictures to represent the 
-                            inner cat of each of the team members
-                            took a disproportionate amount of time.  There were long discussions
-                            about creating 6 other web pages to include a more detailed
-                            documentation for each page, but in the end the group decided
-                            to focus efforts elsewhere.
-                        </p>
+                    <br />
                     </div>
                 </div>
             </div>
             <br />
-            <h4>The Error Page</h4>
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="browse">The Browse Page<br />
+                    <div class="title">Lead Developer: James Bergeron</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <img src="/images/browse.jpg" 
+                             class="img-responsive pageImg"
+                             alt="Initital Design of the Browse Page"
+                             title="Initital Design of the Browse Page"
+                        />
+                    </div>
+                    <div class="col-md-8 documentation">
+
+                    </div>
+                </div>
+            </div>
             <br />
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="sMovie">The Single Movie Page<br />
+                    <div class="title">Lead Developer: Sonia Pitrola</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <img src="/images/sMovie.jpg" 
+                                class="img-responsive pageImg"
+                                alt="Initital Design of About Page"
+                                title="Initital Design of About Page"
+                            />
+                    </div>
+                    <div class="col-md-8 documentation">
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="sPerson">The Single Person Page</div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <img src="/images/sPerson.jpg" 
+                                class="img-responsive pageImg"
+                                alt="Initital Design of the Single Person Page"
+                                title="Initital Design of the Single Person Page"/>
+                    </div>
+                    <div class="col-md-8 documentation">
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="about">The About Page<br />
+                    <div class="title">Lead Developer: James Bergeron</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ">
+                    <img src="/images/about.jpg" 
+                            class="img-responsive pageImg"
+                            alt="Initital Design of About Page"
+                            title="Initital Design of About Page"/>
+                </div>
+                <div class="col-md-8 documentation">
+                    <br />
+                    <p>The initial design of the about page is shown at left.
+                            From the initial design, there were numerous
+                            design and implementation decisons, that included:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-4">
+                            in page links, <br />
+                            grid set up, <br />
+                            ensuring that the page worked with the site master, <br />
+                            assuring accurate and complete citations, and <br />
+                            developing the content.  
+                        </div>
+                    </div>
+                    <br />
+                    <p>Chosing the right level of detail for the documentation was a
+                        challenge.  Finding the "right" pictures to represent the 
+                        inner cat of each of the team members
+                        took a disproportionate amount of time.  There were long discussions
+                        about creating 6 other web pages to include a more detailed
+                        documentation for each page, but in the end the group decided
+                        to focus efforts elsewhere.
+                    </p>
+                </div>
+            </div>
         </div>
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading" id="error">The Error Page<br />
+                <div class="title">Lead Developer: James Bergeron</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ">
+                    <img src="/images/error.jpg" 
+                            class="img-responsive pageImg"
+                            alt="Initital Design of the Single Person Page"
+                            title="Initital Design of the Single Person Page"/>
+                </div>
+            <div class="col-md-8 documentation">
+
+            </div>
+            </div>
+        </div>
+    <br />
     </div>
 </div>
 </asp:Content>
