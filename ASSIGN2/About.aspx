@@ -262,7 +262,7 @@
                 <div class="panel-heading" id="about">The About Page<br />
                     <div class="title">Lead Developer: James Bergeron</div>
                 </div>
-            </div>
+            
             <div class="row">
                 <div class="col-md-4 ">
                     <img src="/images/about.jpg" 
@@ -294,6 +294,7 @@
                         documentation for each page, but in the end the group decided
                         to focus efforts elsewhere.
                     </p>
+                </div>
                 </div>
             </div>
         </div>
