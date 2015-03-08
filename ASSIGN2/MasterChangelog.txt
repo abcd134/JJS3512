@@ -79,3 +79,5 @@ James - About Page - Revision 2 - March 7, 2015
 					Made most images responsive (need to work on the cat pictures)
 Sonia - SMovie Page - Revision 1 - March 7, 2015
 Lines 1 to 164  Added the Template for SMovie using Bootstrap
+
+Line 298        Moved div due to panel error bootstrap
