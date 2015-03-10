@@ -71,9 +71,9 @@
                                  class="img-circle" 
                                  width="175" />
                         </figure>
-                        <p><span class="firstWord">Joseph</span>, worked tirelessly to not only help design and implement
-                            the web page, his joie de vivre inspired the team.  A key member
-                            of the team who took every opportunity to lead the team and to
+                        <p><span class="firstWord">Joseph</span>, worked tirelessly to  help design and implement
+                            the web page.  His joie de vivre inspired the team.  A key member
+                            of the team who took every opportunity to lead and to
                             ensure that it's members understood and were on board with design
                             and implementation initiatives.  A teacher at heart.  Joseph took care
                             of the implementation details for the site master.  He pushed us to 
@@ -102,13 +102,13 @@
                             programming style.  The other members immediately recognized his
                             ability to design, use colors and throw cords.  He was instrumental
                             in the design phase, the documentation phase, and took care of the
-                            implementation details for the about us page and the browse page.
-                            Heard to complain about his role, he was asked to do the browse page.
-                            We could go on about how great he was, but someone might suspect
-                            who was actually authoring this piece.
+                            implementation details for the about us page, the error page and 
+                            the browse page.  Heard to complain about his role, he was asked 
+                            to do the browse page. We could go on about how great he was, but 
+                            someone might suspect who was actually authoring this piece.
                         </p>
                 </div>
-                                <br />
+                <br />
                 <div class="col-md-10 col-md-offset-1 innerWell">
                     <h3 id="sonia">Sonia Pitrola</h3>
                         <figure>
@@ -120,15 +120,15 @@
                         </figure>
                         <p><span class="firstWord">Sonia</span>, tireless, design focussed,
                             led the development effort on the single movie page.  In addition
-                            Sonia developed and provided to tema members clear, concise instructions
-                            for cloning and using the GiHub repository for sharing information,.
+                            Sonia developed and provided to team members clear, concise instructions
+                            for cloning and using the GiHub repository for sharing information.
                             Sonia also created and managed the Google Drive repository for
-                            sharing informatio.  She was instrumental in design decisions to 
-                            establish the initial layout as well as the  being the lead in
+                            sharing information.  She was instrumental in design decisions to 
+                            establish the initial layout as well as the lead in
                             the establishment of the look and feel of the site.  Sonia's good
                             nature and drive for success was a key component in ensuring cohesion
                             between the team members.  She will wear a skirt to school if we get
-                            an "A"......  ooops the write thinking out loud again. 
+                            an "A"......  ooops the writer was thinking out loud again. 
                         </p>
                 </div>
           </div> 
@@ -195,7 +195,7 @@
                     <div class="title">Lead Developer: Joseph Balabat</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 ">
+                    <div class="col-md-3 col-md-offset-1 ">
                         <img src="/images/homePage.jpg" 
                             class="img-responsive pageImg"
                             alt="Initital Design of Home Page"
@@ -212,15 +212,34 @@
                     <div class="title">Lead Developer: James Bergeron</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 ">
+                    <div class="col-md-3 col-md-offset-1 ">
                         <img src="/images/browse.jpg" 
                              class="img-responsive pageImg"
                              alt="Initital Design of the Browse Page"
                              title="Initital Design of the Browse Page"
                         />
                     </div>
-                    <div class="col-md-8 documentation">
-
+                    <div class="col-md-7 documentation">
+                        <br />
+                        <p>The browse page provided an initial challenge, because
+                            any given movie could have multiple cast members, directors
+                            and genres.  As an example, eEarly efforts resulted in
+                            multiple posters for The Matrix as it is considered to be an
+                            ACTION, ADVENTURE, SCIENCE FICTION, THRILLER -- representing
+                            4 of the 20 possible genres listed.
+                        </p>
+                        <p> 
+                            Beyond the initial challenges of learning how to use ASP.NET,
+                            there were a number of smaller challenges.  Pagination was
+                            desireable, but the desire to use Bootstrap trumped the
+                            use of the controls which would easily allow pagination.
+                            The same comment applied to sorting on columns, but the 
+                            choices of controls were more limited and we did not like 
+                            their look.  We sacrificed functionality for appearance.
+                            We believethat a pleasing look, coupled with continual small
+                            tweaks to functionality would keep visitors coming
+                            back and keep us employed upgrading the site.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -230,7 +249,7 @@
                     <div class="title">Lead Developer: Sonia Pitrola</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 ">
+                    <div class="col-md-3 col-md-offset-1 ">
                         <img src="/images/sMovie.jpg" 
                                 class="img-responsive pageImg"
                                 alt="Initital Design of About Page"
@@ -246,7 +265,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" id="sPerson">The Single Person Page</div>
                 <div class="row">
-                    <div class="col-md-4 ">
+                    <div class="col-md-3 col-md-offset-1 ">
                         <img src="/images/sPerson.jpg" 
                                 class="img-responsive pageImg"
                                 alt="Initital Design of the Single Person Page"
@@ -264,20 +283,20 @@
                 </div>
             
             <div class="row">
-                <div class="col-md-4 ">
+                <div class="col-md-3 col-md-offset-1 ">
                     <img src="/images/about.jpg" 
-                            class="img-responsive pageImg"
+                            class="thumbnail img-responsive"
                             alt="Initital Design of About Page"
                             title="Initital Design of About Page"/>
                 </div>
-                <div class="col-md-8 documentation">
+                <div class="col-md-7 documentation">
                     <br />
                     <p>The initial design of the about page is shown at left.
                             From the initial design, there were numerous
                             design and implementation decisons, that included:
                     </p>
                     <div class="row">
-                        <div class="col-md-5 col-md-offset-4">
+                        <div class="col-md-6 col-md-offset-2">
                             in page links, <br />
                             grid set up, <br />
                             ensuring that the page worked with the site master, <br />
@@ -304,14 +323,28 @@
                 <div class="title">Lead Developer: James Bergeron</div>
             </div>
             <div class="row">
-                <div class="col-md-4 ">
+                <div class="col-md-3 col-md-offset-1 ">
                     <img src="/images/error.jpg" 
                             class="img-responsive pageImg"
                             alt="Initital Design of the Single Person Page"
                             title="Initital Design of the Single Person Page"/>
                 </div>
-            <div class="col-md-8 documentation">
-
+            <div class="col-md-7 documentation">
+                <br />
+                <p>Nothing fancy on this page. </p><br />
+                <p> We opted not to include
+                    a query string retrieval process to provide more descriptive
+                    error messages.  This is an area that can be improved upon
+                    in the future.  </p> <br />
+                <p>We considered putting an explicit Button Link back to the home
+                    page, but felt there were enough navigation options already
+                    included on the page for this function.
+                </p><br />
+                <p>Yes, we agree, picture of the cat getting
+                    zapped is tacky and the image editing is on par with an
+                    early 80's effort, so you already know who did it.
+                </p>
+                    
             </div>
             </div>
         </div>
