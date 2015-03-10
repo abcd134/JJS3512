@@ -81,3 +81,10 @@ Sonia - SMovie Page - Revision 1 - March 7, 2015
 Lines 1 to 164  Added the Template for SMovie using Bootstrap
 
 Line 298        Moved div due to panel error bootstrap
+
+James	- Browse Page - First Draft - March 8, 2015
+						posters showing up
+						movie titles have working links to SMovie page
+						release date showing up
+James -  Browse Page	March 9, 2015
+						changed poster class to thumbnail - looked cleaner.
