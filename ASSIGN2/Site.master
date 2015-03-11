@@ -110,7 +110,17 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <div class="row">
+                    <div class="col-md-3">Hi</div>
+                    <div class="col-md-3">James</div>
+                    <div class="col-md-3">and</div>
+                    <div class="col-md-3">Sonia</div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <p class="center">Home | About | Actors & Actress | Movies | Browse</p>
+                <p class="center">&copy; <%: DateTime.Now.Year %> - Content Provided by MovieDB.</p>
             </footer>
         </div>
     </form>
