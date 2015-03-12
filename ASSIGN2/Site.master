@@ -20,7 +20,8 @@
         <asp:SqlDataSource ID="NowShowingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie ORDER BY release_date DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopRatingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY vote_average DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopGrossingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY revenue DESC"></asp:SqlDataSource>
-
+        <asp:SqlDataSource ID="GenreTop10DB" runat="server" ConnectionString='<%$ ConnectionStrings:Movies %>' ProviderName='<%$ ConnectionStrings:Movies.ProviderName %>' SelectCommand="SELECT TOP 10 * FROM [genre]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="GenreBot10DB" runat="server" ConnectionString='<%$ ConnectionStrings:Movies %>' ProviderName='<%$ ConnectionStrings:Movies.ProviderName %>' SelectCommand="SELECT TOP 10 * FROM (SELECT TOP 10 * FROM genre ORDER BY name DESC) ORDER BY name"></asp:SqlDataSource>
 
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -62,15 +63,16 @@
                         </li>
                     </ul>
                 </div>
-                <div class="nav navbar">
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/SPerson/SPerson.aspx">People</a></li>
+                        <li><a runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
                         <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust" role="menu">
                                 <div class="col-xs-4 subnav">
-                                    <h3>Top Rating 2014</h3>
+                                    <h3>Now Playing</h3>
                                     <asp:Repeater ID="NowShowingRepeater" DataSourceID="NowShowingDB" runat="server">
                                         <ItemTemplate>
                                             <table>
@@ -101,6 +103,31 @@
                                 </div>
                             </div>
                         </li>
+                       
+                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
+                            <div class="dropdown-menu dropdown-adjust" role="menu">
+                                    <div class="col-md-12 subnav">
+                                    <div class="col-md-6 subnav">
+                                        <asp:Repeater ID="Genre10Repreater" runat="server" DataSourceID="GenreTop10DB">
+                                            <ItemTemplate>
+                                                <table>
+                                                <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                            </table>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
+                                    <div class="col-md-6 subnav">
+                                        <asp:Repeater ID="Genre10botRepeater" runat="server" DataSourceID="GenreBot10DB">
+                                            <ItemTemplate>
+                                                <table>
+                                                <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                            </table>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
                     </ul>
                 </div>
             </div>
