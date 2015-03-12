@@ -87,9 +87,16 @@ James	- Browse Page - First Draft - March 8, 2015
 						movie titles have working links to SMovie page
 						release date showing up
 James -  Browse Page	March 9, 2015
-						changed poster class to thumbnail - looked clean
+						changed poster class to thumbnail - looked cleaner.
 
-James - Browse Page		March 11, 2015 (Joseph I just discovered the colored bars!!!!)
+Joseph - Site.Master - Revision 5
+Line 122 to 123 Added Footer
+
+Joseph - Site.css
+Line 42		Added Center CSS for text file
+
+James - Browse Page		March 11, 2015 
+(Joseph I just discovered the colored bars!!!! now I know haw you knew what changed!)
 Lines 23			removed col offset
 lines 25			added proper pathing
 lines 31-6			added backdrop image
