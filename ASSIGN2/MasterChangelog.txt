@@ -106,3 +106,12 @@ lines 38-58			changed layout
 					added actor + link to SPerson page
 					added role
 lines 79-86			SQL Statement (will eventually put in code behind)
+
+Joseph - Site.master	March 12,2015
+Line 73 - 133		Added Browse and Genre (dropdown)
+					Moved Movies after browse
+
+Joseph - Default.aspx	March 13, 2015
+5 - 46				Added Carousel (beta) with test jpeg file
+					Added a static text on carousel 
+
