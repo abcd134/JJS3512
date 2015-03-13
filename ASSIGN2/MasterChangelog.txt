@@ -90,7 +90,7 @@ James -  Browse Page	March 9, 2015
 						changed poster class to thumbnail - looked cleaner.
 
 Joseph - Site.Master - Revision 5
-Line 122 to 123 Added Footer
+Line 122 to 123		Added Footer
 
 Joseph - Site.css
 Line 42		Added Center CSS for text file
