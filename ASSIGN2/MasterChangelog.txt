@@ -134,3 +134,7 @@ James		- Browse.aspx	March 13, 2015
 84 - 96				Genre ListBox included
 90 ish				Deleted lines relating to data source for layout in front end code
 
+Joseph	-	Default.aspx	March 13, 2015
+53 - 176			Reoredered div layers
+					Added right side pannel
+					Added panels (bootstarp)

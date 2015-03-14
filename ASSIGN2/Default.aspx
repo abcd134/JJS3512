@@ -2,8 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <%--Begin Carousel --%>
+ <br>
     <div class="container">
-        <br>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -47,65 +48,131 @@
         </div>
     </div>
 
-    <div class="row">
+    <%--End of the carousel--%>
 
-        <div class="col-md-9">
+    <br />
+
+    <div class="container">
+        <%--Begin Body of the website--%>
+
+        <%--Start of the left hand side of the website--%>
+
+        <%--Begin Featured Movie--%>
+        <div class="col-md-8">
             <div class="row">
-                <h2>Featured Movies</h2>
-                <div class="col-md-4">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                        title="<%# Eval("title")%> poster"
-                        alt="<%# Eval("title") %> poster"
-                        class="thumbnail img-responsive" />
-                    <p>Top Featured movie</p>
-                </div>
-                <div class="col-md-8">
-                    <ol>
-                        <li>2nd featured</li>
-                        <li>3rd featured</li>
-                        <li>4th featured</li>
-                        <li>5th featured</li>
-                    </ol>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Featured Movies</div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
+                                title="<%# Eval("title") %> poster"
+                                alt="<%# Eval("title") %> poster"
+                                class="thumbnail img-responsive" />
+                            <p>Top Featured movie</p>
+                        </div>
+                        <div class="col-md-8">
+                            <ol>
+                                <li>2nd featured</li>
+                                <li>3rd featured</li>
+                                <li>4th featured</li>
+                                <li>5th featured</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-          
+            <%--End Featured Movie--%>
+
+            <%--Begin "Born in this day" --%>
             <div class="row">
-                <h2>BORN TO DAY</h2>
-                <div class="col-md-4">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                        title="<%# Eval("title")%> poster"
-                        alt="<%# Eval("title") %> poster"
-                        class="thumbnail img-responsive" />
-                    <p>Persons picture</p>
-                </div>
-                <div class="col-md-8">
-                    <p>BIO</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Born on this day</div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
+                                title="<%# Eval("title") %> poster"
+                                alt="<%# Eval("title") %> poster"
+                                class="thumbnail img-responsive" />
+                            <p>Born on this day</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <h1>Bio</h1>
+                                <p>This is where the bio goes in. NUM NUM NUM NUM NUM!!!!</p>
+                            </div>
+                            <div class="row">
+                                <h1>Latest Movies</h1>
+                                <p>This is where the latest movie goes in. NUM NUM NUM NUM NUM!!!!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <%--End "Born in this day" --%>
 
+            <%--Begin Featured Movie--%>
             <div class="row">
-                <h2>Featured People</h2>
-                <div class="col-md-4">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                        title="<%# Eval("title")%> poster"
-                        alt="<%# Eval("title") %> poster"
-                        class="thumbnail img-responsive" />
-                    <p>Persons picture</p>
-                </div>
-                <div class="col-md-8">
-                    <p>BIO</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Featured Movies</div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
+                                title="<%# Eval("title") %> poster"
+                                alt="<%# Eval("title") %> poster"
+                                class="thumbnail img-responsive" />
+                            <p>Top Featured Movies</p>
+                        </div>
+                        <div class="col-md-8">
+                            <ol>
+                                <li>2nd featured</li>
+                                <li>3rd featured</li>
+                                <li>4th featured</li>
+                                <li>5th featured</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <%--End "Born in this day" --%>
         </div>
-        <div class="col-md-3">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+        <!-- col md 9 -->
+
+        <%--This is the right hand side of the website--%>
+
+        <div class="col-md-3 col-md-offset-1">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Now Playing</div>
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            <li>Movie1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Coming Soon</div>
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            <li>Movie1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Genre</div>
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            <li>Movie1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </asp:Content>
