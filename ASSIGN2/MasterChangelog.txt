@@ -115,3 +115,22 @@ Joseph - Default.aspx	March 13, 2015
 5 - 46				Added Carousel (beta) with test jpeg file
 					Added a static text on carousel 
 5 - 110				Added Featured Movies, Born on this day, Featured people
+
+James	- Browse.aspx.cs	March 13, 2015
+18 - 31				Added skeleton query string check
+					Added data binding method call
+
+33 - 91				performdataBinding method (a lot of Randy's code)
+					Added data binding code for list
+					Added data binding code for genre ListBox
+92 - 103			onSelectedItemChange method added
+					stubbed for handling search
+
+James		- Browse.aspx	March 13, 2015
+11 - 19				Added some css at top of page to fix "Genre ListBox position"
+23					Main content included in col-md-10
+29					Data source for layout now coming from code behind
+71					Page layout changed to have overview after lead actor name/role
+84 - 96				Genre ListBox included
+90 ish				Deleted lines relating to data source for layout in front end code
+
