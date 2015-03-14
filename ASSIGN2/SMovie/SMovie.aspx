@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Single Movie" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="SMovie.aspx.cs" Inherits="About" %>
+﻿<%@ Page Title="Single Movie" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="SMovie.aspx.cs" Inherits="SMovie" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
@@ -18,24 +18,24 @@
             <div class="col-md-8">
                 <!--This is the important information for a movie-->
                 <div class="panel panel-default">
-                    <div class="panel-heading">Add Title (Release Date)</div>
+                    <div class="panel-heading"><asp:Label ID="txtTitle" runat="server" /> (<asp:Label ID="txtReleaseDate" runat="server" />)</div>
                     <div class="panel-body">
-                        <p>Rating: ADD RATING</p>
-                        <p>Run Time: ADD Run Time</p>
-                        <p>Genre: ADD GENRE</p>
+                        <p>Rating: <asp:Label ID="txtRating" runat="server" /></p>
+                        <p>Run Time: <asp:Label ID="txtRunTime" runat="server" /></p>
+                        <p>Genre: <asp:Label ID="txtGenre" runat="server" /></p>
                     </div>
                 </div>
                 <!--This is the movie overview-->
                 <div class="panel panel-default">
                     <div class="panel-heading">Overview</div>
                     <div class="panel-body">
-                        <p>BOOTSTRAP IS UGH!!! ADD MOVIE OVERVIEW HERE :)</p>
+                        <p><asp:Label ID="txtOverview" runat="server" /></p>
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Tag Lines</div>
+                    <div class="panel-heading">Tag Line</div>
                     <div class="panel-body">
-                        <p>Add Tag lines</p>
+                        <p><asp:Label ID="txtTagLine" runat="server" /></p>
                     </div>
                 </div>
 
@@ -52,18 +52,18 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Movie Details</div>
                 <div class="panel-body">
-                <p>Average Rating: ADD RATING</p>
-                <p>Vote Count: ADD VOTE COUNT</p>
+                <p>Average Rating: <asp:Label ID="txtAverage" runat="server" /></p>
+                <p>Vote Count: <asp:Label ID="txtVoteCount" runat="server" /></p>
                 </div>
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading">Movie Information</div>
                 <div class="panel-body">
-                    <p>ID: ADD IMDB ID</p>
+                    <p>ID: <asp:Label ID="txtIMDB" runat="server" /></p>
                     <p>Companies: ADD MOVIE COMPANIES</p>
-                    <p>Budget: Add Budget</p>
-                    <p>Revenue: Add Revenue</p>
+                    <p>Budget: <asp:Label ID="txtBudget" runat="server" /></p>
+                    <p>Revenue: <asp:Label ID="txtRevenue" runat="server" /></p>
                 </div>
             </div>
         </div>
@@ -161,4 +161,5 @@
 
       </div>
    </div>
+    <asp:Label ID="message" runat="server" />
 </asp:Content>

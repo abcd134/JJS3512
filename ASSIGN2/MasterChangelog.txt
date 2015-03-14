@@ -115,3 +115,7 @@ Joseph - Default.aspx	March 13, 2015
 5 - 46				Added Carousel (beta) with test jpeg file
 					Added a static text on carousel 
 5 - 110				Added Featured Movies, Born on this day, Featured people
+
+Sonia - SMovie.aspx March 13, 2015
+lines 21 - 38		Added the DB for title, runtime, year, rating, tagline, overview 
+lines 55 - 66		Added the budget, revenue, average rating, imdb id and vote count
