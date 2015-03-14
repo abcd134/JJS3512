@@ -133,4 +133,3 @@ James		- Browse.aspx	March 13, 2015
 71					Page layout changed to have overview after lead actor name/role
 84 - 96				Genre ListBox included
 90 ish				Deleted lines relating to data source for layout in front end code
-
