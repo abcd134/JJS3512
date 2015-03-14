@@ -103,16 +103,16 @@
                                 </div>
                             </div>
                         </li>
-                       
+
                         <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust" role="menu">
-                                    <div class="col-md-12 subnav">
+                                <div class="col-md-12 subnav">
                                     <div class="col-md-6 subnav">
                                         <asp:Repeater ID="Genre10Repreater" runat="server" DataSourceID="GenreTop10DB">
                                             <ItemTemplate>
                                                 <table>
-                                                <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
-                                            </table>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                                </table>
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
@@ -120,14 +120,14 @@
                                         <asp:Repeater ID="Genre10botRepeater" runat="server" DataSourceID="GenreBot10DB">
                                             <ItemTemplate>
                                                 <table>
-                                                <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
-                                            </table>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>"><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                                </table>
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
                                 </div>
-                                </div>
-                            </li>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -181,6 +181,8 @@
                 <li class="list-group-item"><a href="http://www.inlander.com/imager/b/blog/2201738/bdd7/beabetterfriend.jpg?cb=1383547907">
                     Image of James from The Inlander</a></li>
                 <li class="list-group-item">Will Fowler for GitHub Guidance</li>
+                <li class="list-group-item">Connolly R., Hoar R., 2015,Fundamentals of Web Development</li>
+                <li class="list-group-item">Connolly R., 2007,Core Internet Application with ASP.NET 2.0</li>
                 <li class="list-group-item"><a href="www.tmdb.com">The Movie Database (TMDb)</a></li>
             </ul>
         </div>
@@ -223,10 +225,15 @@
                         <br />
                         <p>The browse page provided an initial challenge, because
                             any given movie could have multiple cast members, directors
-                            and genres.  As an example, eEarly efforts resulted in
+                            and genres.  As an example, early efforts resulted in
                             multiple posters for The Matrix as it is considered to be an
                             ACTION, ADVENTURE, SCIENCE FICTION, THRILLER -- representing
-                            4 of the 20 possible genres listed.
+                            4 of the 20 possible genres listed.  
+                            A number of the design choices were made for expediency, leaving 
+                            future improvment opportunities.  The rating system could
+                            be improved with the use of images, the height of each row could
+                            standardized, and the inclusion of nested materials, would
+                            enhance the information value of the pages.
                         </p>
                         <p> 
                             Beyond the initial challenges of learning how to use ASP.NET,
@@ -335,10 +342,9 @@
                 <p> We opted not to include
                     a query string retrieval process to provide more descriptive
                     error messages.  This is an area that can be improved upon
-                    in the future.  </p> <br />
-                <p>We considered putting an explicit Button Link back to the home
-                    page, but felt there were enough navigation options already
-                    included on the page for this function.
+                    in the future.  We considered putting an explicit Button Link 
+                    back to the home page, but felt there were enough navigation 
+                    options already included on the page for this function.
                 </p><br />
                 <p>Yes, we agree, picture of the cat getting
                     zapped is tacky and the image editing is on par with an

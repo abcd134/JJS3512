@@ -16,6 +16,12 @@
                 display: block;
                 margin-left:auto;
                 margin-right:auto;
+                color:GhostWhite;  
+                background-color:gold;  
+                font-size:medium;  
+                font-style:italic; 
+                color: red;
+                text-align:center; 
        }
     </style>
         <h2><%: Title %>.</h2>   
@@ -48,7 +54,7 @@
                                     <div class="row">
                                         <div class="col-md-10">
                                             <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>"><%# Eval("title") %></a>
-                                                (<%# Eval("release_date", "{0:yyyy}")%>)</h3>
+                                                (<%# Eval("release_date", "{0: YYYY}")%>)</h3>
                                             <h5>"<%# Eval("tagline")%>"</h5>
                                          </div>
                                         <div class="col-md-1">
@@ -82,9 +88,11 @@
                  </div>
             </div>
             <div class="col-md-2">        
-                <div class="panel panel-default text-center fixed">
-                    <div class="panel-heading">Select Genre</div>
-                    <br />
+                <div class="panel panel-default row">
+                    <div class="panel-body">Select Genre<br />     
+                        <asp:Label ID="lblGenre" runat="server" >
+                        </asp:Label>
+                    </div>
                     <asp:Listbox ID="drpGenres" runat="server" 
                         DataTextField="genreName" 
                         DataValueField="genre_id" 

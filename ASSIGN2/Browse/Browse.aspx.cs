@@ -23,9 +23,10 @@ public partial class About : Page
                 search = null;
             }
             else { search = null; }
-            if (Request.QueryString["genreID"] != null)
+            if (Request.QueryString["genre"] != null)
             {
-                genreID = Convert.ToInt32(Request.QueryString["genreID"]);
+                genreID = Convert.ToInt32(Request.QueryString["genre"]);
+                lblGenre.Text = Convert.ToString(genreID);
             }
             else { genreID = -1;}
             PerformDataBinding(search, genreID);
@@ -91,16 +92,20 @@ public partial class About : Page
     }
     public void genres_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string search;
+        String search;
         if (Request.QueryString["search"] != null)
         {
             search = null;
         }
         else { search = null;  }
+        lblGenre.Visible = true;
+        String filter = drpGenres.SelectedItem.Text;
+
         // retrieve index of the row that generated the event
         int genre_ID = Convert.ToInt32(drpGenres.SelectedValue);
         PerformDataBinding(search, genre_ID);
-        Response.Redirect("Browse.aspx?search=" + search + "&genreID=" + genre_ID);
+        lblGenre.Text = filter;
+        Response.Redirect("Browse.aspx?search=" + search + "&genre=" + genre_ID);
     }
     
 
