@@ -1,16 +1,6 @@
 ﻿<%@ Page Title="Error" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Error.aspx.cs" Inherits="About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<style> 
-   .well {background-color:gold;}
-   .innerWell {
-        background-color: lightgoldenrodyellow;
-    }
-   .panel-heading{font-size:2em;
-                  font-style:italic;
-                  font-weight:800;
-   }
-</style>
 
 <h2><%: Title %>.</h2>
 

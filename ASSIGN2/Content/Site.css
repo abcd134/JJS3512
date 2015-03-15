@@ -43,3 +43,103 @@ textarea {
     text-align: center;
 }
 
+/* the following CSS impacts the Browse Page
+   remove as desired.
+*/     
+figure {
+    padding: 1em;
+}
+
+.thumbnail {
+    margin-bottom: 0;
+}
+
+.panel-info {
+    background-color: gold;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.genres{ position: fixed;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        color:GhostWhite;  
+        background-color:gold;  
+        font-size:medium;  
+        font-style:italic; 
+        color: red;
+        text-align:center; 
+}
+
+.button {
+        border: 1px solid #006;
+        background: #9cf;
+}
+
+/*
+    The following CSS impacts the About page
+    remove as desired.
+*/
+
+.img-circle {
+    float: left;
+    margin-right: 1em;
+}
+
+p {
+    text-indent: 2em;
+}
+
+.firstWord {font: bold;
+            font-style:italic;
+            font-size:larger;
+            color:blueviolet;
+}
+
+.well {
+    background-color:gold;
+}
+
+.innerWell {
+    background-color: lightgoldenrodyellow;
+}
+
+.pageImg {
+    padding: .5em;
+}
+.documentation {
+    padding-right: 4em;
+}
+
+.panel-heading{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:large;
+}
+
+.title {
+    font-size:small;
+}
+
+figcaption {
+    text-align:center;
+}
+/*
+    Following stying used on the error page
+    remove as desired.
+*/
+
+.well {
+    background-color:gold;
+
+}
+.innerWell {
+    background-color: lightgoldenrodyellow;
+}
+.panel-heading{
+    font-size:2em;
+    font-style:italic;
+    font-weight:800;
+}

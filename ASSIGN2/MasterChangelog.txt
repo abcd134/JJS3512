@@ -96,7 +96,7 @@ Joseph - Site.css
 Line 42		Added Center CSS for text file
 
 James - Browse Page		March 11, 2015 
-(Joseph I just discovered the colored bars!!!! now I know haw you knew what changed!)
+(Joseph I just discovered the colored bars!!!! now I know how you knew what changed!)
 Lines 23			removed col offset
 lines 25			added proper pathing
 lines 31-6			added backdrop image
@@ -147,3 +147,33 @@ James		- Error.aspx	Pi day
 
 James		- Error.aspx.cs	Pi day
 12 - 15				Added code to load an "error" label from a query string request.
+
+James		-	Error.aspx	March 16, 2015
+4 -14				Deleted all style elements and placed in site.css file
+
+James		-	About.aspx	March 16, 2015
+10 - 36				Deleted all style elements and placed in site.css file
+181 - 191			Home page documentation added
+251 - 267			Single Movie documentation added
+282 - 305			Single Person documentation stubbed with phoney baloney
+366 - 369			Updated wording to include inclusion of error message parameter
+
+James		-	Browse.aspx	March 16, 2015
+4 - 30				Deleted all style elements and placed in site.css file
+13					Added notFound label to handle nothing found event.
+
+James		-	Browse.aspx.cs March 16, 2015
+13					Refactored Partial class name to Browse
+Many lines			Added documentation - especially methods
+30 - 45				Try - catch to verify integer query string if exists
+44					Included Redirect error message for printing on error page
+70					Included genre.name in select if filtering on genre 
+						(needed when coming to page from Nav Bar)
+84					made genre lable visible when one exists
+98 - 104			Included nothing found message
+118					Redirect with error message
+139					Keeping search string alive when adding a genre
+171 - 172			Removing filter button, label and not found message visibility.
+
+James		-	Site.css	March 16, 2015
+46 - 145			Added CSS from Error, About and Browse pages

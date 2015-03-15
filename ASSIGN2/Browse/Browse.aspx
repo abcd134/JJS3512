@@ -1,117 +1,92 @@
-﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="About" %>
+﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="Browse" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
-   <style>        
-       figure {
-            padding: 1em;
-        }
-        .thumbnail {
-            margin-bottom: 0;
-        }
-        .panel-info {background-color: gold;}
-       .fixed {
-           position: fixed;
-       }
-       .genres{ position: fixed;
-                display: block;
-                margin-left:auto;
-                margin-right:auto;
-                color:GhostWhite;  
-                background-color:gold;  
-                font-size:medium;  
-                font-style:italic; 
-                color: red;
-                text-align:center; 
-       }
-       .button {
-                border: 1px solid #006;
-                background: #9cf;
-       }
-    </style>
-        <h2><%: Title %>.</h2>   
-        <div class="row">
-            <div class="col-md-10">
-                <div class="well well-lg">
-                    <h1>Browse the Movies</h1>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <asp:Repeater ID="layout" runat="server">
-                            <ItemTemplate>
+   
+<h2><%: Title %>.</h2>   
+<div class="row">
+    <div class="col-md-10">
+        <div class="well well-lg">
+            <h1>Browse the Movies</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <asp:Label ID="notFound" runat="server" Visible="false" ></asp:Label> 
+                <asp:Repeater ID="layout" runat="server">
+                    <ItemTemplate>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <figure>
+                                <a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>">
+                                <img src="http://image.tmdb.org/t/p/w300<%# Eval("poster_path") %>"
+                                        title="<%# Eval("title")%> poster"
+                                        alt="<%# Eval("title") %> poster"
+                                        class="thumbnail img-responsive" /></a>
+                            </figure>
+                            <figure>
+                                <img src="http://image.tmdb.org/t/p/w300<%# Eval("backdrop_path") %>"
+                                        title="<%# Eval("title")%> backdrop"
+                                        alt="<%# Eval("title") %> backdrop"
+                                        class="thumbnail img-responsive" /></a>
+                            </figure>
+                        </div>
+                        <div class="col-md-10">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <figure>
-                                        <a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>">
-                                        <img src="http://image.tmdb.org/t/p/w300<%# Eval("poster_path") %>"
-                                             title="<%# Eval("title")%> poster"
-                                             alt="<%# Eval("title") %> poster"
-                                             class="thumbnail img-responsive" /></a>
-                                    </figure>
-                                    <figure>
-                                        <img src="http://image.tmdb.org/t/p/w300<%# Eval("backdrop_path") %>"
-                                             title="<%# Eval("title")%> backdrop"
-                                             alt="<%# Eval("title") %> backdrop"
-                                             class="thumbnail img-responsive" /></a>
-                                    </figure>
-                                </div>
                                 <div class="col-md-10">
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>"><%# Eval("title") %></a>
-                                                (<%# Eval("release_date", "{0: YYYY}")%>)</h3>
-                                            <h5>"<%# Eval("tagline")%>"</h5>
-                                         </div>
-                                        <div class="col-md-1">
-                                            <h1><%# Eval("vote_average") %>/10  </h1>
-                                        </div>
+                                    <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>"><%# Eval("title") %></a>
+                                        (<%# Eval("release_date", "{0: YYYY}")%>)</h3>
+                                    <h5>"<%# Eval("tagline")%>"</h5>
                                     </div>
-                                    <div class="panel panel-info row">
-                                        <div class="panel-heading">
-                                            <div class="panel-title"><a href="../SPerson/SPerson.aspx?pid=<%# Eval("pid") %>">
-                                                    <%# Eval("name") %></a></div>
-                                            <div class="panel-body">
-                                                <h5>Stars as <%# Eval("role_name")%></h5>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-info row">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">Overview</div>
-                                            <div class="panel-body">
-                                                <p><%# Eval("overview")%></p>
-                                            </div>      
-                                        </div>
-                                    </div>
+                                <div class="col-md-1">
+                                    <h1><%# Eval("vote_average") %>/10  </h1>
                                 </div>
                             </div>
-                        <hr />
-                        </ItemTemplate>
-
-                        </asp:Repeater> 
-                    </div>                     
-                 </div>
-            </div>
-            <div class="col-md-2">        
-                <div class="panel panel-default row">
-                    <div class="panel-body">Select Genre<br />     
-                        <asp:Label ID="lblGenre" runat="server" 
-                            Visible="false"/>
-                        <asp:Button ID="removeFilter" runat="server"
-                            CssClass ="button" 
-                            Text ="Clear Filter"
-                            Visible ="false"
-                            OnCommand="CommandBtn_Click" />                            
+                            <div class="panel panel-info row">
+                                <div class="panel-heading">
+                                    <div class="panel-title"><a href="../SPerson/SPerson.aspx?pid=<%# Eval("pid") %>">
+                                            <%# Eval("name") %></a></div>
+                                    <div class="panel-body">
+                                        <h5>Stars as <%# Eval("role_name")%></h5>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="panel panel-info row">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Overview</div>
+                                    <div class="panel-body">
+                                        <p><%# Eval("overview")%></p>
+                                    </div>      
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <asp:Listbox ID="drpGenres" runat="server" 
-                        DataTextField="genreName" 
-                        DataValueField="genre_id" 
-                        AutoPostBack="true"
-                        CssClass="genres"
-                        rows ="20"
-                        OnSelectedIndexChanged="genres_SelectedIndexChanged" >
-                    </asp:Listbox>
-                </div>
+                <hr />
+                </ItemTemplate>
+
+                </asp:Repeater> 
+            </div>                     
             </div>
+    </div>
+    <div class="col-md-2">        
+        <div class="panel panel-default row">
+            <div class="panel-body">Select Genre<br />     
+                <asp:Label ID="lblGenre" runat="server" 
+                    Visible="false"/>
+                <asp:Button ID="removeFilter" runat="server"
+                    CssClass ="button" 
+                    Text ="Clear Filter"
+                    Visible ="false"
+                    OnCommand="CommandBtn_Click" />                            
+            </div>
+            <asp:Listbox ID="drpGenres" runat="server" 
+                DataTextField="genreName" 
+                DataValueField="genre_id" 
+                AutoPostBack="true"
+                CssClass="genres"
+                rows ="20"
+                OnSelectedIndexChanged="genres_SelectedIndexChanged" >
+            </asp:Listbox>
         </div>
-        <asp:Label ID="labMsg" runat="server" />    
+    </div>
+</div>
+<asp:Label ID="labMsg" runat="server" />    
 </asp:Content>

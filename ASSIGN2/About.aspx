@@ -5,35 +5,8 @@
     CodeFile="About.aspx.cs" 
     Inherits="About" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<style>
-    .img-circle {
-        float: left;
-        margin-right: 1em;
-    }
-    p {text-indent: 2em;}
-    .firstWord {font: bold;
-                font-style:italic;
-                font-size:larger;
-                color:blueviolet;
-    }
-    .well {background-color:gold;}
-    .innerWell {
-        background-color: lightgoldenrodyellow;
-    }
-    .pageImg {
-        padding: .5em;
-    }
-    .documentation {
-        padding-right: 4em;
-    }
-    .panel-heading{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                    font-size:large;
-    }
-    .title {font-size:small;}
-    figcaption {text-align:center;}
-</style>
+
 <h2><%: Title %>.</h2>
 
 <h3 class="center">Your Complete Movie Information Source</h3>
@@ -203,8 +176,19 @@
                             alt="Initital Design of Home Page"
                             title="Initital Design of Home Page"/>
                     </div>
-                    <div class="col-md-8 documentation">
+                    <div class="col-md-7 documentation">
                     <br />
+                        <p>The home page provided a number of challenges, the largest
+                            of which was balancing design and functionality.  </p>
+                        <p>The page provided the opportunity to learn how to implement the 
+                            carousel feature. </p>
+                        <p>The page was used to help set up the
+                            database access and the master page features related to
+                            the header and the footer. 
+                        </p>
+                        <p> A number of design choices were tested on the home page
+                            before we settled on the look submitted.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -263,8 +247,24 @@
                                 title="Initital Design of About Page"
                             />
                     </div>
-                    <div class="col-md-8 documentation">
-
+                    <div class="col-md-7 documentation">
+                        <br />
+                        <p>The Single movie page's main challenge was initially
+                            in the design that would allow a sensible display of large
+                            amounts of data.
+                        </p>
+                        <p>We struggled with wheter to put the data binding in the
+                            front page or the code behind.  We opted for the code
+                            behind, binding the data with an adaptor in a data
+                            table.  We found the explicit associating of each label
+                            with it's corresponding value to be a simple approach,
+                            but were left feeling like our coding could have been better.
+                        </p>
+                        <p>We discussed how to bind data for those items that had multiple
+                            possible values.  Examples of this type of data are genre, cast
+                            members, actors,.... We opted for multiple query strings that
+                            would be bound to labels contained in repeaters.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -278,8 +278,31 @@
                                 alt="Initital Design of the Single Person Page"
                                 title="Initital Design of the Single Person Page"/>
                     </div>
-                    <div class="col-md-8 documentation">
+                    <div class="col-md-7 documentation">
+                        <br />
+                        <p>Too early to tell.   puting in blah blah sop
+                            that you cand have some material to style.
+                            Ideas on what shoudl go here are being accepted.
+                        </p>
+                        <p>
+OU SHOULD CAREFULLY READ THE FOLLOWING END USER LICENSE AGREEMENT
+BEFORE INSTALLING THIS SOFTWARE PROGRAM. BY INSTALLING, COPYING, OR
+OTHERWISE USING THE SOFTWARE PROGRAM, YOU AGREE TO BE BOUND BY THE
+TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS OF THIS
+AGREEMENT, PROMPTLY RETURN THE UNUSED SOFTWARE PROGRAM TO THE PLACE
+OF PURCHASE FOR A FULL REFUND OF THE PURCHASE PRICE WITHIN THIRTY
+(30) DAYS OF THE ORIGINAL PURCHASE.
 
+This software program (the "Program"), any printed materials, any
+online or electronic documentation, and any and all copies an
+provided below ("License Agreement"). The Program is solely for use
+by end users according to the terms of the License Agreement. Any
+use, reproduction or redistribution of the Program not in accordance
+with the terms of the License Agreement is expressly prohibited.
+
+END USER LICENSE AGREEMENT
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -336,22 +359,23 @@
                             alt="Initital Design of the Single Person Page"
                             title="Initital Design of the Single Person Page"/>
                 </div>
-            <div class="col-md-7 documentation">
-                <br />
-                <p>Nothing fancy on this page. </p><br />
-                <p> We opted not to include
-                    a query string retrieval process to provide more descriptive
-                    error messages.  This is an area that can be improved upon
-                    in the future.  We considered putting an explicit Button Link 
-                    back to the home page, but felt there were enough navigation 
-                    options already included on the page for this function.
-                </p><br />
-                <p>Yes, we agree, picture of the cat getting
-                    zapped is tacky and the image editing is on par with an
-                    early 80's effort, so you already know who did it.
-                </p>
-                    
-            </div>
+                <div class="col-md-7 documentation">
+                    <br />
+                    <p>Nothing fancy on this page. </p><br />
+                    <p> We opted not to include a query string retrieval process to 
+                        provide more descriptive error messages, but it bugged us so
+                        much that we decided to include the functionality.
+                    </p><br />
+                    <p>
+                        We considered putting an explicit Button Link 
+                        back to the home page, but felt there were enough navigation 
+                        options already included on the page for this function.
+                    </p><br />
+                    <p>Yes, we agree, picture of the cat getting
+                        zapped is tacky and the image editing is on par with an
+                        early 80's effort, so you already know who did it.
+                    </p>    
+                </div>
             </div>
         </div>
     <br />
