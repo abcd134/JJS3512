@@ -133,3 +133,17 @@ James		- Browse.aspx	March 13, 2015
 71					Page layout changed to have overview after lead actor name/role
 84 - 96				Genre ListBox included
 90 ish				Deleted lines relating to data source for layout in front end code
+
+James		- Browse.aspx	Pi day
+97 - 103			Working on filter labelling and clear filter button
+
+James		- Browse.aspx.cx	Pi day
+31 and 63			label visibility -- not working right yet, but progress
+114 - 126			Working on filter labelling and clear filter button
+
+James		- Error.aspx	Pi day
+33					Added error label -- send querystring with "error"
+						as the variable name to print message you include
+
+James		- Error.aspx.cs	Pi day
+12 - 15				Added code to load an "error" label from a query string request.

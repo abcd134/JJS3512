@@ -18,15 +18,17 @@ public partial class About : Page
         {
             int genreID;
             string search;
+            
             if (Request.QueryString["search"] != null)
             {
-                search = null;
+                search = Request.QueryString["search"];
             }
             else { search = null; }
             if (Request.QueryString["genre"] != null)
             {
                 genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                lblGenre.Text = Convert.ToString(genreID);
+                // lblGenre.Text = Convert.ToString(genreID);
+                removeFilter.Visible = false;
             }
             else { genreID = -1;}
             PerformDataBinding(search, genreID);
@@ -58,8 +60,9 @@ public partial class About : Page
                 sql += " AND movie_genre.genre_id = genre.genre_id ";
                 sql += " AND movie_genre.movie_id = movie.movie_id ";
                 sql += " AND genre.genre_ID =" + genreID;
+                removeFilter.Visible = true;
             }
-            if (search != null) { sql += " AND movie.title = '%" + search + "%' ";}
+            if (search != null) { sql += " AND movie.title LIKE '%" + search + "%' ";}
             sql += " ORDER BY release_date DESC";
 
             OleDbCommand cmd = new OleDbCommand(sql, conn);
@@ -80,8 +83,7 @@ public partial class About : Page
         }
         catch (Exception ex)
         {
-            labMsg.Text = "<h2>An Error Occurred</h2>";
-            labMsg.Text += ex.Message;
+            Response.Redirect("../Error.aspx?error=" + ex );
         }
         finally
         {
@@ -99,14 +101,28 @@ public partial class About : Page
         }
         else { search = null;  }
         lblGenre.Visible = true;
-        String filter = drpGenres.SelectedItem.Text;
+        removeFilter.Visible = true;
+        String filter = Convert.ToString(drpGenres.SelectedItem);
+        lblGenre.Text = filter;
 
-        // retrieve index of the row that generated the event
+
         int genre_ID = Convert.ToInt32(drpGenres.SelectedValue);
         PerformDataBinding(search, genre_ID);
-        lblGenre.Text = filter;
-        Response.Redirect("Browse.aspx?search=" + search + "&genre=" + genre_ID);
+
+        // Response.Redirect("Browse.aspx?search=" + search + "&genre=" + genre_ID);
     }
-    
+    public void CommandBtn_Click(object sender, EventArgs e)
+    {
+        String search;
+        if (Request.QueryString["search"] != null)
+        {
+            search = null;
+        }
+        else { search = null; }
+        removeFilter.Visible = false;
+        lblGenre.Text = "";
+        int genre_ID = -1;
+        PerformDataBinding(search, genre_ID);
+    }
 
 }

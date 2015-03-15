@@ -35,6 +35,7 @@
                             error and will get our developers to fix the problem
                             if we can. <br />
                         </h3>
+                        <asp:Label ID="errorMessage" runat="server" Visible="false"/>
                         <h5>Thank you for your patience and understanding. <br /></h5>
                     </div>
                 </div>

@@ -9,6 +9,10 @@ public partial class About : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Request.QueryString["error"] != null)
+        {
+            errorMessage.Text = Request.QueryString["error"];
+            errorMessage.Visible = true;
+        }
     }
 }
