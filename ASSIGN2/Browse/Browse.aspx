@@ -23,6 +23,10 @@
                 color: red;
                 text-align:center; 
        }
+       .button {
+                border: 1px solid #006;
+                background: #9cf;
+       }
     </style>
         <h2><%: Title %>.</h2>   
         <div class="row">
@@ -90,8 +94,13 @@
             <div class="col-md-2">        
                 <div class="panel panel-default row">
                     <div class="panel-body">Select Genre<br />     
-                        <asp:Label ID="lblGenre" runat="server" >
-                        </asp:Label>
+                        <asp:Label ID="lblGenre" runat="server" 
+                            Visible="false"/>
+                        <asp:Button ID="removeFilter" runat="server"
+                            CssClass ="button" 
+                            Text ="Clear Filter"
+                            Visible ="false"
+                            OnCommand="CommandBtn_Click" />                            
                     </div>
                     <asp:Listbox ID="drpGenres" runat="server" 
                         DataTextField="genreName" 
