@@ -188,3 +188,9 @@ HA FANCY JAMES. FANCY
 Joseph	-	SPerson.aspx	March 15, 2015
 6 - 123				Added Template for SPerson
 >>>>>>> aef59be8333075830de1cd7d2b19a30194f40937
+
+Sonia	- SMovie.aspx       March 16, 2015
+1 - 180				Added bootstrap accordian for cast and database data 
+
+		- SMovie.aspx.cs	March 16, 2015
+22 - 111			Added OleDb connections and added query strings
