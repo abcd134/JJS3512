@@ -135,7 +135,6 @@
             </div>
             <%--End "Born in this day" --%>
         </div>
-        <!-- col md 9 -->
 
         <%--This is the right hand side of the website--%>
 
@@ -159,6 +158,7 @@
                             <li>Movie1</li>
                         </ul>
                     </div>
+                    <asp:SqlDataSource ID="asd" runat="server"></asp:SqlDataSource>
                 </div>
             </div>
 
@@ -168,6 +168,7 @@
                     <div class="panel-body">
                         <ul class="list-unstyled">
                             <li>Movie1</li>
+                            <asp:Label ID="Label1" runat="server" Text="sdasd \n"></asp:Label>
                         </ul>
                     </div>
                 </div>

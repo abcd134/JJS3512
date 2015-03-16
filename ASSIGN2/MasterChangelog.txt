@@ -194,3 +194,12 @@ Sonia	- SMovie.aspx       March 16, 2015
 
 		- SMovie.aspx.cs	March 16, 2015
 22 - 111			Added OleDb connections and added query strings
+
+
+Joseph -	SPerson.aspx	March 16, 2015
+8  - 151			Re structured Divs and repeater to allow divs to remain invisible when no data is avalable
+
+Joseph -	(NEW) Adapter.ca	March 16, 2015
+					Class created to serve the function of data pull
+Joseph -	(NEW) Constants.cs	March 16, 2015
+					Class created to store SQL statements

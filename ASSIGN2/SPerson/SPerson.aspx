@@ -6,52 +6,61 @@
 
         <%--Begin left hand side of the webpage--%>
         <div class="col-md-4">
-            <div class="row">
-                <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                    title="<%# Eval("title") %> poster"
-                    alt="<%# Eval("title") %> poster"
-                    class="thumbnail img-responsive" />
-            </div>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        Hello
+            <asp:Repeater ID="imageRepeater" runat="server">
+                <ItemTemplate>
+                    <div class="row">
+                        <img src="http://image.tmdb.org/t/p/w300/<%#Eval("profile_path")%>"
+                            title="<%# Eval("name") %> "
+                            alt="<%# Eval("name") %>"
+                            class="thumbnail img-responsive" />
                     </div>
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p><%# Eval("birth_place") %></p>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
         <%--End left side--%>
 
 
         <%--Begin Right Hand side of the webpage--%>
         <div class="col-md-7 col-md-offset-1">
-            <%--Name Section--%>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Name</div>
-                    <div class="panel-body">
-                        Hello
+            <asp:Repeater ID="BioRepeater" runat="server">
+                <ItemTemplate>
+                    <%--Name Section--%>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%# Eval("name") %></div>
+                            <div class="panel-body">
+                                <p>Birthdate <%#Eval("birthday") %></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <%--Bio Section--%>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Biography</div>
-                    <div class="panel-body">
-                        YAYAYA NYAAAAAAA DEEEESSSSUUUUUUUUU kitty kitty kitty kitty
+                    <%--Bio Section--%>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Biography</div>
+                            <div class="panel-body">
+                                <%#Eval("biography") %>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <%--Social Media Section--%>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Social Media num num num</div>
-                    <div class="panel-body">
-                        Facebook,  Twitter,  Website,   email
+                    <%--Social Media Section--%>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Social Media</div>
+                            <div class="panel-body">
+                                Facebook,  Twitter,  Website,   email
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
+
             <%--Carousel Pictures of Actor Actress--%>
             <div class="row">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -99,27 +108,46 @@
         </div>
         <%--End Right hand side--%>
     </div>
-    
+
     <br />
 
     <div class="container">
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">Movies</div>
-                <div class="panel-body">
-                    MOVIES NUM NUM NUM NUM NUM
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">Department</div>
-                <div class="panel-body">
-                    Department NUM NUM NUM NUM NUM
+        <asp:Repeater ID="movieRepeater" runat="server">
+            <HeaderTemplate>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Movies</div>
+                        <div class="panel-body">
+            </HeaderTemplate>
+            <ItemTemplate>
+                <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Played as <%# Eval("role_name") %> in <%# Eval("title") %></a></p>
+            </ItemTemplate>
+            <FooterTemplate>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </FooterTemplate>
+        </asp:Repeater>
+
+
+        <asp:Repeater ID="CrewRepeater" runat="server">
+            <HeaderTemplate>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Department</div>
+                        <div class="panel-body">
+            </HeaderTemplate>
+            <ItemTemplate>
+                <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Crew as <%# Eval("job") %> in <%# Eval("title") %>></a></p>
+            </ItemTemplate>
+            <FooterTemplate>
+                        </div>
+                    </div>
+                </div>
+            </FooterTemplate>
+
+        </asp:Repeater>
     </div>
 
 </asp:Content>
