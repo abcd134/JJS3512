@@ -208,3 +208,7 @@ Joseph -	Site.Master		March 16, 2015
 Joseph -	Default.aspx
 69-75				Added Circle tabs
 79					Encapsulated information div tags to repeater
+
+Sonia -		SMovie.aspx
+1 - 194				Created new layout 
+					Added data for backdrop images and additional poster images 
