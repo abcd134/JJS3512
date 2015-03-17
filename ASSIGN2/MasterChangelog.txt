@@ -212,3 +212,14 @@ Joseph -	Default.aspx
 Sonia -		SMovie.aspx
 1 - 194				Created new layout 
 					Added data for backdrop images and additional poster images 
+
+Sonia -     Content/Bootstrap.css 
+5332 - 5456			Added panel heading (font, color)
+342 - 349			Added link color
+73					Added style (font, color, weight) to the h1 
+					**these changes took effect on each page
+			 Content/site.css
+159					Added h1 tag
+104 - 148			deleted .well, panel-heading, error styling
+			 site.master
+					Added the link for the google font 
