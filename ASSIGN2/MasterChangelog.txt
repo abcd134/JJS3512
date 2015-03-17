@@ -203,3 +203,8 @@ Joseph -	(NEW) Adapter.ca	March 16, 2015
 					Class created to serve the function of data pull
 Joseph -	(NEW) Constants.cs	March 16, 2015
 					Class created to store SQL statements
+Joseph -	Site.Master		March 16, 2015
+70					Removed People tab
+Joseph -	Default.aspx
+69-75				Added Circle tabs
+79					Encapsulated information div tags to repeater

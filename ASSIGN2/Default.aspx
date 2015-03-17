@@ -11,29 +11,33 @@
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="images/joseph.jpg" alt="Movie 1" width="460" height="345">
-                    <div style="position: absolute; top: 120px; left: 15px; width: 200px; height: 25px">
-                        <p>Looking Into The Future</p>
+                    <img src="images/HobbitDefault.jpg" alt="Movie 1" width="1200" height="690">
+                    <div style="position: absolute; top: 550px; left: 30px;">
+                        <h1>Now Playing - The Hobbit: The Five Armies</h1>
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="images/joseph.jpg" alt="Movie 2" width="460" height="345">
+                    <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
+                    <img src="images/KRDefault.jpg" alt="Movie 2" width="1200" height="690">
+                    <div style="position: absolute; top: 550px; left: 30px;">
+                        <h1>Featured Person: Keanu Reeves</h1>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <img src="images/joseph.jpg" alt="Movie 3" width="460" height="345">
+                    <%-- https://i.ytimg.com/vi/kdComTp7KsA/maxresdefault.jpg --%>
+                    <img src="images/InterstelDefault.jpg" alt="Movie 3">
+                    <div style="position: absolute; top: 550px; left: 30px;">
+                        <h1>Featured Movie: Interstellar </h1>
+                    </div>
                 </div>
 
-                <div class="item">
-                    <img src="images/joseph.jpg" alt="Movie 4" width="460" height="345">
-                </div>
             </div>
 
             <!-- Left and right controls -->
@@ -61,23 +65,29 @@
         <div class="col-md-8">
             <div class="row">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Featured Movies</div>
+                    <div class="panel-heading">
+                        <ul class="list-inline">
+                            <li><asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" /></li>
+                            <li><asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" /></li>
+                            <li><asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" /></li>
+                            <li><asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" /></li>
+                            <li><asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" /></li>
+                        </ul>
+                        
+                    </div>
                     <div class="panel-body">
-                        <div class="col-md-4">
-                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                                title="<%# Eval("title") %> poster"
-                                alt="<%# Eval("title") %> poster"
-                                class="thumbnail img-responsive" />
-                            <p>Top Featured movie</p>
-                        </div>
-                        <div class="col-md-8">
-                            <ol>
-                                <li>2nd featured</li>
-                                <li>3rd featured</li>
-                                <li>4th featured</li>
-                                <li>5th featured</li>
-                            </ol>
-                        </div>
+                        <asp:Repeater ID="FeaturedRepeater" runat="server">
+                            <ItemTemplate>
+                                <div class="col-md-4">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
+                                        title="<%# Eval("title") %> poster"
+                                        alt="<%# Eval("title") %> poster"
+                                        class="thumbnail img-responsive" />
+                                    <p>Top Featured movie</p>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
                     </div>
                 </div>
             </div>
