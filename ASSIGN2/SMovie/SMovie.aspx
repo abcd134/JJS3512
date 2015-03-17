@@ -5,19 +5,38 @@
         .rowCol {margin-top:1.5%;}
         tr,td {text-align:center; }
     </style>
+
     <h2><%: Title %>.</h2>
     <div class="row">
-        <div class="col-md-10">
-            <div class="col-md-4">
+        <div class="col-md-12">
+            <div class="col-md-5">
                 <figure>
                     <!--ADD THE RIGHT IMAGE HERE-->
                     <!--<img src="" alt="..." class="thumbnail" />-->
                     <asp:Image runat="server" ID="imgPoster" class="thumbnail" />
                 </figure>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                <div class="panel-heading">Box Office</div>
+                <div class="panel-body">
+                    <p>Budget: <asp:Label ID="txtBudget" runat="server" /></p>
+                    <p>Revenue: <asp:Label ID="txtRevenue" runat="server" /></p>
+                </div>
             </div>
+                </div>
+                <div class="col-md-6">
+             <div class="panel panel-default">
+                <div class="panel-heading">Facts</div>
+                <div class="panel-body">
+                <p>Vote Average: <asp:Label ID="txtAverage" runat="server" /></p>
+                <p>Vote Count: <asp:Label ID="txtVoteCount" runat="server" /></p>
+                </div>
+            </div>
+            </div>
+                </div>
 
             <!--Movie Information-->
-            <div class="col-md-8 rowCol">
+            <div class="col-md-7 rowCol">
                 <!--This is the important information for a movie-->
                 <div class="panel panel-default">
                     <div class="panel-heading"><asp:Label ID="txtTitle" runat="server" /> (<asp:Label ID="txtReleaseDate" runat="server" />)</div>
@@ -25,6 +44,7 @@
                         <p>Run Time: <asp:Label ID="txtRunTime" runat="server" /></p>
                         <p>Genre: <asp:Label ID="txtGenre" runat="server" /></p>
                         <p>Companies: <asp:Label ID="txtCompany" runat="server" /></p>
+                        <p>IMDB: <a ID="linkIMDB" runat="server"><asp:Label ID="txtIMDB" runat="server" /></a></p>
                     </div>
                 </div>
                 <!--This is the movie overview-->
@@ -34,6 +54,7 @@
                         <p><asp:Label ID="txtOverview" runat="server" /></p>
                     </div>
                 </div>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">Tag Line</div>
                     <div class="panel-body">
@@ -50,65 +71,48 @@
             </div>
         </div>
         <!-- Side bar content -->
-        <div class="col-md-2 rowCol">
-            <div class="panel panel-default">
-                <div class="panel-heading">Details</div>
-                <div class="panel-body">
-                <p>Vote Average: <asp:Label ID="txtAverage" runat="server" /></p>
-                <p>Vote Count: <asp:Label ID="txtVoteCount" runat="server" /></p>
-                </div>
-            </div>
+<%--        <div class="col-md-2 rowCol">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">Facts</div>
-                <div class="panel-body">
-                    <p>ID: <asp:Label ID="txtIMDB" runat="server" /></p>
-                    <p>Budget: <asp:Label ID="txtBudget" runat="server" /></p>
-                    <p>Revenue: <asp:Label ID="txtRevenue" runat="server" /></p>
-                </div>
-            </div>
-        </div>
+
+
+        </div>--%>
     </div>
 
 
 
     <!--Put in loop and it can fit 5 imgs-->
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="panel panel-default">
                <div class="panel-heading">Backdrops</div>
                <div class="panel-body">
-                    <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                     </div>
+                   <asp:Repeater ID="rptBackDrop" runat="server">
+                       <ItemTemplate>
+                         <div class="col-md-3 col-md-2">
+                            <a href="#" class="thumbnail" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                 <img src="http://image.tmdb.org/t/p/w300/<%# Eval("file_path") %>>" alt="" id="imageModal" />
+                            </a>
+                        </div>
+                       </ItemTemplate>
+                   </asp:Repeater>
+                                     <div class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                             <div class="modal-content">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <br />  
+                                  <img src="http://image.tmdb.org/t/p/w780/<%# Eval("file_path") %>>" alt="" />
+                             </div>
+                        </div>
+                 </div>
+                        
 
-                    <div class="col-xs-4 col-md-2">
-                         <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                         </a>
-                    </div>
 
-                    <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
-
-                    <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
-
-                     <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
              </div>
          </div>
+            </div>
+         </div>
+
+         <div class="row">
+        <div class="col-md-6">
         <!-- Add cast and crew members-->
         <div class="panel-group" id="accordian" role="tablist">
         <div class="panel panel-default">
@@ -121,60 +125,70 @@
                         <ItemTemplate>                          
                              <ul class="list-group">
                                  <li class="list-group-item"><img src="http://image.tmdb.org/t/p/w45/<%# Eval("profile_path") %>>" alt="" /> 
-                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>>"><%# Eval("name") %></a> <%# Eval("role_name") %></li>
-                                 
+                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>>"><%# Eval("name") %></a>
+                                     ...<%# Eval("role_name") %>
+                                 </li>
                              </ul>
                         </ItemTemplate>
                     </asp:Repeater>
-            </div>
-                 </div>
+                </div>
+             </div>
         </div>
-        </div><br />
-
-         <div class="panel panel-default">
-         <div class="panel-heading">Crew</div>
-            <div class="panel-body">
-                <p>Add Crew Members</p>
-            </div>
+        </div>
+            <br />
+        </div>
+      
+     <div class="col-md-6">
+    <div class="panel-group" id="accordian2" role="tablist">
+        <div class="panel panel-default">
+         <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
+             <a data-toggle="collapse" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2">Crew</a>
+          </div>
+            <div class="panel-body"> 
+                <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
+                    <asp:Repeater ID="rptCrew" runat="server">
+                        <ItemTemplate>                          
+                             <ul class="list-group">
+                                 <li class="list-group-item"><img src="http://image.tmdb.org/t/p/w45/<%# Eval("profile_path") %>>" alt="" /> 
+                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>>"><%# Eval("name") %></a>
+                                     ...<%# Eval("department") %>
+                                 </li>
+                             </ul>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+             </div>
+        </div>
+        </div>
+        <br />
+  </div>
         </div>
 
+        <div class="row">
+        <div class="col-md-12">
         <!--Add related movies images-->
-         <div class="panel panel-default">
-               <div class="panel-heading">Related Movies</div>
-               <div class="panel-body">
-                    <div class="col-xs-4 col-md-2">
+         <div class="panel-group" id="accordian3" role="tablist">
+        <div class="panel panel-default">
+         <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
+             <a data-toggle="collapse" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3">Additional Poster Images</a>
+          </div>
+            <div class="panel-body"> 
+                <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
+                   <asp:Repeater ID="rptPosters" runat="server">
+                       <ItemTemplate>
+                         <div class="col-md-3 col-md-2">
                         <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
+                             <img src="http://image.tmdb.org/t/p/w154/<%# Eval("file_path") %>>" alt="" />
                         </a>
                      </div>
-
-                    <div class="col-xs-4 col-md-2">
-                         <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                         </a>
-                    </div>
-
-                    <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
-
-                    <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
-
-                     <div class="col-xs-4 col-md-2">
-                        <a href="#" class="thumbnail">
-                            <img src="/images/Computer-Cat.jpg" alt="..." />
-                        </a>
-                    </div>
+                       </ItemTemplate>
+                   </asp:Repeater>
+                    
              </div>
          </div>
 
       </div>
    </div>
+
     <asp:Label ID="message" runat="server" />
 </asp:Content>
