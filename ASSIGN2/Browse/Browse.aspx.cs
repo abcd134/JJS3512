@@ -29,9 +29,11 @@ public partial class Browse : Page
             // Check Query String for value then validate
             try
             {
+                
                 if (Request.QueryString["genre"] != null)
                 {
-                    genreID = Convert.ToInt32(Request.QueryString["genre"]);  
+                    genreID = Convert.ToInt32(Request.QueryString["genre"]);
+                    lblGenre.Text = Convert.ToString(genreID);
                 }
                 else 
                 {   // Set the genreID to a negative number to avoid sql "WHERE" clause
