@@ -75,5 +75,15 @@ public partial class SiteMaster : MasterPage
         Context.GetOwinContext().Authentication.SignOut();
     }
 
-    
+
+    protected void SearchButton_Click(object sender, EventArgs e)
+    {
+        string link = "";
+        if (SearchBox.Text != null)
+        {
+            link = "~/Browse/Browse.aspx?search=" + SearchBox.Text;
+            Server.Transfer(link);
+        }
+
+    }
 }

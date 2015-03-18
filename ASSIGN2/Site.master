@@ -59,7 +59,7 @@
                         <li>
                             <asp:TextBox ID="SearchBox" runat="server" Height="35px" class="form-control"></asp:TextBox></li>
                         <li>
-                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" />
+                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" onClick="SearchButton_Click"/>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
                                     <asp:Repeater ID="NowShowingRepeater" DataSourceID="NowShowingDB" runat="server">
                                         <ItemTemplate>
                                             <table>
-                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                                <tr><a href="../SMovie/SMovie.aspx?id=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>
@@ -85,7 +85,7 @@
                                     <asp:Repeater ID="TopRatingRepeater" DataSourceID="TopRatingDB" runat="server">
                                         <ItemTemplate>
                                             <table>
-                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                                <tr><a href="../SMovie/SMovie.aspx?id=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>
@@ -95,7 +95,7 @@
                                     <asp:Repeater ID="Repeater1" DataSourceID="TopGrossingDB" runat="server">
                                         <ItemTemplate>
                                             <table>
-                                                <tr><a href="../SMovie/SMovie.aspx?movies=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
+                                                <tr><a href="../SMovie/SMovie.aspx?id=<%# DataBinder.Eval(Container.DataItem, "movie_id")%>"><%#DataBinder.Eval( Container.DataItem, "title") %> </a></tr>
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>

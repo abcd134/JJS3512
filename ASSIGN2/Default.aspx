@@ -67,23 +67,27 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <ul class="list-inline">
-                            <li><asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" /></li>
-                            <li><asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" /></li>
-                            <li><asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" /></li>
-                            <li><asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" /></li>
-                            <li><asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" /></li>
+                            <li><asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1"/></li>
+                            <li><asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" OnClick="FeaturedButton2_Click" Text="2"/></li>
+                            <li><asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" OnClick="FeaturedButton3_Click" Text="3"/></li>
+                            <li><asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" OnClick="FeaturedButton4_Click" Text="4"/></li>
+                            <li><asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" OnClick="FeaturedButton5_Click" Text="5"/></li>
                         </ul>
                         
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
                             <ItemTemplate>
+                                <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>"><%#Eval("title")%></a></h3>
                                 <div class="col-md-4">
-                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
+                                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("poster_path")%>"
                                         title="<%# Eval("title") %> poster"
                                         alt="<%# Eval("title") %> poster"
                                         class="thumbnail img-responsive" />
-                                    <p>Top Featured movie</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Movie Overview</p>
+                                    <p><%#Eval("overview") %></p>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
