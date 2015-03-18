@@ -35,8 +35,10 @@
             were just plain inspired by.</p>
 
             <div class="row well">
+                
                 <div class="col-md-10 col-md-offset-1 innerWell">
-                    <h3 id="joseph">Joseph Balabat</h3>
+                    <span class="anchor" id="joseph"></span>
+                    <h3 >Joseph Balabat</h3>
                         <figure>
                             <img src="/images/joseph.jpg" 
                                  alt="Joseph Balabat"
@@ -58,8 +60,10 @@
                         </p>
                 </div>
                 <br />
+                
                 <div class="col-md-10 col-md-offset-1 innerWell">
-                    <h3 id="james">James Bergeron</h3>
+                    <span class="anchor" id="james"></span>
+                    <h3 >James Bergeron</h3>
                         <figure>
                             <img src="/images/james.jpg" 
                                  alt="James Bergeron"
@@ -82,8 +86,10 @@
                         </p>
                 </div>
                 <br />
+                
                 <div class="col-md-10 col-md-offset-1 innerWell">
-                    <h3 id="sonia">Sonia Pitrola</h3>
+                    <span class="anchor" id="sonia"></span>
+                    <h3 >Sonia Pitrola</h3>
                         <figure>
                             <img src="/images/sonia.jpg" 
                                  alt="Sonia Pitrola"
@@ -144,7 +150,8 @@
         </div>
         </div>
     <div class="panel panel-info">
-        <div class="panel-heading" id="citations">Citations</div>
+        <span class="anchor" id="citations"></span>
+        <div class="panel-heading" >Citations</div>
         <div class="panel-body">
             <ul class="list-group">
                 <li class="list-group-item"><a href="http://www.sochealth.co.uk/2013/08/09/my-favourite-kitten-pictures-for-internationalcatday/">
@@ -157,6 +164,7 @@
                 <li class="list-group-item">Connolly R., Hoar R., 2015,Fundamentals of Web Development</li>
                 <li class="list-group-item">Connolly R., 2007,Core Internet Application with ASP.NET 2.0</li>
                 <li class="list-group-item"><a href="www.tmdb.com">The Movie Database (TMDb)</a></li>
+                <li class="list-group-item"><a href="http://pixelflips.com/blog/anchor-links-with-a-fixed-header">In Page Referencing Spacing Solution</a></li>
             </ul>
         </div>
     </div>
@@ -165,8 +173,9 @@
     <div class="panel panel-info">
         <div class="panel-heading">Team Development Efforts</div>
         <div class="panel-body">
+            <span class="anchor" id="homePage"></span>
             <div class="panel panel-primary">
-                <div class="panel-heading" id="homePage">The Home Page<br />
+                <div class="panel-heading" >The Home Page<br />
                     <div class="title">Lead Developer: Joseph Balabat</div>
                 </div>
                 <div class="row">
@@ -193,8 +202,9 @@
                 </div>
             </div>
             <br />
+            <span class="anchor" id="browse"></span>
             <div class="panel panel-primary">
-                <div class="panel-heading" id="browse">The Browse Page<br />
+                <div class="panel-heading" >The Browse Page<br />
                     <div class="title">Lead Developer: James Bergeron</div>
                 </div>
                 <div class="row">
@@ -235,8 +245,9 @@
                 </div>
             </div>
             <br />
+            <span class="anchor" id="sMovie"></span>
             <div class="panel panel-primary">
-                <div class="panel-heading" id="sMovie">The Single Movie Page<br />
+                <div class="panel-heading" >The Single Movie Page<br />
                     <div class="title">Lead Developer: Sonia Pitrola</div>
                 </div>
                 <div class="row">
@@ -269,8 +280,9 @@
                 </div>
             </div>
             <br />
+            <span class="anchor" id="sPerson"></span>
             <div class="panel panel-primary">
-                <div class="panel-heading" id="sPerson">The Single Person Page</div>
+                <div class="panel-heading" >The Single Person Page</div>
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1 ">
                         <img src="/images/sPerson.jpg" 
@@ -280,8 +292,8 @@
                     </div>
                     <div class="col-md-7 documentation">
                         <br />
-                        <p>Too early to tell.   puting in blah blah sop
-                            that you cand have some material to style.
+                        <p>Too early to tell.   puting in blah blah so
+                            that you can have some material to style.
                             Ideas on what shoudl go here are being accepted.
                         </p>
                         <p>
@@ -307,8 +319,9 @@ END USER LICENSE AGREEMENT
                 </div>
             </div>
             <br />
+            <span class="anchor" id="about"></span>
             <div class="panel panel-primary">
-                <div class="panel-heading" id="about">The About Page<br />
+                <div class="panel-heading" >The About Page<br />
                     <div class="title">Lead Developer: James Bergeron</div>
                 </div>
             
@@ -348,8 +361,9 @@ END USER LICENSE AGREEMENT
             </div>
         </div>
         <br />
+        <span class="anchor" id="error"></span>
         <div class="panel panel-primary">
-            <div class="panel-heading" id="error">The Error Page<br />
+            <div class="panel-heading" >The Error Page<br />
                 <div class="title">Lead Developer: James Bergeron</div>
             </div>
             <div class="row">

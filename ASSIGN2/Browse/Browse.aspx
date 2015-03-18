@@ -67,7 +67,7 @@
             </div>
     </div>
     <div class="col-md-2">        
-        <div class="panel panel-default row">
+        <div class="panel panel-default row fixed">
             <div class="panel-body">Select Genre<br />     
                 <asp:Label ID="lblGenre" runat="server" 
                     Visible="false"/>

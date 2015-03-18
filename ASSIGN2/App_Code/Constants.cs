@@ -34,4 +34,85 @@ public static class Constants
     {
         return "SELECT movie_id, title, overview, poster_path FROM movie WHERE movie_id=" + movieId;
     }
+
+    /// <summary>
+    /// This query is used in the SMovie Page and retrieves the poster images for the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrievePosterImages(int movieID)
+    {
+        return "SELECT movie_image.is_poster, movie_image.file_path FROM (movie INNER JOIN movie_image"+ 
+        " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = " + movieID + ") AND (movie_image.is_poster = 1)";
+    }
+
+    /// <summary>
+    /// This query is used in the SMovie Page and retrieves the backdrop images for the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveBackDropImages(int movieID)
+    {
+
+        return "SELECT movie_image.is_poster, movie_image.file_path FROM (movie INNER JOIN movie_image" +
+            " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = "+movieID+") AND (movie_image.is_poster = 0)";
+    }
+    /// <summary>
+    /// This query is used in the SMovie Page and retrieves the crew of the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveMovieCrew(int movieID)
+    {
+        return "SELECT movie.movie_id, movie_crew.movie_crew_id, person.person_id,person.profile_path, movie_crew.department, person.name"+
+        " FROM person INNER JOIN (movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id) ON person.person_id = movie_crew.person_id"+
+        " WHERE (((movie.movie_id)=" + movieID + ")) order by movie_crew.department";
+
+    }
+
+    /// <summary>
+    /// This query is used in the SMovie Page and retrieves the cast of the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveMovieCast(int movieID)
+    {
+        return "select person.name, person.person_id, movie_cast.ordering, movie_cast.role_name, person.profile_path"+
+        " from person, movie_cast, movie"+
+        " where movie.movie_id = movie_cast.movie_id and movie_cast.person_id = person.person_id"+
+        " and movie.movie_id = "+movieID+" order by movie_cast.ordering";
+    }
+
+    /// <summary>
+    /// This query is used in the SMovie page and retrieves the company of the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveMovieCompany(int movieID)
+    {
+        return "SELECT company.company_name FROM ((movie_company INNER JOIN movie ON movie_company.movie_id = movie.movie_id)"+
+        " INNER JOIN company ON movie_company.company_id = company.company_id) WHERE (movie.movie_id =" + movieID + ")";
+    }
+
+    /// <summary>
+    /// This query is used in SMovie Page and retrieves the keywords of the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveMovieKeyword(int movieID)
+    {
+        return "SELECT keyword.name FROM ((movie_keyword INNER JOIN movie ON movie_keyword.movie_id = movie.movie_id)"+
+        " INNER JOIN keyword ON movie_keyword.keyword_id = keyword.keyword_id) WHERE (movie.movie_id ="+movieID+")";
+    }
+
+    /// <summary>
+    /// This query is used in SMovie Page and retrieves the genres of the movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
+    public static string retrieveMovieGenre(int movieID)
+    {
+        return "SELECT genre.name FROM ((genre INNER JOIN movie_genre ON genre.genre_id = movie_genre.genre_id)"+ 
+        " INNER JOIN movie ON movie_genre.movie_id = movie.movie_id) WHERE (movie.movie_id = "+movieID+")";
+    }
 }

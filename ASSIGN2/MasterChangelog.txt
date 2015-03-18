@@ -233,10 +233,29 @@ Joseph -	Site.Master.aspx.cs
 Joseph -	Default.aspx
 73 - 93				Panel change to accomodate a repeater
 					method created to handle data fetching	
-64 - 107			Removed Carousel
 Joseph -	Default.aspx.cs
 21 - 62				Added functionality on Circle buttons
 
 Joseph -	Site.Master
 78, 88, 98			Changed Query String to ID
 
+James		Browse.aspx
+70					added fixed class to prevent filter header from scrolling
+
+			Browse.aspx.cs March 17, 2015
+36					added placeholder for genre_name (from header navigation)
+
+			About.aspx March 17, 2015
+40-1, 65-6, 91-2, 
+153-4, 176-8, 
+205-207, 248-250, 
+283-285, 322-324, 
+364-366				applied in page anchor positioning fix.
+
+			Site.CSS	March 17, 2105
+162 - 172			added .anchor class css (offset for in page anchors)	
+
+
+Sonia		SMovie.aspx.cs 
+78 - 109			cleaned up queries using the class that Joseph made
+111 - 124			added a function called checkEmpty to check if the DB field is null 

@@ -159,3 +159,14 @@ figcaption {
 h1 {
 font-weight:800;
 }
+
+/* CSS used to provide spacing for inpage referencing on About Page 
+    This could be used on any of the pages needing the offset from
+    the header.
+*/
+.anchor{
+  display: block;
+  height: 100px; /*same height as header*/
+  margin-top: -100px; /*same height as header*/
+  visibility: hidden;
+}
