@@ -2,6 +2,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+
 }
 
 /* Wrapping element */
@@ -90,7 +91,7 @@ figure {
 }
 
 p {
-    text-indent: 2em;
+    text-indent: 0em;
 }
 
 .firstWord {font: bold;
@@ -99,9 +100,9 @@ p {
             color:blueviolet;
 }
 
-.well {
-    background-color:gold;
-}
+/*.well {
+    background-color:#F5F5DC;
+}*/
 
 .innerWell {
     background-color: lightgoldenrodyellow;
@@ -115,8 +116,10 @@ p {
 }
 
 .panel-heading{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size:large;
+    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:large;*/
+        /*Google Font*/
+    /*font-family: 'Special Elite', cursive;*/
 }
 
 .title {
@@ -131,18 +134,18 @@ figcaption {
     remove as desired.
 */
 
-.well {
+/*.well {
     background-color:gold;
 
-}
-.innerWell {
+}*/
+/*.innerWell {
     background-color: lightgoldenrodyellow;
-}
-.panel-heading{
+}*/
+/*.panel-heading{
     font-size:2em;
     font-style:italic;
     font-weight:800;
-}
+}*/
 
 /*
     Circle buttons
@@ -152,3 +155,7 @@ figcaption {
 .circle{display:block;width:50px;height:50px;border-radius:66px;border:4px double #ccc;font-size:20px;color:#666;line-height:100px;text-align:center;text-decoration:none;text-shadow:0 1px 0 #fff;background:#ddd}
 .circle:hover{border:4px double #bbb;color:#aaa;text-decoration:none;background:#e6e6e6}
 
+/*Browse movie title h1 style*/
+h1 {
+font-weight:800;
+}

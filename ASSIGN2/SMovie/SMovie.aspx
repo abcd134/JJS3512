@@ -19,17 +19,17 @@
                 <div class="panel panel-default">
                 <div class="panel-heading">Box Office</div>
                 <div class="panel-body">
-                    <p>Budget: <asp:Label ID="txtBudget" runat="server" /></p>
-                    <p>Revenue: <asp:Label ID="txtRevenue" runat="server" /></p>
+                    <p><b>Budget:</b> <asp:Label ID="txtBudget" runat="server" /></p>
+                    <p><b>Revenue:</b> <asp:Label ID="txtRevenue" runat="server" /></p>
                 </div>
             </div>
                 </div>
                 <div class="col-md-6">
              <div class="panel panel-default">
-                <div class="panel-heading">Facts</div>
+                <div class="panel-heading">Votes</div>
                 <div class="panel-body">
-                <p>Vote Average: <asp:Label ID="txtAverage" runat="server" /></p>
-                <p>Vote Count: <asp:Label ID="txtVoteCount" runat="server" /></p>
+                <p><b>Vote Average:</b> <asp:Label ID="txtAverage" runat="server" /></p>
+                <p><b>Vote Count:</b> <asp:Label ID="txtVoteCount" runat="server" /></p>
                 </div>
             </div>
             </div>
@@ -41,10 +41,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><asp:Label ID="txtTitle" runat="server" /> (<asp:Label ID="txtReleaseDate" runat="server" />)</div>
                     <div class="panel-body">
-                        <p>Run Time: <asp:Label ID="txtRunTime" runat="server" /></p>
-                        <p>Genre: <asp:Label ID="txtGenre" runat="server" /></p>
-                        <p>Companies: <asp:Label ID="txtCompany" runat="server" /></p>
-                        <p>IMDB: <a ID="linkIMDB" runat="server"><asp:Label ID="txtIMDB" runat="server" /></a></p>
+                        <p><b>Run Time:</b> <asp:Label ID="txtRunTime" runat="server" /></p>
+                        <p><b>Genre:</b> <asp:Label ID="txtGenre" runat="server" /></p>
+                        <p><b>Companies:</b> <asp:Label ID="txtCompany" runat="server" /></p>
+                        <p><b>IMDB:</b> <a ID="linkIMDB" runat="server"><asp:Label ID="txtIMDB" runat="server" /></a></p>
                     </div>
                 </div>
                 <!--This is the movie overview-->
@@ -125,7 +125,7 @@
                         <ItemTemplate>                          
                              <ul class="list-group">
                                  <li class="list-group-item"><img src="http://image.tmdb.org/t/p/w45/<%# Eval("profile_path") %>>" alt="" /> 
-                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>>"><%# Eval("name") %></a>
+                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>"><%# Eval("name") %></a>
                                      ...<%# Eval("role_name") %>
                                  </li>
                              </ul>
@@ -150,7 +150,7 @@
                         <ItemTemplate>                          
                              <ul class="list-group">
                                  <li class="list-group-item"><img src="http://image.tmdb.org/t/p/w45/<%# Eval("profile_path") %>>" alt="" /> 
-                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>>"><%# Eval("name") %></a>
+                                     <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>"><%# Eval("name") %></a>
                                      ...<%# Eval("department") %>
                                  </li>
                              </ul>

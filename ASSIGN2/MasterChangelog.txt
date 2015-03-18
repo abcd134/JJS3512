@@ -213,14 +213,16 @@ Sonia -		SMovie.aspx
 1 - 194				Created new layout 
 					Added data for backdrop images and additional poster images 
 
-Joseph -	Site.Master.aspx.cs
-79 - 89				Fixed and Added Search Functionality 
+Sonia -     Content/Bootstrap.css 
+5332 - 5456			Added panel heading (font, color)
+342 - 349			Added link color
+73					Added style (font, color, weight) to the h1 
+					**these changes took effect on each page
+			 Content/site.css
+159					Added h1 tag
+104 - 148			deleted .well, panel-heading, error styling
+			 site.master
+					Added the link for the google font 
 
-Joseph -	Default.aspx
-73 - 93				Panel change to accomodate a repeater
-					method created to handle data fetching	
-Joseph -	Default.aspx.cs
-21 - 62				Added functionality on Circle buttons
-
-Joseph -	Site.Master
-78, 88, 98			Changed Query String to ID
+James		Browse.aspdx
+45					pid to id
