@@ -254,3 +254,8 @@ James		Browse.aspx
 
 			Site.CSS	March 17, 2105
 162 - 172			added .anchor class css (offset for in page anchors)	
+
+
+Sonia		SMovie.aspx.cs 
+78 - 109			cleaned up queries using the class that Joseph made
+111 - 124			added a function called checkEmpty to check if the DB field is null 
