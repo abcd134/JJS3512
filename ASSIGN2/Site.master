@@ -59,7 +59,7 @@
                         <li>
                             <asp:TextBox ID="SearchBox" runat="server" Height="35px" class="form-control"></asp:TextBox></li>
                         <li>
-                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" onClick="SearchButton_Click"/>
+                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" OnClick="SearchButton_Click" />
                         </li>
                     </ul>
                 </div>
@@ -136,16 +136,14 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <div class="row">
-                    <div class="col-md-3">Hi</div>
-                    <div class="col-md-3">James</div>
-                    <div class="col-md-3">and</div>
-                    <div class="col-md-3">Sonia</div>
-                </div>
                 <br />
                 <br />
                 <br />
-                <p class="center">Home | About | Actors & Actress | Movies | Browse</p>
+                <p class="center">
+                    <a href="Default.aspx">Home</a> | 
+                    <a href="About.aspx">About</a> | 
+                    <a href="Browse/Browse.aspx">Browse</a>
+                </p>
                 <p class="center">&copy; <%: DateTime.Now.Year %> - Content Provided by MovieDB.</p>
             </footer>
         </div>

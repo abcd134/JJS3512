@@ -233,8 +233,10 @@ Joseph -	Site.Master.aspx.cs
 Joseph -	Default.aspx
 73 - 93				Panel change to accomodate a repeater
 					method created to handle data fetching	
+64 - 107			Removed Carousel
 Joseph -	Default.aspx.cs
 21 - 62				Added functionality on Circle buttons
 
 Joseph -	Site.Master
 78, 88, 98			Changed Query String to ID
+
