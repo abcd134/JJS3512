@@ -140,9 +140,9 @@
                 <br />
                 <br />
                 <p class="center">
-                    <a href="Default.aspx">Home</a> | 
-                    <a href="About.aspx">About</a> | 
-                    <a href="Browse/Browse.aspx">Browse</a>
+                    <a href="../Default.aspx">Home</a> | 
+                    <a href="../About">About</a> | 
+                    <a href="../Browse/Browse.aspx">Browse</a>
                 </p>
                 <p class="center">&copy; <%: DateTime.Now.Year %> - Content Provided by MovieDB.</p>
             </footer>

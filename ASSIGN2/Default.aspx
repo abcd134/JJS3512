@@ -4,7 +4,7 @@
 
     <%--Begin Carousel --%>
  <br>
-    <div class="container">
+    <div class="container ">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -62,7 +62,7 @@
         <%--Start of the left hand side of the website--%>
 
         <%--Begin Featured Movie--%>
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -73,7 +73,6 @@
                             <li><asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" OnClick="FeaturedButton4_Click" Text="4"/></li>
                             <li><asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" OnClick="FeaturedButton5_Click" Text="5"/></li>
                         </ul>
-                        
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
@@ -103,91 +102,18 @@
                     <div class="panel-heading">Born on this day</div>
                     <div class="panel-body">
                         <div class="col-md-4">
-                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                                title="<%# Eval("title") %> poster"
-                                alt="<%# Eval("title") %> poster"
-                                class="thumbnail img-responsive" />
-                            <p>Born on this day</p>
+                            
                         </div>
-                        <div class="col-md-8">
-                            <div class="row">
-                                <h1>Bio</h1>
-                                <p>This is where the bio goes in. NUM NUM NUM NUM NUM!!!!</p>
-                            </div>
-                            <div class="row">
-                                <h1>Latest Movies</h1>
-                                <p>This is where the latest movie goes in. NUM NUM NUM NUM NUM!!!!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <%--End "Born in this day" --%>
-
-            <%--Begin Featured Movie--%>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Featured Movies</div>
-                    <div class="panel-body">
                         <div class="col-md-4">
-                            <img src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX214_AL_.jpg"
-                                title="<%# Eval("title") %> poster"
-                                alt="<%# Eval("title") %> poster"
-                                class="thumbnail img-responsive" />
-                            <p>Top Featured Movies</p>
+                            
                         </div>
-                        <div class="col-md-8">
-                            <ol>
-                                <li>2nd featured</li>
-                                <li>3rd featured</li>
-                                <li>4th featured</li>
-                                <li>5th featured</li>
-                            </ol>
+                        <div class="col-md-4">
+                            
                         </div>
                     </div>
                 </div>
             </div>
             <%--End "Born in this day" --%>
-        </div>
-
-        <%--This is the right hand side of the website--%>
-
-        <div class="col-md-3 col-md-offset-1">
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Now Playing</div>
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li>Movie1</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Coming Soon</div>
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li>Movie1</li>
-                        </ul>
-                    </div>
-                    <asp:SqlDataSource ID="asd" runat="server"></asp:SqlDataSource>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Genre</div>
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li>Movie1</li>
-                            <asp:Label ID="Label1" runat="server" Text="sdasd \n"></asp:Label>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </asp:Content>

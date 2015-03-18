@@ -262,3 +262,6 @@ Sonia		SMovie.aspx.cs
 
 Joseph		Content.cs
 35, 51				Methods now return null when there is no data retrieved (Repeaters do not bind when no data exists)
+
+Joseph		Default.aspx
+118					Removed 3rd Row, Removed right bar
