@@ -42,8 +42,14 @@
                     <div class="panel-heading"><asp:Label ID="txtTitle" runat="server" /> (<asp:Label ID="txtReleaseDate" runat="server" />)</div>
                     <div class="panel-body">
                         <p><b>Run Time:</b> <asp:Label ID="txtRunTime" runat="server" /></p>
-                        <p><b>Genre:</b> <asp:Label ID="txtGenre" runat="server" /></p>
-                        <p><b>Companies:</b> <asp:Label ID="txtCompany" runat="server" /></p>
+                        <p><b>Genre:</b> |
+                        <asp:Repeater ID="rptGenre" runat="server">
+                            <ItemTemplate> <%# Eval("name") %> | </ItemTemplate>
+                        </asp:Repeater></p>
+                        <p><b>Companies:</b> |
+                        <asp:Repeater ID="rptCompany" runat="server">
+                            <ItemTemplate> <%# Eval("company_name") %> | </ItemTemplate>
+                        </asp:Repeater></p>
                         <p><b>IMDB:</b> <a ID="linkIMDB" runat="server"><asp:Label ID="txtIMDB" runat="server" /></a></p>
                     </div>
                 </div>
@@ -64,18 +70,14 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">Key Words</div>
-                    <div class="panel-body">
-                        <p><asp:Label ID="txtKeyword" runat="server" /></p>
-                    </div>
+                    <div class="panel-body"> |
+                        <asp:Repeater ID="rptKeyword" runat="server">
+                            <ItemTemplate> <%# Eval("name") %> |</ItemTemplate>
+                        </asp:Repeater>
+                     </div>
                 </div>
             </div>
         </div>
-        <!-- Side bar content -->
-<%--        <div class="col-md-2 rowCol">
-
-
-
-        </div>--%>
     </div>
 
 
