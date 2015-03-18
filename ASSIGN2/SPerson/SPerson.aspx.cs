@@ -45,13 +45,15 @@ public partial class SPerson : Page
             BioRepeater.DataBind();
 
             //Displays the movies the person participated in as an actor
+
             movieRepeater.DataSource = data.createDataTable(Constants.retrieveMoviesByPersonID(id));
             movieRepeater.DataBind();
 
+
             //Displays the movies the person participated in as an crew
+
             CrewRepeater.DataSource = data.createDataTable(Constants.retrieveCrew(id));
             CrewRepeater.DataBind();
-
         }
         catch (Exception e)
         {

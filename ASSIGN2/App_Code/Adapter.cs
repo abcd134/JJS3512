@@ -32,6 +32,7 @@ public class Adapter
         OleDbDataAdapter adapter = new OleDbDataAdapter(sqlQuery, ConnectionString);
         DataTable outputTable = new DataTable();
         adapter.Fill(outputTable);
+        if (outputTable.Rows.Count == 0) return null;
         return outputTable;
     }
 
@@ -47,6 +48,7 @@ public class Adapter
         OleDbDataAdapter adapter = new OleDbDataAdapter(sqlQuery, connectionString);
         DataTable outputTable = new DataTable();
         adapter.Fill(outputTable);
+        if (outputTable.Rows.Count == 0) return null;
         return outputTable;
     }
 

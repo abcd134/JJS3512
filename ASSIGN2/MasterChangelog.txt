@@ -259,3 +259,6 @@ James		Browse.aspx
 Sonia		SMovie.aspx.cs 
 78 - 109			cleaned up queries using the class that Joseph made
 111 - 124			added a function called checkEmpty to check if the DB field is null 
+
+Joseph		Content.cs
+35, 51				Methods now return null when there is no data retrieved (Repeaters do not bind when no data exists)
