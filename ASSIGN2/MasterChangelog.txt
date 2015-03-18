@@ -212,3 +212,15 @@ Joseph -	Default.aspx
 Sonia -		SMovie.aspx
 1 - 194				Created new layout 
 					Added data for backdrop images and additional poster images 
+
+Joseph -	Site.Master.aspx.cs
+79 - 89				Fixed and Added Search Functionality 
+
+Joseph -	Default.aspx
+73 - 93				Panel change to accomodate a repeater
+					method created to handle data fetching	
+Joseph -	Default.aspx.cs
+21 - 62				Added functionality on Circle buttons
+
+Joseph -	Site.Master
+78, 88, 98			Changed Query String to ID

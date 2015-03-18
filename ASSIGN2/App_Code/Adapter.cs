@@ -23,7 +23,7 @@ public class Adapter
 
     /// <summary>
     /// createDataTable is used to create a Data Table using SQL Query and the Connection String.
-    /// It initializes the Data Adapter and Fills a Data Table and returns the a DataTable object
+    /// It initializes the Data Adapter and Fills a Data Table and returns\ a DataTable object
     /// </summary>
     /// <param name="sqlQuery"></param> -- SQL Query Used
     /// <returns>Object Returns a DataTable object that has been filled by the data adapter</returns>
@@ -37,7 +37,7 @@ public class Adapter
 
     /// <summary>
     /// createDataTable is used to create a Data Table using SQL Query and using a user specified Connection String.
-    /// It initializes the Data Adapter and Fills a Data Table and returns the a DataTable object
+    /// It initializes the Data Adapter and Fills a Data Table and returns a DataTable object
     /// </summary>
     /// <param name="sqlQuery"></param>  -- SQL Query Used
     /// <param name="connectionString"></param>  -- Users custom connection string
