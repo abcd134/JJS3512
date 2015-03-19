@@ -3,9 +3,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%--Begin Carousel --%>
- <br>
+       <span class="anchor"></span>
+    <span class="anchor"></span>
     <div class="container ">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+ 
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -50,6 +52,8 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+     
+        
     </div>
 
     <%--End of the carousel--%>
@@ -102,13 +106,12 @@
                     <div class="panel-heading">Born on this day</div>
                     <div class="panel-body">
                         <div class="col-md-4">
-                            
-                        </div>
-                        <div class="col-md-4">
-                            
-                        </div>
-                        <div class="col-md-4">
-                            
+                            <div class="row">
+
+                            </div>
+                            <div class="row">
+
+                            </div>
                         </div>
                     </div>
                 </div>
