@@ -101,21 +101,32 @@
             <%--End Featured Movie--%>
 
             <%--Begin "Born in this day" --%>
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Born on this day</div>
-                    <div class="panel-body">
-                        <div class="col-md-4">
-                            <div class="row">
-
-                            </div>
-                            <div class="row">
-
+            <asp:Repeater ID="FeaturedPersonRepeater" runat="server">
+                <HeaderTemplate>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Featured Person</div>
+                            <div class="panel-body">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <img src="http://image.tmdb.org/t/p/w300<%#Eval("profile_path")%>"
+                                        title="<%# Eval("name") %> poster"
+                                        alt="<%# Eval("name") %> poster"
+                                        class="thumbnail img-responsive" />
+                        </div>
+                        <div class="row">
+                            <h1><%# Eval("name") %> </h1> <p>- <%# Eval("birthday") %></p>
+                        </div>
+                    </div>
+                </ItemTemplate>
+                <FooterTemplate>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </FooterTemplate>
+            </asp:Repeater>
             <%--End "Born in this day" --%>
         </div>
     </div>
