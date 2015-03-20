@@ -38,13 +38,7 @@ public partial class SMovie : Page
             txtRevenue.Text = String.Format("{0:c}",dt.Rows[0]["revenue"]).ToString();
             txtAverage.Text = Convert.ToDecimal(dt.Rows[0]["vote_average"]).ToString();
             txtVoteCount.Text = Convert.ToDecimal(dt.Rows[0]["vote_count"]).ToString();
-            object valueTag = dt.Rows[0]["tagline"];    
-            //txtTagLine.Text = (string)dt.Rows[0]["tagline"];
-            txtTagLine.Text = checkEmpty(dt, valueTag, "tagline");
             imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500/"+dt.Rows[0]["poster_path"];
-           
-            //object value = dt.Rows[0]["poster_path"];
-            //checkImage(dt, imgPoster.ImageUrl, value, "poster_path");
     }
 
     /// <summary>
@@ -74,6 +68,9 @@ public partial class SMovie : Page
             int rowCount = dt.Rows.Count;
             if (rowCount == 0) { Response.Redirect("../Error.aspx"); }
             DisplayMovieData(rowCount, dt);
+
+            rptTagline.DataSource = data.createDataTable(Constants.retrieveMovieTagline(movieID));
+            rptTagline.DataBind();
 
             rptGenre.DataSource = data.createDataTable(Constants.retrieveMovieGenre(movieID));
             rptGenre.DataBind();
@@ -108,18 +105,18 @@ public partial class SMovie : Page
         }
     }
 
-    private string checkEmpty(DataTable dt, object value, string name)
-    {
-        string output = "";
-        if(value == DBNull.Value)
-        {
-            return output;
-        }
-        else
-        {
-            //return imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500/"+dt.Rows[0][name];
-            output = (string)dt.Rows[0][name];
-        }
-        return output;
-    }
+    //private string checkEmpty(DataTable dt, object value, string name)
+    //{
+    //    string output = "";
+    //    if(value == DBNull.Value)
+    //    {
+    //        return output;
+    //    }
+    //    else
+    //    {
+    //        //return imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500/"+dt.Rows[0][name];
+    //        output = (string)dt.Rows[0][name];
+    //    }
+    //    return output;
+    //}
 }

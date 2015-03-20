@@ -115,4 +115,9 @@ public static class Constants
         return "SELECT genre.name FROM ((genre INNER JOIN movie_genre ON genre.genre_id = movie_genre.genre_id)"+ 
         " INNER JOIN movie ON movie_genre.movie_id = movie.movie_id) WHERE (movie.movie_id = "+movieID+")";
     }
+
+    public static string retrieveMovieTagline(int movieID)
+    {
+        return "SELECT tagline from movie as a where a.movie_id = "+movieID+" and tagline is not null";
+    }
 }
