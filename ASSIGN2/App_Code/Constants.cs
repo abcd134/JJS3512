@@ -24,12 +24,22 @@ public static class Constants
             "person ON movie_cast.person_id = person.person_id) WHERE (person.person_id = " + personId + ") GROUP BY movie.movie_id, movie.title, movie_cast.role_name";
     }
 
+    /// <summary>
+    /// Used to retrive the infromation where a person is part of a department 
+    /// </summary>
+    /// <param name="personId"></param>
+    /// <returns></returns>
     public static string retrieveCrew(int personId)
     {
         return "SELECT movie.movie_id, movie.title, movie_crew.department, movie_crew.job FROM ((movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id AND movie.title = movie_crew.department) " +
             "INNER JOIN person ON movie_crew.person_id = person.person_id) WHERE (movie_crew.person_id = " + personId + ") GROUP BY movie.movie_id, movie.title, movie_crew.department, movie_crew.job";
     }
 
+    /// <summary>
+    /// Pulls the movie information using movie id
+    /// </summary>
+    /// <param name="movieId"></param>
+    /// <returns></returns>
     public static string retrieveMoviesByMovieID(int movieId)
     {
         return "SELECT movie_id, title, overview, poster_path FROM movie WHERE movie_id=" + movieId;
@@ -115,4 +125,18 @@ public static class Constants
         return "SELECT genre.name FROM ((genre INNER JOIN movie_genre ON genre.genre_id = movie_genre.genre_id)"+ 
         " INNER JOIN movie ON movie_genre.movie_id = movie.movie_id) WHERE (movie.movie_id = "+movieID+")";
     }
+
+    /// <summary>
+    /// Used in Home page for featured person
+    /// </summary>
+    /// <param name="personID1"></param>
+    /// <param name="personID2"></param>
+    /// <param name="personID3"></param>
+    /// <returns></returns>
+    public static string retrieveThreeActors (int personID1, int personID2, int personID3 )
+    {
+        return "SELECT person_id, name, birthday, profile_path FROM person WHERE (person_id = " + personID1 + " ) " +
+               "OR (person_id = " + personID2 + ") OR (person_id = " + personID3 + ")";
+    }
+
 }
