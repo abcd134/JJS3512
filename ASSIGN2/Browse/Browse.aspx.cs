@@ -15,11 +15,11 @@ public partial class Browse : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        int genreID;
+        string search;
+
         if (!IsPostBack)
         {
-            int genreID;
-            string search;
-
             // Check Query String for value then validate
             try
             {       
@@ -144,14 +144,7 @@ public partial class Browse : Page
     /// <param name="e">Event triggered by the calling control command</param>
     public void genres_SelectedIndexChanged(object sender, EventArgs e)
     {
-        String search;
-        // Check to see if a search is being requested
-        if (Request.QueryString["search"] != null)
-        {
-            search = Request.QueryString["search"];
-            Master.SearchBx = search;
-        }
-        else { search = null;  }
+        string search = Master.SearchBx;  
         // We have filter, so make the filter label and button visible
         // then populate the label.
         lblGenre.Visible = true;
@@ -176,16 +169,9 @@ public partial class Browse : Page
         // Clear search
         // Might want to do this in a separate step to uncouple
         // the filter and search critia.
-        if (Request.QueryString["search"] != null)
-        {
-            Master.SearchBx = "";
-            this.Master.SearchBx = "";
-        }
-        else
-        {
-            Master.SearchBx = "";
-            this.Master.SearchBx = "";
-                }
+
+        Master.SearchBx = "";
+        
         // Hide elements related to a filter
         removeFilter.Visible = false;
         notFound.Visible = false;
@@ -194,6 +180,7 @@ public partial class Browse : Page
         lblGenre.Text = "";
         NameValueCollection filtered = new NameValueCollection(Request.QueryString);
         filtered.Remove("search");
+        filtered.Remove("genre");
         Response.Redirect("../Browse/Browse.aspx");
     }
 }

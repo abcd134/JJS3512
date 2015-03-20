@@ -54,9 +54,20 @@ public static class Constants
     public static string retrieveBackDropImages(int movieID)
     {
 
-        return "SELECT movie_image.is_poster, movie_image.file_path FROM (movie INNER JOIN movie_image" +
+        return "SELECT movie_image.is_poster, movie_image.file_path, movie_image.movie_image_id FROM (movie INNER JOIN movie_image" +
             " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = "+movieID+") AND (movie_image.is_poster = 0)";
     }
+
+
+    //public static string retrieveBackDropModal(int movieID, int backDropID)
+    //{
+
+    //    return "SELECT movie_image.is_poster, movie_image.file_path, movie_image.movie_image_id FROM (movie INNER JOIN movie_image" +
+    //        " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = " + movieID + ") AND (movie_image.is_poster = 0)" +
+    //        " and (movie_image.movie_image_id ="+backDropID+")";
+    //}
+
+
     /// <summary>
     /// This query is used in the SMovie Page and retrieves the crew of the movie
     /// </summary>
@@ -64,20 +75,20 @@ public static class Constants
     /// <returns></returns>
     public static string retrieveMovieCrew(int movieID)
     {
-        return "SELECT movie.movie_id, movie_crew.movie_crew_id, person.person_id,person.profile_path, movie_crew.department, person.name"+
-        " FROM person INNER JOIN (movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id) ON person.person_id = movie_crew.person_id"+
+        return "SELECT movie.movie_id, movie_crew.movie_crew_id, person.person_id, person.profile_path AS path, "+
+        "movie_crew.department, person.name FROM person INNER JOIN (movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id) ON person.person_id = movie_crew.person_id" +
         " WHERE (((movie.movie_id)=" + movieID + ")) order by movie_crew.department";
 
     }
 
     /// <summary>
-    /// This query is used in the SMovie Page and retrieves the cast of the movie
+    /// This query is used in the SMovie Page and retrieves the cast of the movie 
     /// </summary>
     /// <param name="movieID"></param>
     /// <returns></returns>
     public static string retrieveMovieCast(int movieID)
     {
-        return "select person.name, person.person_id, movie_cast.ordering, movie_cast.role_name, person.profile_path"+
+        return "select person.name, person.person_id, movie_cast.ordering, movie_cast.role_name, person.profile_path AS pathcast"+
         " from person, movie_cast, movie"+
         " where movie.movie_id = movie_cast.movie_id and movie_cast.person_id = person.person_id"+
         " and movie.movie_id = "+movieID+" order by movie_cast.ordering";
@@ -116,6 +127,11 @@ public static class Constants
         " INNER JOIN movie ON movie_genre.movie_id = movie.movie_id) WHERE (movie.movie_id = "+movieID+")";
     }
 
+    /// <summary>
+    /// this query retrieves the movie tagline when it is not null
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
     public static string retrieveMovieTagline(int movieID)
     {
         return "SELECT tagline from movie as a where a.movie_id = "+movieID+" and tagline is not null";
