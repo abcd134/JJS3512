@@ -290,3 +290,9 @@ line 168			Added reference
 
 James		Browse.aspx
 45-48				Added check for null tagline (see simple solution Sonia)
+
+James		Browse.aspx.cs		March 20, 2015
+18 - 22				Code clean up
+147 - 154			Deleted debugging code
+179 - 175           Deleted debugging code
+197					Added set genre POST to null (debugging)
