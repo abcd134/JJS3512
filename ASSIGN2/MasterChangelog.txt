@@ -290,3 +290,9 @@ line 168			Added reference
 
 James		Browse.aspx
 45-48				Added check for null tagline (see simple solution Sonia)
+
+Joseph		Default
+9-55				Carousel now enclosed in a repeater
+
+			Defualt.aspx
+12-74				Redid design for the entire code behind

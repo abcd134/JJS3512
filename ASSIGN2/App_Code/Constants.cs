@@ -125,4 +125,9 @@ public static class Constants
     {
         return "SELECT * FROM person Where person_id=" + x  + " OR person_id=" + y + " OR person_id=" + z;
     }
+
+    public static string retrieveFeaturedMovies()
+    {
+        return "SELECT TOP 3 movie_id, title FROM movie ORDER BY revenue DESC";
+    }
 }

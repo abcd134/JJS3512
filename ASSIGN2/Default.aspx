@@ -6,54 +6,53 @@
        <span class="anchor"></span>
     <span class="anchor"></span>
     <div class="container ">
- 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+        <asp:Repeater ID="CarouselRepeater" runat="server">
+            <HeaderTemplate>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="images/HobbitDefault.jpg" alt="Movie 1" width="1200" height="690">
-                    <div style="position: absolute; top: 550px; left: 30px;">
-                        <h1>Now Playing - The Hobbit: The Five Armies</h1>
-                    </div>
-                </div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+            </HeaderTemplate>
 
+            <ItemTemplate>
                 <div class="item">
                     <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
                     <img src="images/KRDefault.jpg" alt="Movie 2" width="1200" height="690">
                     <div style="position: absolute; top: 550px; left: 30px;">
-                        <h1>Featured Person: Keanu Reeves</h1>
+                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %></a></h1>
                     </div>
                 </div>
+            </ItemTemplate>
 
-                <div class="item">
-                    <%-- https://i.ytimg.com/vi/kdComTp7KsA/maxresdefault.jpg --%>
-                    <img src="images/InterstelDefault.jpg" alt="Movie 3">
+            <AlternatingItemTemplate>
+                <div class="item active">
+                    <img src="images/HobbitDefault.jpg" alt="Movie 1" width="1200" height="690">
                     <div style="position: absolute; top: 550px; left: 30px;">
-                        <h1>Featured Movie: Interstellar </h1>
+                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>"> Top Grosser: <%# Eval("title") %></a></h1>
                     </div>
                 </div>
+            </AlternatingItemTemplate>
 
-            </div>
-
+            <FooterTemplate>
+                </div>
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-     
-        
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+            </FooterTemplate>
+        </asp:Repeater> 
     </div>
 
     <%--End of the carousel--%>
@@ -110,7 +109,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <div class="col-md-4">
-                        <div class="row">
+                         <div class="row">
                             <img src="http://image.tmdb.org/t/p/w300<%#Eval("profile_path")%>"
                                         title="<%# Eval("name") %> poster"
                                         alt="<%# Eval("name") %> poster"
