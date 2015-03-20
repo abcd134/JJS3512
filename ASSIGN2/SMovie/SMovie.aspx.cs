@@ -62,34 +62,44 @@ public partial class SMovie : Page
            string sql = "SELECT * FROM movie as a";
            sql += " WHERE a.movie_id=" + movieID;
 
+            //connect to the adapter and pass in the sql and connection string
             OleDbDataAdapter adapter = new OleDbDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             int rowCount = dt.Rows.Count;
+            //if the rowcount is zero go to error page
             if (rowCount == 0) { Response.Redirect("../Error.aspx"); }
             DisplayMovieData(rowCount, dt);
 
+            //binding values to tagline repeater
             rptTagline.DataSource = data.createDataTable(Constants.retrieveMovieTagline(movieID));
             rptTagline.DataBind();
 
+            //binding values to genre repeater
             rptGenre.DataSource = data.createDataTable(Constants.retrieveMovieGenre(movieID));
             rptGenre.DataBind();
 
+            //binding values to keyword repeater
             rptKeyword.DataSource = data.createDataTable(Constants.retrieveMovieKeyword(movieID));
             rptKeyword.DataBind();
 
+            //binding values to company repeater
             rptCompany.DataSource = data.createDataTable(Constants.retrieveMovieCompany(movieID));
             rptCompany.DataBind();
 
+            //binding values to cast repeater
             rptCast.DataSource = data.createDataTable(Constants.retrieveMovieCast(movieID));
             rptCast.DataBind();
 
+            //binding values to crew repeater
             rptCrew.DataSource = data.createDataTable(Constants.retrieveMovieCrew(movieID));
             rptCrew.DataBind();
 
+            //binding values to backdrop repeater
             rptBackDrop.DataSource = data.createDataTable(Constants.retrieveBackDropImages(movieID));
             rptBackDrop.DataBind();
 
+            //binding values to posters repeater
             rptPosters.DataSource = data.createDataTable(Constants.retrievePosterImages(movieID));
             rptPosters.DataBind();
 
@@ -105,18 +115,23 @@ public partial class SMovie : Page
         }
     }
 
-    //private string checkEmpty(DataTable dt, object value, string name)
-    //{
-    //    string output = "";
-    //    if(value == DBNull.Value)
-    //    {
-    //        return output;
-    //    }
-    //    else
-    //    {
-    //        //return imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500/"+dt.Rows[0][name];
-    //        output = (string)dt.Rows[0][name];
-    //    }
-    //    return output;
-    //}
+/// <summary>
+/// This function checks to see if the image is NULL if it is then 
+/// return a a not available image else return the image url and path 
+/// </summary>
+/// <param name="path"></param>
+/// <returns></returns>
+    protected string checkIMG (object path)
+    {
+        string output = "";
+        if(path == DBNull.Value)
+        {
+            output = "../images/Not_available.jpg";
+        }
+        else
+        {
+            output = "http://image.tmdb.org/t/p/w154/"+path;
+        }
+        return output;
+    }
 }

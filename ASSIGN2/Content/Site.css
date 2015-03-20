@@ -170,3 +170,8 @@ font-weight:800;
   margin-top: -100px; /*same height as header*/
   visibility: hidden;
 }
+
+/*This style is used in the single movie page and it is used to move the top row down away from the nav bar*/
+.rowCol {margin-top:1.5%;}
+/*This style is used in the single page movie and it styles the backdrop and poster images in a flexible layout*/
+.display {display:flex; flex-wrap:wrap;}
