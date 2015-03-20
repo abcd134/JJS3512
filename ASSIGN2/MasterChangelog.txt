@@ -287,3 +287,6 @@ line 168			Added reference
 
 			Site.master.cs
 88 - 99				Added method to get/set search box
+
+James		Browse.aspx
+45-48				Added check for null tagline (see simple solution Sonia)

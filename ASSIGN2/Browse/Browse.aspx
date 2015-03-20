@@ -42,7 +42,10 @@
                                 <div class="col-md-10">
                                     <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>"><%# Eval("title") %></a>
                                         (<%# Eval("release_date", "{0: YYYY}")%>)</h3>
-                                    <h5>"<%# Eval("tagline")%>"</h5>
+                                    <asp:Label ID="tagLine" runat="server"
+                                        Visible = '<%# Eval("tagline").ToString() != "" %>' >
+                                        <h5>"<%# Eval("tagline") %>"</h5>
+                                    </asp:Label>
                                     </div>
                                 <div class="col-md-1">
                                     <h1><%# Eval("vote_average") %>/10  </h1>
