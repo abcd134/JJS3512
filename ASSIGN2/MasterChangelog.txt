@@ -290,3 +290,11 @@ line 168			Added reference
 
 James		Browse.aspx
 45-48				Added check for null tagline (see simple solution Sonia)
+
+Sonia		SMovie.aspx
+162, 188			Added a method call to cast and crew members 
+Some lines			Did clean up and commenting 
+
+			SMovie.aspx.cs 
+124 - 136			Created a method to deal with missing pictures for cast and crew members 
+Some lines			Did clean up and commenting 
