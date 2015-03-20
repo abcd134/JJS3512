@@ -265,3 +265,28 @@ Joseph		Content.cs
 
 Joseph		Default.aspx
 118					Removed 3rd Row, Removed right bar
+
+James		About.aspx	March 18, 2015
+line 168			Added reference
+
+			Browse.Aspx	March 18, 2015
+2					Added virtual path to site master
+10-17 72-79			Moved filter label and button to title panel
+64					deleted line
+
+			Browse.aspx.cs
+12					Added namespace to enable query string clearing
+22-27				Deleted
+35 - 50, 160-164	Improved labeling for joint search and filtering
+94					Turned off visibility on "not found message"
+100					Replaced null with "" in an attempt to trouble shoot
+174					Changed method name
+178 - 187			Trying to clear search box text\
+195 -196			Clearing http "search" post
+197					Redirect to browse
+
+			Site.master.cs
+88 - 99				Added method to get/set search box
+
+James		Browse.aspx
+45-48				Added check for null tagline (see simple solution Sonia)

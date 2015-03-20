@@ -15,6 +15,7 @@ public partial class _Default : Page
         if(!IsPostBack)
         {
             initializeDatabases();
+            createFeaturedPerson();
         }
     }
 
@@ -59,5 +60,19 @@ public partial class _Default : Page
 
         repreaterToChange.DataSource = connect.createDataTable(Constants.retrieveMoviesByMovieID(movieId));
         repreaterToChange.DataBind();
+    }
+
+    // Featured person code
+
+    protected void createFeaturedPerson()
+    {
+        Adapter connect = new Adapter(WebConfigurationManager.ConnectionStrings["Movies"].ConnectionString);
+
+        int[] x = {3896, 140, 72129};
+
+
+        FeaturedPersonRepeater.DataSource = connect.createDataTable(Constants.retrieveThreeActors(x[0], x[1], x[2]));
+        FeaturedPersonRepeater.DataBind();
+
     }
 }
