@@ -1,0 +1,292 @@
+﻿**** MASTER CHANGELOG FORMAT (suggested: For Review) **** 
+
+# [Name] - [FILENAME.ASPX] - REVISION [NUMBER] - [DATE]
+# [Number] LINE [LINE NUMBER AND RANGE] - [SUMMARY CHANGE]
+# Example
+# 
+#
+#
+# Site.master - Revision 1 - March 1 1970
+# 1 Line 9000 - 9001 - Power Level indentified 
+
+*********************************************************
+
+Joseph - Site.master - Revision 1 - March 2, 2015
+1  Line 55  		Contacts link has been removed
+	   		Added Dropdown menu. Text: Movies
+2  Line 59-107		Added 3 Cols (Now showing, Top rating, Genres)
+			Added Contents to each Col - #TODO: Database line must go here that will import usefull data
+3  Line 111-114		Right Hand nav bar has been changes. (Removed Login and Register)
+			Added TextBoxID:SearchBox
+			Added ButtonID:SearchButton
+
+
+Joseph - Site.master - Revision 2 - March 4, 2015
+1 Line 59			Added Second Navbar
+2 Line 60			Moved Home, About, Movies Tabs
+3 Line 60			Added People Tab
+4 Line 67			Attached Linked (People tab with ~/SPerson/SPerson.aspx)
+5 Line 54-55		Added Bootstarp theme too textbox and button
+						- reduced textbox size by 10px (from 45)
+						- changed text class to btn btn-primary btn-md from btn btn-lg
+6 Line 115 - 117	Added "View All Movies Link" inside sub navigation
+
+Joseph - Content/Site.css - Revision 1 - March 2, 2015
+1 Line 32			Added class .dropdown-adjust@600px
+
+Content/Site.css - Revision 1 - March 4, 2015
+1 Line 36			Added class .align-right Aligns items to the right
+
+Joseph - App_Data/movies.accdb - Revision 1 - March 4, 2015
+1 Database added	*IMPORTANT DOWNLOAD. YOU NEED THIS INORDER TO INTERFACE WITH THE ACCESS DB - Microsoft Access Database Engine 2010 Redistributable
+						-http://www.microsoft.com/en-us/download/details.aspx?id=13255
+					*IF THE FIRST FILE DOES NOT WORK (YOU CANNOT CONNECT TO DATABASE). DOWNLOAD SECOND LINK AND INSTALL
+						-http://www.microsoft.com/en-us/download/confirmation.aspx?id=23734
+
+Joseph - Site.master - Revision 3 - March 5, 2015
+1 Line 20 - 22		Added SqlDataSourceID:NowShowingDB , SqlDataSourceID:TopRatingDB, SqlDataSourceID:TopGrossing.
+2 Line 75			Replaced Blank li's with a repeater
+					Created RepeaterID:NowShowingRepeater
+3 Line 85			Changed title to Top Rating 2014
+2 Line 86			Replaced Blank li's with a repeater
+					Created RepeaterID:TopRatingRepeater
+5 Line 96			Changed to Top Grossing 2014 from Genre
+
+Joseph - Site.master - Revision 4 - March 5, 2015
+1 Line 74 - 100		Changed layout grid to tables
+					BUG - second col displaying 12 elements instead of 10 
+
+James - About Page - Revision 1 - March 6, 2015
+1 lines 12 - 33		Added in page style - will need to xfer to CSS file when ready
+2 lines	41 - 42		Added alt, title to image
+3 lines 45, 55, 142	Added in page links
+4 lines 45 - 57		Edited content
+5 lines 59 - 127	Added Team Bio's
+6 lines 157 - 164	Added citations including links if apprpriate
+7 lines 169 - 219	Added structure for documentation
+8 lines	181 - 183	Added documentation for about page
+
+James - Images Folder	Added cat pictures
+
+James - About Page - Revision 2 - March 7, 2015
+					Added alt and title tags
+					Added itra page links to documentation
+					Added images for home, error, browse, sMovie, sPerson
+					Set up each pages documentation section with
+					  images, titling (including lead developer) and space 
+					  for actual documentation. 
+					Added figure tags
+					Made most images responsive (need to work on the cat pictures)
+Sonia - SMovie Page - Revision 1 - March 7, 2015
+Lines 1 to 164  Added the Template for SMovie using Bootstrap
+
+Line 298        Moved div due to panel error bootstrap
+
+James	- Browse Page - First Draft - March 8, 2015
+						posters showing up
+						movie titles have working links to SMovie page
+						release date showing up
+James -  Browse Page	March 9, 2015
+						changed poster class to thumbnail - looked cleaner.
+
+Joseph - Site.Master - Revision 5
+Line 122 to 123		Added Footer
+
+Joseph - Site.css
+Line 42		Added Center CSS for text file
+
+James - Browse Page		March 11, 2015 
+(Joseph I just discovered the colored bars!!!! now I know how you knew what changed!)
+Lines 23			removed col offset
+lines 25			added proper pathing
+lines 31-6			added backdrop image
+lines 38-58			changed layout
+					added tag line
+					added rating
+					added actor + link to SPerson page
+					added role
+lines 79-86			SQL Statement (will eventually put in code behind)
+
+Joseph - Site.master	March 12,2015
+Line 73 - 133		Added Browse and Genre (dropdown)
+					Moved Movies after browse
+
+Joseph - Default.aspx	March 13, 2015
+5 - 46				Added Carousel (beta) with test jpeg file
+					Added a static text on carousel 
+5 - 110				Added Featured Movies, Born on this day, Featured people
+
+James	- Browse.aspx.cs	March 13, 2015
+18 - 31				Added skeleton query string check
+					Added data binding method call
+
+33 - 91				performdataBinding method (a lot of Randy's code)
+					Added data binding code for list
+					Added data binding code for genre ListBox
+92 - 103			onSelectedItemChange method added
+					stubbed for handling search
+
+James		- Browse.aspx	March 13, 2015
+11 - 19				Added some css at top of page to fix "Genre ListBox position"
+23					Main content included in col-md-10
+29					Data source for layout now coming from code behind
+71					Page layout changed to have overview after lead actor name/role
+84 - 96				Genre ListBox included
+90 ish				Deleted lines relating to data source for layout in front end code
+
+James		- Browse.aspx	Pi day
+97 - 103			Working on filter labelling and clear filter button
+
+James		- Browse.aspx.cx	Pi day
+31 and 63			label visibility -- not working right yet, but progress
+114 - 126			Working on filter labelling and clear filter button
+
+James		- Error.aspx	Pi day
+33					Added error label -- send querystring with "error"
+						as the variable name to print message you include
+
+James		- Error.aspx.cs	Pi day
+12 - 15				Added code to load an "error" label from a query string request.
+
+
+
+
+
+
+James		-	Error.aspx	March 16, 2015
+4 -14				Deleted all style elements and placed in site.css file
+
+James		-	About.aspx	March 16, 2015
+10 - 36				Deleted all style elements and placed in site.css file
+181 - 191			Home page documentation added
+251 - 267			Single Movie documentation added
+282 - 305			Single Person documentation stubbed with phoney baloney
+366 - 369			Updated wording to include inclusion of error message parameter
+
+James		-	Browse.aspx	March 16, 2015
+4 - 30				Deleted all style elements and placed in site.css file
+13					Added notFound label to handle nothing found event.
+
+James		-	Browse.aspx.cs March 16, 2015
+13					Refactored Partial class name to Browse
+Many lines			Added documentation - especially methods
+30 - 45				Try - catch to verify integer query string if exists
+44					Included Redirect error message for printing on error page
+70					Included genre.name in select if filtering on genre 
+						(needed when coming to page from Nav Bar)
+84					made genre lable visible when one exists
+98 - 104			Included nothing found message
+118					Redirect with error message
+139					Keeping search string alive when adding a genre
+171 - 172			Removing filter button, label and not found message visibility.
+
+James		-	Site.css	March 16, 2015
+46 - 145			Added CSS from Error, About and Browse pages
+=======
+HA FANCY JAMES. FANCY
+
+Joseph	-	SPerson.aspx	March 15, 2015
+6 - 123				Added Template for SPerson
+>>>>>>> aef59be8333075830de1cd7d2b19a30194f40937
+
+Sonia	- SMovie.aspx       March 16, 2015
+1 - 180				Added bootstrap accordian for cast and database data 
+
+		- SMovie.aspx.cs	March 16, 2015
+22 - 111			Added OleDb connections and added query strings
+
+
+Joseph -	SPerson.aspx	March 16, 2015
+8  - 151			Re structured Divs and repeater to allow divs to remain invisible when no data is avalable
+
+Joseph -	(NEW) Adapter.ca	March 16, 2015
+					Class created to serve the function of data pull
+Joseph -	(NEW) Constants.cs	March 16, 2015
+					Class created to store SQL statements
+Joseph -	Site.Master		March 16, 2015
+70					Removed People tab
+Joseph -	Default.aspx
+69-75				Added Circle tabs
+79					Encapsulated information div tags to repeater
+
+Sonia -		SMovie.aspx
+1 - 194				Created new layout 
+					Added data for backdrop images and additional poster images 
+
+Sonia -     Content/Bootstrap.css 
+5332 - 5456			Added panel heading (font, color)
+342 - 349			Added link color
+73					Added style (font, color, weight) to the h1 
+					**these changes took effect on each page
+			 Content/site.css
+159					Added h1 tag
+104 - 148			deleted .well, panel-heading, error styling
+			 site.master
+					Added the link for the google font 
+
+James		Browse.aspdx
+45					pid to id
+
+Joseph -	Site.Master.aspx.cs
+79 - 89				Fixed and Added Search Functionality 
+
+Joseph -	Default.aspx
+73 - 93				Panel change to accomodate a repeater
+					method created to handle data fetching	
+Joseph -	Default.aspx.cs
+21 - 62				Added functionality on Circle buttons
+
+Joseph -	Site.Master
+78, 88, 98			Changed Query String to ID
+
+James		Browse.aspx
+70					added fixed class to prevent filter header from scrolling
+
+			Browse.aspx.cs March 17, 2015
+36					added placeholder for genre_name (from header navigation)
+
+			About.aspx March 17, 2015
+40-1, 65-6, 91-2, 
+153-4, 176-8, 
+205-207, 248-250, 
+283-285, 322-324, 
+364-366				applied in page anchor positioning fix.
+
+			Site.CSS	March 17, 2105
+162 - 172			added .anchor class css (offset for in page anchors)	
+
+
+Sonia		SMovie.aspx.cs 
+78 - 109			cleaned up queries using the class that Joseph made
+111 - 124			added a function called checkEmpty to check if the DB field is null 
+
+Joseph		Content.cs
+35, 51				Methods now return null when there is no data retrieved (Repeaters do not bind when no data exists)
+
+Joseph		Default.aspx
+118					Removed 3rd Row, Removed right bar
+
+James		About.aspx	March 18, 2015
+line 168			Added reference
+
+			Browse.Aspx	March 18, 2015
+2					Added virtual path to site master
+10-17 72-79			Moved filter label and button to title panel
+64					deleted line
+
+			Browse.aspx.cs
+12					Added namespace to enable query string clearing
+22-27				Deleted
+35 - 50, 160-164	Improved labeling for joint search and filtering
+94					Turned off visibility on "not found message"
+100					Replaced null with "" in an attempt to trouble shoot
+174					Changed method name
+178 - 187			Trying to clear search box text\
+195 -196			Clearing http "search" post
+197					Redirect to browse
+
+			Site.master.cs
+88 - 99				Added method to get/set search box
+
+James		Browse.aspx
+45-48				Added check for null tagline (see simple solution Sonia)
