@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="Browse" %>
-
+<%@ MasterType VirtualPath="~/Site.master" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
    
 <h2><%: Title %>.</h2>   
@@ -7,6 +7,14 @@
     <div class="col-md-10">
         <div class="well well-lg">
             <h1>Browse the Movies</h1>
+            <asp:Label ID="lblGenre" runat="server" 
+                Visible="false"/>
+            <asp:Button ID="removeFilter" runat="server"
+                CssClass ="button" 
+                Text ="Clear Filter"
+                Visible ="false"
+                CausesValidation ="false"
+                OnCommand="on_Click" />    
         </div>
         <div class="panel panel-default">
             <div class="panel-body">
@@ -61,22 +69,13 @@
                     </div>
                 <hr />
                 </ItemTemplate>
-
                 </asp:Repeater> 
             </div>                     
-            </div>
+        </div>
     </div>
     <div class="col-md-2">        
         <div class="panel panel-default row fixed">
-            <div class="panel-body">Select Genre<br />     
-                <asp:Label ID="lblGenre" runat="server" 
-                    Visible="false"/>
-                <asp:Button ID="removeFilter" runat="server"
-                    CssClass ="button" 
-                    Text ="Clear Filter"
-                    Visible ="false"
-                    OnCommand="CommandBtn_Click" />                            
-            </div>
+            <div class="panel-body">Select Genre<br /></div>
             <asp:Listbox ID="drpGenres" runat="server" 
                 DataTextField="genreName" 
                 DataValueField="genre_id" 

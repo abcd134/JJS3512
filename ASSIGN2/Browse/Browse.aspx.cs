@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Web.Configuration;
 using System.Data.Common;
+using System.Collections.Specialized;
 
 public partial class Browse : Page
 {
@@ -19,31 +20,39 @@ public partial class Browse : Page
             int genreID;
             string search;
 
-            // Check Query String for value
-            if (Request.QueryString["search"] != null)
-            {
-                search = Request.QueryString["search"];
-            }
-            else { search = null; }
-
             // Check Query String for value then validate
             try
-            {
-                
+            {       
                 if (Request.QueryString["genre"] != null)
-                {
+                {                  
                     genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                    lblGenre.Text = Convert.ToString(genreID);
+                    lblGenre.Text = "Filtering on: " + Convert.ToString(genreID);
                 }
                 else 
                 {   // Set the genreID to a negative number to avoid sql "WHERE" clause
                     genreID = -1;
+                }            
+                // Check Query String for value
+                if (Request.QueryString["search"] != null)
+                {
+                    search = Request.QueryString["search"];
+                    Master.SearchBx = search;
+                    if (lblGenre.Text.Length > 0)
+                    {
+                        lblGenre.Text += " and " + Master.SearchBx;
+                    }
+                    else { 
+                        lblGenre.Text = "Filtering on: " + search;
+                        lblGenre.Visible = true;
+                        removeFilter.Visible = true;
+                    }
                 }
+                else { search = null; }
                 PerformDataBinding(search, genreID);
             }
             catch (Exception ex)
             {
-                Response.Redirect("../Error.aspx?error="+ Convert.ToString(ex.Message) );
+                Response.Redirect("../Error.aspx?error=" + Convert.ToString(ex.Message));
             }
         }
     }
@@ -82,12 +91,13 @@ public partial class Browse : Page
                 sql += " AND movie_genre.genre_id = genre.genre_id ";
                 sql += " AND movie_genre.movie_id = movie.movie_id ";
                 sql += " AND genre.genre_ID =" + genreID;
+                notFound.Visible = false;
                 removeFilter.Visible = true;
                 lblGenre.Visible = true;
             }
 
             // Include search string
-            if (search != null) { sql += " AND movie.title LIKE '%" + search + "%' ";}
+            if (search != "" ) { sql += " AND movie.title LIKE '%" + search + "%' ";}
             sql += " ORDER BY release_date DESC";
 
             // Establish command to execute the Select statement
@@ -139,6 +149,7 @@ public partial class Browse : Page
         if (Request.QueryString["search"] != null)
         {
             search = Request.QueryString["search"];
+            Master.SearchBx = search;
         }
         else { search = null;  }
         // We have filter, so make the filter label and button visible
@@ -146,7 +157,11 @@ public partial class Browse : Page
         lblGenre.Visible = true;
         removeFilter.Visible = true;
         String filter = Convert.ToString(drpGenres.SelectedItem);
-        lblGenre.Text = filter;
+        lblGenre.Text = "Filtering on: " + filter;
+        if (Master.SearchBx != "")
+        {
+            lblGenre.Text += " and " + Master.SearchBx;
+        }
 
         int genre_ID = Convert.ToInt32(drpGenres.SelectedValue);
         PerformDataBinding(search, genre_ID);
@@ -156,26 +171,29 @@ public partial class Browse : Page
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-         public void CommandBtn_Click(object sender, EventArgs e)
+         public void on_Click(object sender, EventArgs e)
     {
         // Clear search
         // Might want to do this in a separate step to uncouple
         // the filter and search critia.
-        String search;
         if (Request.QueryString["search"] != null)
         {
-            search = null;
+            Master.SearchBx = "";
+            this.Master.SearchBx = "";
         }
-        else { search = null; }
-
+        else
+        {
+            Master.SearchBx = "";
+            this.Master.SearchBx = "";
+                }
         // Hide elements related to a filter
         removeFilter.Visible = false;
         notFound.Visible = false;
         lblGenre.Visible = false;
         // Reset genre label to null and genre filter to none
         lblGenre.Text = "";
-        int genre_ID = -1;
-        // now reload page with full data
-        PerformDataBinding(search, genre_ID);
+        NameValueCollection filtered = new NameValueCollection(Request.QueryString);
+        filtered.Remove("search");
+        Response.Redirect("../Browse/Browse.aspx");
     }
 }

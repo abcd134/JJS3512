@@ -163,8 +163,9 @@
                 <li class="list-group-item">Will Fowler for GitHub Guidance</li>
                 <li class="list-group-item">Connolly R., Hoar R., 2015,Fundamentals of Web Development</li>
                 <li class="list-group-item">Connolly R., 2007,Core Internet Application with ASP.NET 2.0</li>
-                <li class="list-group-item"><a href="www.tmdb.com">The Movie Database (TMDb)</a></li>
+                <li class="list-group-item"><a href="https://www.themoviedb.org/">The Movie Database (TMDb)</a></li>
                 <li class="list-group-item"><a href="http://pixelflips.com/blog/anchor-links-with-a-fixed-header">In Page Referencing Spacing Solution</a></li>
+                <li class="list-group-item"><a href="http://www.codeproject.com/Articles/333650/Beginner-s-Tutorial-on-Master-Pages-in-ASP-NET">Getting/Setting Master Page Content from a content page</a></li>
             </ul>
         </div>
     </div>
