@@ -120,4 +120,9 @@ public static class Constants
     {
         return "SELECT tagline from movie as a where a.movie_id = "+movieID+" and tagline is not null";
     }
+
+    public static string retrieveThreeActors(int x, int y, int z)
+    {
+        return "SELECT * FROM person Where person_id=" + x  + " OR person_id=" + y + " OR person_id=" + z;
+    }
 }
