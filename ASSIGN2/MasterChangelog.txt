@@ -290,3 +290,17 @@ line 168			Added reference
 
 James		Browse.aspx
 45-48				Added check for null tagline (see simple solution Sonia)
+
+James		Browse.aspx		March 20, 2015
+80-89				Deleted ListBox 
+90-97				Added filter list
+
+			Browse.aspx.cs		March 20, 2015
+26-34				Simplifying from the major debug attempts
+61-66				Stubbed for search box fix
+111					Two null checks to be sure
+138-161				Deleted method (not required due to ListBox gone!)
+169-184				Simplified coding 
+
+			Site.Master.cs		March 20, 2015
+86					Response.Redirect
