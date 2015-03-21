@@ -79,8 +79,8 @@
                             programming style.  The other members immediately recognized his
                             ability to design, use colors and throw cords.  He was instrumental
                             in the design phase, the documentation phase, and took care of the
-                            implementation details for the about us page, the error page and 
-                            the browse page.  Heard to complain about his role, he was asked 
+                            implementation details for the about us page and the error page.  
+                            Heard to complain about his role, he was asked 
                             to do the browse page. We could go on about how great he was, but 
                             someone might suspect who was actually authoring this piece.
                         </p>
@@ -100,7 +100,7 @@
                         <p><span class="firstWord">Sonia</span>, tireless, design focussed,
                             led the development effort on the single movie page.  In addition
                             Sonia developed and provided to team members clear, concise instructions
-                            for cloning and using the GiHub repository for sharing information.
+                            for cloning and using the GitHub repository for sharing information.
                             Sonia also created and managed the Google Drive repository for
                             sharing information.  She was instrumental in design decisions to 
                             establish the initial layout as well as the lead in
@@ -199,6 +199,11 @@
                         <p> A number of design choices were tested on the home page
                             before we settled on the look submitted.
                         </p>
+                        <p>
+                            Not truly part of the home page, but Joseph lead the set up
+                            of the file structure we used, initiated github for development,
+                             and got a number of master page features to work.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -220,25 +225,23 @@
                         <br />
                         <p>The browse page provided an initial challenge, because
                             any given movie could have multiple cast members, directors
-                            and genres.  As an example, early efforts resulted in
-                            multiple posters for The Matrix as it is considered to be an
-                            ACTION, ADVENTURE, SCIENCE FICTION, THRILLER -- representing
-                            4 of the 20 possible genres listed.  
+                            and genres.
+
+                        </p>
+                        <p>
                             A number of the design choices were made for expediency, leaving 
-                            future improvment opportunities.  The rating system could
+                            future improvement opportunities.  Specifically, the rating system could
                             be improved with the use of images, the height of each row could
                             standardized, and the inclusion of nested materials, would
                             enhance the information value of the pages.
                         </p>
                         <p> 
                             Beyond the initial challenges of learning how to use ASP.NET,
-                            there were a number of smaller challenges.  Pagination was
-                            desireable, but the desire to use Bootstrap trumped the
+                            there were a number of smaller challenges.  The desire to use 
+                            Bootstrap trumped the
                             use of the controls which would easily allow pagination.
-                            The same comment applied to sorting on columns, but the 
-                            choices of controls were more limited and we did not like 
-                            their look.  We sacrificed functionality for appearance.
-                            We believethat a pleasing look, coupled with continual small
+                            The same comment applied to sorting on columns.
+                            We believe that a pleasing look, coupled with continual small
                             tweaks to functionality would keep visitors coming
                             back and keep us employed upgrading the site.
                         </p>
@@ -265,7 +268,7 @@
                             in the design that would allow a sensible display of large
                             amounts of data.
                         </p>
-                        <p>We struggled with wheter to put the data binding in the
+                        <p>We struggled with whether to put the data binding in the
                             front page or the code behind.  We opted for the code
                             behind, binding the data with an adaptor in a data
                             table.  We found the explicit associating of each label
@@ -293,28 +296,18 @@
                     </div>
                     <div class="col-md-7 documentation">
                         <br />
-                        <p>Too early to tell.   puting in blah blah so
-                            that you can have some material to style.
-                            Ideas on what shoudl go here are being accepted.
+                        <p>This page had similar challenges to those encountered
+                            in the Single Movie page.  The largest challenge by far
+                            was determining the right design.  
                         </p>
                         <p>
-OU SHOULD CAREFULLY READ THE FOLLOWING END USER LICENSE AGREEMENT
-BEFORE INSTALLING THIS SOFTWARE PROGRAM. BY INSTALLING, COPYING, OR
-OTHERWISE USING THE SOFTWARE PROGRAM, YOU AGREE TO BE BOUND BY THE
-TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS OF THIS
-AGREEMENT, PROMPTLY RETURN THE UNUSED SOFTWARE PROGRAM TO THE PLACE
-OF PURCHASE FOR A FULL REFUND OF THE PURCHASE PRICE WITHIN THIRTY
-(30) DAYS OF THE ORIGINAL PURCHASE.
-
-This software program (the "Program"), any printed materials, any
-online or electronic documentation, and any and all copies an
-provided below ("License Agreement"). The Program is solely for use
-by end users according to the terms of the License Agreement. Any
-use, reproduction or redistribution of the Program not in accordance
-with the terms of the License Agreement is expressly prohibited.
-
-END USER LICENSE AGREEMENT
-
+                            By the time we got around to designing this page, Sonia
+                            had mastered a number of the technical challenges and 
+                            had laid the visual framework for the work to progress.
+                        </p>
+                        <p>
+                            Styling similar to that shown on the single movie page
+                            needed to be coordinated and synchronized.
                         </p>
                     </div>
                 </div>
@@ -348,14 +341,10 @@ END USER LICENSE AGREEMENT
                             developing the content.  
                         </div>
                     </div>
-                    <br />
                     <p>Chosing the right level of detail for the documentation was a
                         challenge.  Finding the "right" pictures to represent the 
                         inner cat of each of the team members
-                        took a disproportionate amount of time.  There were long discussions
-                        about creating 6 other web pages to include a more detailed
-                        documentation for each page, but in the end the group decided
-                        to focus efforts elsewhere.
+                        took a disproportionate amount of time.
                     </p>
                 </div>
                 </div>
@@ -379,8 +368,8 @@ END USER LICENSE AGREEMENT
                     <p>Nothing fancy on this page. </p><br />
                     <p> We opted not to include a query string retrieval process to 
                         provide more descriptive error messages, but it bugged us so
-                        much that we decided to include the functionality.
-                    </p><br />
+                        much that we decided to include the functionality (OK, bugged me).
+                    </p>
                     <p>
                         We considered putting an explicit Button Link 
                         back to the home page, but felt there were enough navigation 
