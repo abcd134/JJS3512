@@ -8,7 +8,7 @@
         <div class="well well-lg">
             <h1>Browse the Movies</h1>
             <asp:Label ID="lblGenre" runat="server" 
-                Visible="false"/>
+                Visible="false" CssClass="font"/>
             <asp:Button ID="removeFilter" runat="server"
                 CssClass ="button" 
                 Text ="Clear Filter"
