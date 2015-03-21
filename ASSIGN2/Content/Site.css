@@ -35,6 +35,10 @@ textarea {
     width: 800px;
 }
 
+.dropdown-adjust-genre {
+    width: 400px;
+}
+
 
 .align-right {
     text-align: right;
@@ -152,8 +156,27 @@ figcaption {
     Source: http://bryanhadaway.com/how-to-create-circles-with-css/
 */
 
-.circle{display:block;width:50px;height:50px;border-radius:66px;border:4px double #ccc;font-size:20px;color:#666;line-height:100px;text-align:center;text-decoration:none;text-shadow:0 1px 0 #fff;background:#ddd}
-.circle:hover{border:4px double #bbb;color:#aaa;text-decoration:none;background:#e6e6e6}
+.circle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 66px;
+    border: 4px double #ccc;
+    font-size: 20px;
+    color: #fff;
+    line-height: 75px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    background: #99CCFF;
+}
+
+    .circle:hover {
+        border: 4px double #bbb;
+        color: #aaa;
+        text-decoration: none;
+        background: #fff;
+    }
 
 /*Browse movie title h1 style*/
 h1 {
@@ -171,7 +194,24 @@ font-weight:800;
   visibility: hidden;
 }
 
+.anchorDefault{
+  display: block;
+  height: 150px; /*same height as header*/
+  margin-top: -100px; /*same height as header*/
+  visibility: hidden;
+}
+
 /*This style is used in the single movie page and it is used to move the top row down away from the nav bar*/
 .rowCol {margin-top:1.5%;}
 /*This style is used in the single page movie and it styles the backdrop and poster images in a flexible layout*/
 .display {display:flex; flex-wrap:wrap;}
+
+.navbar-blue{
+    background-color:#99CCFF;
+}
+
+.default-links{
+    color: white;
+    font-family: 'Roboto';
+
+}

@@ -3,10 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%--Begin Carousel --%>
-       <span class="anchor"></span>
-    <span class="anchor"></span>
+       <span class="anchorDefault"></span>
     <div class="container ">
-        <asp:Repeater ID="CarouselRepeater" runat="server">
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+            <asp:Repeater ID="CarouselRepeater" runat="server">
             <HeaderTemplate>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -23,7 +23,7 @@
                 <div class="item">
                     <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
                     <img src="images/KRDefault.jpg" alt="Movie 2" width="1200" height="690">
-                    <div style="position: absolute; top: 550px; left: 30px;">
+                    <div style="position: absolute; top: 430px; left: 40px;">
                         <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %></a></h1>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
             <AlternatingItemTemplate>
                 <div class="item active">
                     <img src="images/HobbitDefault.jpg" alt="Movie 1" width="1200" height="690">
-                    <div style="position: absolute; top: 550px; left: 30px;">
+                    <div style="position: absolute; top: 430px; left: 40px;">
                         <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>"> Top Grosser: <%# Eval("title") %></a></h1>
                     </div>
                 </div>
@@ -52,6 +52,8 @@
                 </div>
             </FooterTemplate>
         </asp:Repeater> 
+        </div>
+        
     </div>
 
     <%--End of the carousel--%>
@@ -64,7 +66,7 @@
         <%--Start of the left hand side of the website--%>
 
         <%--Begin Featured Movie--%>
-        <div class="col-md-12">
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">

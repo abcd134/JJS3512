@@ -304,3 +304,18 @@ James		Browse.aspx		March 20, 2015
 
 			Site.Master.cs		March 20, 2015
 86					Response.Redirect
+
+Joseph -	Site.master.aspx	March 20, 2015
+48-134				Various Design changes:
+						Light blue color for site.master
+						Roboto Font
+						Color white on links
+						Resized genre tab
+
+			Default.aspx
+6					Span class changed to anchor-default (height changed from 100 to 150px)
+8,69				Added off sets to shrink page
+			Site.css
+197-202				Added snchor for default.aspx
+209-217				Added navbar-links for navbar color to blue, added default-links.
+
