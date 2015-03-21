@@ -333,3 +333,15 @@ Sonia		SMovie.aspx		March 20, 2015
 209 - 240			Added content margins 
 			Bootstrap.css
 5451				changed panel colors and font color 
+
+James		Browse.aspx  March 21, 2015
+45					added ToString().SubString(0,4) to get just year
+
+			Browse.aspx.cs
+12					deleted systems collections (not needed)
+19					added string genreType
+64-78				added ispostback filter/search state retention
+139,161-2,176,179	documentation
+
+			Site.master.cs
+85-95				added postback filter/search state retention
