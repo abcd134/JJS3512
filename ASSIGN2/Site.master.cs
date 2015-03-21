@@ -82,7 +82,7 @@ public partial class SiteMaster : MasterPage
         if (SearchBox.Text != null)
         {
             link = "~/Browse/Browse.aspx?search=" + SearchBox.Text;
-            Server.Transfer(link);
+            Response.Redirect(link);
         }
 
     }

@@ -22,20 +22,23 @@ public partial class Browse : Page
         {
             // Check Query String for value then validate
             try
-            {       
-                if (Request.QueryString["genre"] != null)
-                {                  
-                    genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                    lblGenre.Text = "Filtering on: " + Convert.ToString(genreID);
+            {
+                genreID = -1;    // No genre to filter on unless explicity set in next section
+                // Check for valid genre id and name
+                if (Request.QueryString["genre"] != null ){
+                    if(Request.QueryString["genreType"] != null){
+                        genreID = Convert.ToInt32(Request.QueryString["genre"]);
+                        lblGenre.Text = "Filtering on: " + Request.QueryString["genreType"];
+                    }
+                    else{
+                        Response.Redirect("../Error.aspx?error=Invalid Query String sent to Browse Page");
+                    }
                 }
-                else 
-                {   // Set the genreID to a negative number to avoid sql "WHERE" clause
-                    genreID = -1;
-                }            
                 // Check Query String for value
-                if (Request.QueryString["search"] != null)
+                if (Request.QueryString["search"] != null && Request.QueryString["search"] != "")
                 {
                     search = Request.QueryString["search"];
+                    // set the search box with latest search string
                     Master.SearchBx = search;
                     if (lblGenre.Text.Length > 0)
                     {
@@ -52,8 +55,15 @@ public partial class Browse : Page
             }
             catch (Exception ex)
             {
-                Response.Redirect("../Error.aspx?error=" + Convert.ToString(ex.Message));
+                Response.Redirect("../Error.aspx?error=" + Convert.ToString(ex.Message)); 
             }
+        }
+        else
+        {
+            /* Will add code here to handle case where filter 
+             * is selected then search is chosen.  Right now not
+             * giving desired results.
+             */
         }
     }
     /// <summary>
@@ -97,7 +107,7 @@ public partial class Browse : Page
             }
 
             // Include search string
-            if (search != "" ) { sql += " AND movie.title LIKE '%" + search + "%' ";}
+            if (search != null ) { sql += " AND movie.title LIKE '%" + search + "%' ";}
             sql += " ORDER BY release_date DESC";
 
             // Establish command to execute the Select statement
@@ -135,30 +145,6 @@ public partial class Browse : Page
             conn.Close();
         }
     }
-
-    /// <summary>
-    /// genres_SelectedIndexChanged
-    /// Method to turn on/off genre filter
-    /// </summary>
-    /// <param name="sender">Type of Object being sent into method</param>
-    /// <param name="e">Event triggered by the calling control command</param>
-    public void genres_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        string search = Master.SearchBx;  
-        // We have filter, so make the filter label and button visible
-        // then populate the label.
-        lblGenre.Visible = true;
-        removeFilter.Visible = true;
-        String filter = Convert.ToString(drpGenres.SelectedItem);
-        lblGenre.Text = "Filtering on: " + filter;
-        if (Master.SearchBx != "")
-        {
-            lblGenre.Text += " and " + Master.SearchBx;
-        }
-
-        int genre_ID = Convert.ToInt32(drpGenres.SelectedValue);
-        PerformDataBinding(search, genre_ID);
-    }
     /// <summary>
     /// 
     /// </summary>
@@ -166,21 +152,18 @@ public partial class Browse : Page
     /// <param name="e"></param>
          public void on_Click(object sender, EventArgs e)
     {
-        // Clear search
-        // Might want to do this in a separate step to uncouple
-        // the filter and search critia.
-
+        // Clear Master search box
         Master.SearchBx = "";
         
         // Hide elements related to a filter
         removeFilter.Visible = false;
         notFound.Visible = false;
         lblGenre.Visible = false;
+
         // Reset genre label to null and genre filter to none
         lblGenre.Text = "";
-        NameValueCollection filtered = new NameValueCollection(Request.QueryString);
-        filtered.Remove("search");
-        filtered.Remove("genre");
+
+        // Now head back to Browse page, resetting the POSTS
         Response.Redirect("../Browse/Browse.aspx");
     }
 }

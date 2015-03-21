@@ -77,18 +77,26 @@
         </div>
     </div>
     <div class="col-md-2">        
-        <div class="panel panel-default row fixed">
-            <div class="panel-body">Select Genre<br /></div>
-            <asp:Listbox ID="drpGenres" runat="server" 
-                DataTextField="genreName" 
-                DataValueField="genre_id" 
-                AutoPostBack="true"
-                CssClass="genres"
-                rows ="20"
-                OnSelectedIndexChanged="genres_SelectedIndexChanged" >
-            </asp:Listbox>
-        </div>
+        <!-- Alternate list box -->
+        <asp:Repeater ID="drpGenres" runat="server" >
+            <HeaderTemplate>
+                <div class="panel panel-default fixed" >
+                    <div class="panel-heading">Select Genre<br /></div>
+                    <div class ="panel-body">
+            </HeaderTemplate>
+            <%--ItemTemplate controls the content--%>
+            <ItemTemplate>
+                <p>
+                <a href="../Browse/Browse.aspx?genre=<%# Eval("genre_id") %>&genreType=<%# Eval("genreName") %>&search=<%# Master.SearchBx %>"><%# Eval("genreName") %></a>
+                </p>
+            </ItemTemplate>
+            <FooterTemplate>
+                    </div>
+                </div>
+            </FooterTemplate>
+        </asp:Repeater>
     </div>
+
 </div>
 <asp:Label ID="labMsg" runat="server" />    
 </asp:Content>
