@@ -7,17 +7,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <h3 class="center">Your Complete Movie Information Source</h3>
-<div class ="row">
-        <div class="col-md-3">
-            <figure>
-                <img src="/images/naxos.jpg" width="200"
-                    class="img-responsive img-rounded" 
-                    title="Thinking of Greece - Naxos"
-                    alt="Naxos,Greece"/>
-            </figure>
-        </div>
-        <div class="col-md-9">
-            <p>This site was designed by <A href="#joseph">Joseph</A>, <A href="#james">James</A> and <A href="#sonia" >Sonia</A>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <p>This site was designed by <b><A href="#dev1">Joseph Balabat</A></b>, <b><A href="#dev1">James Bergeron</A></b> and <b><A href="#dev1">Sonia Pitrola</A></b>
             as part of the requirements for the Mount Royal University,
             Bachelor of Computer Information Systems degree program.  The project
             was submitted to Professor Randy Connolly in partial
@@ -27,15 +22,24 @@
             followed by a brief bio of each of the developers.  The third section is
             a summary of the development efforts of each of the members.  The fourth 
             section involves a more detailed documentation of each of the web pages.
-            The final section contains the <A href="#citations">list of citations</A> that reflect ideas/efforts
+            The final section contains the <b><A href="#citations1">list of citations</A></b> that reflect ideas/efforts
             of other people/organizations that we chose to either emulate, access or
-            were just plain inspired by.</p>
-
-            <div class="row well">
-                
-                <div class="col-md-10 col-md-offset-1 innerWell">
-                    <span class="anchor" id="joseph"></span>
-                    <h3 >Joseph Balabat</h3>
+            were just plain inspired by. <b><A href="#dev1">Joseph</A></b></p>
+            </div>
+        </div>
+        <span class="anchor" id="dev1"></span>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Developers</div>
+                    <div class="panel-body">
+            <div role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#joseph1" aria-controls="joseph" role="tab" data-toggle="tab">Joseph Balabat</a></li>
+                    <li role="presentation"><a href="#james1" aria-controls="james" role="tab" data-toggle="tab">James Bergeron</a></li>
+                    <li role="presentation"><a href="#sonia1" aria-controls="sonia" role="tab" data-toggle="tab">Sonia Pitrola</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="joseph1">
                         <figure>
                             <img src="/images/joseph.jpg" 
                                  alt="Joseph Balabat"
@@ -55,12 +59,8 @@
                             Joseph took the lead on the home page.  We can thank Joseph for cats 
                             making their way onto this website.
                         </p>
-                </div>
-                <br />
-                
-                <div class="col-md-10 col-md-offset-1 innerWell">
-                    <span class="anchor" id="james"></span>
-                    <h3 >James Bergeron</h3>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="james1">
                         <figure>
                             <img src="/images/james.jpg" 
                                  alt="James Bergeron"
@@ -81,12 +81,8 @@
                             to do the browse page. We could go on about how great he was, but 
                             someone might suspect who was actually authoring this piece.
                         </p>
-                </div>
-                <br />
-                
-                <div class="col-md-10 col-md-offset-1 innerWell">
-                    <span class="anchor" id="sonia"></span>
-                    <h3 >Sonia Pitrola</h3>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="sonia1">
                         <figure>
                             <img src="/images/sonia.jpg" 
                                  alt="Sonia Pitrola"
@@ -106,51 +102,20 @@
                             between the team members.  She will wear a skirt to school if we get
                             an "A"......  ooops the writer was thinking out loud again. 
                         </p>
-                </div>
-          </div> 
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <br /><br />
-            <figure>
-                <figcaption>Initial Design of Browse Page</figcaption>          
-                <img src="/images/browse.jpg"
-                     class="img-responsive" 
-                     alt="Initial Design of Browse Page"
-                     title="Initial Design of Browse Page"/>
-            </figure>
-        </div>
-        <div class ="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">The Movie Web Site Documentation Pages</div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#homePage">Home Page</a></li>
-                        <li class="list-group-item"><a href="#browse">Browse Movies</a></li>
-                        <li class="list-group-item"><a href="#sMovie">Detailed info on one movie</a></li>
-                        <li class="list-group-item"><a href="#sPerson">Detailed info on one person</a></li>
-                        <li class="list-group-item"><a href="#about">This about us page, and</a></li>
-                        <li class="list-group-item"><a href="#error">An error page</a></li>
-                    </ul>
+                    </div>
                 </div>
             </div>
+            
+                    </div>
+                </div>
         </div>
-        <div class="col-md-3">
-            <br /><br />
-            <figure>
-                <figcaption>Initial Design of Single Movie</figcaption>
-                <img src="/images/sMovie.jpg"
-                     title="Initial Design of Single Movie" 
-                     alt="Initial Design of Single Movie"
-                     class="img-responsive"/>
-            </figure>
-        </div>
-        </div>
-    <div class="panel panel-info">
-        <span class="anchor" id="citations"></span>
-        <div class="panel-heading" >Citations</div>
-        <div class="panel-body">
-            <ul class="list-group">
+
+        <span class="anchor" id="citations1"></span>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Citations</div>
+                <div class="panel-body">
+                     <ul class="list-group">
                 <li class="list-group-item"><a href="http://www.sochealth.co.uk/2013/08/09/my-favourite-kitten-pictures-for-internationalcatday/">
                     Image of Joseph from the Socialist Health Association</a></li>
                 <li class="list-group-item"><a href="http://nyc_dog_blog.downtownpet.com/2007/08/cats-and-ducks.html">
@@ -163,28 +128,41 @@
                 <li class="list-group-item"><a href="https://www.themoviedb.org/">The Movie Database (TMDb)</a></li>
                 <li class="list-group-item"><a href="http://pixelflips.com/blog/anchor-links-with-a-fixed-header">In Page Referencing Spacing Solution</a></li>
                 <li class="list-group-item"><a href="http://www.codeproject.com/Articles/333650/Beginner-s-Tutorial-on-Master-Pages-in-ASP-NET">Getting/Setting Master Page Content from a content page</a></li>
+                <li class="list-group-item"><a href="http://www.google.com/fonts">Google Fonts</a></li>
+                <li class="list-group-item">Jordan and Steve for Guidance</li>
+                <li class="list-group-item"><a href="http://www.uwplatt.edu/distance-education/student-advisory-board-ms-integrated-supply-chain-management">Image of an "Image Not Available"</a></li>
             </ul>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 <div class="row">
-    <div class="panel panel-info">
-        <div class="panel-heading">Team Development Efforts</div>
-        <div class="panel-body">
-            <span class="anchor" id="homePage"></span>
-            <div class="panel panel-primary">
-                <div class="panel-heading" >The Home Page<br />
-                    <div class="title">Lead Developer: Joseph Balabat</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-1 ">
-                        <img src="/images/homePage.jpg" 
-                            class="img-responsive pageImg"
-                            alt="Initital Design of Home Page"
-                            title="Initital Design of Home Page"/>
-                    </div>
-                    <div class="col-md-7 documentation">
-                    <br />
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">BBP Movie Databases Documentation</div>
+            <div class="panel-body">
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home1" aria-controls="home" role="tab" data-toggle="tab">Home Page</a></li>
+                        <li role="presentation"><a href="#browse1" aria-controls="browse" role="tab" data-toggle="tab">Browse Movies</a></li>
+                        <li role="presentation"><a href="#movie1" aria-controls="movie" role="tab" data-toggle="tab">Single Movie</a></li>
+                        <li role="presentation"><a href="#person1" aria-controls="person" role="tab" data-toggle="tab">Single Person</a></li>
+                        <li role="presentation"><a href="#about1" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
+                        <li role="presentation"><a href="#error1" aria-controls="error" role="tab" data-toggle="tab">Error Page</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home1">
+                            <br />
+                            <div class="title"><b>Lead Developer: Joseph Balabat</b></div><br />
+                            <div class="col-md-4 col-md-offset-1">
+                                <img src="/images/homePage.jpg" 
+                                class="thumbnail img-responsive pageImg"
+                                alt="Initital Design of Home Page"
+                                title="Initital Design of Home Page"/>
+                            </div>
+                             <div class="col-md-7 documentation">
                         <p>The home page provided a number of challenges, the largest
                             of which was balancing design and functionality.  </p>
                         <p>The page provided the opportunity to learn how to implement the 
@@ -202,24 +180,17 @@
                              and got a number of master page features to work.
                         </p>
                     </div>
-                </div>
-            </div>
-            <br />
-            <span class="anchor" id="browse"></span>
-            <div class="panel panel-primary">
-                <div class="panel-heading" >The Browse Page<br />
-                    <div class="title">Lead Developer: James Bergeron</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-1 ">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="browse1"><br />
+                            <div class="title"><b>Lead Developer: James Bergeron</b></div><br />
+                    <div class="col-md-4 col-md-offset-1 ">
                         <img src="/images/browse.jpg" 
-                             class="img-responsive pageImg"
+                             class="thumbnail img-responsive pageImg"
                              alt="Initital Design of the Browse Page"
-                             title="Initital Design of the Browse Page"
-                        />
+                             title="Initital Design of the Browse Page" />
                     </div>
                     <div class="col-md-7 documentation">
-                        <br />
+                        
                         <p>The browse page provided an initial challenge, because
                             any given movie could have multiple cast members, directors
                             and genres.
@@ -243,24 +214,19 @@
                             back and keep us employed upgrading the site.
                         </p>
                     </div>
-                </div>
-            </div>
-            <br />
-            <span class="anchor" id="sMovie"></span>
-            <div class="panel panel-primary">
-                <div class="panel-heading" >The Single Movie Page<br />
-                    <div class="title">Lead Developer: Sonia Pitrola</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-1 ">
+                
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="movie1"><br />
+                            <div class="title"><b>Lead Developer: Sonia Pitrola</b></div><br />
+ 
+                    <div class="col-md-4 col-md-offset-1 ">
                         <img src="/images/sMovie.jpg" 
-                                class="img-responsive pageImg"
+                                class="thumbnail img-responsive pageImg"
                                 alt="Initital Design of About Page"
-                                title="Initital Design of About Page"
-                            />
+                                title="Initital Design of About Page"/>
                     </div>
                     <div class="col-md-7 documentation">
-                        <br />
+
                         <p>The Single movie page's main challenge was initially
                             in the design that would allow a sensible display of large
                             amounts of data.
@@ -278,21 +244,18 @@
                             would be bound to labels contained in repeaters.
                         </p>
                     </div>
-                </div>
-            </div>
-            <br />
-            <span class="anchor" id="sPerson"></span>
-            <div class="panel panel-primary">
-                <div class="panel-heading" >The Single Person Page</div>
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-1 ">
+                
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="person1"><br />
+                            <div class="title"><b>Lead Developer: Joseph Balabat</b></div><br />
+                    <div class="col-md-4 col-md-offset-1 ">
                         <img src="/images/sPerson.jpg" 
                                 class="img-responsive pageImg"
                                 alt="Initital Design of the Single Person Page"
                                 title="Initital Design of the Single Person Page"/>
                     </div>
                     <div class="col-md-7 documentation">
-                        <br />
+
                         <p>This page had similar challenges to those encountered
                             in the Single Movie page.  The largest challenge by far
                             was determining the right design.  
@@ -307,24 +270,19 @@
                             needed to be coordinated and synchronized.
                         </p>
                     </div>
-                </div>
-            </div>
-            <br />
-            <span class="anchor" id="about"></span>
-            <div class="panel panel-primary">
-                <div class="panel-heading" >The About Page<br />
-                    <div class="title">Lead Developer: James Bergeron</div>
-                </div>
+                        </div>
+                       
+                        <div role="tabpanel" class="tab-pane" id="about1"><br />
+                             <div class="title"><b>Lead Developer: James Bergeron</b></div><br />
             
-            <div class="row">
-                <div class="col-md-3 col-md-offset-1 ">
+                <div class="col-md-4 col-md-offset-1 ">
                     <img src="/images/about.jpg" 
                             class="thumbnail img-responsive"
                             alt="Initital Design of About Page"
                             title="Initital Design of About Page"/>
                 </div>
                 <div class="col-md-7 documentation">
-                    <br />
+
                     <p>The initial design of the about page is shown at left.
                             From the initial design, there were numerous
                             design and implementation decisons, that included:
@@ -335,7 +293,7 @@
                             grid set up, <br />
                             ensuring that the page worked with the site master, <br />
                             assuring accurate and complete citations, and <br />
-                            developing the content.  
+                            developing the content. 
                         </div>
                     </div>
                     <p>Chosing the right level of detail for the documentation was a
@@ -344,24 +302,18 @@
                         took a disproportionate amount of time.
                     </p>
                 </div>
-                </div>
-            </div>
-        </div>
-        <br />
-        <span class="anchor" id="error"></span>
-        <div class="panel panel-primary">
-            <div class="panel-heading" >The Error Page<br />
-                <div class="title">Lead Developer: James Bergeron</div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-md-offset-1 ">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="error1"><br />
+                             <div class="title"><b>Lead Developer: James Bergeron</b></div><br />
+
+                <div class="col-md-4 col-md-offset-1 ">
                     <img src="/images/error.jpg" 
-                            class="img-responsive pageImg"
+                            class="thumbnail img-responsive pageImg"
                             alt="Initital Design of the Single Person Page"
                             title="Initital Design of the Single Person Page"/>
                 </div>
                 <div class="col-md-7 documentation">
-                    <br />
+
                     <p>Nothing fancy on this page. </p><br />
                     <p> We opted not to include a query string retrieval process to 
                         provide more descriptive error messages, but it bugged us so
@@ -377,9 +329,11 @@
                         early 80's effort, so you already know who did it.
                     </p>    
                 </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
-    <br />
-    </div>
+     </div>
 </div>
 </asp:Content>
