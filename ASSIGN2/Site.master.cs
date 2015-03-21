@@ -82,6 +82,17 @@ public partial class SiteMaster : MasterPage
         if (SearchBox.Text != null)
         {
             link = "~/Browse/Browse.aspx?search=" + SearchBox.Text;
+            if (Request.QueryString["genre"] != null)
+            {
+                if (Request.QueryString["genreType"] != null)
+                {
+                    link += "&genre=" + Request.QueryString["genre"] + "&genreType=" + Request.QueryString["genreType"];
+                }
+                else
+                {
+                    Response.Redirect("../Error.aspx?error=Invalid Query String on site Master");
+                }
+            }
             Response.Redirect(link);
         }
 
