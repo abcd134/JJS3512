@@ -12,7 +12,6 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 4%;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -226,9 +225,11 @@ font-weight:800;
     margin-right:6%;
 }
 
-.browsePanel {
-    margin-left:3%;
-    margin-right:-1%;
+.navbar-blue{
+    background-color:#99ccff;
 }
 
-.containerHeader{background-color:#2B3856;}
+.default-links{
+    color: white;
+    font-family: 'Roboto';
+}
