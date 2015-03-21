@@ -2,9 +2,9 @@
 <%@ MasterType VirtualPath="~/Site.master" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
    
-<h2><%: Title %>.</h2>   
+
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-9 browsePanel">
         <div class="well well-lg">
             <h1>Browse the Movies</h1>
             <asp:Label ID="lblGenre" runat="server" 
