@@ -322,3 +322,14 @@ Joseph -	Site.master.aspx	March 20, 2015
 James		About.aspx		March 20, 2015
 83,103, 228-240,268	Grammar, spelling and eglish clean up
 202-268				Joseph blurb
+
+
+Sonia		SMovie.aspx		March 20, 2015
+10 - 28				Added Modal to poster Image (it is working)
+144 - 167			Tried to add modal to backdrop (it is not working)
+			About.aspx		March 20,2015 - March 21, 2015
+11 - 339			Cleaned up the about page and styled it 
+			site.css
+209 - 240			Added content margins 
+			Bootstrap.css
+5451				changed panel colors and font color 
