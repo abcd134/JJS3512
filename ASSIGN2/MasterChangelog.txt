@@ -319,3 +319,6 @@ Joseph -	Site.master.aspx	March 20, 2015
 197-202				Added snchor for default.aspx
 209-217				Added navbar-links for navbar color to blue, added default-links.
 
+James		About.aspx		March 20, 2015
+83,103, 228-240,268	Grammar, spelling and eglish clean up
+202-268				Joseph blurb
