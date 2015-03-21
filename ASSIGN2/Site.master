@@ -14,6 +14,7 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
     <form runat="server">
@@ -44,7 +45,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-blue navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">BBP Movie Databases</a>
+                    <a class="navbar-brand default-links" runat="server" href="~/">BBP Movie Databases</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right spaceabove">
@@ -63,12 +64,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse default-links">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
-                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
+                        <li><a class="default-links" runat="server" href="~/">Home</a></li>
+                        <li><a class="default-links" runat="server" href="~/About">About</a></li>
+                        <li><a class="default-links" runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
+                        <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust" role="menu">
                                 <div class="col-xs-4 subnav">
                                     <h3>Now Playing</h3>
@@ -103,8 +104,8 @@
                             </div>
                         </li>
 
-                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
-                            <div class="dropdown-menu dropdown-adjust" role="menu">
+                        <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
+                            <div class="dropdown-menu dropdown-adjust-genre" role="menu">
                                 <div class="col-md-12 subnav">
                                     <div class="col-md-6 subnav">
                                         <asp:Repeater ID="Genre10Repreater" runat="server" DataSourceID="GenreTop10DB">
@@ -139,12 +140,12 @@
                 <br />
                 <br />
                 <br />
-                <p class="center">
+                <p class="center default-links">
                     <a href="../Default.aspx">Home</a> | 
                     <a href="../About">About</a> | 
                     <a href="../Browse/Browse.aspx">Browse</a>
                 </p>
-                <p class="center">&copy; <%: DateTime.Now.Year %> - Content Provided by <a href="https://www.themoviedb.org/">MovieDB</a>.</p>
+                <p class="center navbar-link ">&copy; <%: DateTime.Now.Year %> - Content Provided by <a href="https://www.themoviedb.org/">MovieDB</a>.</p>
             </footer>
         </div>
     </form>
