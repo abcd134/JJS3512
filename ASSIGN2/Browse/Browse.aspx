@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="Browse" %>
 <%@ MasterType VirtualPath="~/Site.master" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
-   
+
 
 <div class="row">
     <div class="col-md-10 browsePanel">
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("id") %>"><%# Eval("title") %></a>
-                                        (<%# Eval("release_date", "{0: YYYY}")%>)</h3>
+                                        (<%# Eval("release_date").ToString().Substring(0,4) %>)</h3>
                                     <asp:Label ID="tagLine" runat="server"
                                         Visible = '<%# Eval("tagline").ToString() != "" %>' >
                                         <h5>"<%# Eval("tagline") %>"</h5>

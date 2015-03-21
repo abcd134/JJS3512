@@ -9,13 +9,14 @@ using System.Data;
 using System.Data.OleDb;
 using System.Web.Configuration;
 using System.Data.Common;
-using System.Collections.Specialized;
+
 
 public partial class Browse : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         int genreID;
+        string genreType;
         string search;
 
         if (!IsPostBack)
@@ -60,10 +61,20 @@ public partial class Browse : Page
         }
         else
         {
-            /* Will add code here to handle case where filter 
-             * is selected then search is chosen.  Right now not
-             * giving desired results.
-             */
+            genreID = -1;
+            if (Request.QueryString["genre"] != null)
+            {
+                if (Request.QueryString["genreType"] != null)
+                {
+                    genreID = Convert.ToInt32(Request.QueryString["genre"]);
+                    lblGenre.Text = "Filtering on: " + Request.QueryString["genreType"] + " and " + Master.SearchBx;
+                }
+                else
+                {
+                    Response.Redirect("../Error.aspx?error=Invalid Post Back String sent to Browse Page");
+                }
+            }
+            PerformDataBinding(Master.SearchBx, genreID);
         }
     }
     /// <summary>
@@ -125,7 +136,7 @@ public partial class Browse : Page
                 notFound.Visible = true;
             }
 
-            // Obtain data for Genre Filter Process (used in ListBox ATM)
+            // Obtain data for Genre Filter Process (used to list genres)
             sql = "Select name as genreName, genre_id from genre";
             cmd = new OleDbCommand(sql, conn);
             reader = cmd.ExecuteReader();
@@ -145,8 +156,10 @@ public partial class Browse : Page
             conn.Close();
         }
     }
+
     /// <summary>
-    /// 
+    /// Method to clear search and filter fields and to make
+    /// their visisibilty = false.
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -160,10 +173,10 @@ public partial class Browse : Page
         notFound.Visible = false;
         lblGenre.Visible = false;
 
-        // Reset genre label to null and genre filter to none
+        // Reset genre label to null
         lblGenre.Text = "";
 
-        // Now head back to Browse page, resetting the POSTS
+        // Now head back to Browse page, resetting the POSTS to null
         Response.Redirect("../Browse/Browse.aspx");
     }
 }
