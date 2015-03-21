@@ -4,7 +4,7 @@
    
 
 <div class="row">
-    <div class="col-md-9 browsePanel">
+    <div class="col-md-10 browsePanel">
         <div class="well well-lg">
             <h1>Browse the Movies</h1>
             <asp:Label ID="lblGenre" runat="server" 

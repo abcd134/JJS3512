@@ -526,6 +526,7 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
+  color:black;
 }
 
 h4,
@@ -5406,7 +5407,7 @@ a.list-group-item:focus {
 }
 
 .panel-title > a {
-  color: #008080;
+  color: #FF8040;
 }
 
 .panel-footer {
@@ -5539,12 +5540,12 @@ a.list-group-item:focus {
 }
 
 .panel-info {
-  border-color: #800000;
+  
 }
 
 .panel-info > .panel-heading {
   color: #000;
-  background-color: #F5F5DC;
+  background-color: #E5E4E2;
   border-color: #fff;
 }
 
