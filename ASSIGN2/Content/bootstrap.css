@@ -340,13 +340,13 @@ textarea {
 }
 
 a {
-  color: #008080;
+  color: #FF8040;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #008080;
+  color: #FF8040;
   text-decoration: underline;
 }
 
@@ -5447,8 +5447,8 @@ a.list-group-item:focus {
 }
 
 .panel-default > .panel-heading {
-  color: #800000;
-  background-color: #F5F5DC;
+  color: #fff;
+  background-color: #151B8D;
   border-color: #dddddd;
   /*Custome CSS*/
       font-size:2em;

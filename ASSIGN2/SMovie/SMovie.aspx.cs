@@ -38,7 +38,8 @@ public partial class SMovie : Page
             txtRevenue.Text = String.Format("{0:c}",dt.Rows[0]["revenue"]).ToString();
             txtAverage.Text = Convert.ToDecimal(dt.Rows[0]["vote_average"]).ToString();
             txtVoteCount.Text = Convert.ToDecimal(dt.Rows[0]["vote_count"]).ToString();
-            imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500/"+dt.Rows[0]["poster_path"];
+            imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500"+dt.Rows[0]["poster_path"];
+            imgPosterLarge.ImageUrl = "http://image.tmdb.org/t/p/w780" + dt.Rows[0]["poster_path"];
     }
 
     /// <summary>

@@ -58,16 +58,6 @@ public static class Constants
             " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = "+movieID+") AND (movie_image.is_poster = 0)";
     }
 
-
-    //public static string retrieveBackDropModal(int movieID, int backDropID)
-    //{
-
-    //    return "SELECT movie_image.is_poster, movie_image.file_path, movie_image.movie_image_id FROM (movie INNER JOIN movie_image" +
-    //        " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = " + movieID + ") AND (movie_image.is_poster = 0)" +
-    //        " and (movie_image.movie_image_id ="+backDropID+")";
-    //}
-
-
     /// <summary>
     /// This query is used in the SMovie Page and retrieves the crew of the movie
     /// </summary>
@@ -123,7 +113,7 @@ public static class Constants
     /// <returns></returns>
     public static string retrieveMovieGenre(int movieID)
     {
-        return "SELECT genre.name FROM ((genre INNER JOIN movie_genre ON genre.genre_id = movie_genre.genre_id)"+ 
+        return "SELECT genre.name, genre.genre_id FROM ((genre INNER JOIN movie_genre ON genre.genre_id = movie_genre.genre_id)"+ 
         " INNER JOIN movie ON movie_genre.movie_id = movie.movie_id) WHERE (movie.movie_id = "+movieID+")";
     }
 

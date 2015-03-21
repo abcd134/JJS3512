@@ -2,7 +2,9 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-
+    background-image: url(../images/movie_page.png);
+    background-size: contain;
+    background-repeat:repeat-y;
 }
 
 /* Wrapping element */
@@ -175,3 +177,20 @@ font-weight:800;
 .rowCol {margin-top:1.5%;}
 /*This style is used in the single page movie and it styles the backdrop and poster images in a flexible layout*/
 .display {display:flex; flex-wrap:wrap;}
+
+.panelResizing{
+    margin-left:3%;
+    margin-right:3%;
+}
+
+.imageResize {
+    margin-right:-2%;
+}
+
+.castResize{
+    margin-left:6%;
+}
+
+.crewResize{
+    margin-right:6%;
+}
