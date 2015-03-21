@@ -224,3 +224,12 @@ font-weight:800;
 .crewResize{
     margin-right:6%;
 }
+
+.navbar-blue{
+    background-color:#99ccff;
+}
+
+.default-links{
+    color: white;
+    font-family: 'Roboto';
+}
