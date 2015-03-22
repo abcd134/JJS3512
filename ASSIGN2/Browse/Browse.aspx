@@ -82,7 +82,7 @@
             <HeaderTemplate>
                 <div class="panel panel-default fixed" >
                     <div class="panel-heading">Select Genre<br /></div>
-                    <div class ="panel-body">
+                    <div class ="panel-body  fixedPanel">
             </HeaderTemplate>
             <%--ItemTemplate controls the content--%>
             <ItemTemplate>

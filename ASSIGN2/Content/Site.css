@@ -83,6 +83,11 @@ figure {
         background: GhostWhite;
 }
 
+.fixedPanel {
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+
 .font{color:white;}
 /*
     The following CSS impacts the About page
