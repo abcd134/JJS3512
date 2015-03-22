@@ -119,7 +119,7 @@
                         </div>
                         <div class="row">
                             <h1><a href="../SPerson/SPerson.aspx?id=<%#Eval("person_id") %>"><%# Eval("name") %></a></h1>
-                            <p>- <%# Eval("birthday") %></p>
+                            <p> <%# Eval("birthday") %></p>
                         </div>
                     </div>
                 </ItemTemplate>
