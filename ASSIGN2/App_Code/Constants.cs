@@ -10,7 +10,7 @@ public static class Constants
 {
     public static string retriveAllPerson(int personID)
     {
-        return "SELECT name, person_id, profile_path, birthday, deathday, birth_place FROM person WHERE person_id=" + personID;
+        return "SELECT name, person_id, profile_path, birthday, deathday, home_page, birth_place FROM person WHERE person_id=" + personID;
     }
     public static string retrieveBio(int personID) 
     {
@@ -139,8 +139,8 @@ public static class Constants
         return "SELECT * FROM person Where person_id=" + x  + " OR person_id=" + y + " OR person_id=" + z;
     }
 
-    public static string retrieveFeaturedMovies()
+    public static string retrieveFeaturedMovies( int posterID)
     {
-        return "SELECT TOP 3 movie_id, title, backdrop_path FROM movie ORDER BY revenue DESC";
+        return "SELECT movie_image_id, file_path FROM movie_image WHERE (movie_image_id = " + posterID + ")";
     }
 }

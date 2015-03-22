@@ -70,7 +70,25 @@ public partial class _Default : Page
 
     protected void createCarousel()
     {
-        bindRepeaterData(CarouselRepeater, connect.createDataTable(Constants.retrieveFeaturedMovies()));
+        int movieID = 102382, posterID = 14428;
+        DataTable carouselData = connect.createDataTable(Constants.retrieveFeaturedMovies(posterID));
+        string posterLink = "http://image.tmdb.org/t/p/w1920" + carouselData.Rows[0]["file_path"] as String;
+        CarouselBackdrop1.ImageUrl = posterLink;
+        CarouselInfo1.NavigateUrl = "../SMovie/SMovie.aspx?id=" + movieID;
+
+        int personID = 51329;
+        posterID = 13990;
+        carouselData = connect.createDataTable(Constants.retrieveFeaturedMovies(posterID));
+        posterLink = "http://image.tmdb.org/t/p/w1920" + carouselData.Rows[0]["file_path"] as String;
+        CarouselBackdrop2.ImageUrl = posterLink;
+        CarouselInfo2.NavigateUrl = "../SPerson/SPerson.aspx?id=" + personID;
+
+        posterID = 7265;
+        carouselData = connect.createDataTable(Constants.retrieveFeaturedMovies(posterID));
+        posterLink = "http://image.tmdb.org/t/p/w1920" + carouselData.Rows[0]["file_path"] as String;
+        CarouselBackdrop3.ImageUrl = posterLink;
+        CarouselInfo3.NavigateUrl = "../Browse/Browse.aspx";
+
     }
     
 }

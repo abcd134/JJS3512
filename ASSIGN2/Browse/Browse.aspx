@@ -58,10 +58,7 @@
                             <div class="panel panel-info row">
                                 <div class="panel-heading">
                                     <div class="panel-title"><b><a href="../SPerson/SPerson.aspx?id=<%# Eval("pid") %>">
-                                            <%# Eval("name") %></a></b></div>
-                                    <div class="panel-body">
-                                        <h5>Stars as <%# Eval("role_name")%></h5>
-                                    </div> 
+                                            <%# Eval("name") %></a></b> stars as <%# Eval("role_name")%></div>
                                 </div>
                             </div>
                             <div class="panel panel-info row">

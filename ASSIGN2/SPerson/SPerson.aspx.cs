@@ -37,9 +37,9 @@ public partial class SPerson : Page
             Adapter data = new Adapter(WebConfigurationManager.ConnectionStrings["Movies"].ConnectionString);
 
             DataTable dt = data.createDataTable(Constants.retriveAllPerson(id));
-            int rowCount = dt.Rows.Count;
+
             //if the rowcount is zero go to error page
-            if (rowCount == 0) { Response.Redirect("../Error.aspx"); }
+            if (dt == null) { Response.Redirect("../Error.aspx"); }
 
             displayPersonInfo(data, id);
             if (data.createDataTable(Constants.retrieveBio(id)).Rows[0]["biography"].ToString() != "")
@@ -73,6 +73,8 @@ public partial class SPerson : Page
         lblPersonName.Text = tempData.Rows[0]["name"] as String;
         string bday = tempData.Rows[0]["birthday"] as String;
         string dday = tempData.Rows[0]["deathday"] as String;
+        string birthPlace = tempData.Rows[0]["birth_place"] as String;
+        string homePage = tempData.Rows[0]["home_page"] as String;
 
         if (checkData(bday))
         {
@@ -81,15 +83,25 @@ public partial class SPerson : Page
 
         if (checkData(dday))
         {
-            lblDeathdate.Text = "Death Death: " + dday;
+            lblDeathdate.Text = "Death Date: " + dday;
         }
+
+        lblBirthPlace.Text = birthPlace;
+
+        if (checkData(homePage))
+        {
+            HyperLink1.NavigateUrl = homePage;
+        }
+   
+        
 
         if ((tempData.Rows[0]["profile_path"] as String) != null)
         {
             string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
             imgProfilePic.ImageUrl = profilePic;
-
+            imgProfilePic2.ImageUrl = profilePic;
         }
+
 
 
     }

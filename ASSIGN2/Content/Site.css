@@ -65,6 +65,7 @@ figure {
 .button {
         border: 2px solid #006;
         background: GhostWhite;
+        margin-left:1%;
 }
 
 .fixedPanel {
@@ -72,7 +73,7 @@ figure {
         overflow-y: scroll;
     }
 
-.font{color:white;}
+.font{color:black; font-weight:bold;}
 /*
     The following CSS impacts the About page
     remove as desired.
@@ -180,7 +181,7 @@ font-weight:800;
 }
 
 .navbar-blue{
-    background-color:#2B3856;
+    background-color:#2C3539;
 }
 
 .default-links{
@@ -216,3 +217,5 @@ font-weight:800;
     width: 100%;
 
 }
+
+.personModal{width:52%;}
