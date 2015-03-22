@@ -64,6 +64,8 @@
         </div>
         <%--End Right hand side--%>
     </div>
+
+       <%--Begin Crew and movie info--%>
     <div class="row">
        
             <asp:Repeater ID="movieRepeater" runat="server">
@@ -101,5 +103,5 @@
 
             </asp:Repeater>
         </div>
-
+     <%--End Crew and movie info--%>
 </asp:Content>

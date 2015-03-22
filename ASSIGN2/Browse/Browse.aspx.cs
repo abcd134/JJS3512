@@ -16,7 +16,6 @@ public partial class Browse : Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int genreID;
-        string genreType;
         string search;
 
         if (!IsPostBack)
@@ -77,6 +76,7 @@ public partial class Browse : Page
         {
             // open the connection to the database
             conn.Open();
+
             // create the SQL command
             string sql =
             "SELECT [movie.movie_id] as id, [person.person_id] as pid, [poster_path],";
@@ -100,7 +100,7 @@ public partial class Browse : Page
                 lblGenre.Visible = true;
             }
 
-            // Include search string
+            // Include criteria to search on if needed
             if (search != null ) { sql += " AND movie.title LIKE '%" + search + "%' ";}
             sql += " ORDER BY release_date DESC";
 

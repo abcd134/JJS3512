@@ -141,6 +141,9 @@
                 <div class="panel-body">
                     <div class="display">
 
+
+
+            <%--Modal and Backdrop STARTS HERE--%>
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
                                 <div class="col-md-3">
@@ -156,11 +159,12 @@
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                                <img src="http://image.tmdb.org/t/p/w780<%# Eval("file_path") %>" alt="" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
+               <%--Modal and Backdrop ENDS HERE--%>
 
                     </div>
                 </div>
@@ -258,7 +262,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                                        </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </div>

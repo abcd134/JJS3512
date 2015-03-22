@@ -128,6 +128,8 @@
                                 </div>
                             </div>
                         </li>
+                        <li><a class="default-links" runat="server" href="#">View Favourites</a></li>
+                        <li><a class="default-links" runat="server" href="#">Upcomming</a></li>
                     </ul>
                 </div>
             </div>
