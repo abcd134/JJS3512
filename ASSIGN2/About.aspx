@@ -360,7 +360,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane active" id="doc1">
+                            <div role="tabpanel" class="tab-pane" id="doc1">
                                 <br />
                                 <div class="title"><b>Lead Developer: Joseph Balabat</b></div>
                                 <br />
