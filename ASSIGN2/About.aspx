@@ -21,10 +21,10 @@
             <p>This page is divided into five main sections.  This introduction,
             followed by a brief bio of each of the developers.  The third section is
             a summary of the development efforts of each of the members.  The fourth 
-            section involves a more detailed documentation of each of the web pages.
+            section involves a more detailed <b><A href="#documentation1">documentation</A></b> of each of the web pages.
             The final section contains the <b><A href="#citations1">list of citations</A></b> that reflect ideas/efforts
             of other people/organizations that we chose to either emulate, access or
-            were just plain inspired by. <b><A href="#dev1">Joseph</A></b></p>
+            were just plain inspired by.</p>
             </div>
         </div>
         <span class="anchor" id="dev1"></span>
@@ -139,6 +139,7 @@
     </div>
 </div>
 <div class="row">
+    <span class="anchor" id="documentation1"></span>
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">BBP Movie Databases Documentation</div>
@@ -191,22 +192,15 @@
                     </div>
                     <div class="col-md-7 documentation">
                         
-                        <p>The browse page provided an initial challenge, because
-                            any given movie could have multiple cast members, directors
-                            and genres.
-
-                        </p>
                         <p>
-                            A number of the design choices were made for expediency, leaving 
-                            future improvement opportunities.  Specifically, the rating system could
+                            A number of the design choices were made for expediency.  Specifically, 
+                            the rating system could
                             be improved with the use of images, the height of each row could
                             standardized, and the inclusion of nested materials, would
                             enhance the information value of the pages.
                         </p>
                         <p> 
-                            Beyond the initial challenges of learning how to use ASP.NET,
-                            there were a number of smaller challenges.  The desire to use 
-                            Bootstrap trumped the
+                            The desire to use Bootstrap trumped the
                             use of the controls which would easily allow pagination.
                             The same comment applied to sorting on columns.
                             We believe that a pleasing look, coupled with continual small
@@ -227,14 +221,13 @@
                     </div>
                     <div class="col-md-7 documentation">
 
-                        <p>The Single movie page's main challenge was initially
-                            in the design that would allow a sensible display of large
-                            amounts of data.
+                        <p>The Single movie page's main challenge was 
+                            coming up with a design that would allow a sensible 
+                            display of large amounts of data.
                         </p>
-                        <p>We struggled with whether to put the data binding in the
-                            front page or the code behind.  We opted for the code
+                        <p>We opted to put the data binding in the code
                             behind, binding the data with an adaptor in a data
-                            table.  We found the explicit associating of each label
+                            table.  We found the explicit association of each label
                             with it's corresponding value to be a simple approach,
                             but were left feeling like our coding could have been better.
                         </p>
@@ -283,19 +276,19 @@
                 </div>
                 <div class="col-md-7 documentation">
 
-                    <p>The initial design of the about page is shown at left.
-                            From the initial design, there were numerous
+                    <p>From the initial design, shown at left, there were numerous
                             design and implementation decisons, that included:
                     </p>
                     <div class="row">
                         <div class="col-md-6 col-md-offset-2">
                             in page links, <br />
                             grid set up, <br />
-                            ensuring that the page worked with the site master, <br />
                             assuring accurate and complete citations, and <br />
                             developing the content. 
                         </div>
                     </div>
+                    <br /> 
+
                     <p>Chosing the right level of detail for the documentation was a
                         challenge.  Finding the "right" pictures to represent the 
                         inner cat of each of the team members
@@ -314,11 +307,12 @@
                 </div>
                 <div class="col-md-7 documentation">
 
-                    <p>Nothing fancy on this page. </p><br />
+                    <p>Nothing fancy on this page. </p>
                     <p> We opted not to include a query string retrieval process to 
                         provide more descriptive error messages, but it bugged us so
-                        much that we decided to include the functionality (OK, bugged me).
+                        much that we decided to include the functionality.
                     </p>
+                    <br />
                     <p>
                         We considered putting an explicit Button Link 
                         back to the home page, but felt there were enough navigation 

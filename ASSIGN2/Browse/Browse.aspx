@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
 
 
-<div class="row">
-    <div class="col-md-10 browsePanel">
+<div class="row rowCol">
+    <div class="col-md-9 browsePanel">
         <div class="well well-lg">
             <h1>Browse the Movies</h1>
             <asp:Label ID="lblGenre" runat="server" 
@@ -82,7 +82,7 @@
             <HeaderTemplate>
                 <div class="panel panel-default fixed" >
                     <div class="panel-heading">Select Genre<br /></div>
-                    <div class ="panel-body">
+                    <div class ="panel-body  fixedPanel">
             </HeaderTemplate>
             <%--ItemTemplate controls the content--%>
             <ItemTemplate>

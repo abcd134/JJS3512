@@ -345,3 +345,13 @@ James		Browse.aspx  March 21, 2015
 
 			Site.master.cs
 85-95				added postback filter/search state retention
+
+James		About.aspx		march 21, 2015
+24 & 142			added link to documentation
+27					deleted Joseph (sorry)
+200-315				Small things to line text up with the images
+
+			site.css
+					added fixedPanel class to provide Sonia a scroll bar
+			default.aspx
+122					deleted random dash
