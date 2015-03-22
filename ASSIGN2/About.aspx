@@ -12,19 +12,20 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <p>This site was designed by <b><A href="#dev1">Joseph Balabat</A></b>, <b><A href="#dev1">James Bergeron</A></b> and <b><A href="#dev1">Sonia Pitrola</A></b>
-            as part of the requirements for the Mount Royal University,
-            Bachelor of Computer Information Systems degree program.  The project
-            was submitted to Professor Randy Connolly in partial
-            fulfilment of the requirements for Comp 3512, Web II.</p>
+                <p>This hypothetical site was designed by <b><A href="#dev1">Joseph Balabat</A></b>, 
+                    <b><A href="#dev1">James Bergeron</A></b> and <b><A href="#dev1">Sonia Pitrola</A></b>
+                    as part of the requirements for the Mount Royal University,
+                    Bachelor of Computer Information Systems degree program.  The project
+                    was submitted to Professor Randy Connolly in partial
+                    fulfilment of the requirements for Comp 3512, Web II.</p>
 
-            <p>This page is divided into five main sections.  This introduction,
-            followed by a brief bio of each of the developers.  The third section is
-            a summary of the development efforts of each of the members.  The fourth 
-            section involves a more detailed <b><A href="#documentation1">documentation</A></b> of each of the web pages.
-            The final section contains the <b><A href="#citations1">list of citations</A></b> that reflect ideas/efforts
-            of other people/organizations that we chose to either emulate, access or
-            were just plain inspired by.</p>
+                <p>This page is divided into five main sections.  This introduction,
+                followed by a brief bio of each of the developers.  The third section is
+                a summary of the development efforts of each of the members.  The fourth 
+                section involves a more detailed <b><A href="#documentation1">documentation</A></b> of each of the web pages.
+                The final section contains the <b><A href="#citations1">list of citations</A></b> that reflect ideas/efforts
+                of other people/organizations that we chose to either emulate, access or
+                were just plain inspired by.</p>
             </div>
         </div>
         <span class="anchor" id="dev1"></span>

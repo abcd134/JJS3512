@@ -1,5 +1,9 @@
-﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="Browse" %>
+﻿<%@ Page Title="Browse" Language="C#" MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" CodeFile="Browse.aspx.cs" Inherits="Browse"
+    CODEPAGE = 65001 
+    %>
 <%@ MasterType VirtualPath="~/Site.master" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
 
 
