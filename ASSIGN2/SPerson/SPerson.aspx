@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <div class="col-md-12 rowCol">
+        <div class="col-md-12 spaceabove">
             <div class="col-md-5">
             <asp:Repeater ID="imageRepeater" runat="server">
                 <ItemTemplate>

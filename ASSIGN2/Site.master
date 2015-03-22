@@ -13,8 +13,8 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+     <link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bubblegun+Sans">
 </head>
 <body>
     <form runat="server">

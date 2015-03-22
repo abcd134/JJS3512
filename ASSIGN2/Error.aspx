@@ -2,12 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2><%: Title %>.</h2>
-
 <div class="row">
-    <div class="well col-md-10 col-md-offset-1">
+    <div class="well col-md-10 col-md-offset-1 rowCol">
         <div class="panel panel-danger">
-            <div class="panel-heading">Shocking we know, but Error, Error, Error!!</div>
             <div class="panel-body  innerWell">
                 <div class="row">
                     <div class="col-md-3">

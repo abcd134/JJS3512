@@ -58,14 +58,15 @@
             </div>
             
             <%--Start Movie Information--%>
-            <div class="col-md-7 rowCol">
+            <div class="col-md-7 spaceabove">
                 <%--This is the important information for a movie--%>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <%--The title and release date lable is being pulled in from the code-behind--%>
                         <asp:Label ID="txtTitle" runat="server" />
-                        (<asp:Label ID="txtReleaseDate" runat="server" />)</div>
+                    </div>
                     <div class="panel-body">
+                        <p><b>Release Date:</b> <asp:Label ID="txtReleaseDate" runat="server" /></p>
                         <p><b>Run Time:</b>
                             <%--This lable data is being pulled in from the code-behind--%>
                             <asp:Label ID="txtRunTime" runat="server" /></p>
@@ -134,6 +135,7 @@
     <%--This is start of a new main row--%>
     <div class="row">
         <div class="col-md-12">
+            <%--Start of Backdrops--%>
             <div class="panel panel-default panelResizing">
                 <div class="panel-heading">Backdrops</div>
                 <div class="panel-body">
@@ -175,6 +177,7 @@
 
     <div class="row">
         <div class="col-md-6">
+            <%--Start of cast panel--%>
             <div class="panel-group castResize" id="accordian" role="tablist">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
@@ -182,10 +185,12 @@
                     </div>
                     <div class="panel-body">
                         <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+                            <%--The data is being pulled from the repeater and binded in the behind code--%>
                             <asp:Repeater ID="rptCast" runat="server">
                                 <ItemTemplate>
                                     <ul class="list-group">
                                         <li class="list-group-item">
+                                            <%--The checkIMG(parma) is used to check if the image path is null or not--%>
                                             <img src="<%# checkIMG(Eval("pathcast")) %>" width="45px" alt="<%# Eval("name") %>" title="<%# Eval("name") %>" />
                                             <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>"><b><%# Eval("name") %></a>
                                             ...<%# Eval("role_name") %></b>
@@ -201,6 +206,7 @@
         </div>
 
         <div class="col-md-6">
+            <%--This is the start of crew panel--%>
             <div class="panel-group crewResize" id="accordian2" role="tablist">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
@@ -212,6 +218,7 @@
                                 <ItemTemplate>
                                     <ul class="list-group">
                                         <li class="list-group-item">
+                                            <%--The checkIMG(parma) is used to check if the image path is null or not--%>
                                             <img src="<%# checkIMG(Eval("path")) %>" width="45px" alt="<%# Eval("name") %>" title="<%# Eval("name") %>" />
                                             <a href="../SPerson/SPerson.aspx?id=<%# Eval("person_id") %>"><b><%# Eval("name") %></a>
                                             ...<%# Eval("department") %></b>
@@ -227,6 +234,7 @@
         </div>
     </div>
 
+    <%--this is the start of additional poster images--%>
     <div class="row">
         <div class="col-md-12">
             <div class="panel-group panelResizing" id="accordian3" role="tablist">

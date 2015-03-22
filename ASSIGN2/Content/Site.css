@@ -58,24 +58,8 @@ figure {
     padding: 1em;
 }
 
-.thumbnail {
-    margin-bottom: 0;
-}
-
 .fixed {
     position: fixed;
-}
-
-.genres{ position: fixed;
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        color:GhostWhite;  
-        background-color:gold;  
-        font-size:medium;  
-        font-style:italic; 
-        color: red;
-        text-align:center; 
 }
 
 .button {
@@ -99,20 +83,12 @@ figure {
     margin-right: 1em;
 }
 
-p {
-    text-indent: 0em;
-}
 
 .firstWord {font: bold;
             font-style:italic;
             font-size:larger;
             color:blueviolet;
 }
-
-/*.well {
-    background-color:#F5F5DC;
-}*/
-
 
 .pageImg {
     padding: .5em;
@@ -121,7 +97,6 @@ p {
     padding-right: 4em;
 }
 
-
 .title {
     font-size:small;
 }
@@ -129,23 +104,6 @@ p {
 figcaption {
     text-align:center;
 }
-/*
-    Following stying used on the error page
-    remove as desired.
-*/
-
-/*.well {
-    background-color:gold;
-
-}*/
-/*.innerWell {
-    background-color: lightgoldenrodyellow;
-}*/
-/*.panel-heading{
-    font-size:2em;
-    font-style:italic;
-    font-weight:800;
-}*/
 
 /*
     Circle buttons
@@ -167,7 +125,7 @@ figcaption {
     background: #99CCFF;
 }
 
-    .circle:hover {
+.circle:hover {
         border: 4px double #bbb;
         color: #aaa;
         text-decoration: none;
@@ -197,8 +155,7 @@ font-weight:800;
   visibility: hidden;
 }
 
-/*This style is used in the single movie page and it is used to move the top row down away from the nav bar*/
-.rowCol {margin-top:1.5%;}
+
 /*This style is used in the single page movie and it styles the backdrop and poster images in a flexible layout*/
 .display {display:flex; flex-wrap:wrap;}
 
@@ -228,7 +185,7 @@ font-weight:800;
 
 .default-links{
     color: white;
-    font-family: 'Roboto';
+    font-family: 'Bubblegum Sans', cursive;
 }
 /*This resizes the browse panel in the browse page*/
 .browsePanel {
@@ -237,6 +194,7 @@ font-weight:800;
 }
 
 /*adds a margin to the Default page*/
+/*This style is also used in the single movie page and it is used to move the top row down away from the nav bar*/
 .spaceabove{margin-top:1.5%;}
 
 /*This resizes the person image in the SMovie page*/

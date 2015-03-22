@@ -128,9 +128,10 @@
                 <li class="list-group-item"><a href="https://www.themoviedb.org/">The Movie Database (TMDb)</a></li>
                 <li class="list-group-item"><a href="http://pixelflips.com/blog/anchor-links-with-a-fixed-header">In Page Referencing Spacing Solution</a></li>
                 <li class="list-group-item"><a href="http://www.codeproject.com/Articles/333650/Beginner-s-Tutorial-on-Master-Pages-in-ASP-NET">Getting/Setting Master Page Content from a content page</a></li>
-                <li class="list-group-item"><a href="http://www.google.com/fonts">Google Fonts</a></li>
+                <li class="list-group-item"><a href="http://www.google.com/fonts">Google Fonts (Bubblegum and Philosopher)</a></li>
                 <li class="list-group-item">Jordan and Steve for Guidance</li>
                 <li class="list-group-item"><a href="http://www.uwplatt.edu/distance-education/student-advisory-board-ms-integrated-supply-chain-management">Image of an "Image Not Available"</a></li>
+                <li class="list-group-item"><a href="http://getbootstrap.com/">Bootstrap for customize and javascript</a></li>
             </ul>
                 </div>
             </div>
