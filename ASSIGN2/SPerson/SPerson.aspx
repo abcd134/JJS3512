@@ -15,7 +15,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
-                            <asp:Image ID="imgProfilePic2" runat="server" ImageUrl="~/images/Not_available.jpg" /> 
+                            <asp:Image ID="imgProfilePic2" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/> 
                         </div>
                     </div>
                 </div>

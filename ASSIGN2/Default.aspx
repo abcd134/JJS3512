@@ -20,20 +20,20 @@
                 <div class="item active">
                     <asp:Image ID="CarouselBackdrop1" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
-                        <h1><asp:HyperLink ID="CarouselInfo1" NavigateUrl="#" runat="server">Find your favorite movies here in BBP Movies</asp:HyperLink></h1>
+                        <h1><asp:HyperLink CssClass="carouselText" ID="CarouselInfo1" NavigateUrl="#" runat="server">Find your favorite movies here at BBP Movies</asp:HyperLink></h1>
                     </div>
                 </div>
 
                 <div class="item">
                     <asp:Image ID="CarouselBackdrop2" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
-                        <h1><asp:HyperLink ID="CarouselInfo2" NavigateUrl="#" runat="server">Find cool facts about your favorite artists here in BBP Movies</asp:HyperLink></h1>
+                        <h1><asp:HyperLink CssClass="carouselText" ID="CarouselInfo2" NavigateUrl="#" runat="server">Cool facts about your cast & crew for your favourite movies</asp:HyperLink></h1>
                     </div>
                 </div>
                 <div class="item">
                     <asp:Image ID="CarouselBackdrop3" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
-                        <h1><asp:HyperLink ID="CarouselInfo3" NavigateUrl="#" runat="server">Browse through thousands of movies in our Browse page</asp:HyperLink></h1>
+                        <h1><asp:HyperLink CssClass="carouselText" ID="CarouselInfo3" NavigateUrl="#" runat="server">Sift through thousands of movies using our Browse page</asp:HyperLink></h1>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2>Featured Movies</h2>
+                        <h2>Discover our top five featured movies</h2>
                         <ul class="list-inline">
                             <li>
                                 <asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1" Height="75px" Width="75px" /></li>
@@ -108,7 +108,7 @@
                 <HeaderTemplate>
                     <div class="row">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Featured Person</div>
+                            <div class="panel-heading">Featured Cast & Crew</div>
                             <div class="panel-body">
                 </HeaderTemplate>
                 <ItemTemplate>
