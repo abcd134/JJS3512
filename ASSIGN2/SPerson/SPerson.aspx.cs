@@ -40,9 +40,7 @@ public partial class SPerson : Page
             imageRepeater.DataSource = data.createDataTable(Constants.retrieveBio(id));
             imageRepeater.DataBind();
 
-            //Displays the Full Biography
-            BioRepeater.DataSource = data.createDataTable(Constants.retrieveBio(id));
-            BioRepeater.DataBind();
+            displayPersonBio(data, id);
 
             //Displays the movies the person participated in as an actor
 
@@ -59,5 +57,16 @@ public partial class SPerson : Page
         {
             
         }
+    }
+
+    protected void displayPersonBio(Adapter data, int id)
+    {
+        //Displays the Full Biography
+        DataTable tempData = data.createDataTable(Constants.retrieveBio(id));
+        lblPersonName.Text = tempData.Rows[0]["name"] as String;
+        lblBirthdate.Text = tempData.Rows[0]["birthday"] as String;
+        lblBio.Text = tempData.Rows[0]["biography"] as String;
+
+
     }
 }
