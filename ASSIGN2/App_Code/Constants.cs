@@ -8,9 +8,13 @@ using System.Web;
 /// </summary>
 public static class Constants
 {
+    public static string retriveAllPerson(int personID)
+    {
+        return "SELECT name, person_id, profile_path, birthday, deathday, birth_place FROM person WHERE person_id=" + personID;
+    }
     public static string retrieveBio(int personID) 
     {
-        return "SELECT * FROM person WHERE person_id=" + personID;
+        return "SELECT biography FROM person WHERE person_id=" + personID;
     }
 
     /// <summary>

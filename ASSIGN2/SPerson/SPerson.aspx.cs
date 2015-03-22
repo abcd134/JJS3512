@@ -36,11 +36,15 @@ public partial class SPerson : Page
             //Instantiate the Adaptor Class and set the query string
             Adapter data = new Adapter(WebConfigurationManager.ConnectionStrings["Movies"].ConnectionString);
 
-            //Displays the Birthplace and image
-            imageRepeater.DataSource = data.createDataTable(Constants.retrieveBio(id));
-            imageRepeater.DataBind();
+            
 
-            displayPersonBio(data, id);
+            displayPersonInfo(data, id);
+            if (data.createDataTable(Constants.retrieveBio(id)).Rows[0]["biography"].ToString() != "")
+            {
+                BioRepeater.DataSource = data.createDataTable(Constants.retrieveBio(id));
+            BioRepeater.DataBind();
+            }
+            
 
             //Displays the movies the person participated in as an actor
 
@@ -59,17 +63,21 @@ public partial class SPerson : Page
         }
     }
 
-    protected void displayPersonBio(Adapter data, int id)
+    protected void displayPersonInfo(Adapter data, int id)
     {
         //Displays the Full Biography
-        DataTable tempData = data.createDataTable(Constants.retrieveBio(id));
+        DataTable tempData = data.createDataTable(Constants.retriveAllPerson(id));
         lblPersonName.Text = tempData.Rows[0]["name"] as String;
         lblBirthdate.Text = tempData.Rows[0]["birthday"] as String;
         lblDeathdate.Text = tempData.Rows[0]["deathday"] as String;
         lblBirthPlace.Text = tempData.Rows[0]["birth_place"] as String;
-        lblBio.Text = tempData.Rows[0]["biography"] as String;
-        string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
-        imgProfilePic.ImageUrl = profilePic;
+        if ((tempData.Rows[0]["profile_path"] as String)!=null)
+        {
+            string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
+            imgProfilePic.ImageUrl = profilePic;
+
+        }
+        
          
     }
 }
