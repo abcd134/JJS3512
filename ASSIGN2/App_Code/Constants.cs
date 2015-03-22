@@ -10,7 +10,7 @@ public static class Constants
 {
     public static string retriveAllPerson(int personID)
     {
-        return "SELECT name, person_id, profile_path, birthday, deathday, birth_place FROM person WHERE person_id=" + personID;
+        return "SELECT name, person_id, profile_path, birthday, deathday, home_page, birth_place FROM person WHERE person_id=" + personID;
     }
     public static string retrieveBio(int personID) 
     {
