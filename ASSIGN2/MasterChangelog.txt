@@ -371,3 +371,16 @@ All lines			Comment and clean up
 
 			site.master.aspx
 16 - 17			change google font link
+
+James		site.master.cs		March 22, 2015
+78-81			method documentation
+89-90			documentation
+
+			Browse.aspx
+2-3				Character Set
+
+			About.aspx
+15				Added the word hypothetical
+
+			Browse.aspx.cs
+60-80 ish		Deleted Duplicate code being handled in Site.maste.cs

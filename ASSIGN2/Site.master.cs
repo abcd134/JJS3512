@@ -75,13 +75,19 @@ public partial class SiteMaster : MasterPage
         Context.GetOwinContext().Authentication.SignOut();
     }
 
-
+    /// <summary>
+    /// Method to pass search text box to the browse page
+    /// </summary>
+    /// <param name="sender">Object being sent</param>
+    /// <param name="e">The event</param>
     protected void SearchButton_Click(object sender, EventArgs e)
     {
         string link = "";
         if (SearchBox.Text != null)
         {
             link = "~/Browse/Browse.aspx?search=" + SearchBox.Text;
+
+            // Creating query string on post back to maintain search/filter cohesion
             if (Request.QueryString["genre"] != null)
             {
                 if (Request.QueryString["genreType"] != null)
