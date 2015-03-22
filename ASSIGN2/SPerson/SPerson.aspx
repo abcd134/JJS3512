@@ -17,9 +17,9 @@
 
                     </div>
                     <div class="panel-body">
-                        <asp:Label ID="lblBirthPlace" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblBirthdate" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblDeathdate" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lblBirthPlace" runat="server" ></asp:Label>
+                        <asp:Label ID="lblBirthdate" runat="server" ></asp:Label>
+                        <asp:Label ID="lblDeathdate" runat="server" ></asp:Label>
                     </div>
                 </div>
 

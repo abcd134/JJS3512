@@ -3,9 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%--Begin Carousel --%>
-       <span class="anchorDefault"></span>
-    <div class="container ">
-        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+ 
+  
+        <div class="col-md-12">
             <asp:Repeater ID="CarouselRepeater" runat="server">
             <HeaderTemplate>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -54,7 +54,7 @@
         </asp:Repeater> 
         </div>
         
-    </div>
+  
 
     <%--End of the carousel--%>
 

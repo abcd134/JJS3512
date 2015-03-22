@@ -36,15 +36,15 @@ public partial class SPerson : Page
             //Instantiate the Adaptor Class and set the query string
             Adapter data = new Adapter(WebConfigurationManager.ConnectionStrings["Movies"].ConnectionString);
 
-            
+
 
             displayPersonInfo(data, id);
             if (data.createDataTable(Constants.retrieveBio(id)).Rows[0]["biography"].ToString() != "")
             {
                 BioRepeater.DataSource = data.createDataTable(Constants.retrieveBio(id));
-            BioRepeater.DataBind();
+                BioRepeater.DataBind();
             }
-            
+
 
             //Displays the movies the person participated in as an actor
 
@@ -59,7 +59,7 @@ public partial class SPerson : Page
         }
         catch (Exception e)
         {
-            
+
         }
     }
 
@@ -68,16 +68,35 @@ public partial class SPerson : Page
         //Displays the Full Biography
         DataTable tempData = data.createDataTable(Constants.retriveAllPerson(id));
         lblPersonName.Text = tempData.Rows[0]["name"] as String;
-        lblBirthdate.Text = tempData.Rows[0]["birthday"] as String;
-        lblDeathdate.Text = tempData.Rows[0]["deathday"] as String;
-        lblBirthPlace.Text = tempData.Rows[0]["birth_place"] as String;
-        if ((tempData.Rows[0]["profile_path"] as String)!=null)
+        string bday = tempData.Rows[0]["birthday"] as String;
+        string dday = tempData.Rows[0]["deathday"] as String;
+
+        if (checkData(bday))
+        {
+            lblBirthdate.Text = "Birth Date: " + bday;
+        }
+
+        if (checkData(dday))
+        {
+            lblDeathdate.Text = "Death Death: " + dday;
+        }
+
+        if ((tempData.Rows[0]["profile_path"] as String) != null)
         {
             string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
             imgProfilePic.ImageUrl = profilePic;
 
         }
-        
-         
+
+
+    }
+
+    protected bool checkData(string x)
+    {
+        if (x == null || x == "")
+        {
+            return false;
+        }
+        return true;
     }
 }
