@@ -35,8 +35,8 @@ public partial class SMovie : Page
             txtOverview.Text = (string)dt.Rows[0]["overview"];
             txtIMDB.Text = "http://www.imdb.com/title/" + dt.Rows[0]["imdb_id"];
             linkIMDB.HRef = "http://www.imdb.com/title/" + dt.Rows[0]["imdb_id"];
-            txtBudget.Text = String.Format("{0:c}",dt.Rows[0]["budget"]).ToString();
-            txtRevenue.Text = String.Format("{0:c}",dt.Rows[0]["revenue"]).ToString();
+            txtBudget.Text = checkValues(dt, "budget");
+            txtRevenue.Text = checkValues(dt, "revenue");
             txtAverage.Text = Convert.ToDecimal(dt.Rows[0]["vote_average"]).ToString();
             txtVoteCount.Text = Convert.ToDecimal(dt.Rows[0]["vote_count"]).ToString();
             imgPoster.ImageUrl = "http://image.tmdb.org/t/p/w500"+dt.Rows[0]["poster_path"];
@@ -133,6 +133,28 @@ public partial class SMovie : Page
         else
         {
             output = "http://image.tmdb.org/t/p/w154/"+path;
+        }
+        return output;
+    }
+
+    /// <summary>
+    /// This functions checks to see if the currency is 0 and if it is it will return N/A
+    /// else return the currency in string format 
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    protected string checkValues(DataTable dt, string name)
+    {
+        string output = "";
+        decimal value = (decimal)dt.Rows[0][name];
+        if (value.Equals(0))
+        {
+            output = "N/A";
+        }
+        else
+        {
+            output = String.Format("{0:c}", dt.Rows[0][name]).ToString();
         }
         return output;
     }
