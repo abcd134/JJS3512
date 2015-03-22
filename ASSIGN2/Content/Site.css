@@ -113,9 +113,6 @@ p {
     background-color:#F5F5DC;
 }*/
 
-.innerWell {
-    background-color: lightgoldenrodyellow;
-}
 
 .pageImg {
     padding: .5em;
@@ -124,12 +121,6 @@ p {
     padding-right: 4em;
 }
 
-.panel-heading{
-    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size:large;*/
-        /*Google Font*/
-    /*font-family: 'Special Elite', cursive;*/
-}
 
 .title {
     font-size:small;
@@ -211,11 +202,13 @@ font-weight:800;
 /*This style is used in the single page movie and it styles the backdrop and poster images in a flexible layout*/
 .display {display:flex; flex-wrap:wrap;}
 
+/*This resizes the panel that have full page width in SMovie and SPerson*/
 .panelResizing{
     margin-left:3%;
     margin-right:3%;
 }
 
+/*This resizes the image in */
 .imageResize {
     margin-right:-2%;
 }
