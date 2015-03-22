@@ -3,7 +3,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(../images/movie_page.png);
-    background-size: contain;
+    background-size: 100%;
     background-repeat:repeat-y;
 }
 
@@ -238,3 +238,16 @@ font-weight:800;
 }
 
 .spaceabove{margin-top:1.5%;}
+
+.personImage {
+    margin-left:6%;
+}
+
+.personPanel{
+    margin-left:-3%;
+}
+
+.personBorn{
+    text-align:center;
+    margin-left:8%;
+}
