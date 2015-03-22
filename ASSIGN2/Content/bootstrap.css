@@ -348,7 +348,7 @@ a {
 a:hover,
 a:focus {
   color: #800000;
-  text-decoration: underline;
+  background-color: #E5E4E2;
 }
 
 a:focus {
@@ -5711,7 +5711,7 @@ body.modal-open,
 
 .modal-body {
   position: relative;
-  padding: 20px;
+  padding: 32px;
 }
 
 .modal-footer {

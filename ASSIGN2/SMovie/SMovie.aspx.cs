@@ -61,7 +61,7 @@ public partial class SMovie : Page
             
           
            //this is sql statement gets all the movie details where it equals the querystring movie id 
-           string sql = "SELECT * FROM movie as a";
+           string sql = "SELECT movie_id, imdb_id, title, overview, poster_path, backdrop_path, release_date, revenue, budget, runtime, tagline, vote_average, vote_count FROM movie as a";
            sql += " WHERE a.movie_id=" + movieID;
 
             //connect to the adapter and pass in the sql and connection string

@@ -49,7 +49,7 @@ public static class Constants
     /// <returns></returns>
     public static string retrievePosterImages(int movieID)
     {
-        return "SELECT movie_image.is_poster, movie_image.file_path FROM (movie INNER JOIN movie_image"+ 
+        return "SELECT movie_image.is_poster, movie_image.file_path, movie_image.movie_image_id FROM (movie INNER JOIN movie_image"+ 
         " ON movie.movie_id = movie_image.movie_id) WHERE (movie.movie_id = " + movieID + ") AND (movie_image.is_poster = 1)";
     }
 
