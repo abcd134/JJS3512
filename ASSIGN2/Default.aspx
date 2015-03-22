@@ -3,59 +3,55 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%--Begin Carousel --%>
- 
-  
-        <div class="col-md-12">
-            <asp:Repeater ID="CarouselRepeater" runat="server">
-            <HeaderTemplate>
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-            </HeaderTemplate>
 
-            <ItemTemplate>
-                <div class="item">
-                    <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
-                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("backdrop_path")%>" alt="Movie 2" width="1200" height="690">
-                    <div style="position: absolute; top: 530px; left: 40px;">
-                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %> </a></h1>
-                    </div>
-                </div>
-            </ItemTemplate>
 
-            <AlternatingItemTemplate>
+    <div class="col-md-12">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
                 <div class="item active">
-                     <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
-                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("backdrop_path")%>" alt="Movie 2"width="1200" height="690">
+                    <asp:Image ID="CarouselBackdrop1" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
-                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %></a></h1>
+                        <h1><asp:HyperLink ID="CarouselInfo1" NavigateUrl="#" runat="server">Find your favorite movies here in BBP Movies</asp:HyperLink></h1>
                     </div>
                 </div>
-            </AlternatingItemTemplate>
 
-            <FooterTemplate>
+                <div class="item">
+                    <asp:Image ID="CarouselBackdrop2" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
+                    <div style="position: absolute; top: 530px; left: 40px;">
+                        <h1><asp:HyperLink ID="CarouselInfo2" NavigateUrl="#" runat="server">Find cool facts about your favorite artists here in BBP Movies</asp:HyperLink></h1>
+                    </div>
                 </div>
+                <div class="item">
+                    <asp:Image ID="CarouselBackdrop3" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
+                    <div style="position: absolute; top: 530px; left: 40px;">
+                        <h1><asp:HyperLink ID="CarouselInfo3" NavigateUrl="#" runat="server">Browse through thousands of movies in our Browse page</asp:HyperLink></h1>
+                    </div>
+                </div>
+
+            </div>
             <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                </div>
-            </FooterTemplate>
-        </asp:Repeater> 
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        
-  
+
+    </div>
+
+
 
     <%--End of the carousel--%>
 
@@ -73,11 +69,16 @@
                     <div class="panel-heading">
                         <h2>Featured Movies</h2>
                         <ul class="list-inline">
-                            <li><asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1" Height="75px" Width="75px"/></li>
-                            <li><asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" OnClick="FeaturedButton2_Click" Text="2" Height="75px" Width="75px"/></li>
-                            <li><asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" OnClick="FeaturedButton3_Click" Text="3" Height="75px" Width="75px"/></li>
-                            <li><asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" OnClick="FeaturedButton4_Click" Text="4" Height="75px" Width="75px"/></li>
-                            <li><asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" OnClick="FeaturedButton5_Click" Text="5" Height="75px" Width="75px"/></li>
+                            <li>
+                                <asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1" Height="75px" Width="75px" /></li>
+                            <li>
+                                <asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" OnClick="FeaturedButton2_Click" Text="2" Height="75px" Width="75px" /></li>
+                            <li>
+                                <asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" OnClick="FeaturedButton3_Click" Text="3" Height="75px" Width="75px" /></li>
+                            <li>
+                                <asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" OnClick="FeaturedButton4_Click" Text="4" Height="75px" Width="75px" /></li>
+                            <li>
+                                <asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" OnClick="FeaturedButton5_Click" Text="5" Height="75px" Width="75px" /></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -120,12 +121,12 @@
                         </div>
                         <div class="row">
                             <h1><a href="../SPerson/SPerson.aspx?id=<%#Eval("person_id") %>"><%# Eval("name") %></a></h1>
-                            <p> <%# Eval("birthday") %></p>
+                            <p><%# Eval("birthday") %></p>
                         </div>
                     </div>
                 </ItemTemplate>
                 <FooterTemplate>
-                            </div>
+                    </div>
                         </div>
                     </div>
                 </FooterTemplate>
