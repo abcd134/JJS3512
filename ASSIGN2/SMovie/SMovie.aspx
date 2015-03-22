@@ -143,7 +143,7 @@
 
 
 
-            <%--I NEED HELP WITH THIS MODAL....AAAAHHHHH STARTS HERE--%>
+            <%--Modal and Backdrop STARTS HERE--%>
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
                                 <div class="col-md-3">
@@ -166,7 +166,7 @@
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-               <%--I NEED HELP WITH THIS MODAL....AAAAHHHHH ENDS HERE--%>
+               <%--Modal and Backdrop ENDS HERE--%>
 
 
                     </div>

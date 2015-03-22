@@ -60,9 +60,9 @@ public partial class SPerson : Page
             CrewRepeater.DataSource = data.createDataTable(Constants.retrieveCrew(id));
             CrewRepeater.DataBind();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-
+            Response.Redirect("../Error.aspx?error=" + Convert.ToString(ex.Message));
         }
     }
 

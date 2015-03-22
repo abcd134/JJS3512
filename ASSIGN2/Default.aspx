@@ -18,20 +18,20 @@
             <div class="carousel-inner" role="listbox">
 
                 <div class="item active">
-                    <asp:Image ID="CarouselBackdrop1" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
+                    <asp:Image ID="CarouselBackdrop1" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
                         <h1><asp:HyperLink ID="CarouselInfo1" NavigateUrl="#" runat="server">Find your favorite movies here in BBP Movies</asp:HyperLink></h1>
                     </div>
                 </div>
 
                 <div class="item">
-                    <asp:Image ID="CarouselBackdrop2" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
+                    <asp:Image ID="CarouselBackdrop2" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
                         <h1><asp:HyperLink ID="CarouselInfo2" NavigateUrl="#" runat="server">Find cool facts about your favorite artists here in BBP Movies</asp:HyperLink></h1>
                     </div>
                 </div>
                 <div class="item">
-                    <asp:Image ID="CarouselBackdrop3" ImageUrl="http://image.tmdb.org/t/p/w1920/zFkSKrhbEVlPYnWo4gSsiO0FdEq.jpg" runat ="server" />
+                    <asp:Image ID="CarouselBackdrop3" runat ="server" />
                     <div style="position: absolute; top: 530px; left: 40px;">
                         <h1><asp:HyperLink ID="CarouselInfo3" NavigateUrl="#" runat="server">Browse through thousands of movies in our Browse page</asp:HyperLink></h1>
                     </div>
