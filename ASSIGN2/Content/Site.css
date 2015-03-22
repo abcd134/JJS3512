@@ -72,7 +72,7 @@ figure {
         overflow-y: scroll;
     }
 
-.font{color:white;}
+.font{color:black; font-weight:bold;}
 /*
     The following CSS impacts the About page
     remove as desired.

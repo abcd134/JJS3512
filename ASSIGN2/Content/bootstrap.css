@@ -75,7 +75,7 @@ h1 {
   font-size: 2em;
  /*Custome CSS*/
 font-family: 'Philosopher', sans-serif;
-  color: #fff;
+  color: #000;
   font-style:italic;
   font-weight:800;
 }
@@ -340,13 +340,13 @@ textarea {
 }
 
 a {
-  color: #2CA4E6;
+  color: #800000;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #2CA4E6;
+  color: #800000;
   text-decoration: underline;
 }
 
@@ -5450,8 +5450,8 @@ a.list-group-item:focus {
 }
 
     .panel-default > .panel-heading {
-        color: #fff;
-        background-color:#614051;
+        color: #000;
+        background-color:#F88017;
         border-color: #dddddd;
         /*Custome CSS*/
         font-size: 2em;
@@ -5562,7 +5562,7 @@ a.list-group-item:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #614051;
+  background-color: #F88017;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
