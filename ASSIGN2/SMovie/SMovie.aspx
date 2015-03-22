@@ -147,23 +147,23 @@
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
                                 <div class="col-md-3">
-                                    <a href="http://image.tmdb.org/t/p/w500<%# Eval("file_path") %>" class="thumbnail" data-toggle="modal" data-target="#myModal2">
+                                    <a href="http://image.tmdb.org/t/p/w500<%# Eval("file_path") %>" class="thumbnail" data-toggle="modal" data-target="#myModal<%# Eval ("movie_image_id") %>">
                                         <img src="http://image.tmdb.org/t/p/w300<%# Eval("file_path") %>" alt="" />
                                     </a>
 
-                                 </div>
-               <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="backDropModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                                 <img src="http://image.tmdb.org/t/p/w500<%# Eval("file_path") %>" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                </div>
+                                <div class="modal fade" id="myModal<%# Eval ("movie_image_id") %>" tabindex="-1" role="dialog" aria-labelledby="backDropModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="http://image.tmdb.org/t/p/w500<%# Eval("file_path") %>" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
                <%--I NEED HELP WITH THIS MODAL....AAAAHHHHH ENDS HERE--%>
