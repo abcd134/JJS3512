@@ -5,13 +5,8 @@
     <div class="row">
         <div class="col-md-12 rowCol">
             <div class="col-md-5">
-            <asp:Repeater ID="imageRepeater" runat="server">
-                <ItemTemplate>
                     <div class="row personImage">
-                        <img src="http://image.tmdb.org/t/p/w300/<%#Eval("profile_path")%>"
-                            title="<%# Eval("name") %> "
-                            alt="<%# Eval("name") %>"
-                            class="thumbnail img-responsive" />
+                        <asp:Image ID="imgProfilePic" runat="server" />
                     </div>
                     <div class="row">
                         <div class="col-md-8 personBorn">
@@ -22,20 +17,16 @@
                         </div>
                     </div>
                         </div>
-                </ItemTemplate>
-            </asp:Repeater>
         </div>
 
             <div class="col-md-7 personPanel">
-   
-                     
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <asp:Label ID="lblPersonName" runat="server" Text="Label"></asp:Label>
 
                             </div>
                             <div class="panel-body">
-                                <p>Birthdate <%#Eval("birthday") %></p>
+                                <asp:Label ID="lblBirthPlace" runat="server" Text="Label"></asp:Label>
                                 <asp:Label ID="lblBirthdate" runat="server" Text="Label"></asp:Label>
                                 <asp:Label ID="lblDeathdate" runat="server" Text="Label"></asp:Label>
                             </div>
@@ -48,7 +39,6 @@
                             <div class="panel-heading">Biography</div>
                             <div class="panel-body">
                                 <asp:Label ID="lblBio" runat="server" Text="Label"></asp:Label>
-                                <%#Eval("biography") %>
                             </div>
                         </div>
                     

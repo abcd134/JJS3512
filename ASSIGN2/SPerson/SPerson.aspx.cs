@@ -65,8 +65,11 @@ public partial class SPerson : Page
         DataTable tempData = data.createDataTable(Constants.retrieveBio(id));
         lblPersonName.Text = tempData.Rows[0]["name"] as String;
         lblBirthdate.Text = tempData.Rows[0]["birthday"] as String;
+        lblDeathdate.Text = tempData.Rows[0]["deathday"] as String;
+        lblBirthPlace.Text = tempData.Rows[0]["birth_place"] as String;
         lblBio.Text = tempData.Rows[0]["biography"] as String;
-
-
+        string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
+        imgProfilePic.ImageUrl = profilePic;
+         
     }
 }
