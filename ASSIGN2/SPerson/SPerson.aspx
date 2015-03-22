@@ -6,7 +6,20 @@
         <div class="col-md-12 spaceabove">
             <div class="col-md-5">
                 <div class="row personImage">
-                    <asp:Image ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" Height="400" Width="300"/>
+                    <a href="#" data-toggle="modal" data-target="#myModal">
+                    <asp:Image class="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" />
+                    </a>
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content personModal">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <asp:Image ID="imgProfilePic2" runat="server" ImageUrl="~/images/Not_available.jpg" /> 
+                        </div>
+                    </div>
+                </div>
+
                 </div>
             </div>
 

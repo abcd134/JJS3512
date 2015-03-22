@@ -99,7 +99,7 @@ public partial class SPerson : Page
         {
             string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
             imgProfilePic.ImageUrl = profilePic;
-
+            imgProfilePic2.ImageUrl = profilePic;
         }
 
 

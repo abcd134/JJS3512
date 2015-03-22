@@ -342,6 +342,7 @@ textarea {
 a {
   color: #800000;
   text-decoration: none;
+  font-weight:bold;
 }
 
 a:hover,
@@ -2096,9 +2097,11 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  color: #000;
+  background-color: #F88017;
+  border-color: #F88017;
+  margin-left:5%;
+  font-weight:bold;
 }
 
 .btn-primary:hover,
@@ -2106,9 +2109,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  color: #000;
+  background-color:#BCC6CC;
+  border-color: #F88017;
 }
 
 .btn-primary:active,
@@ -5541,7 +5544,7 @@ a.list-group-item:focus {
 }
 
 .panel-info {
-  
+  width:90%;
 }
 
 .panel-info > .panel-heading {
