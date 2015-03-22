@@ -18,6 +18,7 @@
 </head>
 <body>
     <form runat="server">
+        <!-- Connect Database -->
         <asp:SqlDataSource ID="NowShowingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie ORDER BY release_date DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopRatingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY vote_average DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopGrossingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY revenue DESC"></asp:SqlDataSource>
@@ -44,7 +45,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        <!-- Nav Bar first layer -->
         <div class="navbar navbar-blue navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -64,12 +65,14 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Nav Bar second layer -->
                 <div class="navbar-collapse collapse default-links">
                     <ul class="nav navbar-nav">
                         <li><a class="default-links" runat="server" href="~/">Home</a></li>
                         <li><a class="default-links" runat="server" href="~/About">About</a></li>
                         <li><a class="default-links" runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
                         <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
+                            <!-- Movies sub panel -->
                             <div class="dropdown-menu dropdown-adjust" role="menu">
                                 <div class="col-xs-4 subnav">
                                     <h3>Now Playing</h3>
@@ -103,7 +106,7 @@
                                 </div>
                             </div>
                         </li>
-
+                        <!-- Genre subpanel -->
                         <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust-genre" role="menu">
                                 <div class="col-md-12 subnav">
@@ -138,6 +141,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+            <!-- Footer -->
             <footer>
                 <br />
                 <br />

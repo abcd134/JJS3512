@@ -384,3 +384,26 @@ James		site.master.cs		March 22, 2015
 
 			Browse.aspx.cs
 60-80 ish		Deleted Duplicate code being handled in Site.maste.cs
+
+
+Joseph		Site.master			March 22, 2015
+ALL			Added Documentation
+
+			SMovie.aspx
+150,155		Fixed a bug where clicking a picture redirects your to the first modal
+
+			SPerson.aspx
+22-66		Revamped Sperson page 
+71-96		Added a functionality where if data is not available the information does not show
+
+			Default.aspx
+10-38		Removed REpeater and revamped Carousel
+
+			Default.aspx.cs
+71-92		Added data source for carousel
+
+			Constants.cs
+142-145		Add a SQL line for carousel
+
+Sonia		*** ALL PAGES Site.css, bootstrap.css
+			Revamp of all page designs
