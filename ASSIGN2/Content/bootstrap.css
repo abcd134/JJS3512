@@ -150,6 +150,7 @@ svg:not(:root) {
 
 figure {
   margin: 0;
+  padding: 1em;
 }
 
 fieldset {
@@ -321,6 +322,11 @@ body {
   line-height: 1.428571429;
   color: #000;
   background-color: #ffffff;
+      padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url(../images/movie_page.png);
+    background-size: 100%;
+    background-repeat:repeat-y;
 }
 
 input,
@@ -4193,6 +4199,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top {
   top: 0;
   z-index: 1030;
+  background-color:#2C3539;
 }
 
 .navbar-fixed-bottom {
@@ -6021,6 +6028,7 @@ body.modal-open,
 
 .carousel {
   position: relative;
+  width:100%;
 }
 
 .carousel-inner {

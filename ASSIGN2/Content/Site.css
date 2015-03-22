@@ -1,11 +1,4 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-image: url(../images/movie_page.png);
-    background-size: 100%;
-    background-repeat:repeat-y;
-}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -49,13 +42,6 @@ textarea {
 
 .center{
     text-align: center;
-}
-
-/* the following CSS impacts the Browse Page
-   remove as desired.
-*/     
-figure {
-    padding: 1em;
 }
 
 .fixed {
@@ -102,10 +88,6 @@ figure {
     font-size:small;
 }
 
-figcaption {
-    text-align:center;
-}
-
 /*
     Circle buttons
     Source: http://bryanhadaway.com/how-to-create-circles-with-css/
@@ -118,19 +100,19 @@ figcaption {
     border-radius: 66px;
     border: 4px double #ccc;
     font-size: 20px;
-    color: #fff;
+    color: #000;
     line-height: 75px;
     text-align: center;
     text-decoration: none;
     text-shadow: 0 1px 0 #fff;
-    background: #99CCFF;
+    background: #E5E4E2;
 }
 
 .circle:hover {
         border: 4px double #bbb;
-        color: #aaa;
+        color: #800000;
         text-decoration: none;
-        background: #fff;
+        background: #E5E4E2;
     }
 
 /*Browse movie title h1 style*/
@@ -164,6 +146,7 @@ font-weight:800;
 .panelResizing{
     margin-left:3%;
     margin-right:3%;
+    margin-top:1%;
 }
 
 /*This resizes the poster image in the SMovie page*/
@@ -178,10 +161,6 @@ font-weight:800;
 /*This resizes the margins for the crew panel in SMovie*/
 .crewResize{
     margin-right:6%;
-}
-
-.navbar-blue{
-    background-color:#2C3539;
 }
 
 .default-links{
@@ -211,11 +190,6 @@ font-weight:800;
 .personBorn{
     text-align:center;
     margin-left:8%;
-}
-
-.Carousel{
-    width: 100%;
-
 }
 
 .personModal{width:52%;}

@@ -7,7 +7,7 @@
             <div class="col-md-5">
                 <div class="row personImage">
                     <a href="#" data-toggle="modal" data-target="#myModal">
-                    <asp:Image class="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" />
+                    <asp:Image class="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/>
                     </a>
                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
                     <div class="modal-dialog">
