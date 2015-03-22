@@ -36,7 +36,10 @@ public partial class SPerson : Page
             //Instantiate the Adaptor Class and set the query string
             Adapter data = new Adapter(WebConfigurationManager.ConnectionStrings["Movies"].ConnectionString);
 
-
+            DataTable dt = data.createDataTable(Constants.retriveAllPerson(id));
+            int rowCount = dt.Rows.Count;
+            //if the rowcount is zero go to error page
+            if (rowCount == 0) { Response.Redirect("../Error.aspx"); }
 
             displayPersonInfo(data, id);
             if (data.createDataTable(Constants.retrieveBio(id)).Rows[0]["biography"].ToString() != "")

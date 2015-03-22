@@ -23,15 +23,18 @@ public static class Constants
     /// <param name="personId"></param>
     /// <returns>List of movies</returns>
     public static string retrieveMoviesByPersonID(int personId)
-    {
-        return "SELECT movie.movie_id, movie.title, movie_cast.role_name FROM ((movie INNER JOIN movie_cast ON movie.movie_id = movie_cast.movie_id) INNER JOIN " +
-            "person ON movie_cast.person_id = person.person_id) WHERE (person.person_id = " + personId + ") GROUP BY movie.movie_id, movie.title, movie_cast.role_name";
+    {           
+        return "SELECT movie.movie_id, movie.title, movie_cast.role_name FROM ((movie INNER JOIN movie_cast ON movie.movie_id = movie_cast.movie_id) INNER JOIN person ON movie_cast.person_id = person.person_id) " +
+" WHERE (person.person_id = "+ personId +") ORDER BY movie.release_date DESC";
     }
 
     public static string retrieveCrew(int personId)
     {
-        return "SELECT movie.movie_id, movie.title, movie_crew.department, movie_crew.job FROM ((movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id AND movie.title = movie_crew.department) " +
-            "INNER JOIN person ON movie_crew.person_id = person.person_id) WHERE (movie_crew.person_id = " + personId + ") GROUP BY movie.movie_id, movie.title, movie_crew.department, movie_crew.job";
+        //return "SELECT movie.movie_id, movie.title, movie_crew.department, movie_crew.job FROM ((movie INNER JOIN movie_crew ON movie.movie_id = movie_crew.movie_id AND movie.title = movie_crew.department) " +
+          //  "INNER JOIN person ON movie_crew.person_id = person.person_id) WHERE (movie_crew.person_id = " + personId + ") GROUP BY movie.movie_id, movie.title, movie_crew.department, movie_crew.job";
+        return " SELECT        movie_crew.movie_id, movie_crew.department, movie_crew.job, movie.title FROM (movie_crew INNER JOIN movie ON movie_crew.movie_id = movie.movie_id) " +
+        "WHERE (movie_crew.person_id = 1377) ORDER BY movie.release_date DESC";
+
     }
 
     public static string retrieveMoviesByMovieID(int movieId)

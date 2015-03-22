@@ -74,7 +74,7 @@
                             <div class="panel-body">
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Crew as <%# Eval("job") %> in <%# Eval("title") %>></a></p>
+                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Crew as <%# Eval("job") %> in <%# Eval("title") %></a></p>
                 </ItemTemplate>
                 <FooterTemplate>
                     </div>
