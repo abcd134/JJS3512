@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <div class="col-md-12 rowCol">
+        <div class="col-md-12 spaceabove">
             <div class="col-md-5">
                 <div class="row personImage">
                     <asp:Image ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" Height="400" Width="300"/>

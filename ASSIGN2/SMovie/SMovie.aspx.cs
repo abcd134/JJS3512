@@ -13,6 +13,7 @@ public partial class SMovie : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //if not postback then display the single movie
         if(!IsPostBack)
         {
             DisplayMovie();

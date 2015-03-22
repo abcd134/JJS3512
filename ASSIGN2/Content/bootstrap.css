@@ -74,7 +74,7 @@ h1 {
   margin: 0.67em 0;
   font-size: 2em;
  /*Custome CSS*/
-   font-family: 'Special Elite', cursive;
+font-family: 'Philosopher', sans-serif;
   color: #fff;
   font-style:italic;
   font-weight:800;
@@ -4979,6 +4979,7 @@ a.list-group-item.active > .badge,
   line-height: 1.428571429;
   background-color: #ffffff;
   border: 1px solid #dddddd;
+  margin-bottom: 0;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
@@ -5448,16 +5449,16 @@ a.list-group-item:focus {
   border-color: #EBEBD2;
 }
 
-.panel-default > .panel-heading {
-  color: #fff;
-  background-color: #151B8D;
-  border-color: #dddddd;
-  /*Custome CSS*/
-      font-size:2em;
-    font-style:italic;
-    font-weight:800;
-      font-family: 'Special Elite', cursive;
-}
+    .panel-default > .panel-heading {
+        color: #fff;
+        background-color: #151B8D;
+        border-color: #dddddd;
+        /*Custome CSS*/
+        font-size: 2em;
+        font-style: italic;
+        font-weight: 800;
+        font-family: 'Philosopher', sans-serif;
+    }
 
 .panel-default > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #dddddd;
