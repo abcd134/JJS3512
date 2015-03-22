@@ -97,6 +97,10 @@ public partial class SiteMaster : MasterPage
         }
 
     }
+    /// <summary>
+    /// Method to Get and Set the SearchBox.Text
+    /// Used to help maintain state
+    /// </summary>
     public string SearchBx
     {
         get

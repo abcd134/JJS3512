@@ -59,23 +59,6 @@ public partial class Browse : Page
                 Response.Redirect("../Error.aspx?error=" + Convert.ToString(ex.Message)); 
             }
         }
-        else
-        {
-            genreID = -1;
-            if (Request.QueryString["genre"] != null)
-            {
-                if (Request.QueryString["genreType"] != null)
-                {
-                    genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                    lblGenre.Text = "Filtering on: " + Request.QueryString["genreType"] + " and " + Master.SearchBx;
-                }
-                else
-                {
-                    Response.Redirect("../Error.aspx?error=Invalid Post Back String sent to Browse Page");
-                }
-            }
-            PerformDataBinding(Master.SearchBx, genreID);
-        }
     }
     /// <summary>
     /// PerformDataBinding
