@@ -208,15 +208,16 @@ font-weight:800;
     margin-right:3%;
 }
 
-/*This resizes the image in */
+/*This resizes the poster image in the SMovie page*/
 .imageResize {
     margin-right:-2%;
 }
 
+/*This resizes the margins for the cast panel in SMovie*/
 .castResize{
     margin-left:6%;
 }
-
+/*This resizes the margins for the crew panel in SMovie*/
 .crewResize{
     margin-right:6%;
 }
@@ -229,22 +230,25 @@ font-weight:800;
     color: white;
     font-family: 'Roboto';
 }
-
+/*This resizes the browse panel in the browse page*/
 .browsePanel {
     margin-left:2%;
     margin-right:0%;
 }
 
+/*adds a margin to the Default page*/
 .spaceabove{margin-top:1.5%;}
 
+/*This resizes the person image in the SMovie page*/
 .personImage {
     margin-left:6%;
 }
-
+/*This resizes the margins for the person important panel information in SPerson*/
 .personPanel{
     margin-left:-3%;
 }
 
+/*This resizes the margins and aligns the text for the panel located under the person image*/
 .personBorn{
     text-align:center;
     margin-left:8%;
