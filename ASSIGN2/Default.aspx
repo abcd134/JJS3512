@@ -22,18 +22,19 @@
             <ItemTemplate>
                 <div class="item">
                     <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
-                    <img src="images/KRDefault.jpg" alt="Movie 2" width="1200" height="690">
-                    <div style="position: absolute; top: 430px; left: 40px;">
-                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %></a></h1>
+                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("backdrop_path")%>" alt="Movie 2" width="1200" height="690">
+                    <div style="position: absolute; top: 530px; left: 40px;">
+                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %> </a></h1>
                     </div>
                 </div>
             </ItemTemplate>
 
             <AlternatingItemTemplate>
                 <div class="item active">
-                    <img src="images/HobbitDefault.jpg" alt="Movie 1" width="1200" height="690">
-                    <div style="position: absolute; top: 430px; left: 40px;">
-                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>"> Top Grosser: <%# Eval("title") %></a></h1>
+                     <%--Reference : http://www.desktopwallpapers4.me/male-celebrities/keanu-reeves-7133/ --%>
+                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("backdrop_path")%>" alt="Movie 2"width="1200" height="690">
+                    <div style="position: absolute; top: 530px; left: 40px;">
+                        <h1><a href="SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>>"> Top Grosser: <%# Eval("title") %></a></h1>
                     </div>
                 </div>
             </AlternatingItemTemplate>

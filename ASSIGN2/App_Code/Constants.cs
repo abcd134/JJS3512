@@ -138,6 +138,6 @@ public static class Constants
 
     public static string retrieveFeaturedMovies()
     {
-        return "SELECT TOP 3 movie_id, title FROM movie ORDER BY revenue DESC";
+        return "SELECT TOP 3 movie_id, title, backdrop_path FROM movie ORDER BY revenue DESC";
     }
 }
