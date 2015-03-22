@@ -355,3 +355,19 @@ James		About.aspx		march 21, 2015
 					added fixedPanel class to provide Sonia a scroll bar
 			default.aspx
 122					deleted random dash
+
+Sonia		SMovie.aspx
+All lines			Comment and clean up
+
+			About.aspx
+133 - 134		Added citations to bootstrap and google fonts
+
+			boostrap.css
+77, 5460		changed the font from special elite to philosoper 
+
+			site.css
+6				change background size 
+188				changed the font from Roboto to Bubblegum
+
+			site.master.aspx
+16 - 17			change google font link
