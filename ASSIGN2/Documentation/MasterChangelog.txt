@@ -413,3 +413,11 @@ Sonia		*** ALL PAGES Site.css, bootstrap.css
 
 Added BPPMovie.sln - Solution File
 Fixed 27 errors that reqired various references
+
+Deleted Change Above
+
+NEW DOCUMENTATION STYLE
+
+March 27	Joseph Version 1
+ChangelogTemplate.txt
+	Created document

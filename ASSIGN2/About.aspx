@@ -365,7 +365,7 @@
                                 <div class="title"><b>Lead Developer: Joseph Balabat</b></div>
                                 <br />
                                 <div class="col-md-12">
-                                    <a href="MasterChangelog.txt">Click here to view Change Log</a>
+                                    <a href="../Documentation/MasterChangelog.txt">Click here to view Change Log</a>
                                 </div>
                                 
                             </div>

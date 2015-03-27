@@ -1,0 +1,35 @@
+﻿This is the template to be used for source and version control.
+********************************************************
+GIT HUB
+Commit Naming Conventions:
+On Master:					[name] - Version x.xx
+On Own Branch:			Version x.xx
+
+
+Branch Naming Conventions 
+[name-Branch] - Version x.xx
+
+Examples:
+
+Change:
+WHEN MAKING CHANGES IN MASTER BRANCH: Joseph - Version 1.1
+WHEN MAKING CHANGES ON OWN Branch - Version 1.1
+
+Branch
+Joseph-Branch - Version 1.1
+
+*********************************************************
+Changelog:
+
+[Date] - [Change name] 
+[File Name] - [Code Number]
+	[Summary of Changes]
+
+
+Example:
+March 27, 2015 - Joseph - Version 1.1
+Site.Master.aspx - 2-50
+	Added Documentation
+Site.css 1-20
+	Added coding styles
+
