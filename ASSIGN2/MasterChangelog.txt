@@ -407,3 +407,9 @@ ALL			Added Documentation
 
 Sonia		*** ALL PAGES Site.css, bootstrap.css
 			Revamp of all page designs
+
+
+---------------------------------------BEGIN A3 Changelog ------------------------------------------
+
+Added BPPMovie.sln - Solution File
+Fixed 27 errors that reqired various references
