@@ -92,17 +92,13 @@ public partial class SPerson : Page
         {
             HyperLink1.NavigateUrl = homePage;
         }
-   
-        
-
+           
         if ((tempData.Rows[0]["profile_path"] as String) != null)
         {
             string profilePic = "http://image.tmdb.org/t/p/w300/" + tempData.Rows[0]["profile_path"] as String;
             imgProfilePic.ImageUrl = profilePic;
             imgProfilePic2.ImageUrl = profilePic;
         }
-
-
 
     }
 
