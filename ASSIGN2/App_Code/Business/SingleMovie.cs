@@ -101,5 +101,10 @@ namespace Content.Business
             get { return _posterPath; }
             set { _posterPath = value; }
         }
+
+        public override void PopulateDataMembersFromDataRow(System.Data.DataRow table)
+        {
+
+        }
     }
 }

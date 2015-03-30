@@ -16,6 +16,11 @@ namespace Content.Business
             // TODO: Add constructor logic here
             //   
         }
+
+        public override void PopulateDataMembersFromDataRow(System.Data.DataRow table)
+        {
+            
+        }
         
     }
 }
