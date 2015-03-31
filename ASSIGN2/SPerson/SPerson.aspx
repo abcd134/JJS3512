@@ -7,7 +7,7 @@
             <div class="col-md-5">
                 <div class="row personImage">
                     <a href="#" data-toggle="modal" data-target="#myModal">
-                    <asp:Image class="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/>
+                    <asp:Image CssClass="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/>
                     </a>
                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -22,19 +22,23 @@
 
                 </div>
             </div>
+            <asp:Repeater ID="rptPerson" runat="server">
+                <ItemTemplate>
+                    <div class="col-md-7 personPanel">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <%# Eval("Name") %>
 
-            <div class="col-md-7 personPanel">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <asp:Label ID="lblPersonName" runat="server" Text="Label"></asp:Label>
-
+                            </div>
+                            <div class="panel-body">
+                                <%# Eval("Birthday") %><br />
+                                <%# Eval("Birthplace") %><br />
+                                <%# Eval("Deathday") %><br />
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <asp:Label ID="lblBirthPlace" runat="server" ></asp:Label><br />
-                        <asp:Label ID="lblBirthdate" runat="server" ></asp:Label><br />
-                        <asp:Label ID="lblDeathdate" runat="server" ></asp:Label><br />
-                    </div>
-                </div>
+                </ItemTemplate>
+            </asp:Repeater>
 
 
                 <%--Bio Section--%>
@@ -63,7 +67,6 @@
             </div>
         </div>
         <%--End Right hand side--%>
-    </div>
 
        <%--Begin Crew and movie info--%>
     <div class="row">

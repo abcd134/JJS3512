@@ -15,14 +15,13 @@ namespace Content.DataAccess
     public class PersonDA : AbstractDA
     {
 
-        private const string fields = "FirstName,LastName,LastName + ', ' + Firstname As FullName,Nationality,YearOfBirth,YearOfDeath,Details,Link";
-        //private const string fields = "FirstName,LastName,Nationality,YearOfBirth,YearOfDeath,Details,Link";
+        private const string fields = "name,birthday,deathday,birth_place,biography,profile_path,home_page";
 
         protected override string SelectStatement
         {
             get
             {
-                return "SELECT " + KeyFieldName + "," + fields + " FROM Movies";
+                return "SELECT " + KeyFieldName + "," + fields + " FROM Person";
             }
         }
 
@@ -30,7 +29,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "LastName";
+                return "name";
             }
         }
 
@@ -38,12 +37,12 @@ namespace Content.DataAccess
         {
             get
             {
-                return "PersonID";
+                return "person_id";
             }
         }
 
         /// <summary>
-        /// Returns a data table containing Artist table info for this exact name.
+        /// Returns a data table containing SinglePerson table info for this exact name.
         /// Note that this data set will contain either 0 or 1 rows of data.
         /// </summary>
         public DataTable GetByName(string name)
@@ -77,27 +76,5 @@ namespace Content.DataAccess
             // return result
             return DataHelper.GetDataTable(sql, parameters);
         }
-
-        public void DeleteAllArtists()
-        {
-            //string sql = "DELETE FROM Artists ";
-            //DataHelper.RunNonQuery(sql, null, CommandType.Text);
-        }
-
-        public int InsertArtist(string mbid, string name, string summary, string description)
-        {
-            //DbParameter[] parameters = new DbParameter[] {
-            //    DataHelper.MakeParameter("@mbid", mbid),
-            //    DataHelper.MakeParameter("@name", name),
-            //    DataHelper.MakeParameter("@summary", summary),
-            //    DataHelper.MakeParameter("@description", description)              
-            //};
-
-            //construct SQL
-            //string sql = "INSERT INTO Artists (mbid, name, summary, description) VALUES (@mbid, @name,@summary, @description)";
-            //int artistId = DataHelper.RunNonQuery(sql, parameters, CommandType.Text, true);
-            return 0;
-        }
-
     }
 }

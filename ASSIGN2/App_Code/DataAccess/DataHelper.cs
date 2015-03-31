@@ -219,7 +219,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return WebConfigurationManager.ConnectionStrings["ModernEye"];
+                return WebConfigurationManager.ConnectionStrings["connectionString"];
 
             }
         }

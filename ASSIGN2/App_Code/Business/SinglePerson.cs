@@ -19,8 +19,8 @@ namespace Content.Business
         private int _id;
         private string _biography;
         private string _name;
-        private DateTime _birthDay;
-        private DateTime _deathDay;
+        private string _birthDay;
+        private string _deathDay;
         private string _birthPlace;
         private string _homePage;
         private string _profilePath;
@@ -33,6 +33,7 @@ namespace Content.Business
             _personDA = new PersonDA();
             base.DataAccess = _personDA;
         }
+
         /// <summary>
         /// Method to obtain a row of validated data
         /// </summary>
@@ -40,7 +41,7 @@ namespace Content.Business
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
             // set the data members to the data retrieved from the database table/query
-            ID = (int)row["id"];
+            ID = (int)row["person_id"];
 
             if (row["name"] == DBNull.Value)
                 Name = "";
@@ -52,13 +53,22 @@ namespace Content.Business
             else
                 Biography = (string)row["biography"];
 
-            BirthDay = Convert.ToDateTime(row["YearOfBirth"]);
-            DeathDay = Convert.ToDateTime(row["YearOfDeath"]);
+            if ( row["birthday"] == DBNull.Value )
+            {
+                BirthDay = "";
+            }
+            else { BirthDay = "Born: " + row["birthday"] ; }
 
-            if (row["birthPlace"] == DBNull.Value)
+            if (row["deathday"] == DBNull.Value)
+            {
+                DeathDay = "";
+            }
+            else { DeathDay = "Died: " + row["deathday"]; }
+
+            if (row["birth_place"] == DBNull.Value)
                 BirthPlace = "";
             else
-                BirthPlace = (string)row["birthPlace"];
+                BirthPlace = (string)row["birth_place"];
 
             if (row["profile_path"] == DBNull.Value)
             {
@@ -93,12 +103,12 @@ namespace Content.Business
             get { return _name; }
             set { _name = value; }
         }
-        public DateTime BirthDay
+        public string BirthDay
         {
             get { return _birthDay; }
             set { _birthDay = value; }
         }
-        public DateTime DeathDay
+        public string DeathDay
         {
             get { return _deathDay; }
             set { _deathDay = value; }

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.Common;
+
 using Content.DataAccess;
 
 namespace Content.Business
@@ -12,6 +15,7 @@ namespace Content.Business
     /// </summary>
     public class SingleMovie : AbstractBusiness
     {
+        private int _id;
         private int _movieId;
         private string _title;
         private string _releaseDate;
@@ -26,9 +30,30 @@ namespace Content.Business
         private string _imgPoster500;
         private string _imgPoster780;
         private string _posterPath;
+        private MovieDA _movieDA;
+
         public SingleMovie()
         {
+            _movieDA = new MovieDA();
+            base.DataAccess = _movieDA;
+        }
 
+        public override void PopulateDataMembersFromDataRow(DataRow row)
+        {
+            try
+            {
+                MovieId = (int)row["id"];
+
+                if (row["title"] == DBNull.Value)
+                    Title = "";
+                else
+                    Title = (string)row["title"];
+
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }           
         }
 
         public int MovieId

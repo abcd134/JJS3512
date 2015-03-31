@@ -5,8 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Web.Configuration;
+using Content.Business;
 
 public partial class SPerson : Page
 {
@@ -16,10 +18,25 @@ public partial class SPerson : Page
         if (!IsPostBack)
         {
             int id;
-            if (Request.QueryString["id"] == null) { Response.Redirect("../Error.aspx"); }
-            else if (!Int32.TryParse(Request.QueryString["id"], out id)) { Response.Redirect("../Error.aspx"); }
+            if (Request.QueryString["id"] == null) { Response.Redirect("../Error.aspx?error=Null Query String"); }
+            else if (!Int32.TryParse(Request.QueryString["id"], out id)) { Response.Redirect("../Error.aspx?error=Invalid Query String"); }
             else
             {
+                PersonCollection ac = new PersonCollection();
+                ac.FetchForId(id);
+                if (ac.Count <= 0)
+                    Response.Redirect("../Error.aspx?error=Person Not Found");
+                else
+                {
+                    rptPerson.DataSource = ac;
+                    rptPerson.DataBind();
+
+                    /*
+                    // display the information for this person
+                    viewWorks.DataSource = ac[0].Works;
+                    viewWorks.DataBind();
+                    */
+                }
                 DisplayPerson(id);
             }
         }
@@ -70,7 +87,7 @@ public partial class SPerson : Page
     {
         //Displays the Full Biography
         DataTable tempData = data.createDataTable(Constants.retriveAllPerson(id));
-        lblPersonName.Text = tempData.Rows[0]["name"] as String;
+        // lblPersonName.Text = tempData.Rows[0]["name"] as String;
         string bday = tempData.Rows[0]["birthday"] as String;
         string dday = tempData.Rows[0]["deathday"] as String;
         string birthPlace = tempData.Rows[0]["birth_place"] as String;
@@ -78,15 +95,15 @@ public partial class SPerson : Page
 
         if (checkData(bday))
         {
-            lblBirthdate.Text = "Birth Date: " + bday;
+            //lblBirthdate.Text = "Birth Date: " + bday;
         }
 
         if (checkData(dday))
         {
-            lblDeathdate.Text = "Death Date: " + dday;
+            //lblDeathdate.Text = "Death Date: " + dday;
         }
 
-        lblBirthPlace.Text = birthPlace;
+        //lblBirthPlace.Text = birthPlace;
 
         if (checkData(homePage))
         {
