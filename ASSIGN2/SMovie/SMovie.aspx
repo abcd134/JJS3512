@@ -6,11 +6,11 @@
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <%--Give the poster image a col-md of 5--%>
-            <div class="col-md-5 imageResize">
+            <div class="col-xs-12 col-md-5 imageResize">
                <a href="#" data-toggle="modal" data-target="#myModal"> 
-                <figure>
+                <figure class="img-responsive">
                     <%--This Image is pulled from the code-behind--%>
-                    <asp:Image runat="server" ID="imgPoster" class="thumbnail img-responsive" />
+                    <asp:Image runat="server" ID="imgPoster" class="thumbnail" />
                 </figure>
                 </a>
                 <%--This handles the modal for the poster and opens up the bigger picture--%>
@@ -58,7 +58,7 @@
             </div>
             
             <%--Start Movie Information--%>
-            <div class="col-xs-12 col-md-7 spaceabove">
+            <div class="col-md-7 spaceabove">
                 <%--This is the important information for a movie--%>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -134,7 +134,7 @@
 
     <%--This is start of a new main row--%>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 hidden-xs">
             <%--Start of Backdrops--%>
             <div class="panel panel-default panelResizing">
                 <div class="panel-heading">Backdrops</div>
@@ -202,7 +202,7 @@
             <br />
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 hidden-xs">
             <%--This is the start of crew panel--%>
             <div class="panel-group crewResize" id="accordian2" role="tablist">
                 <div class="panel panel-default">
@@ -233,7 +233,7 @@
 
     <%--this is the start of additional poster images--%>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 hidden-xs">
             <div class="panel-group panelResizing" id="accordian3" role="tablist">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
@@ -274,4 +274,13 @@
     </div>
 
     <asp:Label ID="message" runat="server" />
+    <script>
+        $(window).resize(function () {
+            if ($(window).width() <= 768) {
+                // do something here
+                $("#collapseListGroup1").find("ul").slice(3).remove();
+            }
+        });
+</script>
 </asp:Content>
+

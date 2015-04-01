@@ -27,6 +27,18 @@ textarea {
     }
 }
 
+@media screen and (max-width: 768px)
+{
+     .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }   
+    
+
+}
 /* used to determine the size of the dropdown box located in the master file*/
 .dropdown-adjust {
     width: 800px;
