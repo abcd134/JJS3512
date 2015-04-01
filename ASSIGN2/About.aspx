@@ -9,7 +9,7 @@
     <h3 class="center">Your Complete Movie Information Source</h3>
 
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <p>
@@ -32,8 +32,9 @@
                     </p>
                 </div>
             </div>
+
             <span class="anchor" id="dev1"></span>
-            <div class="col-md-6">
+            <div class="hidden-xs col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Developers</div>
                     <div class="panel-body">
@@ -119,7 +120,7 @@
             </div>
 
             <span class="anchor" id="citations1"></span>
-            <div class="col-md-6">
+            <div class="col-xs-12 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Citations</div>
                     <div class="panel-body">
@@ -146,7 +147,7 @@
     </div>
     <div class="row">
         <span class="anchor" id="documentation1"></span>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="hidden-xs col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">BBP Movie Databases Documentation</div>
                 <div class="panel-body">

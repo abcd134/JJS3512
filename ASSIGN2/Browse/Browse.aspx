@@ -51,7 +51,7 @@
                                         <h5>"<%# Eval("tagline") %>"</h5>
                                     </asp:Label>
                                     </div>
-                                <div class="col-md-1">
+                                <div class="col-md-2">
                                     <h1><%# Eval("vote_average") %>/10  </h1>
                                 </div>
                             </div>

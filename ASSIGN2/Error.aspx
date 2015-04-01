@@ -3,11 +3,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="row">
-    <div class="well col-md-10 col-md-offset-1 rowCol">
+    <div class="well col-xs-12 col-xs-offset-1 col-md-10 col-md-offset-1 rowCol">
         <div class="panel panel-danger">
             <div class="panel-body  innerWell">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <figure>
                             <img src="/images/shocking.jpg"
                                     alt="Cat getting shocked"
@@ -15,7 +15,7 @@
                                     class="img-responsive img-rounded" />
                         </figure>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-xs-12 col-md-9">
                         
                         <h3>
                             We are sorry, something broke.  We have recorded the

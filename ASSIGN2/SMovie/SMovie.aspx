@@ -4,13 +4,13 @@
 
     <%--This is start of the first main row--%>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12 col-md-12">
             <%--Give the poster image a col-md of 5--%>
             <div class="col-md-5 imageResize">
                <a href="#" data-toggle="modal" data-target="#myModal"> 
                 <figure>
                     <%--This Image is pulled from the code-behind--%>
-                    <asp:Image runat="server" ID="imgPoster" class="thumbnail" />
+                    <asp:Image runat="server" ID="imgPoster" class="thumbnail img-responsive" />
                 </figure>
                 </a>
                 <%--This handles the modal for the poster and opens up the bigger picture--%>
@@ -28,7 +28,7 @@
                 </div>
 
                 <%--This is the start of box office content--%>
-                <div class="col-md-6">
+                <div class="hidden-xs col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">Box Office</div>
                         <div class="panel-body">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <%--This is the start of the vote content--%>
-                <div class="col-md-6">
+                <div class="hidden-xs col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">Votes</div>
                         <div class="panel-body">
@@ -58,7 +58,7 @@
             </div>
             
             <%--Start Movie Information--%>
-            <div class="col-md-7 spaceabove">
+            <div class="col-xs-12 col-md-7 spaceabove">
                 <%--This is the important information for a movie--%>
                 <div class="panel panel-default">
                     <div class="panel-heading">

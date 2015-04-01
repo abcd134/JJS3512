@@ -46,8 +46,9 @@
             </Scripts>
         </asp:ScriptManager>
            <!-- Nav Bar first layer -->
+        <div class="container">
         <div class="navbar navbar-fixed-top">
-            <div class="container">
+            
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -71,10 +72,12 @@
                         <li><a class="default-links" runat="server" href="~/">Home</a></li>
                         <li><a class="default-links" runat="server" href="~/About">About</a></li>
                         <li><a class="default-links" runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
-                        <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Movies<span class="caret"></span></a>
+                        <li><a runat="server" class="default-links" href="#">Now Playing</a></li>
+                        <li><a class="default-links" runat="server" href="#">Comming Soon</a></li>
+                        <li><a class="default-links" runat="server" href="#">View Favourites</a></li>
                             <!-- Movies sub panel -->
-                            <div class="dropdown-menu dropdown-adjust" role="menu">
-                                <div class="col-xs-4 subnav">
+              <%--              <div class="dropdown-menu dropdown-adjust" role="menu">--%>
+<%--                                <div class="col-xs-4 subnav">
                                     <h3>Now Playing</h3>
                                     <asp:Repeater ID="NowShowingRepeater" DataSourceID="NowShowingDB" runat="server">
                                         <ItemTemplate>
@@ -83,8 +86,8 @@
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>
-                                </div>
-                                <div class="col-xs-4 subnav">
+                                </div>--%>
+<%--                                <div class="col-xs-4 subnav">
                                     <h3>Top Rating 2014</h3>
                                     <asp:Repeater ID="TopRatingRepeater" DataSourceID="TopRatingDB" runat="server">
                                         <ItemTemplate>
@@ -93,8 +96,8 @@
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>
-                                </div>
-                                <div class="col-xs-4 subnav">
+                                </div>--%>
+<%--                                <div class="col-xs-4 subnav">
                                     <h3>Top Grossing 2014</h3>
                                     <asp:Repeater ID="Repeater1" DataSourceID="TopGrossingDB" runat="server">
                                         <ItemTemplate>
@@ -103,9 +106,9 @@
                                             </table>
                                         </ItemTemplate>
                                     </asp:Repeater>
-                                </div>
-                            </div>
-                        </li>
+                                </div>--%>
+<%--                            </div>
+                        </li>--%>
                         <!-- Genre subpanel -->
                         <li><a runat="server" class="dropdown-toggle default-links" data-toggle="dropdown" href="#" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-adjust-genre" role="menu">
@@ -131,8 +134,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="default-links" runat="server" href="#">View Favourites</a></li>
-                        <li><a class="default-links" runat="server" href="#">Upcomming</a></li>
+
                     </ul>
                 </div>
             </div>

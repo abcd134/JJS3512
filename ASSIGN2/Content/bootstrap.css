@@ -327,6 +327,8 @@ body {
     background-image: url(../images/movie_page.png);
     background-size: 100%;
     background-repeat:repeat-y;
+    /*Sonia added this style*/
+    word-wrap:break-word;
 }
 
 input,
@@ -1737,6 +1739,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 14px;
   line-height: 1.428571429;
   color: #555555;
+  margin-left:1%;
   vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -2106,8 +2109,10 @@ fieldset[disabled] .btn-default.active {
   color: #000;
   background-color: #F88017;
   border-color: #F88017;
-  margin-left:5%;
+  margin-left:1%;
   font-weight:bold;
+  /*Sonia Added this style*/
+  margin-top:1%;
 }
 
 .btn-primary:hover,
@@ -4242,6 +4247,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   width: 22px;
   height: 2px;
   border-radius: 1px;
+  /*Sonia Added this style for drop down toggle*/
+  background-color: #F88017;
 }
 
 .navbar-toggle .icon-bar + .icon-bar {
@@ -4270,7 +4277,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: none;
     width: auto;
     margin-top: 0;
-    background-color: transparent;
+    background-color: grey;
     border: 0;
     box-shadow: none;
   }
