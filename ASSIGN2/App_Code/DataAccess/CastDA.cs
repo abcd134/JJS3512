@@ -11,7 +11,7 @@ using Content.DataAccess;
 /// </summary>
 public class CastDA : AbstractDA
 {
-    private const string fields = " movie.title, movie_cast.role_name";
+    private const string fields = " person.person_id, movie.movie_id, movie.title, movie_cast.role_name";
     protected override string SelectStatement
     {
         get
@@ -36,9 +36,9 @@ public class CastDA : AbstractDA
         }
     }
 
-    public DataTable GetCrewByMovieID(int personID)
+    public DataTable GetMoviesByPersonID(int personID)
     {
-        string sql = SelectStatement + " WHERE personid=@id  ORDER BY " + OrderFields + dataOrder(false) ;
+        string sql = SelectStatement + " WHERE person.person_id=@id  ORDER BY " + OrderFields + dataOrder(false) ;
         DbParameter[] parameters = new DbParameter[] {
 			   DataHelper.MakeParameter("@id", personID, DbType.String)
         };

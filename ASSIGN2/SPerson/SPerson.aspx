@@ -1,58 +1,53 @@
 ﻿<%@ Page Title="Actors | Actresses | Crews" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="SPerson.aspx.cs" Inherits="SPerson" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+<style>
+    .profilePic{ height: 450px;
+                 width:  300px;
+    }
+</style>
     <div class="row">
-        <div class="col-md-12 spaceabove">
-            <div class="col-md-5">
-                <div class="row personImage">
-                    <a href="#" data-toggle="modal" data-target="#myModal">
-                    <asp:Image CssClass="thumbnail" ID="imgProfilePic" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/>
-                    </a>
-               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content personModal">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <asp:Repeater ID="rptPerson" runat="server">
+            <ItemTemplate>
+                <div class="col-md-12 spaceabove">
+                    <div class="col-md-5">
+                        <div class="row personImage">
+                            <a href="#" data-toggle="modal" data-target="#myModal">
+                            <img src="<%# Eval("ProfilePic") %>"  class="thumbnail profilePic"/>
+                            </a>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content personModal">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <img src="<%# Eval("ProfilePic") %>"  class="profilePic"/> 
+                                    </div>
+                                </div>
                             </div>
-                            <asp:Image ID="imgProfilePic2" runat="server" ImageUrl="~/images/Not_available.jpg" width="300px" Height="450px"/> 
                         </div>
                     </div>
-                </div>
-
-                </div>
-            </div>
-            <asp:Repeater ID="rptPerson" runat="server">
-                <ItemTemplate>
+            
                     <div class="col-md-7 personPanel">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <%# Eval("Name") %>
-
                             </div>
                             <div class="panel-body">
                                 <%# Eval("Birthday") %><br />
-                                <%# Eval("Birthplace") %><br />
                                 <%# Eval("Deathday") %><br />
+                                <%# Eval("Birthplace") %><br />
                             </div>
                         </div>
                     </div>
-                </ItemTemplate>
-            </asp:Repeater>
-
 
                 <%--Bio Section--%>
-                <asp:Repeater ID="BioRepeater" runat="server">
-                    <ItemTemplate>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Biography</div>
-                            <div class="panel-body">
-                                <%#Eval("biography") %>
-                            </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Biography</div>
+                        <div class="panel-body">
+                            <%#Eval("Biography") %>
                         </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                
+                    </div>
 
                 <%--Social Media Section--%>
 
@@ -61,14 +56,16 @@
                     <div class="panel-body">
                         <a href="#"><img src="../images/fb.png" /></a>
                         <a href="#"><img src="../images/twit.png" /></a>
-                        <asp:HyperLink ID="HyperLink1" NavigateUrl="#" ImageUrl="~/images/home.png" runat="server"></asp:HyperLink>
+                        <a href="<%# Eval("HomePage") %>" ><img src="../images/home.png" /></a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <%--End Right hand side--%>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+     </div>           
+     <%--End Right hand side--%>
 
-       <%--Begin Crew and movie info--%>
+    <%--Begin Crew and movie info--%>
     <div class="row">
        
             <asp:Repeater ID="movieRepeater" runat="server">
@@ -78,7 +75,7 @@
                         <div class="panel-body">
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Played as <%# Eval("role_name") %> in <%# Eval("title") %></a></p>
+                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieID") %>">Played as <%# Eval("RoleName") %> in <%# Eval("Title") %></a></p>
                 </ItemTemplate>
                 <FooterTemplate>
                     </div>
@@ -88,7 +85,7 @@
             </div>
         <div class="row">
 
-            <asp:Repeater ID="CrewRepeater" runat="server">
+            <asp:Repeater ID="crewRepeater" runat="server">
                 <HeaderTemplate>
                     <div class="row">
                         <div class="panel panel-default panelResizing">
@@ -96,7 +93,7 @@
                             <div class="panel-body">
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("movie_id") %>">Crew as <%# Eval("job") %> in <%# Eval("title") %></a></p>
+                    <p><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieID") %>"> was  <%# Eval("Job") %> in the <%# Eval("Department ") %> department in <%# Eval("Title") %></a></p>
                 </ItemTemplate>
                 <FooterTemplate>
                     </div>
