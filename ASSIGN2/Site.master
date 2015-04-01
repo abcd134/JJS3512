@@ -60,7 +60,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right spaceabove">
                         <li>
-                            <asp:TextBox ID="SearchBox" runat="server" Height="35px" class="form-control"></asp:TextBox></li>
+                            <asp:TextBox ID="SearchBox" runat="server" Height="35px" placeholder="search..." class="form-control"></asp:TextBox></li>
                         <li>
                             <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" OnClick="SearchButton_Click" />
                         </li>
