@@ -428,3 +428,45 @@ CastDA.cs
 
 CrewDA.cs 
 	Created document
+
+March 28 - 31   James	Version 1
+AbstractBusiness.cs
+	Created Document
+Cast.cs
+	Created Document
+CastCollection.cs
+	Created Document
+Crew.cs
+	Created Document
+CrewCollection.cs
+	Created Document
+PersonCollection.cs
+	Created Document
+SinglePerson.cs
+	Created Document
+AbstractDA.cs
+	Created Document
+DataAccessExceptionHandler.cs
+	Created Document
+DataHelper.cs
+	Created Document
+PersonDA.cs
+	Created Document
+CastDA.cs
+	Edited Query string for person_id
+	Added fields
+CrewDA.cs
+	Edited Query string for person_id
+	Added field
+	Fixed inner join bug
+SPerson.Aspx
+		removed asp img tag (note styling in header need to be in css file)
+10		added repeater
+16&24	Eval for profile pic
+25-6	Deleted rptPerson
+45-6	Deleted BioRepeater
+59		deleted hyperlink & replaced with Evals
+96		Wording changes + using classes
+
+SPerson.aspx.cs
+		Essentially deleted everything and revamped for layered approach

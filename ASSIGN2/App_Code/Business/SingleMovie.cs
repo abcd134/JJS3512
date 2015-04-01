@@ -127,9 +127,5 @@ namespace Content.Business
             set { _posterPath = value; }
         }
 
-        public override void PopulateDataMembersFromDataRow(System.Data.DataRow table)
-        {
-
-        }
     }
 }
