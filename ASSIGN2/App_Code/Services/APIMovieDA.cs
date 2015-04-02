@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 using System.Net;
-using System.Json;
 using System.Data;
 using content.Services;
 
@@ -17,6 +16,10 @@ namespace content.Services
     //Used to retrive upcoming movies from API
     public class APIMovieDA : APIAbstractDA
     {
+        /// <summary>
+        /// Used to fetch Upcoming movies
+        /// </summary>
+        /// <returns></returns>
         public override DataTable fetchData()
         {
             return DownloadFromAPI<UpcomingMoviesCollection>(MovieDBServices.FetchUpcoming()).getDataTable();

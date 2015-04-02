@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 
 /// <summary>
-/// Summary description for Movie
+/// The movie.cs class is class used to store the data after parsing the Json Object
 /// </summary>
 public class Movie
 {

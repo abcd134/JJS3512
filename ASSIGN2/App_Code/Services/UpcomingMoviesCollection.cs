@@ -7,24 +7,35 @@ using System.Data;
 using System.Reflection;
 
 /// <summary>
-/// Summary description for Upcoming
+/// Used to store the store a collection of  movies and information of upcoming movies
 /// </summary>
 public class UpcomingMoviesCollection
 {
-
+    /// <summary>
+    /// Creates a list of movies
+    /// </summary>
     [JsonProperty("results")]
     public List<Movie> Movies
     {
         get;
         set;
     }
-
+    /// <summary>
+    /// Returns a data table of List<movies>>
+    /// </summary>
+    /// <returns></returns>
     public DataTable getDataTable()
     {
         return ToDataTable<Movie>(Movies);
     }
 
     //REFERENCE: http://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table
+    /// <summary>
+    /// method converts List to data table
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="items"></param>
+    /// <returns></returns>
     private static DataTable ToDataTable<T>(List<T> items)
     {
         DataTable dataTable = new DataTable(typeof(T).Name);
