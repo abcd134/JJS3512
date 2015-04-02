@@ -19,7 +19,14 @@ public class MovieDBServices
 
     public static string FetchMovie(int movieID)
     {
-        string movieLink = "movie/" + movieID;
-        return ConfigurationInformation.MovieDBURL + movieLink + MakeAuthenticationIdQueryString();
+        string link = "movie/" + movieID;
+        return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
+    }
+
+    public static string FetchUpcoming()
+    {
+        string link = "movie/upcoming";
+        return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
+        
     }
 }

@@ -38,23 +38,23 @@ namespace Content.Business
             base.DataAccess = _movieDA;
         }
 
-        //public override void PopulateDataMembersFromDataRow(DataRow row)
-        //{
-        //    try
-        //    {
-        //        MovieId = (int)row["id"];
+        public override void PopulateDataMembersFromDataRow(DataRow row)
+        {
+            try
+            {
+                MovieId = (int)row["id"];
 
-        //        if (row["title"] == DBNull.Value)
-        //            Title = "";
-        //        else
-        //            Title = (string)row["title"];
+                if (row["title"] == DBNull.Value)
+                    Title = "";
+                else
+                    Title = (string)row["title"];
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw new NotImplementedException();
-        //    }           
-        //}
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public int MovieId
         {
