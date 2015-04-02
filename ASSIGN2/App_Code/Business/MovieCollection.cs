@@ -55,9 +55,9 @@ namespace Content.Business
         /// </summary>
         public void FetchForPerson(int personId)
         {
-            DataTable dt = _da.GetByPerson(personId);
+            //DataTable dt = _da.GetByPerson(personId);
             // population this collection from this data table
-            PopulateFromDataTable(dt);
+            //PopulateFromDataTable(dt);
         }
         /// <summary>
         /// Fetch all the movies for a given genre
