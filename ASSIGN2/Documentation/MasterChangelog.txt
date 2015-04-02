@@ -470,3 +470,11 @@ SPerson.Aspx
 
 SPerson.aspx.cs
 		Essentially deleted everything and revamped for layered approach
+
+April 1			James
+SingleMovie.cs
+16		Removed instance variable
+31-34	Added instance variables
+43-130	Added PopulateDataMembersFromDataRow method
+		including data validation
+202-225	Added getters/Setters
