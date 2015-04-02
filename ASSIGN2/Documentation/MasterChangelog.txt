@@ -479,7 +479,7 @@ SingleMovie.cs
 		including data validation
 202-225	Added getters/Setters
 
-April 1	Verison 3 && Verison 3B
+April 1	Verison 3 && Verison 3B && Version 3Final
 APIAbstractDA.cs
 	Create Document
 APIMovieDA.cs
@@ -491,6 +491,7 @@ MovieDBServices.cs
 UpcomingMoviesDocument.cs
 	Created Document
 ConfigurationInformation.cs
+Added Documentation
 
 April 2	Version 4	Joseph
 MovieDa.cs
