@@ -13,13 +13,12 @@ namespace Content.DataAccess
     /// </summary>
     public class MovieDA : AbstractDA
     {
-        private const string fields = ""; // Need to complete this line
+        private const string fields = ", imdb_id, title, overview, poster_path, backdrop_path, release_date, revenue, budget, runtime, tagline, vote_average, vote_count"; // Need to complete this line
         protected override string SelectStatement  // need to complete this select statement
         {
             get
             {
-                string sql = "SELECT " + fields + " FROM ArtWorks";
-                sql += " INNER JOIN  Artists ON ArtWorks.ArtistId = Artists.ArtistId";
+                string sql = "SELECT " + fields + " FROM Movie";
                 return sql;
             }
         }
@@ -36,7 +35,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movieID";
+                return "movie_id";
             }
         }
 
@@ -63,13 +62,13 @@ namespace Content.DataAccess
         /// Returns a data table containing Movies the person did something
         /// Note that this data set will contain either 0,1, or N rows of data.
         /// </summary>
-        public DataTable GetByPerson(int personId)
+        public DataTable GetByPerson(int movieId)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " WHERE ArtWorks.ArtistID=@artistid"; // need to clean this up
+            string sql = SelectStatement + " WHERE movie_id=@movie_id"; // need to clean this up
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
-                DataHelper.MakeParameter("@artistid", personId, DbType.Int32)
+                DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
             };
             // return result
             return DataHelper.GetDataTable(sql, parameters);

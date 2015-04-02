@@ -478,3 +478,7 @@ SingleMovie.cs
 43-130	Added PopulateDataMembersFromDataRow method
 		including data validation
 202-225	Added getters/Setters
+
+April 2	Version 4	Joseph
+MovieDa.cs
+17 - 39	Reconfigured Query for use
