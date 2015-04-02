@@ -479,6 +479,19 @@ SingleMovie.cs
 		including data validation
 202-225	Added getters/Setters
 
+April 1	Verison 3 && Verison 3B
+APIAbstractDA.cs
+	Create Document
+APIMovieDA.cs
+	Created DOcument
+Movie.cs
+	Created Document
+MovieDBServices.cs
+	Created Document
+UpcomingMoviesDocument.cs
+	Created Document
+ConfigurationInformation.cs
+
 April 2	Version 4	Joseph
 MovieDa.cs
 17 - 39	Reconfigured Query for use
