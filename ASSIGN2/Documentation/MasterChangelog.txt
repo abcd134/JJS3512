@@ -500,3 +500,12 @@ MovieDa.cs
 April 2 Version 5	Joseph
 MovieImageDA.cs
 	Created Document
+
+April 3 Version 6	Joseph
+MovieCastDA.cs
+MovieCompany.cs
+MovieCrewDA.cs
+MovieDA.cs
+MovieGenreDA.cs
+MovieKeywords.cs
+	Created Document

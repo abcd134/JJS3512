@@ -10,11 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <asp:Repeater ID="Repeater1" runat="server">
-            <ItemTemplate>
-                <%# Eval("id") %>
-            </ItemTemplate>
-        </asp:Repeater>
+
     </div>
     </form>
 </body>

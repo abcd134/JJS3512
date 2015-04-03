@@ -4,20 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.Common;
+using Content.DataAccess;
+
+/// <summary>
+/// Used to retrieve the list of keywords for SMovie
+/// </summary>
+/// 
 
 namespace Content.DataAccess
 {
-    /// <summary>
-    /// Used to retrieve the Movie Information for SMovie
-    /// </summary>
-    public class MovieDA : AbstractDA
+    public class MovieKeywordsDA : AbstractDA
     {
-        private const string fields = ", imdb_id, title, overview, poster_path, backdrop_path, release_date, revenue, budget, runtime, tagline, vote_average, vote_count";
-        protected override string SelectStatement 
+        private const string fields = "";
+        protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM Movie";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
                 return sql;
             }
         }
@@ -26,7 +29,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie_image_id";
+                return "name";
             }
         }
 
@@ -34,27 +37,24 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie_id";
+                return "name";
             }
         }
 
         /// <summary>
-        /// Retrives the movies based on the title
+        /// Retrive movie using movie id adn returns it by order
         /// </summary>
-        public DataTable GetLikeTitle(string title)
+        public DataTable GetByMovieID(int movieId)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " WHERE Title=@title";
-
+            string sql = SelectStatement + " WHERE movie_id=@movie_id ";
+            sql = "ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("@title", "%" + title + "%", DbType.String)
-			};
-
+                DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
+            };
             // return result
             return DataHelper.GetDataTable(sql, parameters);
         }
-
-
     }
 }
