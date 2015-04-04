@@ -7,20 +7,20 @@ using System.Data.Common;
 using Content.DataAccess;
 
 /// <summary>
-/// Used to retrieve the list of keywords for SMovie
+/// Used to retrieve the Crew for SMovie
 /// </summary>
 /// 
 
 namespace Content.DataAccess
 {
-    public class MovieKeywordsDA : AbstractDA
+    public class MovieCrewDA : AbstractDA
     {
-        private const string fields = "";
+        private const string fields = ", movie_crew.movie_crew_id, movie_crew.person_id, person.profile_path, movie_crew.department, person.name";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (movie_crew INNER JOIN person ON movie_crew.person_id = person.person_id)";
                 return sql;
             }
         }
@@ -29,7 +29,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie_crew.department";
             }
         }
 
@@ -37,7 +37,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie_crew.movie_id";
             }
         }
 

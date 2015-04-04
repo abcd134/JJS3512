@@ -7,20 +7,19 @@ using System.Data.Common;
 using Content.DataAccess;
 
 /// <summary>
-/// Used to retrieve the list of keywords for SMovie
+/// Used to retrieve the list of genre for SMovie
 /// </summary>
 /// 
-
 namespace Content.DataAccess
 {
-    public class MovieKeywordsDA : AbstractDA
+    public class MovieGenreDA : AbstractDA
     {
-        private const string fields = "";
+        private const string fields = ", name";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (movie_genre INNER JOIN genre ON movie_genre.genre_id = genre.genre_id)";
                 return sql;
             }
         }
@@ -37,7 +36,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "genre.genre_id";
             }
         }
 
