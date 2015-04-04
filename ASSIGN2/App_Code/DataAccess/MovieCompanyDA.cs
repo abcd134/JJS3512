@@ -15,14 +15,12 @@ namespace Content.DataAccess
 {
     public class MovieCompanyDA : AbstractDA
     {
-        private const string fields = ", company.company_name ";
+        private const string fields = "";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM movie, movie_company, company " +
-                    "WHERE movie_company.company_id = company.company_id AND " + 
-                    " movie_company.movie_id = movie.movie_id ";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (movie_company INNER JOIN company ON movie_company.company_id = company.company_id)";
                 return sql;
             }
         }
@@ -39,7 +37,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie.movie_id";
+                return "company_name";
             }
         }
 
@@ -49,8 +47,8 @@ namespace Content.DataAccess
         public DataTable GetByMovieID(int movieId)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " AND movie.movie_id=@movie_id ";
-            sql += " ORDER BY " + OrderFields;
+            string sql = SelectStatement + " WHERE movie_id=@movie_id ";
+            sql = "ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
