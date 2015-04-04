@@ -10,7 +10,10 @@ public partial class Test : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        TestDA asd = new TestDA();
-        Label1.Text = asd.ToString();
+        APIMovieDA asd = new APIMovieDA();
+
+        Repeater1.DataSource = asd.fetchData();
+        Repeater1.DataBind();
+        
     }
 }
