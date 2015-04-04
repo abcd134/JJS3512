@@ -11,14 +11,12 @@ using Content.DataAccess;
 /// </summary>
 public class CastDA : AbstractDA
 {
-    private const string fields = " person.person_id, person.profile_path, person.name, movie.title, movie_cast.role_name";
+    private const string fields = " person.person_id, movie.movie_id, movie.title, movie_cast.role_name";
     protected override string SelectStatement
     {
         get
         {
-            return "SELECT " + KeyFieldName + "," + fields + " FROM  person, movie_cast, movie " +
-                " WHERE movie.movie_id = movie_cast.movie_id AND " +
-                " movie_cast.person_id = person.person_id ";
+            return "SELECT " + KeyFieldName + "," + fields + " FROM  ((movie INNER JOIN movie_cast ON movie.movie_id = movie_cast.movie_id) INNER JOIN person ON movie_cast.person_id = person.person_id) ";
         }
     }
 
@@ -26,7 +24,7 @@ public class CastDA : AbstractDA
     {
         get
         {
-            return " movie_cast.ordering ";
+            return " movie.release_date ";
         }
     }
 
@@ -38,23 +36,16 @@ public class CastDA : AbstractDA
         }
     }
 
-    public DataTable GetByMovieID(int movieID)
+    public DataTable GetMoviesByPersonID(int personID)
     {
-        string sql = SelectStatement + " AND movie.movie_id=@id  ORDER BY " + OrderFields + dataOrder(true);
+        string sql = SelectStatement + " WHERE person.person_id=@id  ORDER BY " + OrderFields + dataOrder(false) ;
         DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("@id", movieID, DbType.String)
+			   DataHelper.MakeParameter("@id", personID, DbType.String)
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
-    public DataTable GetMovies(int personID)
-    {
-        string sql = SelectStatement + " AND person.person_id=" + personID + " ORDER BY " + OrderFields + dataOrder(true);
-        DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("person.person_id", personID, DbType.String)
-        };
-        return DataHelper.GetDataTable(sql, parameters);
-    }
-    private string dataOrder(bool ISAscending)
+
+    private string dataOrder (bool ISAscending)
     {
         if (ISAscending) return "ASC";
         else return "DESC";

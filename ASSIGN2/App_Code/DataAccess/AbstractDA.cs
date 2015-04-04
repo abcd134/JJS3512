@@ -52,10 +52,7 @@ namespace Content.DataAccess
       public DataTable GetById(int id)
       {
          // set up parameterized query statement
-         string  sql = SelectStatement + " WHERE " + KeyFieldName + "=@id";
-                 sql += " AND movie_cast.movie_id = movie.movie_id AND ";
-                 sql += "movie_cast.person_id = person.person_id AND ";
-                 sql += "movie_cast.ordering = 0 ";
+         string sql = SelectStatement + " WHERE " + KeyFieldName + "=@id";
 
          // construct array of parameters
          DbParameter[] parameters = new DbParameter[] {

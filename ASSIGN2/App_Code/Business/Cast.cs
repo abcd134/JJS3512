@@ -14,12 +14,10 @@ namespace Content.Business
     /// </summary>
     public class Cast : AbstractBusiness
     {
-        private int _actorID;
+        private int _id;
         private int _movieId;
         private string _title;
-        private string _actorName;
         private string _roleName;
-        private string _profilePath;
         private CastDA _castDA;
 
         public Cast()
@@ -34,7 +32,7 @@ namespace Content.Business
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
             // set the data members to the data retrieved from the database table/query
-            ActorID = (int)row["person_id"];
+            ID = (int)row["person_id"];
 
             if (row["movie_id"] == DBNull.Value)
                 MovieID = -1;  // Error flag set that the movie ID was not found (should be impossible)
@@ -46,31 +44,17 @@ namespace Content.Business
             else
                 Title = (string)row["title"];
 
-            if (row["name"] == DBNull.Value)
-                ActorName = "";
-            else
-                ActorName = (string)row["name"];
-
             if (row["role_name"] == DBNull.Value)
             {
                 RoleName = "";
             }
             else { RoleName = (string)row["role_name"]; }
-
-            if (row["profile_path"] == DBNull.Value)
-            {
-                ProfilePath = "../images/Not_available.jpg";
-            }
-            else
-            {
-                ProfilePath = "http://image.tmdb.org/t/p/w154/" + row["profile_path"];
-            }
         }
 
-        public int ActorID
+        public int ID
         {
-            get { return _actorID; }
-            set { _actorID = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
         public string RoleName
@@ -88,16 +72,6 @@ namespace Content.Business
         {
             get { return _movieId; }
             set { _movieId = value; }
-        }
-        public string ProfilePath
-        {
-            get { return _profilePath; }
-            set { _profilePath = value; }
-        }
-        public string ActorName
-        {
-            get { return _actorName; }
-            set { _actorName = value; }
         }
     }
 }

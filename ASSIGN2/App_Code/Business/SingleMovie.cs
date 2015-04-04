@@ -42,7 +42,7 @@ namespace Content.Business
 
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
-            MovieId = (int)row["movie_id"];
+            MovieId = (int)row["id"];
 
             if (row["title"] == DBNull.Value)
                 Title = "";
@@ -57,42 +57,42 @@ namespace Content.Business
             if (row["runtime"] == DBNull.Value)
                 RunTime = "";
             else
-                RunTime = Convert.ToInt32(row["runtime"]).ToString() + " Minutes";
+                RunTime = (string)row["runtime"];
 
             if (row["overview"] == DBNull.Value)
                 Overview = "";
             else
                 Overview = (string)row["overview"];
 
-            if (row["imdb_id"] == DBNull.Value)
+            if (row["imbd_id"] == DBNull.Value)
                 ImdbId = "";
             else
-                ImdbId = "http://www.imdb.com/title/" + (string)row["imdb_id"];
+                ImdbId = (string)row["imdb_id"];
 
-            if (row["imdb_id"] == DBNull.Value)
+            if (row["imdb_link"] == DBNull.Value)
                 ImdbLink = "";
             else
-                ImdbLink = "http://www.imdb.com/title/" + (string)row["imdb_id"];
+                ImdbLink = (string)row["imdb_link"];
 
-            if ((decimal) row["budget"] == 0)
-                Budget = "N/A";
+            if (row["budget"] == DBNull.Value)
+                Budget = "";
             else
-                Budget = String.Format("{0:c}", (decimal)row["budget"]).ToString();
+                Budget = (string)row["budget"];
 
-            if ((decimal)row["revenue"] == 0)
-                Revenue = "N/A";
+            if (row["revenue"] == DBNull.Value)
+                Revenue = "";
             else
-                Revenue = String.Format("{0:c}", (decimal)row["revenue"]).ToString();
+                Revenue = (string)row["revenue"];
 
             if (row["vote_average"] == DBNull.Value)
-                Average = "N/A";
+                Average = "";
             else
-                Average = Convert.ToDecimal(row["vote_average"]).ToString();
+                Average = (string)row["vote_average"];
 
             if (row["vote_count"] == DBNull.Value)
-                VoteCount = "N/A";
+                VoteCount = "";
             else
-                VoteCount = Convert.ToDecimal(row["vote_count"]).ToString();
+                VoteCount = (string)row["vote_count"];
 
             if (row["poster_path"] == DBNull.Value)
             {
@@ -125,7 +125,7 @@ namespace Content.Business
             if (row["role_name"] == DBNull.Value)
                 RoleName = "";
             else
-                RoleName = (string)row["role_name"];
+                RoleName = (string)row["roel_name"];
 
         }
 

@@ -41,11 +41,6 @@ namespace Content.Business
             DataTable dt = _da.GetMoviesByPersonID(id);
             PopulateFromDataTable(dt);
         }
-        public void FetchForMovieId(int id)
-        {
-            DataTable dt = _da.GetByMovieID(id);
-            PopulateFromDataTable(dt);
-        }
 
         private void PopulateFromDataTable(DataTable dt)
         {
