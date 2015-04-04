@@ -8,16 +8,16 @@ using System.Data.Common;
 namespace Content.DataAccess
 {
     /// <summary>
-    /// Used to retrieve the Movie Information for SMovie
+    /// Use to fetch all the data related to moves db
     /// </summary>
     public class MovieDA : AbstractDA
     {
-        private const string fields = ", imdb_id, title, overview, poster_path, backdrop_path, release_date, revenue, budget, runtime, tagline, vote_average, vote_count";
+        private const string fields = "person.name, role_name,movie.movie_id,imdb_id, title, overview, poster_path, backdrop_path, release_date, revenue, budget, runtime, tagline, vote_average, vote_count";
         protected override string SelectStatement 
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM Movie";
+                string sql = "SELECT " + fields + " FROM Movie, movie_cast, person";
                 return sql;
             }
         }
@@ -34,7 +34,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie_id";
+                return "movie.movie_id";
             }
         }
 
@@ -45,6 +45,9 @@ namespace Content.DataAccess
         {
             // set up parameterized query statement
             string sql = SelectStatement + " WHERE Title=@title";
+            sql += " AND movie_cast.movie_id = movie.movie_id AND ";
+            sql += "movie_cast.person_id = person.person_id AND ";
+            sql += "movie_cast.ordering = 0 ";
 
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
@@ -55,6 +58,24 @@ namespace Content.DataAccess
             return DataHelper.GetDataTable(sql, parameters);
         }
 
+
+        /// <summary>
+        /// Retrive movie using movie id
+        /// </summary>
+        public DataTable GetByMovieID(int movieId)
+        {
+            // set up parameterized query statement
+            string  sql = SelectStatement + " WHERE movie.movie_id=@movie_id";
+                    sql += " AND movie_cast.movie_id = movie.movie_id AND ";
+                    sql += "movie_cast.person_id = person.person_id AND ";
+                    sql += "movie_cast.ordering = 0 ";
+            // construct array of parameters
+            DbParameter[] parameters = new DbParameter[] {
+                DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
+            };
+            // return result
+            return DataHelper.GetDataTable(sql, parameters);
+        }
 
     }
 }

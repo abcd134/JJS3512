@@ -15,9 +15,11 @@ namespace Content.Business
 /// </summary>
 public class Crew : AbstractBusiness
     {
-        private int _id;
+        private int _personID;
         private int _movieId;
         private string _title;
+        private string _personName;
+        private string _profilePath;
         private string _department;
         private string _job;
         private CrewDA _crewDA;
@@ -34,7 +36,21 @@ public class Crew : AbstractBusiness
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
             // set the data members to the data retrieved from the database table/query
-            ID = (int)row["person_id"];
+            PersonID = (int)row["person_id"];
+
+            if (row["name"] == DBNull.Value)
+                PersonName = "";
+            else
+                PersonName = (string)row["name"];
+
+            if (row["profile_path"] == DBNull.Value)
+            {
+                ProfilePath = "../images/Not_available.jpg";
+            }
+            else
+            {
+                ProfilePath = "http://image.tmdb.org/t/p/w154/" + row["profile_path"];
+            }
 
             if (row["movie_id"] == DBNull.Value)
                 MovieID = -1;  // Error flag set that the movie ID was not found (should be impossible)
@@ -59,12 +75,22 @@ public class Crew : AbstractBusiness
             else { Job = (string)row["job"]; }
         }
 
-        public int ID
+        public int PersonID
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _personID; }
+            set { _personID = value; }
         }
 
+        public string PersonName
+        {
+            get { return _personName; }
+            set { _personName = value; }
+        }
+        public string ProfilePath
+        {
+            get { return _profilePath; }
+            set { _profilePath = value; }
+        }
         public string Department
         {
             get { return _department; }
