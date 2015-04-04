@@ -26,11 +26,6 @@ namespace Content.DataAccess
                 return sql;
             }
         }
- /*       SELECT keyword.name
-FROM     ((keyword INNER JOIN
-                  movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id) INNER JOIN
-                  movie ON movie_keyword.movie_id = movie.movie_id)
-WHERE  (movie.movie_id = 122917) */
         protected override string OrderFields
         {
             get
