@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,20 +8,20 @@ using System.Data.Common;
 using Content.DataAccess;
 
 /// <summary>
-/// Used to retrieve the list of keywords for SMovie
+/// Used to retrieve the cast for SMovie
 /// </summary>
 /// 
 
 namespace Content.DataAccess
 {
-    public class MovieKeywordsDA : AbstractDA
+    public class MovieCastDA : AbstractDA
     {
-        private const string fields = "";
+        private const string fields = ", person.name, person.person_id, movie_cast.ordering, movie_cast.role_name, person.profile_path";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (person INNER JOIN movie_cast ON movie_cast.person_id = person.person_id)";
                 return sql;
             }
         }
@@ -29,7 +30,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie_cast.ordering";
             }
         }
 
@@ -37,7 +38,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie_cast.movie_id";
             }
         }
 
