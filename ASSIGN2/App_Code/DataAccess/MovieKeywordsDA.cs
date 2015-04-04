@@ -13,14 +13,15 @@ using Content.DataAccess;
 
 namespace Content.DataAccess
 {
-    public class MovieKeywordsDA : AbstractDA
+    public class MovieKeyWordsDA : AbstractDA
     {
         private const string fields = "";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
+                string sql = "SELECT " + KeyFieldName + fields 
+                + " FROM movie_keyword.keyword= keyword_keyword AND keyword.keyword_id = movie_keyword.keyword_id";
                 return sql;
             }
         }
