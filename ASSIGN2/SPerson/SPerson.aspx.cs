@@ -33,36 +33,36 @@ public partial class SPerson : Page
     /// <param name="id"></param> - ID pulled from query string. ID is use to indentify the person to display in the page
     protected void DisplayPerson(int id)
     {
-        PersonCollection pc = new PersonCollection();
-        pc.FetchForId(id);
-        if (pc.Count <= 0)
+        PersonCollection personC = new PersonCollection();
+        personC.FetchForId(id);
+        if (personC.Count <= 0)
             Response.Redirect("../Error.aspx?error=Person Not Found");
         else
         {
-            rptPerson.DataSource = pc;
+            rptPerson.DataSource = personC;
             rptPerson.DataBind();
         }
 
-        CastCollection cc = new CastCollection();
-        cc.FetchForId(id);
-        if (cc.Count <= 0)
+        CastCollection castC = new CastCollection();
+        castC.FetchForMovies(id);
+        if (castC.Count <= 0)
         {
             // if no other roles, what do we do?
         }
         else
         {
-            movieRepeater.DataSource = cc;
+            movieRepeater.DataSource = castC;
             movieRepeater.DataBind();
         }
-        CrewCollection cc2 = new CrewCollection();
-        cc2.FetchForId(id);
-        if (cc2.Count <= 0)
+        CrewCollection crewC = new CrewCollection();
+        crewC.FetchForId(id);
+        if (crewC.Count <= 0)
         {
             // if no other jobs, what do we do?
         }
         else
         {
-            crewRepeater.DataSource = cc2;
+            crewRepeater.DataSource = crewC;
             crewRepeater.DataBind();
         }
     }
