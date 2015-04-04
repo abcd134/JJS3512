@@ -13,23 +13,29 @@ using Content.DataAccess;
 
 namespace Content.DataAccess
 {
-    public class MovieKeywordsDA : AbstractDA
+    public class MovieKeyWordsDA : AbstractDA
     {
-        private const string fields = "";
+        private const string fields = ", keyword.name";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields + " FROM (keyword INNER JOIN movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id)";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM keyword, movie, movie_keyword " +
+                    " WHERE keyword.keyword_id = movie_keyword.keyword_id AND " +
+                    " movie_keyword.movie_id = movie.movie_id ";
                 return sql;
             }
         }
-
+        /*       SELECT keyword.name
+       FROM     ((keyword INNER JOIN
+                         movie_keyword ON keyword.keyword_id = movie_keyword.keyword_id) INNER JOIN
+                         movie ON movie_keyword.movie_id = movie.movie_id)
+       WHERE  (movie.movie_id = 122917) */
         protected override string OrderFields
         {
             get
             {
-                return "name";
+                return "keyword.name";
             }
         }
 
@@ -37,7 +43,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie.movie_id";
             }
         }
 
@@ -47,8 +53,8 @@ namespace Content.DataAccess
         public DataTable GetByMovieID(int movieId)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " WHERE movie_id=@movie_id ";
-            sql = "ORDER BY " + OrderFields;
+            string sql = SelectStatement + " AND movie.movie_id=@movie_id ";
+            sql += "ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
