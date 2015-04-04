@@ -1,27 +1,27 @@
-﻿using Content.DataAccess;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.Common;
+using Content.DataAccess;
 
 /// <summary>
-/// fetch the images
+/// Used to retrieve the cast for SMovie
 /// </summary>
 /// 
 
 namespace Content.DataAccess
 {
-    public class MovieImageDA : AbstractDA
+    public class MovieCastDA : AbstractDA
     {
-        private const string fields = " movie.movie_id, movie_image_id, is_poster, file_path"; 
-        protected override string SelectStatement  
+        private const string fields = ", person.name, person.person_id, movie_cast.ordering, movie_cast.role_name, person.profile_path";
+        protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + fields + " FROM movie, movie_image " +
-                    " WHERE movie.movie_id = movie_image.movie_id ";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (person INNER JOIN movie_cast ON movie_cast.person_id = person.person_id)";
                 return sql;
             }
         }
@@ -30,7 +30,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie_image_id";
+                return "movie_cast.ordering";
             }
         }
 
@@ -38,22 +38,18 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie_image_id";
+                return "movie_cast.movie_id";
             }
         }
 
         /// <summary>
-        /// Grabs the images based on the movies id and IF it is a poster or a backdrop
-        /// Poster = 1, Backdrop = 0
+        /// Retrive movie using movie id adn returns it by order
         /// </summary>
-        public DataTable GetByMovieImage(int movieId, bool IsMoviePoster)
+        public DataTable GetByMovieID(int movieId)
         {
-            int moviePoster = 0;
-            if (IsMoviePoster)
-                moviePoster = 1;
-
             // set up parameterized query statement
-            string sql = SelectStatement + " AND (movie.movie_id =@movie_id) AND (movie_image.is_poster = " + moviePoster + ")"; // need to clean this up
+            string sql = SelectStatement + " WHERE movie_id=@movie_id ";
+            sql = "ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
