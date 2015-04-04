@@ -58,19 +58,14 @@ namespace Content.DataAccess
             // return result
             return DataHelper.GetDataTable(sql, parameters);
         }
-
-
-        /// <summary>
-        /// Returns a data table containing Artist table info that is similar to this title.
-        /// </summary>
-        public DataTable GetLikeName(string name)
+        public DataTable GetByPersonID(int personID)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " WHERE LastName Like @name";
+            string sql = SelectStatement + " WHERE person_Id=@ID";
 
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("@name", "%" + name + "%", DbType.String)
+			   DataHelper.MakeParameter("@ID", personID, DbType.String)
 			};
 
             // return result
