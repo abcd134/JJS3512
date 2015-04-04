@@ -24,7 +24,7 @@ namespace Content.Business
 	    }
         #region methods
         /// <summary>
-        /// Fetch all the actors in database
+        /// Fetch all the Art work data
         /// </summary>
         public void FetchAll()
         {
@@ -33,21 +33,15 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the people who acted in a praticular movie.
+        /// Fetch all the roles with a given person id. This should normally create a collection
+        /// with roles. 
         /// </summary>
         public void FetchForId(int id)
         {
-            DataTable dt = _da.GetByMovieID(id);
+            DataTable dt = _da.GetMoviesByPersonID(id);
             PopulateFromDataTable(dt);
         }
-        /// <summary>
-        /// Fetch all the movies a particular person acted in
-        /// </summary>
-        public void FetchForMovies(int id)
-        {
-            DataTable dt = _da.GetMovies(id);
-            PopulateFromDataTable(dt);
-        }
+
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table
