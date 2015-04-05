@@ -5,7 +5,8 @@ using System.Web;
 using Newtonsoft.Json;
 using Content.Services;
 /// <summary>
-/// Summary description for MovieTrailers
+///  Data Transfer Object for MoviesTrailers
+/// The movie.cs class is class used to store the data after parsing the Json Object
 /// </summary>
 
 namespace Content.Services
