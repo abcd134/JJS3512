@@ -14,7 +14,7 @@ namespace Content.Services
     public class MovieTrailersCollection
     {
         [JsonProperty("results")]
-        public List<MovieTrailersDA> MoviesTrailer
+        public List<MovieTrailers> MoviesTrailer
         {
             get;
             set;
@@ -25,7 +25,7 @@ namespace Content.Services
         /// <returns></returns>
         public DataTable getDataTable()
         {
-            return ToDataTable<MovieTrailersDA>(MoviesTrailer);
+            return ToDataTable<MovieTrailers>(MoviesTrailer);
         }
 
         //REFERENCE: http://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table

@@ -13,7 +13,7 @@ namespace Content.Services
     {
         public override DataTable fetchData()
         {
-            throw new NotImplementedException();
+            return DownloadFromAPI<MoviesCollection>(MovieDBServices.FetchNowPlaying()).getDataTable();
         }
     }
 }

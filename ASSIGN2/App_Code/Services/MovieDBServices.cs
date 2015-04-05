@@ -46,5 +46,10 @@ namespace Content.Services
             string link = "movie/" + movieID + "/videos";
             return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
         }
+        public static string FetchNowPlaying()
+        {
+            string link = "movie/now_playing";
+            return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
+        }
     }
 }

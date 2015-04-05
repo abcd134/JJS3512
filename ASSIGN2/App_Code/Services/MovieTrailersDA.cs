@@ -14,11 +14,11 @@ namespace Content.Services
     {
         public override DataTable fetchData()
         {
-            throw new NotImplementedException();
+            return null;
         }
-        public DataTable fetchTrailer(int movieID)
+        public DataTable fetchTrailers(int movieID)
         {
-            return DownloadFromAPI<MoviesCollection>(MovieDBServices.FetchTrailer(movieID)).getDataTable();
+            return DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).getDataTable();
         }
     }
 }
