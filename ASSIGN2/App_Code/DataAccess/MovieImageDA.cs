@@ -15,7 +15,7 @@ namespace Content.DataAccess
 {
     public class MovieImageDA : AbstractDA
     {
-        private const string fields = " movie.movie_id, movie_image_id, is_poster, file_path"; 
+        private const string fields = " movie_image.movie_id, movie_image_id, is_poster, file_path"; 
         protected override string SelectStatement  
         {
             get
@@ -60,6 +60,14 @@ namespace Content.DataAccess
             };
             // return result
             return DataHelper.GetDataTable(sql, parameters);
+        }
+
+        public DataTable GetByImageID(int imageID)
+        {
+            // set up parameterized query statement
+            string sql = "Select " + fields +" FROM movie_image WHERE movie_image.movie_image_id=" + imageID; 
+            // return result
+            return DataHelper.GetDataTable(sql, null);
         }
     }
 }
