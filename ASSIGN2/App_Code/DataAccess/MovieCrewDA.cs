@@ -7,21 +7,20 @@ using System.Data.Common;
 using Content.DataAccess;
 
 /// <summary>
-/// Used to retrieve the list of keywords for SMovie
+/// Used to retrieve the Crew for SMovie
 /// </summary>
 /// 
 
 namespace Content.DataAccess
 {
-    public class MovieKeyWordsDA : AbstractDA
+    public class MovieCrewDA : AbstractDA
     {
-        private const string fields = ", name";
+        private const string fields = ", movie_crew.person_id, person.profile_path, movie_crew.department, person.name";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields 
-                + " FROM keyword, movie, movie_keyword WHERE keyword.keyword_id= movie_keyword.keyword_id AND movie.movie_id = movie_keyword.movie_id ";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM (movie_crew INNER JOIN person ON movie_crew.person_id = person.person_id)";
                 return sql;
             }
         }
@@ -30,7 +29,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "movie_crew.department";
             }
         }
 
@@ -38,7 +37,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "movie.movie_id";
+                return "movie_crew.movie_id";
             }
         }
 
@@ -48,8 +47,8 @@ namespace Content.DataAccess
         public DataTable GetByMovieID(int movieId)
         {
             // set up parameterized query statement
-            string sql = SelectStatement + " AND movie.movie_id=@movie_id ";
-            sql += "ORDER BY " + OrderFields;
+            string sql = SelectStatement + " WHERE movie_id=@movie_id ";
+            sql = "ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)

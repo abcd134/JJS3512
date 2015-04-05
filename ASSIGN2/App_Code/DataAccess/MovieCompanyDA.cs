@@ -7,21 +7,22 @@ using System.Data.Common;
 using Content.DataAccess;
 
 /// <summary>
-/// Used to retrieve the list of keywords for SMovie
+/// Used to retrieve the list of companies for SMovie
 /// </summary>
 /// 
 
 namespace Content.DataAccess
 {
-    public class MovieKeyWordsDA : AbstractDA
+    public class MovieCompanyDA : AbstractDA
     {
-        private const string fields = ", name";
+        private const string fields = ", company.company_name ";
         protected override string SelectStatement
         {
             get
             {
-                string sql = "SELECT " + KeyFieldName + fields 
-                + " FROM keyword, movie, movie_keyword WHERE keyword.keyword_id= movie_keyword.keyword_id AND movie.movie_id = movie_keyword.movie_id ";
+                string sql = "SELECT " + KeyFieldName + fields + " FROM movie, movie_company, company " +
+                    "WHERE movie_company.company_id = company.company_id AND " + 
+                    " movie_company.movie_id = movie.movie_id ";
                 return sql;
             }
         }
@@ -30,7 +31,7 @@ namespace Content.DataAccess
         {
             get
             {
-                return "name";
+                return "company_name";
             }
         }
 
@@ -49,7 +50,7 @@ namespace Content.DataAccess
         {
             // set up parameterized query statement
             string sql = SelectStatement + " AND movie.movie_id=@movie_id ";
-            sql += "ORDER BY " + OrderFields;
+            sql += " ORDER BY " + OrderFields;
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)

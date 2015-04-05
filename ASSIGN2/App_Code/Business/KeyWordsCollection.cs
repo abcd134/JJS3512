@@ -9,22 +9,21 @@ using Content.DataAccess;
 
 namespace Content.Business
 {
-/// <summary>
-/// Summary description for CastCollection
-/// </summary>
-    public class CastCollection : AbstractBusinessCollection<Cast>
+    /// <summary>
+    /// Summary description for KeyWordsCollection
+    /// </summary>
+    public class KeyWordsCollection : AbstractBusinessCollection<KeyWords>
     {
-        private CastDA _da = new CastDA();
-
-	    public CastCollection()
-	    {
-		    //
-		    // TODO: Add constructor logic here
-		    //
-	    }
+        private MovieKeyWordsDA _da = new MovieKeyWordsDA();
+        public KeyWordsCollection()
+        {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
         #region methods
         /// <summary>
-        /// Fetch all the actors in database
+        /// Fetch all the data where the person was part of the crew
         /// </summary>
         public void FetchAll()
         {
@@ -33,27 +32,21 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the people who acted in a praticular movie.
+        /// Fetch all the key words for a given movie id. 
+        /// This should normally create a collection 
         /// </summary>
         public void FetchForId(int id)
         {
             DataTable dt = _da.GetByMovieID(id);
             PopulateFromDataTable(dt);
         }
-        /// <summary>
-        /// Fetch all the movies a particular person acted in
-        /// </summary>
-        public void FetchForMovies(int id)
-        {
-            DataTable dt = _da.GetMovies(id);
-            PopulateFromDataTable(dt);
-        }
+
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table
             foreach (DataRow row in dt.Rows)
             {
-                Cast a = new Cast();
+                KeyWords a = new KeyWords();
                 a.PopulateDataMembersFromDataRow(row);
                 AddToCollection(a);
             }
@@ -63,9 +56,9 @@ namespace Content.Business
         /// Adapter method for ObjectDataSource
         /// </summary>
         /// <returns></returns>
-        public static CastCollection GetAll()
+        public static GenreCollection GetAll()
         {
-            CastCollection list = new CastCollection();
+            GenreCollection list = new GenreCollection();
             list.FetchAll();
 
             return list;
