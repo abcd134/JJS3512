@@ -6,15 +6,20 @@ using Newtonsoft.Json;
 using System.Data;
 using System.Reflection;
 using Content.Services;
+
 /// <summary>
-/// Summary description for MovieTrailersCollection
+/// Used to store the store a collection of  movies and information of upcoming movies
 /// </summary>
+
 namespace Content.Services
 {
-    public class MovieTrailersCollection
+    public class MoviesCollection
     {
+        /// <summary>
+        /// Creates a list of movies
+        /// </summary>
         [JsonProperty("results")]
-        public List<MovieTrailersDA> MoviesTrailer
+        public List<Movie> Movies
         {
             get;
             set;
@@ -25,7 +30,7 @@ namespace Content.Services
         /// <returns></returns>
         public DataTable getDataTable()
         {
-            return ToDataTable<MovieTrailersDA>(MoviesTrailer);
+            return ToDataTable<Movie>(Movies);
         }
 
         //REFERENCE: http://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table
@@ -59,5 +64,6 @@ namespace Content.Services
             //put a breakpoint here and check datatable
             return dataTable;
         }
+
     }
 }

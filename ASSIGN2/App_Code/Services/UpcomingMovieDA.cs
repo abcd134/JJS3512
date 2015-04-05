@@ -5,16 +5,16 @@ using System.Web;
 using Newtonsoft.Json;
 using System.Net;
 using System.Data;
-using content.Services;
+using Content.Services;
 
 /// <summary>
 /// Summary description for MovieDBDA
 /// </summary>
 /// 
-namespace content.Services
+namespace Content.Services
 {
     //Used to retrive upcoming movies from API
-    public class APIMovieDA : APIAbstractDA
+    public class UpcomingMovieDA : APIAbstractDA
     {
         /// <summary>
         /// Used to fetch Upcoming movies
@@ -22,7 +22,7 @@ namespace content.Services
         /// <returns></returns>
         public override DataTable fetchData()
         {
-            return DownloadFromAPI<UpcomingMoviesCollection>(MovieDBServices.FetchUpcoming()).getDataTable();
+            return DownloadFromAPI<MoviesCollection>(MovieDBServices.FetchUpcoming()).getDataTable();
         }
     }
 }

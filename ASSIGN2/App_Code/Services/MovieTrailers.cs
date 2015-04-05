@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
-
+using Content.Services;
 /// <summary>
 /// Summary description for MovieTrailers
 /// </summary>
-public class MovieTrailers
+
+namespace Content.Services
 {
-    [JsonProperty("key")]
-    public string Key
+    public class MovieTrailers
     {
-        get;
-        set;
+        [JsonProperty("key")]
+        public string Key
+        {
+            get;
+            set;
+        }
     }
 }
