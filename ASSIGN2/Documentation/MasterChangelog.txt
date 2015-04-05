@@ -608,3 +608,8 @@ Deleted 70-97, 102-114, 121-139		Removed old data access structure
 
 SMovie.aspx and SMovie.aspx.cs   looks like yesterdays changes
 
+April 5		Joseph Version 6
+MovieTrailers.cs
+MovieTrailersCollection.cs
+APIMovieTrailers.cs
+	Document Created

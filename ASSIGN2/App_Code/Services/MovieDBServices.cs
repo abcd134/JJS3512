@@ -37,6 +37,10 @@ public class MovieDBServices
     {
         string link = "movie/upcoming";
         return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
-        
+    }
+    public static string FetchTrailer (int movieID)
+    {
+        string link = "movie/" + movieID + "/videos";
+        return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
     }
 }
