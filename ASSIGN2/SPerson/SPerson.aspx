@@ -42,15 +42,16 @@
                     </div>
 
                 <%--Bio Section--%>
+                    <div class="col-md-7 personPanel">
                     <div class="panel panel-default">
                         <div class="panel-heading">Biography</div>
                         <div class="panel-body">
                             <%#Eval("Biography") %>
                         </div>
                     </div>
-
+                    </div>
                 <%--Social Media Section--%>
-
+                <div class="col-md-7 personPanel">
                 <div class="panel panel-default">
                     <div class="panel-heading">Social Media</div>
                     <div class="panel-body">
@@ -60,6 +61,7 @@
                     </div>
                 </div>
                 </div>
+                    </div>
             </ItemTemplate>
         </asp:Repeater>
      </div>           
