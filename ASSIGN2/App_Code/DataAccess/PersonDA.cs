@@ -71,5 +71,13 @@ namespace Content.DataAccess
             // return result
             return DataHelper.GetDataTable(sql, parameters);
         }
+        public DataTable GetBy3PersonID(int id1, int id2, int id3)
+        {
+            string sql = SelectStatement + " WHERE person_Id=" + id1 +
+                                              " OR person_Id=" + id2 +
+                                              " OR person_Id=" + id3;
+            // return result
+            return DataHelper.GetDataTable(sql, null);
+        }
     }
 }

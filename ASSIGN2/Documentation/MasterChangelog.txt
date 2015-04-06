@@ -616,3 +616,42 @@ APIMovieTrailers.cs
 April 5		Joseph Version 6b
 Changed naming of Movie Trailer, Movie TrailerDa and UpcomingMovieDa to avoid confusion
 TestForJSON.aspx - created
+
+April 5		James Version 4.1ish
+MovieImage.cs
+					Added useless image instance variable (sighs)
+69-73				Added large size poster path
+110-114,130-134		Added appropriate getters/setters
+
+MovieImageCollection.cs
+44-51		Added Fetch for one image method
+
+PersonCollection.cs
+39-42 48-51			Removed more artwork references (they are like bunnies!)
+57-65				Added method to fetch 3 movies at a time (stinky design)
+
+SinglePerson.cs
+79-80		Code clean up for casting 
+
+MovieImageDA.cs
+18			Change one of the fields to increase reusability
+64-71		Added method get by image id
+
+PersonDA.cs
+74-81		Added method to get 3 people at a time
+
+Default.aspx
+87-92, 96, 117-124		Revised to work with layer structure
+
+Default.aspx.cs
+Major Rework to adapt to business layer approach.
+
+April 6, 2015			James
+
+		Added work plan to the google drive
+
+SMovie.aspx.cs
+54 - 56			Tagline visibility fix
+
+SingleMovie
+119				Tagline visibiltiy fix

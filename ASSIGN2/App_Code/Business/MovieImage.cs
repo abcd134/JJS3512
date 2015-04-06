@@ -14,12 +14,14 @@ namespace Content.Business
     /// </summary>
     public class MovieImage : AbstractBusiness
     {
+        private int _id;
         private int _movieID;
         private int _movieImageID;
         private string _filePath154;
         private string _filePath300;
         private string _filePath500;
         private string _filePath780;
+        private string _filePath1920;
         private bool _isPoster;
         private MovieImageDA _movieImageDA;
 
@@ -47,29 +49,32 @@ namespace Content.Business
             }
 
             if (row["movie_image_id"] == DBNull.Value)
+            {
                 MovieImageID = -1;  // Error flag set that the movie ID was not found (should be impossible)
+                Id = -1;
+            }
             else
+            {
                 MovieImageID = (int)Convert.ToInt32(row["movie_image_id"]);
+                Id = MovieImageID;
+            }
+                
 
             if (row["file_path"] == DBNull.Value)
             {
                 FilePath500 = "../images/Not_available.jpg";
-                if (_isPoster)
-                {
-                    FilePath154 = "../images/Not_available.jpg";
-                }
-                else
-                {
-                    FilePath300 = "../images/Not_available.jpg";
-                    FilePath780 = "../images/Not_available.jpg";
-                }               
+                FilePath154 = "../images/Not_available.jpg";
+                FilePath300 = "../images/Not_available.jpg";
+                FilePath780 = "../images/Not_available.jpg";
+                FilePath1920 ="../images/Not_available.jpg";
             }
             else
             {
+                FilePath1920 = "http://image.tmdb.org/t/p/w1920/" + row["file_path"];
                 FilePath500 = "http://image.tmdb.org/t/p/w500/" + row["file_path"];
                 if (_isPoster)
                 {
-                    FilePath154 = "http://image.tmdb.org/t/p/w154/" + row["file_path"];
+                    FilePath154  = "http://image.tmdb.org/t/p/w154/" + row["file_path"];         
                 }
                 else
                 {
@@ -102,7 +107,11 @@ namespace Content.Business
             get { return _filePath300; }
             set { _filePath300 = value; }
         }
-
+        public string FilePath1920
+        {
+            get { return _filePath1920; }
+            set { _filePath1920 = value; }
+        }
         public string FilePath500
         {
             get { return _filePath500; }
@@ -117,6 +126,11 @@ namespace Content.Business
         {
             get { return _filePath154; }
             set { _filePath154 = value; }
+        }
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
         }
    }
 }

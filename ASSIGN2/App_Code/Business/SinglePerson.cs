@@ -76,7 +76,8 @@ namespace Content.Business
             }
             else 
             {
-                ProfilePic = "http://image.tmdb.org/t/p/w300/" + row["profile_path"];    
+                ProfilePath = (string) row["profile_path"];
+                ProfilePic = "http://image.tmdb.org/t/p/w300/" + (string)row["profile_path"];    
             }
 
             if (row["home_page"] == DBNull.Value) HomePage = "";
