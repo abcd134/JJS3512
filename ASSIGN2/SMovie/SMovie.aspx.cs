@@ -71,12 +71,12 @@ public partial class SMovie : Page
         KeyWordsCollection kwc = new KeyWordsCollection();
         kwc.FetchForId(movieID);
         if (kwc.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Key Words Found");
+            rptKeyWords.DataSource = null; 
         else
         {
-            rptKeyWords.DataSource = kwc;
-            rptKeyWords.DataBind();
+            rptKeyWords.DataSource = kwc;         
         }
+        rptKeyWords.DataBind();
 
         CompanyCollection companyC = new CompanyCollection();
         companyC.FetchForId(movieID);

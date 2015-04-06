@@ -655,3 +655,9 @@ SMovie.aspx.cs
 
 SingleMovie
 119				Tagline visibiltiy fix
+
+KeyWords.cs
+40				KeyWord visibility fix
+
+SMovie.aspx.cs
+74				Keyword visibility fix
