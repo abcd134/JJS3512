@@ -646,3 +646,12 @@ Default.aspx
 Default.aspx.cs
 Major Rework to adapt to business layer approach.
 
+April 6, 2015			James
+
+		Added work plan to the google drive
+
+SMovie.aspx.cs
+54 - 56			Tagline visibility fix
+
+SingleMovie
+119				Tagline visibiltiy fix
