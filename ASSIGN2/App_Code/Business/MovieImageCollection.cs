@@ -41,6 +41,14 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
 
+        /// <summary>
+        /// Fetch for one image.
+        /// </summary>
+        public void FetchForImageID(int id)
+        {
+            DataTable dt = _da.GetByImageID(id);
+            PopulateFromDataTable(dt);
+        }
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table
