@@ -25,7 +25,6 @@ namespace Content.Business
         private string _homePage;
         private string _profilePath;
         private string _profilePic;
-        private Portfolio _folio;
         private PersonDA _personDA;
 
         public SinglePerson()
@@ -77,13 +76,13 @@ namespace Content.Business
             }
             else 
             {
-                ProfilePic = "http://image.tmdb.org/t/p/w300/" + row["profile_path"];    
+                ProfilePath = (string) row["profile_path"];
+                ProfilePic = "http://image.tmdb.org/t/p/w300/" + (string)row["profile_path"];    
             }
 
             if (row["home_page"] == DBNull.Value) HomePage = "";
             else HomePage = (string)row["home_page"];
 
-            Folio = new Portfolio(ID);
         }
         
         public int ID
@@ -132,11 +131,6 @@ namespace Content.Business
         {
             get { return _profilePic; }
             set { _profilePic = value; }
-        }
-        public Portfolio Folio
-        {
-            get { return _folio; }
-            set { _folio = value; }
         }
     }	
 }

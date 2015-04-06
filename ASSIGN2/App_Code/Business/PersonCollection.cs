@@ -28,7 +28,7 @@ namespace Content.Business
 
         #region methods
         /// <summary>
-        /// Fetch all the Art work data
+        /// Fetch all the information about all people
         /// </summary>
         public void FetchAll()
         {
@@ -37,16 +37,16 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the art works with a given id. This should normally create a collection
-        /// with either 0 or 1 art works. This way the single art work can be data binded to a data control.
+        /// Fetch information about a person with a given id. This should 
+        /// normally create a collection with either 0 or 1 SinglePersons.
         /// </summary>
         public void FetchForId(int id)
         {
-            DataTable dt = _da.GetById(id);
+            DataTable dt = _da.GetByPersonID(id);
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the movies for a given person
+        /// Fetch all the movies for a given person name
         /// </summary>
         public void FetchForPerson(string name)
         {
@@ -55,11 +55,13 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the Art work for a given keyword
+        /// Fetch information on 3 people
+        /// Specialized method for the Home Page
         /// </summary>
-        public void FetchForKeyword(int keywordId)
+        public void FetchFor3PeopleIds(int id1, int id2, int id3)
         {
-            // to do
+            DataTable dt = _da.GetBy3PersonID(id1, id2, id3);
+            PopulateFromDataTable(dt);
         }
 
         private void PopulateFromDataTable(DataTable dt)

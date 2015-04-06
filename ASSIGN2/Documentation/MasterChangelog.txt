@@ -500,3 +500,149 @@ MovieDa.cs
 April 2 Version 5	Joseph
 MovieImageDA.cs
 	Created Document
+
+April 3	Version 2 James
+Cast.cs
+		some minor clean up
+20		added _actorName
+22		added _profilePath
+49-53	added business logic for ActorName
+59-67	added business logic for ProfilePath
+92-101	added getters/setters for ActorName & ProfilePath
+
+CastCollection.cs
+		cleaning up Art Work references
+40-1	modified FetchByID method
+46-50	Added FetchForMovies method
+
+Crew.cs
+		some minor variable name cleanup
+21-2	added _personName and _profilePath
+41-4	added business logic for PersonName
+46-53	added business logic for ProfilePath
+84-93	added getters/setters for PersonName and ProfilePath
+
+CrewCollection.cs
+44-48	added FetchForMovieId method
+
+PersonCollection.cs
+		cleaning up art work references
+45		used a new DA method name (GetByPersonID)
+
+SingleMovie.cs
+		minor consistency changes
+60		fixed type cast error
+67-75   typos (switched imbd to imdb lol)
+77-95	Number conversions to currency format
+128		typo fixed
+
+SinglePerson.cs
+28,86,136-40	Deleted Portfolio class and all references to it
+
+AbstractDA.cs
+55-59		GetByID query string made to work
+			Note -- Visual Studio doesn't like inner joins
+
+CastDA.cs
+19-21		Select Statement
+29			Order By -- an appropriate field
+41-48		Added GetBYMovieID method
+51			select statement
+53			parameter structure
+
+CrewDA.cs
+21, 27-29	Select Statement
+35			Order By field chosen appropriately
+49			Select statement
+57-64		Added GetByMovieID method
+
+MovieDA.cs
+15			Select statement + fields added
+20			added more tables to join
+37			made clear which table movie_id was from
+48-50		added join
+68-71		added join
+
+MovieImageDA.cs
+18			added fields to select statement
+23-4		Select statement
+55			Select statement
+
+PersonDA.cs
+			some minor documentation/cleanup
+61			GetByPersonID method added
+64			Select statement cleaned up
+68			Parameter construction cleaned up
+
+SMovie.aspx
+			Changed data access structure from code behind to classes
+			About 100 changes!
+
+SMovie.aspx.cs
+20-26		Query string checking happening in !ispostback
+23-45		Deleted display movie method
+51-end		Deleted everything and replaced
+36-123		Added data retrieval from business layer/Data access layer
+
+Person.Aspx.cs
+			Numerous changes to improve readability
+
+April 4, 2015		 James		Version 3
+A number of changes were recorded yesterday, but are still showing as changes for today
+the list below is only the changes for today (I think)
+
+Browse.cs				Created Browse class
+BrowseCollection.cs		Created BrowseCollection
+						(including references to FetchBy 4 methods)
+BrowseDA.cs				Added methods to handle fetch all, fetch with search,
+						fetch with filter, and fetch with filter & search
+MovieKeyWords			See Yesterday's notes, but did again.
+
+Browse.aspx	
+32-34, 38-40, 47-8, 
+50-51, 60-61, 68, 91	Updated presentation layer to use business layer
+
+Browse.aspx.cs
+Deleted 70-97, 102-114, 121-139		Removed old data access structure
+70-106					Added data access through business and data access layers.
+
+SMovie.aspx and SMovie.aspx.cs   looks like yesterdays changes
+
+April 5		Joseph Version 6
+MovieTrailers.cs
+MovieTrailersCollection.cs
+APIMovieTrailers.cs
+	Document Created
+April 5		Joseph Version 6b
+Changed naming of Movie Trailer, Movie TrailerDa and UpcomingMovieDa to avoid confusion
+TestForJSON.aspx - created
+
+April 5		James Version 4.1ish
+MovieImage.cs
+					Added useless image instance variable (sighs)
+69-73				Added large size poster path
+110-114,130-134		Added appropriate getters/setters
+
+MovieImageCollection.cs
+44-51		Added Fetch for one image method
+
+PersonCollection.cs
+39-42 48-51			Removed more artwork references (they are like bunnies!)
+57-65				Added method to fetch 3 movies at a time (stinky design)
+
+SinglePerson.cs
+79-80		Code clean up for casting 
+
+MovieImageDA.cs
+18			Change one of the fields to increase reusability
+64-71		Added method get by image id
+
+PersonDA.cs
+74-81		Added method to get 3 people at a time
+
+Default.aspx
+87-92, 96, 117-124		Revised to work with layer structure
+
+Default.aspx.cs
+Major Rework to adapt to business layer approach.
+

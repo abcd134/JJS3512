@@ -9,19 +9,19 @@ using Content.DataAccess;
 
 namespace Content.Business
 {
-/// <summary>
-/// Summary description for CastCollection
-/// </summary>
-    public class CastCollection : AbstractBusinessCollection<Cast>
+    /// <summary>
+    /// Summary description for Movie Image Collection
+    /// </summary>
+    public class MovieImageCollection : AbstractBusinessCollection<MovieImage>
     {
-        private CastDA _da = new CastDA();
+        private MovieImageDA _da = new MovieImageDA();
 
-	    public CastCollection()
-	    {
-		    //
-		    // TODO: Add constructor logic here
-		    //
-	    }
+        public MovieImageCollection()
+        {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
         #region methods
         /// <summary>
         /// Fetch all the actors in database
@@ -33,19 +33,20 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
         /// <summary>
-        /// Fetch all the people who acted in a praticular movie.
+        /// Fetch all images for a particular movie.
         /// </summary>
-        public void FetchForId(int id)
+        public void FetchForMovieId(int id, bool isMoviePoster)
         {
-            DataTable dt = _da.GetByMovieID(id);
+            DataTable dt = _da.GetByMovieImage(id, isMoviePoster );
             PopulateFromDataTable(dt);
         }
+
         /// <summary>
-        /// Fetch all the movies a particular person acted in
+        /// Fetch for one image.
         /// </summary>
-        public void FetchForMovies(int id)
+        public void FetchForImageID(int id)
         {
-            DataTable dt = _da.GetMovies(id);
+            DataTable dt = _da.GetByImageID(id);
             PopulateFromDataTable(dt);
         }
         private void PopulateFromDataTable(DataTable dt)
@@ -53,7 +54,7 @@ namespace Content.Business
             // population this collection from this data table
             foreach (DataRow row in dt.Rows)
             {
-                Cast a = new Cast();
+                MovieImage a = new MovieImage();
                 a.PopulateDataMembersFromDataRow(row);
                 AddToCollection(a);
             }
@@ -63,9 +64,9 @@ namespace Content.Business
         /// Adapter method for ObjectDataSource
         /// </summary>
         /// <returns></returns>
-        public static CastCollection GetAll()
+        public static MovieImageCollection GetAll()
         {
-            CastCollection list = new CastCollection();
+            MovieImageCollection list = new MovieImageCollection();
             list.FetchAll();
 
             return list;

@@ -15,12 +15,13 @@ namespace Content.DataAccess
 {
     public class MovieImageDA : AbstractDA
     {
-        private const string fields = ", movie_id, is_poster, file_path"; 
+        private const string fields = " movie_image.movie_id, movie_image_id, is_poster, file_path"; 
         protected override string SelectStatement  
         {
             get
             {
-                string sql = "SELECT " + fields + " FROM (movie INNER JOIN movie_image ON movie.movie_id = movie_image.movie_id) ";
+                string sql = "SELECT " + fields + " FROM movie, movie_image " +
+                    " WHERE movie.movie_id = movie_image.movie_id ";
                 return sql;
             }
         }
@@ -52,13 +53,21 @@ namespace Content.DataAccess
                 moviePoster = 1;
 
             // set up parameterized query statement
-            string sql = SelectStatement + " WHERE (movie.movie_id =@movie_id) AND (movie_image.is_poster = " + moviePoster + ")"; // need to clean this up
+            string sql = SelectStatement + " AND (movie.movie_id =@movie_id) AND (movie_image.is_poster = " + moviePoster + ")"; // need to clean this up
             // construct array of parameters
             DbParameter[] parameters = new DbParameter[] {
                 DataHelper.MakeParameter("@movie_id", movieId, DbType.Int32)
             };
             // return result
             return DataHelper.GetDataTable(sql, parameters);
+        }
+
+        public DataTable GetByImageID(int imageID)
+        {
+            // set up parameterized query statement
+            string sql = "Select " + fields +" FROM movie_image WHERE movie_image.movie_image_id=" + imageID; 
+            // return result
+            return DataHelper.GetDataTable(sql, null);
         }
     }
 }

@@ -84,16 +84,16 @@
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
                             <ItemTemplate>
-                                <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("movie_id")%>"><%#Eval("title")%></a></h3>
+                                <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("MovieId")%>"><%#Eval("Title")%></a></h3>
                                 <div class="col-md-4">
-                                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("poster_path")%>"
-                                        title="<%# Eval("title") %> poster"
-                                        alt="<%# Eval("title") %> poster"
+                                    <img src="http://image.tmdb.org/t/p/w300<%#Eval("PosterPath")%>"
+                                        title="<%# Eval("Title") %> poster"
+                                        alt="<%# Eval("Title") %> poster"
                                         class="thumbnail img-responsive" />
                                 </div>
                                 <div class="col-md-8">
                                     <p>Movie Overview</p>
-                                    <p><%#Eval("overview") %></p>
+                                    <p><%#Eval("Overview") %></p>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -114,14 +114,14 @@
                 <ItemTemplate>
                     <div class="col-md-3 col-md-offset-1">
                         <div class="row">
-                            <img src="http://image.tmdb.org/t/p/w300<%#Eval("profile_path")%>"
-                                title="<%# Eval("name") %> poster"
-                                alt="<%# Eval("name") %> poster"
+                            <img src="http://image.tmdb.org/t/p/w300<%#Eval("ProfilePath")%>"
+                                title="<%# Eval("Name") %> poster"
+                                alt="<%# Eval("Name") %> poster"
                                 class="thumbnail img-responsive" />
                         </div>
                         <div class="row">
-                            <h1><a href="../SPerson/SPerson.aspx?id=<%#Eval("person_id") %>"><%# Eval("name") %></a></h1>
-                            <p><%# Eval("birthday") %></p>
+                            <h1><a href="../SPerson/SPerson.aspx?id=<%#Eval("ID") %>"><%# Eval("Name") %></a></h1>
+                            <p><%# Eval("Birthday") %></p>
                         </div>
                     </div>
                 </ItemTemplate>
