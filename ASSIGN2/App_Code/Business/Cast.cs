@@ -63,7 +63,7 @@ namespace Content.Business
             }
             else
             {
-                ProfilePath = "http://image.tmdb.org/t/p/w154/" + row["profile_path"];
+                ProfilePath = "http://image.tmdb.org/t/p/w154" + row["profile_path"];
             }
         }
 

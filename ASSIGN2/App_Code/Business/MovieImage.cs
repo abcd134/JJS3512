@@ -70,16 +70,16 @@ namespace Content.Business
             }
             else
             {
-                FilePath1920 = "http://image.tmdb.org/t/p/w1920/" + row["file_path"];
-                FilePath500 = "http://image.tmdb.org/t/p/w500/" + row["file_path"];
+                FilePath1920 = "http://image.tmdb.org/t/p/w1920" + row["file_path"];
+                FilePath500 = "http://image.tmdb.org/t/p/w500" + row["file_path"];
                 if (_isPoster)
                 {
-                    FilePath154  = "http://image.tmdb.org/t/p/w154/" + row["file_path"];         
+                    FilePath154  = "http://image.tmdb.org/t/p/w154" + row["file_path"];         
                 }
                 else
                 {
-                    FilePath300 = "http://image.tmdb.org/t/p/w300/" + row["file_path"];
-                    FilePath780 = "http://image.tmdb.org/t/p/w780/" + row["file_path"];
+                    FilePath300 = "http://image.tmdb.org/t/p/w300" + row["file_path"];
+                    FilePath780 = "http://image.tmdb.org/t/p/w780" + row["file_path"];
                 }                
             }            
         }

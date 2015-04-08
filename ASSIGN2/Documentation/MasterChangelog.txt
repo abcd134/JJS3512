@@ -713,3 +713,16 @@ Smovie.aspx
 
 Smovie.aspx.cs
 132-135		Added code for trailer repeater
+
+April 8, 2015			James Doube//bug
+MovieImage.cs
+73,74,77,81,82			Double slash bug fix
+
+SinglePerson.cs
+80						Double slash bug fix
+
+Cast.cs
+66						Doulbe slash bug fix
+
+Crew.cs	
+52						Double slash bug fix
