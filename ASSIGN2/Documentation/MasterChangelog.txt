@@ -677,3 +677,10 @@ Site.Master.cs
 10				Added Content.Business namespace
 72				Added getGenre method call on page load
 75-89			Added getGenre method to populate the two repeaters.
+
+April 7, 2015		Joseph Version 7
+Folder Top20 Created
+Movielist.aspx and .cs Created
+
+Site.master
+24, 25		Added links to nowplaying and coming soon

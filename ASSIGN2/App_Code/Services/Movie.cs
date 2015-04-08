@@ -21,7 +21,7 @@ namespace Content.Services
             set;
         }
         [JsonProperty("id")]
-        public int Id
+        public int MovieId
         {
             get;
             set;
@@ -33,13 +33,13 @@ namespace Content.Services
             set;
         }
         [JsonProperty("release_date")]
-        public string Release_date
+        public string ReleaseDate
         {
             get;
             set;
         }
         [JsonProperty("poster_path")]
-        public string Poster_path
+        public string PosterPath
         {
             get;
             set;
@@ -57,7 +57,7 @@ namespace Content.Services
             set;
         }
         [JsonProperty("vote_average")]
-        public double Vote_average
+        public double Average
         {
             get;
             set;
