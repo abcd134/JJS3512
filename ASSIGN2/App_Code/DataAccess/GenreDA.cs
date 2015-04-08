@@ -53,6 +53,19 @@ public class GenreDA : AbstractDA
         string sql = "Select name, genre_id from genre";
         return DataHelper.GetDataTable(sql, null);
     }
+    public DataTable GetTenGenreNames(Boolean top)
+    {
+        string sql;
+        if (top)
+        {
+            sql = "SELECT TOP 10 name, genre_id FROM [genre]";
+        }
+        else
+        {
+            sql = "SELECT TOP 10 * FROM (SELECT TOP 10 * FROM genre ORDER BY name DESC) ORDER BY name";
+        }
+        return DataHelper.GetDataTable(sql, null);
+    }
     private string dataOrder(bool ISAscending)
     {
         if (ISAscending) return "ASC";

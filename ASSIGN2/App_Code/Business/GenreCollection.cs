@@ -47,6 +47,12 @@ namespace Content.Business
             PopulateFromDataTable(dt);
         }
 
+        public void FetchTenGenreNames(Boolean top = true)
+        {
+            DataTable dt = _da.GetTenGenreNames(top);
+            PopulateFromDataTable(dt);
+        }
+
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table

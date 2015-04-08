@@ -646,3 +646,34 @@ Default.aspx
 Default.aspx.cs
 Major Rework to adapt to business layer approach.
 
+April 6, 2015			James
+
+		Added work plan to the google drive
+
+SMovie.aspx.cs
+54 - 56			Tagline visibility fix
+
+SingleMovie
+119				Tagline visibiltiy fix
+
+KeyWords.cs
+40				KeyWord visibility fix
+
+SMovie.aspx.cs
+74				Keyword visibility fix
+
+April 7, 2015			James   Master Page for 3 layer
+GenreCollection.cs
+50-55			Added method to fetch for top/bottom 10 genres
+
+GenreDA.cs		
+56 -68			Added method to get top/bottom 10 genres
+
+Site.Master
+25-26			Delete code in front data binding for genre
+114,117,123,127	Data retrieval from class structure
+
+Site.Master.cs
+10				Added Content.Business namespace
+72				Added getGenre method call on page load
+75-89			Added getGenre method to populate the two repeaters.

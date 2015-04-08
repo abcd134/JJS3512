@@ -37,7 +37,7 @@ namespace Content.Business
                 MovieID = (int)Convert.ToInt32(row["movie_ID"]);
 
             if (row["name"] == DBNull.Value)
-                KeyWordName = "";
+                KeyWordName = null;
             else
                 KeyWordName = (string)row["name"];
 

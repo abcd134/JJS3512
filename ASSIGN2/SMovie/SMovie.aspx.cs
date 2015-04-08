@@ -51,13 +51,17 @@ public partial class SMovie : Page
         rptIMDB.DataBind();
         rptOverview.DataSource = movieC;
         rptOverview.DataBind();
-        rptTagline.DataSource = movieC;
+
+        if (movieC.FindById(0).Tagline != null) { rptTagline.DataSource = movieC; }
+            else { rptTagline.DataSource = null; }
         rptTagline.DataBind();
 
         GenreCollection genreC = new GenreCollection();
         genreC.FetchForId(movieID);
         if (genreC.Count <= 0)
+        {
             Response.Redirect("../Error.aspx?error=No Genres Found");
+        }
         else
         {
             rptGenre.DataSource = genreC;
@@ -67,12 +71,12 @@ public partial class SMovie : Page
         KeyWordsCollection kwc = new KeyWordsCollection();
         kwc.FetchForId(movieID);
         if (kwc.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Key Words Found");
+            rptKeyWords.DataSource = null; 
         else
         {
-            rptKeyWords.DataSource = kwc;
-            rptKeyWords.DataBind();
+            rptKeyWords.DataSource = kwc;         
         }
+        rptKeyWords.DataBind();
 
         CompanyCollection companyC = new CompanyCollection();
         companyC.FetchForId(movieID);

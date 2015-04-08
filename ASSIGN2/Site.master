@@ -22,9 +22,6 @@
         <asp:SqlDataSource ID="NowShowingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie ORDER BY release_date DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopRatingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY vote_average DESC"></asp:SqlDataSource>
         <asp:SqlDataSource ID="TopGrossingDB" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\movies.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT TOP 10 movie_id, title FROM movie WHERE (release_date BETWEEN '2014' AND '2015') ORDER BY revenue DESC"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="GenreTop10DB" runat="server" ConnectionString='<%$ ConnectionStrings:Movies %>' ProviderName='<%$ ConnectionStrings:Movies.ProviderName %>' SelectCommand="SELECT TOP 10 * FROM [genre]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="GenreBot10DB" runat="server" ConnectionString='<%$ ConnectionStrings:Movies %>' ProviderName='<%$ ConnectionStrings:Movies.ProviderName %>' SelectCommand="SELECT TOP 10 * FROM (SELECT TOP 10 * FROM genre ORDER BY name DESC) ORDER BY name"></asp:SqlDataSource>
-
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -114,19 +111,19 @@
                             <div class="dropdown-menu dropdown-adjust-genre" role="menu">
                                 <div class="col-md-12 subnav">
                                     <div class="col-md-6 subnav">
-                                        <asp:Repeater ID="Genre10Repreater" runat="server" DataSourceID="GenreTop10DB">
+                                        <asp:Repeater ID="Top10DB" runat="server">
                                             <ItemTemplate>
                                                 <table>
-                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>&genreType=<%# DataBinder.Eval(Container.DataItem, "name")%>"/><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>"/><%# Eval("GenreName") %> </a></tr>
                                                 </table>
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
                                     <div class="col-md-6 subnav">
-                                        <asp:Repeater ID="Genre10botRepeater" runat="server" DataSourceID="GenreBot10DB">
+                                        <asp:Repeater ID="Bot10DB" runat="server">
                                             <ItemTemplate>
                                                 <table>
-                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# DataBinder.Eval(Container.DataItem, "genre_id")%>&genreType=<%# DataBinder.Eval(Container.DataItem, "name")%>"/><%#DataBinder.Eval( Container.DataItem, "name") %> </a></tr>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>"/><%# Eval("GenreName") %> </a></tr>
                                                 </table>
                                             </ItemTemplate>
                                         </asp:Repeater>

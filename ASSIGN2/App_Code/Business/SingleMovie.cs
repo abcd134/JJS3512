@@ -116,7 +116,7 @@ namespace Content.Business
                 BackDropPath = (string)row["backdrop_path"];
 
             if (row["tagline"] == DBNull.Value)
-                Tagline = "";
+                Tagline = null;
             else
                 Tagline = (string)row["tagline"];
 
