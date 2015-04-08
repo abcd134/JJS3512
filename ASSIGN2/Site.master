@@ -15,6 +15,11 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
      <link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bubblegun+Sans">
+    <style>
+        .radioSearch{color:blue;
+                     background-color: gold;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -54,8 +59,21 @@
                     </button>
                     <a class="navbar-brand default-links" runat="server" href="~/">BBP Movie Databases</a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right spaceabove">
+                <div class="navbar-collapse collapse">              
+                    <ul class="nav navbar-nav navbar-right spaceabove"> 
+                        <li>
+                            <asp:Label ID="SearchOn" runat="server" Text="Search On" CssClass="radioSearch"></asp:Label>
+                            <asp:RadioButtonList ID="SearchList" runat="server"
+                                onSelectedIndexChanged ="SearchList_SelectedItemChanged"
+                                AutopostBack="true"
+                                EnableViewState="true"
+                                CssClass="radioSearch"
+                                RepeatDirection ="Horizontal">
+                                <asp:ListItem Selected ="true" Text="Title" Value="title"></asp:ListItem>
+                                <asp:ListItem Text="Company" Value="company"></asp:ListItem>
+                                <asp:ListItem Text="Key Word" Value="keyWord"></asp:ListItem>
+                            </asp:RadioButtonList>
+                        </li>       
                         <li>
                             <asp:TextBox ID="SearchBox" runat="server" Height="35px" placeholder="search..." class="form-control"></asp:TextBox></li>
                         <li>

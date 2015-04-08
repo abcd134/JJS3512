@@ -9,11 +9,13 @@
     <div class="row">
         <asp:Repeater ID="rptPerson" runat="server">
             <ItemTemplate>
-                <div class="col-md-12 spaceabove">
-                    <div class="col-md-5">
+                <div class="col-xs-12 col-md-12 spaceabove">
+                    <div class="col-xs-12 col-md-5">
                         <div class="row personImage">
                             <a href="#" data-toggle="modal" data-target="#myModal">
-                            <img src="<%# Eval("ProfilePic") %>"  class="thumbnail profilePic"/>
+                            <figure class="img-responsive">
+                            <img src="<%# Eval("ProfilePic") %>"  class="thumbnail"/>
+                            </figure>
                             </a>
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -28,7 +30,7 @@
                         </div>
                     </div>
             
-                    <div class="col-md-7 personPanel">
+                    <div class="col-xs-12 col-md-7 personPanel">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <%# Eval("Name") %>
@@ -39,19 +41,19 @@
                                 <%# Eval("Birthplace") %><br />
                             </div>
                         </div>
-                    </div>
+                    
 
                 <%--Bio Section--%>
-                    <div class="col-md-7 personPanel">
+                  
                     <div class="panel panel-default">
                         <div class="panel-heading">Biography</div>
                         <div class="panel-body">
                             <%#Eval("Biography") %>
                         </div>
                     </div>
-                    </div>
+                    
                 <%--Social Media Section--%>
-                <div class="col-md-7 personPanel">
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">Social Media</div>
                     <div class="panel-body">
@@ -69,7 +71,7 @@
 
     <%--Begin Crew and movie info--%>
     <div class="row">
-       
+       <div class="col-xs-12 col-md-12">
             <asp:Repeater ID="movieRepeater" runat="server">
                 <HeaderTemplate>
                     <div class="panel panel-default panelResizing">
@@ -85,11 +87,11 @@
                 </FooterTemplate>
             </asp:Repeater>
             </div>
+        </div>
         <div class="row">
-
+            <div class="col-xs-12 col-md-12">
             <asp:Repeater ID="crewRepeater" runat="server">
                 <HeaderTemplate>
-                    <div class="row">
                         <div class="panel panel-default panelResizing">
                             <div class="panel-heading">Department</div>
                             <div class="panel-body">
@@ -100,10 +102,10 @@
                 <FooterTemplate>
                     </div>
                     </div>
-                </div>
                 </FooterTemplate>
 
             </asp:Repeater>
+            </div>
         </div>
      <%--End Crew and movie info--%>
 </asp:Content>

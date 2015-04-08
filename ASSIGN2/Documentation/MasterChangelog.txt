@@ -678,6 +678,25 @@ Site.Master.cs
 72				Added getGenre method call on page load
 75-89			Added getGenre method to populate the two repeaters.
 
+April 7, 2015			Sonia	
+Sperson design Debug
+1 - 111			Debugged the col md's for the panels added some mobile bootstrap
+
+SMovie design 
+174 - 181		Added panel for trailers 
+
+images
+				Re-sized the photo not available image in paint 
+
+April 7, 2015		James		Search Functionality
+Site.master
+18-22			Sexy styling
+64-76			Added RadioButtonList
+
+Site.master.cs
+89-92			stubbed search list change method
+109				added query string for search type
+
 April 7, 2015		Joseph Version 7
 Folder Top20 Created
 Movielist.aspx and .cs Created
