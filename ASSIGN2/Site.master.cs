@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using Content.Business;
+
 
 public partial class SiteMaster : MasterPage
 {
@@ -67,9 +69,24 @@ public partial class SiteMaster : MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        getGenres();
     }
 
+    protected void getGenres()
+    {
+        Boolean top = true;
+        Boolean bottom = false;
+        GenreCollection genreTC = new GenreCollection();
+        // get top ten genre names and bind
+        genreTC.FetchTenGenreNames(top);
+        Top10DB.DataSource = genreTC;
+        Top10DB.DataBind();
+        // Now get the bottom 10 genres and bind
+        GenreCollection genreBC = new GenreCollection();
+        genreBC.FetchTenGenreNames(bottom);
+        Bot10DB.DataSource = genreBC;
+        Bot10DB.DataBind();
+    }
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
         Context.GetOwinContext().Authentication.SignOut();
