@@ -18,7 +18,7 @@
                         <div class="col-md-2">
                             <figure>
                                 <a href="https://www.themoviedb.org/movie/<%# Eval("MovieId") %>">
-                                <img src="http://image.tmdb.org/t/p/w300<%# Eval("PosterPath") %>"
+                                <img src="<%# Eval("PosterPath") %>"
                                         title="<%# Eval("Title")%> poster"
                                         alt="<%# Eval("Title") %> poster"
                                         class="thumbnail img-responsive" /></a>

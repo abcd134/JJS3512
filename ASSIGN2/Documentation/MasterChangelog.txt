@@ -697,9 +697,12 @@ Site.master.cs
 89-92			stubbed search list change method
 109				added query string for search type
 
-April 7, 2015		Joseph Version 7
+April 7, 2015		Joseph Version 7 and 7B
 Folder Top20 Created
 Movielist.aspx and .cs Created
 
 Site.master
 24, 25		Added links to nowplaying and coming soon
+
+April 7, 2015		Joseph Version 7c
+69-89		Added a functionality to check if there is a valid poster picture link. Return no image in there is nothing

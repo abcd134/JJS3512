@@ -30,6 +30,7 @@ namespace Content.Services
         /// <returns></returns>
         public DataTable getDataTable()
         {
+            checkPoster();
             return ToDataTable<Movie>(Movies);
         }
 
@@ -63,6 +64,20 @@ namespace Content.Services
             }
             //put a breakpoint here and check datatable
             return dataTable;
+        }
+
+        private void checkPoster ()
+        {
+            foreach(Movie movieToCheck in Movies)
+            {
+                if (movieToCheck.PosterPath == null)
+                {
+                    string ProfilePath = "../images/";
+                    movieToCheck.PosterPath = ProfilePath + "Not_available.jpg";
+                }
+                else
+                    movieToCheck.PosterPath = "http://image.tmdb.org/t/p/w300" + movieToCheck.PosterPath;
+            }
         }
 
     }
