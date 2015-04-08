@@ -706,3 +706,10 @@ Site.master
 
 April 7, 2015		Joseph Version 7c
 69-89		Added a functionality to check if there is a valid poster picture link. Return no image in there is nothing
+
+April 8, 2015		Joseph Version 8
+Smovie.aspx
+175-188		Added repeater for trailers
+
+Smovie.aspx.cs
+132-135		Added code for trailer repeater

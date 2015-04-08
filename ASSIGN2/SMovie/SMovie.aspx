@@ -170,15 +170,22 @@
                         </div>
                     </FooterTemplate>
                 </asp:Repeater>
-                
+
                 <%--This is the start of trailer repeater--%>
-                <%--ADD REPEATER HERE FOR TRAILER API--%>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Trailer</div>
-                    <div class="panel-body">
-                        INSERT TRAILER HERE!!!
-                    </div>
-                </div>
+                <asp:Repeater ID="rptTrailer" runat="server">
+                    <HeaderTemplate>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Trailer</div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                            <div class="panel-body">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%# Eval("Key") %>"></iframe>
+                            </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                            </div>
+                    </FooterTemplate>
+                </asp:Repeater>
             </div>
         </div>
     </div>

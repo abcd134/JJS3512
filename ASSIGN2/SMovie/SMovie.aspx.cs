@@ -9,6 +9,7 @@ using System.Data.OleDb;
 using System.Web.Configuration;
 using System.Data.Common;
 using Content.Business;
+using Content.Services;
 
 public partial class SMovie : Page
 {
@@ -126,6 +127,12 @@ public partial class SMovie : Page
         {
             rptPosters.DataSource = posterC;
             rptPosters.DataBind();
+        }
+
+        MovieTrailersDA trailerC = new MovieTrailersDA();
+        {
+            rptTrailer.DataSource = trailerC.fetchTrailers(movieID);
+            rptTrailer.DataBind();
         }
     }
 }
