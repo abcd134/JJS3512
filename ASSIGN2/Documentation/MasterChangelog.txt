@@ -687,3 +687,12 @@ SMovie design
 
 images
 				Re-sized the photo not available image in paint 
+
+April 7, 2015		James		Search Functionality
+Site.master
+18-22			Sexy styling
+64-76			Added RadioButtonList
+
+Site.master.cs
+89-92			stubbed search list change method
+109				added query string for search type

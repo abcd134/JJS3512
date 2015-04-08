@@ -9,7 +9,6 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using Content.Business;
 
-
 public partial class SiteMaster : MasterPage
 {
     private const string AntiXsrfTokenKey = "__AntiXsrfToken";
@@ -87,6 +86,10 @@ public partial class SiteMaster : MasterPage
         Bot10DB.DataSource = genreBC;
         Bot10DB.DataBind();
     }
+    protected void SearchList_SelectedItemChanged(object sender, EventArgs e)
+    {
+        string searchType = SearchList.SelectedItem.Value.ToString();
+    }
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
         Context.GetOwinContext().Authentication.SignOut();
@@ -102,14 +105,16 @@ public partial class SiteMaster : MasterPage
         string link = "";
         if (SearchBox.Text != null)
         {
-            link = "~/Browse/Browse.aspx?search=" + SearchBox.Text;
+            link = "~/Browse/Browse.aspx?search=" + SearchBox.Text
+                  + "&SearchType=" + SearchList.SelectedItem.Value;
 
             // Creating query string on post back to maintain search/filter cohesion
             if (Request.QueryString["genre"] != null)
             {
                 if (Request.QueryString["genreType"] != null)
                 {
-                    link += "&genre=" + Request.QueryString["genre"] + "&genreType=" + Request.QueryString["genreType"];
+                    link += "&genre=" + Request.QueryString["genre"]
+                          + "&genreType=" + Request.QueryString["genreType"];
                 }
                 else
                 {
@@ -118,7 +123,6 @@ public partial class SiteMaster : MasterPage
             }
             Response.Redirect(link);
         }
-
     }
     /// <summary>
     /// Method to Get and Set the SearchBox.Text
