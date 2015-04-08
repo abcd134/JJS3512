@@ -8,7 +8,8 @@
             <%--Give the poster image a col-md of 5--%>
             <div class="col-xs-12 col-md-5 imageResize">
                 <asp:Repeater ID="topOfPage" runat="server">
-                    <ItemTemplate>             
+                    <ItemTemplate>
+                        
                        <a href="#" data-toggle="modal" data-target="#myModal"> 
                         <figure class="img-responsive">
                             <img src="<%# Eval("ImgPoster500") %>" class="thumbnail" />
@@ -16,6 +17,8 @@
                             <%-- %> <asp:Image runat="server" ID="imgPoster" class="thumbnail" /> --%>
                         </figure>
                         </a>
+                  
+                   
                         <%--This handles the modal for the poster and opens up the bigger picture--%>
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
                             <div class="modal-dialog">
@@ -167,6 +170,15 @@
                         </div>
                     </FooterTemplate>
                 </asp:Repeater>
+                
+                <%--This is the start of trailer repeater--%>
+                <%--ADD REPEATER HERE FOR TRAILER API--%>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Trailer</div>
+                    <div class="panel-body">
+                        INSERT TRAILER HERE!!!
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -180,9 +192,6 @@
                 <div class="panel-heading">Backdrops</div>
                 <div class="panel-body">
                     <div class="display">
-
-
-
             <%--Modal and Backdrop STARTS HERE--%>
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
