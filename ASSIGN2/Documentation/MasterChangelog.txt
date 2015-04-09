@@ -729,3 +729,45 @@ Crew.cs
 
 April 8, 2015		Joseph Version 9
 Movies.accdb	Added reviews and Movie_review table
+
+April 8, 2015		Joseph Version 10
+Smovie.aspx
+203-222			Comented out old code
+224-235			Added JQuery Image Gallary for "Backdrops section" 
+315-335			Comented out old code
+337-347			Added JQuery Image Gallary for "Additional Posters Section"
+
+Site.master
+24-25				Added reference to JQuery CSS file
+
+TestForJSON.aspx
+21-51				Removed JSON Test repeaters
+					ADDED JQUERY IMAGE LIBRARY TEST repeaters
+
+TestForJSON.aspx.cs
+13-24			Removed JSON Test codes
+					ADDED JQUERY IMAGE LIBRARY repeater codes
+
+Content/fotorama.css
+	Document added
+Script/fotorama.css
+	Document added
+
+April 8, 2015		Sonia Design Changes
+
+SPerson.aspx	
+All Lines			Design for mobile on all lines
+
+media.css			
+All lines			Added new stylesheet for mobile view 
+
+Site.css
+192 - 195			Added styles for now playing and coming soon movies
+197					Added clear style for Sperson bio 
+
+MovieList.aspx
+All lines			Added styling for desktop version 
+
+Smovie.aspx
+201					Removed bootstrap display styling so JQuery plugin works
+312					Removed bootstrap display styling so JQuery plugin works 

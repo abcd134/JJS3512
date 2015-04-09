@@ -130,9 +130,11 @@ public partial class SMovie : Page
         }
 
         MovieTrailersDA trailerC = new MovieTrailersDA();
+        if (trailerC.checkIfTrailerExists(movieID) == false)
         {
             rptTrailer.DataSource = trailerC.fetchTrailers(movieID);
             rptTrailer.DataBind();
         }
+        
     }
 }
