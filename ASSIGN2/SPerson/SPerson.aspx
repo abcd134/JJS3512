@@ -9,8 +9,8 @@
     <div class="row">
         <asp:Repeater ID="rptPerson" runat="server">
             <ItemTemplate>
-                <div class="col-xs-12 col-md-12 spaceabove">
-                    <div class="col-xs-5 col-sm-5 col-md-5">
+                <div class="col-xs-12 col-sm-12 col-md-12 spaceabove">
+                    <div class="col-xs-5 col-sm-4 col-md-5">
                         <div class="row personImage">
                             <a href="#" data-toggle="modal" data-target="#myModal">
                             <figure class="img-responsive">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
             
-                    <div class="col-xs-12 col-sm-7 col-md-7 personPanel">
+                    <div class="col-xs-12 col-sm-8 col-md-7 personPanel">
                         <div class="panel panel-default personInfoMobile">
                             <div class="panel-heading">
                                 <%# Eval("Name") %>

@@ -198,7 +198,7 @@
             <div class="panel panel-default panelResizing">
                 <div class="panel-heading">Backdrops</div>
                 <div class="panel-body">
-                    <div class="display">
+                    <%--<div class="display">--%>
             <%--Modal and Backdrop STARTS HERE--%>
 <%--                        <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
@@ -234,7 +234,7 @@
                         </asp:Repeater>
                <%--Modal and Backdrop ENDS HERE--%>
 
-                    </div>
+                    <%--</div>--%>
                 </div>
             </div>
         </div>
@@ -309,7 +309,7 @@
                     </div>
                     <div class="panel-body">
                         <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
-                            <div class="display">
+                            <%--<div class="display">--%>
 
 
 <%--                                <asp:Repeater ID="rptPosters" runat="server">
@@ -346,7 +346,7 @@
                                     </FooterTemplate>
                                 </asp:Repeater>
 
-                            </div>
+                            <%--</div>--%>
                         </div>
                     </div>
                 </div>
@@ -357,13 +357,13 @@
 
 
     <asp:Label ID="message" runat="server" />
-    <script>
+<%--    <script>
         $(window).resize(function () {
             if ($(window).width() <= 768) {
                 // do something here
                 $("#collapseListGroup1").find("ul").slice(3).remove();
             }
         });
-</script>
+</script>--%>
      <script src="../Scripts/fotorama.js" type="text/javascript"></script>
 </asp:Content>

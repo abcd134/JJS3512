@@ -7,15 +7,16 @@
 
 
 <div class="row rowCol">
-    <div class="col-md-9 browsePanel">
-        <asp:Label ID="lblTitle" runat="server"></asp:Label>
+    <div class="col-md-12 top20Panel spaceabove">
+     
         <div class="panel panel-default">
+            <div class="panel-heading"><asp:Label ID="lblTitle" runat="server"></asp:Label></div>
             <div class="panel-body">
                 <asp:Label ID="notFound" runat="server" Visible="false" ></asp:Label> 
                 <asp:Repeater ID="layout" runat="server">
                     <ItemTemplate>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-6">
                             <figure>
                                 <a href="https://www.themoviedb.org/movie/<%# Eval("MovieId") %>">
                                 <img src="<%# Eval("PosterPath") %>"
@@ -24,7 +25,7 @@
                                         class="thumbnail img-responsive" /></a>
                             </figure>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-10">
                                     <h3><a href="https://www.themoviedb.org/movie/<%# Eval("MovieId") %>"><%# Eval("Title") %></a>
