@@ -12,14 +12,13 @@ using Content.DataAccess;
 public class BrowseDA : AbstractDA
 {
     private const string fields = " person.name, person.person_id,role_name, "+
-        " title, overview, poster_path, backdrop_path, release_date, "+
+        " movie.title, overview, poster_path, backdrop_path, release_date, "+
         " tagline, vote_average ";
     protected override string SelectStatement
     {
         get
         {
-            return "SELECT " + KeyFieldName + "," + fields
-                + " FROM movie, movie_cast, person";
+            return "SELECT " + KeyFieldName + "," + fields;
         }
     }
 
@@ -44,7 +43,7 @@ public class BrowseDA : AbstractDA
     /// <returns></returns>
     public DataTable GetAllMovies()
     {
-        string sql = SelectStatement + "  WHERE "
+        string sql = SelectStatement + " FROM movie, movie_cast, person WHERE "
                                      + " movie_cast.movie_id = movie.movie_id AND "
                                      + " movie_cast.person_id = person.person_id AND "
                                      + " movie_cast.ordering = 0 "
@@ -54,7 +53,8 @@ public class BrowseDA : AbstractDA
 
     public DataTable GetGenreFilteredMovies(int genreID)
     {
-        string sql = SelectStatement + " ,genre, movie_genre " + " WHERE genre.genre_id=" + genreID + " AND "
+        string sql = SelectStatement + " FROM movie, movie_cast, person ,genre, movie_genre " 
+                                     + " WHERE genre.genre_id=" + genreID + " AND "
                                      + " movie.movie_id =  movie_genre.movie_id AND "
                                      + " movie_genre.genre_id = genre.genre_id AND "
                                      + " movie_cast.movie_id = movie.movie_id AND "
@@ -67,26 +67,32 @@ public class BrowseDA : AbstractDA
         return DataHelper.GetDataTable(sql, parameters);
     }
 
-    public DataTable GetSearchFilteredMovies(string search)
+    public DataTable GetSearchFilteredMovies(string search, string searchBy)
     {
-        string sql = SelectStatement + " WHERE movie_cast.movie_id = movie.movie_id AND "
-                                     + " movie_cast.person_id = person.person_id AND "
-                                     + " movie_cast.ordering = 0 AND "
-                                     + " movie.title LIKE '%" + search + "%' "
-                                     + " ORDER BY " + OrderFields + dataOrder(false);
+        string sql = SelectStatement + " FROM movie, movie_cast, person ";
+               sql+= getOtherTables(searchBy);
+               sql+= " WHERE movie_cast.movie_id = movie.movie_id AND "
+                  +  " movie_cast.person_id = person.person_id AND "
+                  +  " movie_cast.ordering = 0 AND ";
+        sql += getSearchBySql(search, searchBy);
+        sql += " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
 
-    public DataTable GetGenreAndSearchFilteredMovies(int genreID, string search)
+    public DataTable GetGenreAndSearchFilteredMovies(int genreID, string searchFor, string searchBy)
     {
-        string sql = SelectStatement + " , genre, movie_genre WHERE genre.genre_id=" + genreID + " AND "
-                                     + " movie_cast.movie_id = movie.movie_id AND "
-                                     + " movie_cast.person_id = person.person_id AND "
-                                     + " movie_cast.ordering = 0 AND "
-                                     + " movie_genre.genre_id = genre.genre_id AND "
-                                     + " movie_genre.movie_id = movie.movie_id AND "
-                                     + " movie.title LIKE '%" + search + "%' "
-                                     + " ORDER BY " + OrderFields + dataOrder(false);
+        string sql  = SelectStatement + " FROM movie, movie_cast, person, genre, movie_genre ";
+               sql += getOtherTables(searchBy);
+               sql +=" WHERE genre.genre_id=" + genreID + " AND "
+                   + " movie_cast.movie_id = movie.movie_id AND "
+                   + " movie_cast.person_id = person.person_id AND "
+                  
+                   + " movie_genre.genre_id = genre.genre_id AND "
+                   + " movie_genre.movie_id = movie.movie_id AND "
+                    + " movie_cast.ordering = 0 AND ";
+
+        sql += getSearchBySql(searchFor, searchBy);                         
+        sql += " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
 
@@ -94,5 +100,43 @@ public class BrowseDA : AbstractDA
     {
         if (ISAscending) return "ASC";
         else return "DESC";
+    }
+    private string getOtherTables(string searchBy)
+    {
+        string sqlPiece="";
+        if (searchBy == "Company")
+        {
+            sqlPiece += ", company, movie_company ";
+        }
+        else if (searchBy == "Key Word")
+        {
+            sqlPiece += ", movie_keyword, keyword ";
+        }
+        else
+        {
+            sqlPiece += " ";
+        }
+        return sqlPiece;
+    }
+    private string getSearchBySql(string searchFor, string searchBy)
+    {
+        string sqlPiece ="";
+        if (searchBy == "Company")
+        {
+            sqlPiece += " movie_company.company_id = company.company_id AND "
+                + " movie_company.movie_id = movie.movie_id AND "
+                + " company.company_name LIKE '%" + searchFor + "%' ";
+        }
+        else if (searchBy == "Key Word")
+        {
+            sqlPiece += " movie_keyword.keyword_id = keyword.keyword_id AND "
+                + " movie_keyword.movie_id = movie.movie_id AND "
+                + " keyword.name LIKE '%" + searchFor + "%' ";
+        }
+        else
+        {
+            sqlPiece += " movie.title LIKE '%" + searchFor + "%' ";
+        }
+        return sqlPiece;
     }
 }

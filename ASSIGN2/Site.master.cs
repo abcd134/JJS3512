@@ -139,4 +139,16 @@ public partial class SiteMaster : MasterPage
             SearchBox.Text = value;
         }
     }
+
+    public string SearchKind
+    {
+        get
+        {
+            return SearchList.SelectedItem.Value.ToString();
+        }
+        set 
+        {
+            SearchList.SelectedValue= value;
+        }
+    }
 }

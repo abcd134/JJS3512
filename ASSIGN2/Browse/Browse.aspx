@@ -88,7 +88,7 @@
             <%--ItemTemplate controls the content--%>
             <ItemTemplate>
                 <p>
-                <a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID") %>&genreType=<%# Eval("GenreName") %>&search=<%# Master.SearchBx %>"><%# Eval("GenreName") %></a>
+                <a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID") %>&genreType=<%# Eval("GenreName") %>&search=<%# Master.SearchBx %>&SearchType=<%# Master.SearchKind %>"><%# Eval("GenreName") %></a>
                 </p>
             </ItemTemplate>
             <FooterTemplate>

@@ -65,13 +65,12 @@
                             <asp:Label ID="SearchOn" runat="server" Text="Search On" CssClass="radioSearch"></asp:Label>
                             <asp:RadioButtonList ID="SearchList" runat="server"
                                 onSelectedIndexChanged ="SearchList_SelectedItemChanged"
-                                AutopostBack="true"
                                 EnableViewState="true"
                                 CssClass="radioSearch"
                                 RepeatDirection ="Horizontal">
-                                <asp:ListItem Selected ="true" Text="Title" Value="title"></asp:ListItem>
-                                <asp:ListItem Text="Company" Value="company"></asp:ListItem>
-                                <asp:ListItem Text="Key Word" Value="keyWord"></asp:ListItem>
+                                <asp:ListItem Selected ="true" Text="Title" Value="Title"></asp:ListItem>
+                                <asp:ListItem Text="Company" Value="Company"></asp:ListItem>
+                                <asp:ListItem Text="Key Word" Value="Key Word"></asp:ListItem>
                             </asp:RadioButtonList>
                         </li>       
                         <li>
@@ -132,7 +131,7 @@
                                         <asp:Repeater ID="Top10DB" runat="server">
                                             <ItemTemplate>
                                                 <table>
-                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>"/><%# Eval("GenreName") %> </a></tr>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>&SearchType=<%# SearchList.SelectedItem.Value %>"/><%# Eval("GenreName") %> </a></tr>
                                                 </table>
                                             </ItemTemplate>
                                         </asp:Repeater>
@@ -141,7 +140,7 @@
                                         <asp:Repeater ID="Bot10DB" runat="server">
                                             <ItemTemplate>
                                                 <table>
-                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>"/><%# Eval("GenreName") %> </a></tr>
+                                                    <tr><a href="../Browse/Browse.aspx?genre=<%# Eval("GenreID")%>&genreType=<%# Eval("GenreName")%>&SearchType=<%# SearchList.SelectedItem.Value %>"/><%# Eval("GenreName") %> </a></tr>
                                                 </table>
                                             </ItemTemplate>
                                         </asp:Repeater>

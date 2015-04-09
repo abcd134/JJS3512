@@ -17,7 +17,6 @@ public partial class Browse : Page
     {
         int genreID;
         string search;
-
         if (!IsPostBack)
         {
             // Check Query String for value then validate
@@ -28,7 +27,8 @@ public partial class Browse : Page
                 if (Request.QueryString["genre"] != null ){
                     if(Request.QueryString["genreType"] != null){
                         genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                        lblGenre.Text = "Filtering on: " + Request.QueryString["genreType"];
+                        Master.SearchKind = Request.QueryString["SearchType"];
+                        lblGenre.Text = "&nbsp Showing only " + Request.QueryString["genreType"] + " movies";                      
                     }
                     else{
                         Response.Redirect("../Error.aspx?error=Invalid Query String sent to Browse Page");
@@ -40,15 +40,17 @@ public partial class Browse : Page
                     search = Request.QueryString["search"];
                     // set the search box with latest search string
                     Master.SearchBx = search;
+                    Master.SearchKind = Request.QueryString["SearchType"]; ;
                     if (lblGenre.Text.Length > 0)
                     {
-                        lblGenre.Text += " and " + Master.SearchBx;
+                        lblGenre.Text += " containing '" ;
                     }
-                    else { 
-                        lblGenre.Text = "Filtering on: " + search;
+                    else {
+                        lblGenre.Text = "&nbsp Showing only movies containing '";
                         lblGenre.Visible = true;
                         removeFilter.Visible = true;
                     }
+                    lblGenre.Text += Master.SearchBx + "' in the " + Master.SearchKind + " field.";
                 }
                 else { search = null; }
                 PerformDataBinding(search, genreID);
@@ -70,13 +72,14 @@ public partial class Browse : Page
         notFound.Visible = false;
         removeFilter.Visible = true;
         lblGenre.Visible = true;
+        string searchOn = Master.SearchKind;
         BrowseCollection browseC = new BrowseCollection();
         if (search != null && genreID >= 0) // Filter on genre and search criteria
         {
-            browseC.FetchForGenreAndSearch(genreID, search);
+            browseC.FetchForGenreAndSearch(genreID, search, searchOn);
         }
             else if(search != null){ //Filter on only search box criteria
-                browseC.FetchForSearch(search);
+                browseC.FetchForSearch(search, searchOn);
             }
                 else if(genreID >= 0){
                     browseC.FetchForGenre(genreID); // Filter only on genre
@@ -114,6 +117,7 @@ public partial class Browse : Page
     {
         // Clear Master search box
         Master.SearchBx = "";
+        Master.SearchKind = "Title";
         
         // Hide elements related to a filter
         removeFilter.Visible = false;

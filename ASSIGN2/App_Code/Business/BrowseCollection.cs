@@ -39,14 +39,14 @@ namespace Content.Business
             DataTable dt = _da.GetGenreFilteredMovies(genreID);
             PopulateFromDataTable(dt);
         }
-        public void FetchForSearch(string search)
+        public void FetchForSearch(string search, string searchBy)
         {
-            DataTable dt = _da.GetSearchFilteredMovies(search);
+            DataTable dt = _da.GetSearchFilteredMovies(search, searchBy);
             PopulateFromDataTable(dt);
         }
-        public void FetchForGenreAndSearch(int genreID, string search)
+        public void FetchForGenreAndSearch(int genreID, string searchFor, string searchBy)
         {
-            DataTable dt = _da.GetGenreAndSearchFilteredMovies(genreID, search);
+            DataTable dt = _da.GetGenreAndSearchFilteredMovies(genreID, searchFor, searchBy);
             PopulateFromDataTable(dt);
         }
         private void PopulateFromDataTable(DataTable dt)
