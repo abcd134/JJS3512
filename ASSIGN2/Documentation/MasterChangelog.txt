@@ -753,3 +753,21 @@ Content/fotorama.css
 Script/fotorama.css
 	Document added
 
+April 8, 2015		Sonia Design Changes
+
+SPerson.aspx	
+All Lines			Design for mobile on all lines
+
+media.css			
+All lines			Added new stylesheet for mobile view 
+
+Site.css
+192 - 195			Added styles for now playing and coming soon movies
+197					Added clear style for Sperson bio 
+
+MovieList.aspx
+All lines			Added styling for desktop version 
+
+Smovie.aspx
+201					Removed bootstrap display styling so JQuery plugin works
+312					Removed bootstrap display styling so JQuery plugin works 
