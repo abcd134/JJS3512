@@ -771,3 +771,35 @@ All lines			Added styling for desktop version
 Smovie.aspx
 201					Removed bootstrap display styling so JQuery plugin works
 312					Removed bootstrap display styling so JQuery plugin works 
+
+
+April 9, 2015		James Search Functionality
+Browse.aspx		Added search type (ie, title, company and key word)
+
+Browse.aspx.cs
+31,43			getting search by field from site master
+32,46,49,53		Display wording
+79				Paramater added to FetchForGenreAndTitle
+82				Parameter added to FetchFor Genre
+120				Explicit clearing of site.master SearchKind
+
+Site.master
+69				Removed autopost back
+71-3			standardized list names (capital first letter)
+134, 143		Added SearchList.SelectedItem.Value to query string
+
+Site.master.cs
+142-153			Added get/sets for SearchKind (radiobuttonlist value)
+
+BrowseCollection.cs
+42,44,47,49		Added parameter to fetch method and get calls
+
+BrowseDA.cs
+15				explicitly naming table for title
+22				restructured how from clause is built
+46				restructured how from clause is built
+56-8			Restructured select statement for GetGenreFilteredMovies
+72-78			Restructured select statement for GetSearchFilteredMovies
+84-95			Restructured select statement for GetGenreAndSearchFilteredMovies
+104-120			Added getOtherTables method
+121-141			Added getSearchBySql method
