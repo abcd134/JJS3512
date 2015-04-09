@@ -729,3 +729,27 @@ Crew.cs
 
 April 8, 2015		Joseph Version 9
 Movies.accdb	Added reviews and Movie_review table
+
+April 8, 2015		Joseph Version 10
+Smovie.aspx
+203-222			Comented out old code
+224-235			Added JQuery Image Gallary for "Backdrops section" 
+315-335			Comented out old code
+337-347			Added JQuery Image Gallary for "Additional Posters Section"
+
+Site.master
+24-25				Added reference to JQuery CSS file
+
+TestForJSON.aspx
+21-51				Removed JSON Test repeaters
+					ADDED JQUERY IMAGE LIBRARY TEST repeaters
+
+TestForJSON.aspx.cs
+13-24			Removed JSON Test codes
+					ADDED JQUERY IMAGE LIBRARY repeater codes
+
+Content/fotorama.css
+	Document added
+Script/fotorama.css
+	Document added
+

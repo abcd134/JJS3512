@@ -200,7 +200,7 @@
                 <div class="panel-body">
                     <div class="display">
             <%--Modal and Backdrop STARTS HERE--%>
-                        <asp:Repeater ID="rptBackDrop" runat="server">
+<%--                        <asp:Repeater ID="rptBackDrop" runat="server">
                             <ItemTemplate>
                                 <div class="col-md-3">
                                     <a href="<%# Eval("FilePath500") %>" class="thumbnail" data-toggle="modal" data-target="#myModal<%# Eval ("MovieImageID") %>">
@@ -219,6 +219,18 @@
                                         </div>
                                     </div>
                             </ItemTemplate>
+                        </asp:Repeater>--%>
+
+                        <asp:Repeater ID="rptBackDrop" runat="server">
+                            <HeaderTemplate>
+                                <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="50%">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <img src="<%# Eval("FilePath500") %>" />
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </div>
+                            </FooterTemplate>
                         </asp:Repeater>
                <%--Modal and Backdrop ENDS HERE--%>
 
@@ -300,7 +312,7 @@
                             <div class="display">
 
 
-                                <asp:Repeater ID="rptPosters" runat="server">
+<%--                                <asp:Repeater ID="rptPosters" runat="server">
                                     <ItemTemplate>
                                         <div class="col-md-3">
                                             <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal2<%# Eval ("MovieImageID") %>">
@@ -320,7 +332,20 @@
                                 </div>
                                         </div>
                                     </ItemTemplate>
+                                </asp:Repeater>--%>
+
+                                <asp:Repeater ID="rptPosters" runat="server">
+                                    <HeaderTemplate>
+                                        <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="50%">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <img src="<%# Eval("FilePath500") %>" />
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </div>
+                                    </FooterTemplate>
                                 </asp:Repeater>
+
                             </div>
                         </div>
                     </div>
@@ -328,6 +353,8 @@
             </div>
         </div>
     </div>
+
+
 
     <asp:Label ID="message" runat="server" />
     <script>
@@ -338,4 +365,5 @@
             }
         });
 </script>
+     <script src="../Scripts/fotorama.js" type="text/javascript"></script>
 </asp:Content>

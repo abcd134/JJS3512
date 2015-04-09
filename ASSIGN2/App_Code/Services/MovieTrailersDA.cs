@@ -26,5 +26,15 @@ namespace Content.Services
         {
             return DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).getDataTable();
         }
+
+        public bool  checkIfTrailerExists(int movieID)
+        {
+            if (DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).MoviesTrailer == null || DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).MoviesTrailer.ToString() == "")
+            {
+                return true;
+            }
+            else return false;
+
+        }
     }
 }
