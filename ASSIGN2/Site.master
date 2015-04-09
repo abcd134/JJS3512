@@ -21,6 +21,14 @@
                      background-color: gold;
         }
     </style>
+
+  <!-- JQuery Image Library CSS file -->
+    <link href="~/Content/fotorama.css" rel="stylesheet" />
+
+
+  <!-- Just don’t want to repeat this prefix in every img[src] -->
+
+
 </head>
 <body>
     <form runat="server">
@@ -32,6 +40,7 @@
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
+               
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
@@ -76,9 +85,9 @@
                             </asp:RadioButtonList>
                         </li>       
                         <li>
-                            <asp:TextBox ID="SearchBox" runat="server" Height="35px" placeholder="search..." class="form-control"></asp:TextBox></li>
+                            <asp:TextBox ID="SearchBox" runat="server" Height="35px" placeholder="search..." CSSclass="form-control"></asp:TextBox></li>
                         <li>
-                            <asp:Button ID="SearchButton" runat="server" class="btn btn-primary btn-md" Text="Search" OnClick="SearchButton_Click" />
+                            <asp:Button ID="SearchButton" runat="server" CSSclass="btn btn-primary btn-md" Text="Search" OnClick="SearchButton_Click" />
                         </li>
                     </ul>
                 </div>
