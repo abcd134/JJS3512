@@ -1,0 +1,22 @@
+﻿@media (max-width:768px){
+    body{font-size: 8pt;}
+    
+    .personImage {
+     margin-left:-4%;
+     margin-top:-3%;
+    }
+
+    .personPanel{
+     margin-left:0%;
+    }
+
+    .personInfoMobile{
+        float:right;
+        width: 58%;
+        margin-top:3%;
+    }
+
+    .bioClear{clear:both;}
+}
+
+
