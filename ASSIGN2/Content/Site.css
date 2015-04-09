@@ -190,6 +190,7 @@ font-weight:800;
     margin-right:0%;
 }
 
+.bioClear{clear:both;}
 /*adds a margin to the Default page*/
 /*This style is also used in the single movie page and it is used to move the top row down away from the nav bar*/
 .spaceabove{margin-top:1.5%;}
