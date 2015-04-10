@@ -72,7 +72,6 @@
                 <div class="navbar-collapse collapse">              
                     <ul class="nav navbar-nav navbar-right spaceabove"> 
                         <li>
-                            <asp:Label ID="SearchOn" runat="server" Text="Search On" CssClass="radioSearch"></asp:Label>
                             <asp:RadioButtonList ID="SearchList" runat="server"
                                 onSelectedIndexChanged ="SearchList_SelectedItemChanged"
                                 EnableViewState="true"

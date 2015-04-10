@@ -111,7 +111,7 @@
                             <b>Companies:</b> |
                             <%--This is the start of the companies repeater--%>
                         <asp:Repeater ID="rptCompany" runat="server">
-                            <ItemTemplate><%# Eval("CompanyName") %> | </ItemTemplate>
+                            <ItemTemplate><a href='../Browse/Browse.aspx?search=<%# Eval("CompanyName") %>&SearchType=Company'><%# Eval("CompanyName") %></a> | </ItemTemplate>
                         </asp:Repeater>
                         </p>
                         <%--This IMDB label is being pulled from the code-behind--%>
@@ -164,7 +164,7 @@
                             <div class="panel-body"> |
                     </HeaderTemplate>
                     <%--The ItemTemplate controls the content--%>
-                    <ItemTemplate> <%# Eval("KeyWordName") %> |</ItemTemplate>
+                    <ItemTemplate> <a href="../Browse/Browse.aspx?search=<%# Eval("KeyWordName") %>&SearchType=Key Word"><%# Eval("KeyWordName") %></a> |</ItemTemplate>
                     <FooterTemplate>
                         </div>
                         </div>

@@ -27,7 +27,10 @@ public partial class Browse : Page
                 if (Request.QueryString["genre"] != null ){
                     if(Request.QueryString["genreType"] != null){
                         genreID = Convert.ToInt32(Request.QueryString["genre"]);
-                        Master.SearchKind = Request.QueryString["SearchType"];
+
+                        if (Request.QueryString["SearchType"] == null) { Master.SearchKind = "Title"; }
+                        else { Master.SearchKind = Request.QueryString["SearchType"]; }
+
                         lblGenre.Text = "&nbsp Showing only " + Request.QueryString["genreType"] + " movies";                      
                     }
                     else{
@@ -40,7 +43,7 @@ public partial class Browse : Page
                     search = Request.QueryString["search"];
                     // set the search box with latest search string
                     Master.SearchBx = search;
-                    Master.SearchKind = Request.QueryString["SearchType"]; ;
+                    Master.SearchKind = Request.QueryString["SearchType"];
                     if (lblGenre.Text.Length > 0)
                     {
                         lblGenre.Text += " containing '" ;
