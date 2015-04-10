@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Content.Services;
 using Content.Business;
+using Content.DataAccess;
 public partial class TestForJSON : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -43,5 +44,14 @@ public partial class TestForJSON : System.Web.UI.Page
             rptPosters.DataSource = posterC;
             rptPosters.DataBind();
         }
+
+        ReviewDA asd = new ReviewDA();
+        Repeater1.DataSource = asd.fetchReviewByMovieID(605);
+        Repeater1.DataBind();
+
+    }
+    protected void btnReviewSubmit_Click(object sender, EventArgs e)
+    {
+
     }
 }

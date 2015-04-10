@@ -815,3 +815,19 @@ SMovie.aspx
 
 Browse.aspx.cs
 30-32			Bug fix on home to smovie to genre path (ty joseph for spotting)
+
+April 10, 2015		Version 11 Joseph
+Site.master
+28				Added rating.css for stars used for reviews
+ReviewDA.cs
+	Created Document
+TestForJSON.aspx
+59-78			Added review Beta
+
+TestForJSON.aspx.cs
+48-50			Test for reviewDA
+
+Content/rating.css
+Images/rating.png
+Scripts/rating.js
+	Created Documents
