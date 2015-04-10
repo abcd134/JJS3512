@@ -803,3 +803,15 @@ BrowseDA.cs
 84-95			Restructured select statement for GetGenreAndSearchFilteredMovies
 104-120			Added getOtherTables method
 121-141			Added getSearchBySql method
+
+
+April 9, 2015		James
+Site.master
+75				Removed part of sexy search on text box
+
+SMovie.aspx
+114				A tag on Company names to browse page
+167				A tage on Key Word names to browse page
+
+Browse.aspx.cs
+30-32			Bug fix on home to smovie to genre path (ty joseph for spotting)
