@@ -104,10 +104,23 @@ public partial class Browse : Page
             layout.DataSource = browseC;
             layout.DataBind();
         }
-        GenreCollection genreC = new GenreCollection();
-        genreC.FetchGenreNames();
-        drpGenres.DataSource = genreC;
-        drpGenres.DataBind();
+
+        Session["BrowseCollection"] = browseC;
+
+        // Trying to get genres from session state
+        if (Session["GenreCollection"] != null)
+        {
+            drpGenres.DataSource = Session["GenreCollection"];
+            drpGenres.DataBind();
+        }
+        else
+        {
+            GenreCollection genreC = new GenreCollection();
+            genreC.FetchGenreNames();
+            drpGenres.DataSource = genreC;
+            drpGenres.DataBind();
+            Session["GenreCollection"] = genreC;
+        }
     }
 
     /// <summary>
@@ -116,7 +129,7 @@ public partial class Browse : Page
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-         public void on_Click(object sender, EventArgs e)
+    public void on_Click(object sender, EventArgs e)
     {
         // Clear Master search box
         Master.SearchBx = "";
@@ -132,5 +145,14 @@ public partial class Browse : Page
 
         // Now head back to Browse page, resetting the POSTS to null
         Response.Redirect("../Browse/Browse.aspx");
+    }
+    public void movieFavoritesClick(object sender, EventArgs e)
+    {
+        // MovieFavoritesCollection thisUser = getTheList()  from session state;
+        // thisMovie.makeInstance();
+        // check if movie instance exists
+        // if not, add to list, if so, ignore request
+        // go to movie favorites page with movie added
+
     }
 }

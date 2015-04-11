@@ -831,3 +831,25 @@ Content/rating.css
 Images/rating.png
 Scripts/rating.js
 	Created Documents
+
+	April 10, 2015		James  Session State Stuff
+SMovie.cs
+134-7			Added MakeMovieInstance() method
+
+Browse.aspx.cs
+108				Put browse collection in session state
+				( thinking this will mnake it easier to retrieve data
+				 for favorites)
+109-123			using session state for genres
+149-157			stubbed MovieFavoritesClick method
+
+Site.master
+78-106			Enabled session state for genres
+
+MovieFavorites.cs
+				Added the class
+
+MovieFavoritesCollection.cs
+				Added the class
+
+

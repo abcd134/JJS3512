@@ -131,6 +131,10 @@ namespace Content.Business
                 RoleName = (string)row["role_name"];
 
         }
+        public MovieFavorites MakeMovieInstance()
+        {
+            return new MovieFavorites(this.MovieId, this.Title, this.PosterPath, this.ReleaseDate);
+        }
 
         public int MovieId
         {

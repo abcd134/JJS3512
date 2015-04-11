@@ -75,16 +75,35 @@ public partial class SiteMaster : MasterPage
     {
         Boolean top = true;
         Boolean bottom = false;
-        GenreCollection genreTC = new GenreCollection();
-        // get top ten genre names and bind
-        genreTC.FetchTenGenreNames(top);
-        Top10DB.DataSource = genreTC;
-        Top10DB.DataBind();
-        // Now get the bottom 10 genres and bind
-        GenreCollection genreBC = new GenreCollection();
-        genreBC.FetchTenGenreNames(bottom);
-        Bot10DB.DataSource = genreBC;
-        Bot10DB.DataBind();
+        if (Session["GenreTC"] != null)
+        {
+            Top10DB.DataSource = Session["GenreTC"];
+            Top10DB.DataBind();
+        }
+        else
+        {
+            GenreCollection genreTC = new GenreCollection();
+            // get top ten genre names and bind
+            genreTC.FetchTenGenreNames(top);
+            Top10DB.DataSource = genreTC;
+            Top10DB.DataBind();
+            Session["GenreTC"] = genreTC;
+        }
+        if (Session["GenreBC"] != null)
+        {
+            Bot10DB.DataSource = Session["GenreBC"];
+            Bot10DB.DataBind();
+        }
+        else
+        {
+            // Now get the bottom 10 genres and bind
+            GenreCollection genreBC = new GenreCollection();
+            genreBC.FetchTenGenreNames(bottom);
+            Bot10DB.DataSource = genreBC;
+            Bot10DB.DataBind();
+            Session["GenreBC"] = genreBC;
+        }
+
     }
     protected void SearchList_SelectedItemChanged(object sender, EventArgs e)
     {
