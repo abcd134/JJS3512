@@ -83,8 +83,13 @@
                             <ItemTemplate>
                                 <%# Eval("Title") %>
                             </ItemTemplate>
-                        </asp:Repeater>
-                        
+                        </asp:Repeater><br />
+                            <button type="button" class="btn btn-default" runat="server" ID="addToFav">
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
+                            </button>
+                            <button type="button" class="btn btn-default" runat="server" ID="writeReview">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
+                            </button>
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="rptReleaseRun" runat="server">
@@ -195,8 +200,9 @@
     <div class="row">
         <div class="col-md-12 hidden-xs">
             <%--Start of Backdrops--%>
-            <div class="panel panel-default panelResizing">
-                <div class="panel-heading">Backdrops</div>
+            <div class="panel panel-default panelResizing" id="accordian4" role="tablist"">
+                <div class="panel-heading" role="tab" id="collapseListGroupHeading4">
+                    <a data-toggle="collapse" href="#collapseListGroup4" aria-expanded="true" aria-controls="collapseListGroup4">Backdrops</a></div>
                 <div class="panel-body">
                     <%--<div class="display">--%>
             <%--Modal and Backdrop STARTS HERE--%>
@@ -220,7 +226,7 @@
                                     </div>
                             </ItemTemplate>
                         </asp:Repeater>--%>
-
+                    <div id="collapseListGroup4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading4" aria-expanded="true">
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <HeaderTemplate>
                                 <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="50%">
@@ -232,6 +238,7 @@
                                 </div>
                             </FooterTemplate>
                         </asp:Repeater>
+                    </div>
                <%--Modal and Backdrop ENDS HERE--%>
 
                     <%--</div>--%>
