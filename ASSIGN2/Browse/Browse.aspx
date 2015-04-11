@@ -34,12 +34,16 @@
                                         alt="<%# Eval("Title") %> poster"
                                         class="thumbnail img-responsive" /></a>
                             </figure>
-                            <figure>
+<%--                            <figure>
                                 <img src="http://image.tmdb.org/t/p/w300<%# Eval("BackDropPath") %>"
                                         title="<%# Eval("Title")%> backdrop"
                                         alt="<%# Eval("Title") %> backdrop"
                                         class="thumbnail img-responsive" /></a>
-                            </figure>
+                            </figure>--%>
+                            <button type="button" class="btn btn-default" runat="server" ID="addToFav">
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
+                            </button>
+
                         </div>
                         <div class="col-md-10">
                             <div class="row">
