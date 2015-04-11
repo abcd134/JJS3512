@@ -17,6 +17,13 @@
     }
 
     .bioClear{clear:both;}
+
+    .imageResize{margin-left:21%;}
+    .crewResize{margin-left:4%; margin-right:4%;}
+    .castResize{margin-left:4%; margin-right:4%;}
+
+    .btn{font-size:12px;}
+    .panel-default > .panel-heading{font-size:14pt;}
 }
 
 
