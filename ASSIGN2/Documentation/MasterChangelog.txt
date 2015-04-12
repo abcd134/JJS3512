@@ -863,3 +863,35 @@ All Lines			Fixed design for trailer, backdrop and additional posters
 					Design for mobile view
 
 Sperson				Added the "Add to Favorites" button
+
+April 11, 2015		James		tempCommit
+MovieFavorites.cs		class created
+
+MovieFavoritesCollection.cs		Class Created
+
+PeopleFavorites.cs		Class Created
+
+PeopleFavoritesCollection.cs	Class created
+
+Browse.cs
+92-97					Added MakeMovieInstance method
+
+SinglePerson.cs
+87-91					Added MakePersonInstance method
+
+Browse.aspx
+43-47					addToFav_Click button activated
+
+Browse.aspx.cs
+16						browse collection instance variable created to preserve state
+150-186					addToFav_Click method created
+187-191					Getters/setters for instance variable
+
+Favorites.aspx			Page created
+
+Favorites.aspx.cs
+						page created
+						logic for data binding and movie removal included
+
+Site.master
+						Activated Favorites Link
