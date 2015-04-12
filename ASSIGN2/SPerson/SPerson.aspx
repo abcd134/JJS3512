@@ -33,7 +33,10 @@
                     <div class="col-xs-12 col-sm-8 col-md-7 personPanel">
                         <div class="panel panel-default personInfoMobile">
                             <div class="panel-heading">
-                                <%# Eval("Name") %>
+                                <%# Eval("Name") %> <br />
+                             <button type="button" class="btn btn-default" runat="server" ID="addToFav">
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
+                            </button>
                             </div>
                             <div class="panel-body">
                                 <%# Eval("Birthday") %><br />

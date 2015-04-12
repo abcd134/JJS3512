@@ -853,3 +853,13 @@ MovieFavoritesCollection.cs
 				Added the class
 
 
+April 10, 2015		Sonia Design 
+
+Browse.aspx
+					Added the "Add to Favorites" button 
+SMovie.aspx
+					Added the "Add to Favorites" and "write review" button 
+All Lines			Fixed design for trailer, backdrop and additional posters
+					Design for mobile view
+
+Sperson				Added the "Add to Favorites" button

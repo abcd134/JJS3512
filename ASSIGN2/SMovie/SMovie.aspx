@@ -4,9 +4,9 @@
 
     <%--This is start of the first main row--%>
     <div class="row">
-        <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <%--Give the poster image a col-md of 5--%>
-            <div class="col-xs-12 col-md-5 imageResize">
+            <div class="col-xs-7 col-sm-6 col-md-5 imageResize">
                 <asp:Repeater ID="topOfPage" runat="server">
                     <ItemTemplate>
                         
@@ -35,7 +35,7 @@
                         </div>
 
                         <%--This is the start of box office content--%>
-                        <div class="hidden-xs col-md-6">
+                        <div class="hidden-xs col-sm-12 col-md-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading">Box Office</div>
                                 <div class="panel-body">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <%--This is the start of the vote content--%>
-                        <div class="hidden-xs col-md-6">
+                        <div class="hidden-xs col-sm-12 col-md-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading">Votes</div>
                                 <div class="panel-body">
@@ -72,9 +72,9 @@
             </div>
             
             <%--Start Movie Information--%>
-            <div class="col-md-7 spaceabove">
+            <div class="col-md-7 col-xs-12 col-sm-6 spaceabove">
                 <%--This is the important information for a movie--%>
-                <div class="panel panel-default">
+                <div class="panel panel-default bioClear">
                     <div class="panel-heading">
                         <%--The title and release date lable is being pulled in from the code-behind--%>
                         <%-- Still need to figure out control visibility of a nested repeater --%>
@@ -175,22 +175,6 @@
                         </div>
                     </FooterTemplate>
                 </asp:Repeater>
-
-                <%--This is the start of trailer repeater--%>
-                <asp:Repeater ID="rptTrailer" runat="server">
-                    <HeaderTemplate>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Trailer</div>
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                            <div class="panel-body">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%# Eval("Key") %>"></iframe>
-                            </div>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                            </div>
-                    </FooterTemplate>
-                </asp:Repeater>
             </div>
         </div>
     </div>
@@ -198,38 +182,14 @@
 
     <%--This is start of a new main row--%>
     <div class="row">
-        <div class="col-md-12 hidden-xs">
+        <div class="col-md-6 hidden-xs">
             <%--Start of Backdrops--%>
-            <div class="panel panel-default panelResizing" id="accordian4" role="tablist"">
-                <div class="panel-heading" role="tab" id="collapseListGroupHeading4">
-                    <a data-toggle="collapse" href="#collapseListGroup4" aria-expanded="true" aria-controls="collapseListGroup4">Backdrops</a></div>
+            <div class="panel panel-default castResize">
+                <div class="panel-heading">Backdrops</div>
                 <div class="panel-body">
-                    <%--<div class="display">--%>
-            <%--Modal and Backdrop STARTS HERE--%>
-<%--                        <asp:Repeater ID="rptBackDrop" runat="server">
-                            <ItemTemplate>
-                                <div class="col-md-3">
-                                    <a href="<%# Eval("FilePath500") %>" class="thumbnail" data-toggle="modal" data-target="#myModal<%# Eval ("MovieImageID") %>">
-                                        <img src="<%# Eval("FilePath300") %>" alt="" />
-                                    </a>
-
-                                </div>
-                                <div class="modal fade" id="myModal<%# Eval ("MovieImageID") %>" tabindex="-1" role="dialog" aria-labelledby="backDropModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content backdropModal">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                               <img src="<%# Eval("FilePath780") %>" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                            </ItemTemplate>
-                        </asp:Repeater>--%>
-                    <div id="collapseListGroup4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading4" aria-expanded="true">
                         <asp:Repeater ID="rptBackDrop" runat="server">
                             <HeaderTemplate>
-                                <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="50%">
+                                <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="100%">
                             </HeaderTemplate>
                             <ItemTemplate>
                                 <img src="<%# Eval("FilePath500") %>" />
@@ -238,17 +198,32 @@
                                 </div>
                             </FooterTemplate>
                         </asp:Repeater>
-                    </div>
+                    
                <%--Modal and Backdrop ENDS HERE--%>
-
-                    <%--</div>--%>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+                            <%--This is the start of trailer repeater--%>
+                <asp:Repeater ID="rptTrailer" runat="server">
+                    <HeaderTemplate>
+                        <div class="panel panel-default crewResize">
+                            <div class="panel-heading">Trailer</div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                            <div class="panel-body">
+                                <iframe class="trailerDimensions" <%--width="560" height="315" --%>src="https://www.youtube.com/embed/<%# Eval("Key") %>"></iframe>
+                            </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                            </div>
+                    </FooterTemplate>
+                </asp:Repeater>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12">
             <%--Start of cast panel--%>
             <div class="panel-group castResize" id="accordian" role="tablist">
                 <div class="panel panel-default">
@@ -343,7 +318,7 @@
 
                                 <asp:Repeater ID="rptPosters" runat="server">
                                     <HeaderTemplate>
-                                        <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="50%">
+                                        <div class="fotorama" data-nav="thumbs" data-width=" 700" data-ratio="700/467" data-max-width="100%">
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <img src="<%# Eval("FilePath500") %>" />
@@ -359,7 +334,16 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 col-xs-12">
+            <div class="panel panel-default panelResizing">
+                <div class="panel-heading">Reviews</div>
+                <div class="panel-body">
+                    INSERT REVIEWS HHHEEERREEE!!!
+                </div>
+            </div>
+        </div>
     </div>
+    
 
 
 
