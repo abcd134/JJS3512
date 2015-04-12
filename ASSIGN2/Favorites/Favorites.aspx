@@ -9,14 +9,14 @@
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-info">
-            <asp:Label ID="notFound" runat="server" Visible="false" ></asp:Label> 
+        <div class="panel panel-default">
+            <asp:Label ID="notFound" runat="server" Visible="false"></asp:Label> 
             <asp:Repeater ID="favMovies" runat="server">
+                <HeaderTemplate>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Favourite Movies</div>
+                </HeaderTemplate>
                 <ItemTemplate>
-                    <HeaderTemplate>
-                        <div class="panel-title">Favourite Movies</div>
-                    </HeaderTemplate>
-                    <div class="panel-body">
                         <div class="row">
                             <div class="col-md-2">
                                 <figure>
@@ -27,26 +27,21 @@
                                                 alt="<%# Eval("Title") %> poster"
                                                 class="thumbnail img-responsive" /></a>
                                 </figure>
-                                <!-- Hard coded movie id for now -->
-                                <asp:Button ID="remFromFav" runat="server" 
-                                    OnCommand="remFromFav_Click" 
+                                <asp:Button ID="remFromMovieFav" runat="server" 
+                                    OnCommand="remFromMovieFav_Click" 
                                     Text ="Remove"
                                     CommandArgument='<%# Eval("MovieId") %>' >
                                 </asp:Button>
                             </div>
-                            <div class="col-md-10">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>"><%# Eval("Title") %></a></h3>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <h3><%# Eval("Year") %></h3>
-                                    </div>
-                                </div>
+                            <div class="col-md-8">
+                                <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>"><%# Eval("Title") %></a></h3>
+                            </div>
+                            <div class="col-md-2">
+                                <h3><%# Eval("Year") %></h3>
                             </div>
                         </div>
-                        <hr />
                     </div>
+                    <hr />
                 </ItemTemplate>
             </asp:Repeater>
         </div> 
@@ -59,31 +54,33 @@
         <div class="panel panel-default">
             <asp:Label ID="noPeople" runat="server" Visible="false" ></asp:Label> 
             <asp:Repeater ID="people" runat="server">
+                <HeaderTemplate>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Favourite People</div>
+                </HeaderTemplate>
                 <ItemTemplate>
-                    <HeaderTemplate>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Favourite People</div>
-                    </HeaderTemplate>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <figure>
-                                        <!-- insert PersonId to query string to SMovie -->
-                                        <a href="../SPerson/SPerson.aspx?id=">Image Goes here</a>
-                                    </figure>
-                                    <!-- Hard coded person id for now -->
-                                    <asp:Button ID="remFromFav" runat="server" 
-                                        OnCommand="remFromFav_Click" 
-                                        Text ="Remove"
-                                        CommandArgument='917' >
-                                    </asp:Button>
-                                </div>
-                                <div class="col-md-10">
-                                    <!--insert id=PersonId Eval  and put in a real name -->
-                                    <h3><a href="../SPerson/SPerson.aspx?id=">Blah blah blah</a></h3>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <figure>
+                                <!-- insert PersonId to query string to SMovie -->
+                                <a href="../SPerson/SPerson.aspx?id=<%# Eval("PersonID") %>">
+                                    <img src="<%# Eval("ProfilePic") %>"
+                                                title="<%# Eval("Name")%> picture"
+                                                alt="<%# Eval("Name") %> picture"
+                                                class="thumbnail img-responsive" /></a>
+                            </figure>
+                            <asp:Button ID="remFromPeopleFav" runat="server" 
+                                OnCommand="remFromPeopleFav_Click" 
+                                Text ="Remove"
+                                CommandArgument='<%# Eval("PersonID") %>' >
+                            </asp:Button>
                         </div>
-                        <hr />
+                        <div class="col-md-10">
+                            <h3><a href="../SPerson/SPerson.aspx?id=<%# Eval("PersonID") %>"><%# Eval("Name") %></a></h3>
+                        </div>
+                    </div>
+                </div>
+                <hr />
                 </ItemTemplate>
             </asp:Repeater>  
         </div> 

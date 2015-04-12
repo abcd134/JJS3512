@@ -14,18 +14,18 @@ public class PeopleFavorites : AbstractBusiness
 {
     private int _personID;
     private string _name;
-    private string _profilePath;
-	public PeopleFavorites(int personId, string name, string profilePath)
+    private string _profilePic;
+	public PeopleFavorites(int personId, string name, string profilePic)
 	{
         PersonID = personId;
         Name = name;
-        ProfilePath = profilePath;
+        ProfilePic = profilePic;
 	}
     public override void PopulateDataMembersFromDataRow(DataRow row)
     {
         PersonID = (int) row["personId"];
         Name = (string) row["name"];
-        ProfilePath = (string) row["profilePath"];
+        ProfilePic = (string) row["profilePic"];
     }
     /// <summary>
     /// Getter and Setter section for th instance variables
@@ -40,9 +40,9 @@ public class PeopleFavorites : AbstractBusiness
         get { return _name; }
         set { _name = value; }
     }
-    public string ProfilePath
+    public string ProfilePic
     {
-        get { return _profilePath; }
-        set { _profilePath = value; }
+        get { return _profilePic; }
+        set { _profilePic = value; }
     }
 }

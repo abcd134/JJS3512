@@ -12,6 +12,7 @@ using Content.Business;
 
 public partial class SPerson : Page
 {
+    PersonCollection _personC;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -41,7 +42,10 @@ public partial class SPerson : Page
         {
             rptPerson.DataSource = personC;
             rptPerson.DataBind();
+            PersonC = personC;
         }
+
+        Session["PersonCollection"] = personC;
 
         CastCollection castC = new CastCollection();
         castC.FetchForMovies(id);
@@ -66,4 +70,48 @@ public partial class SPerson : Page
             crewRepeater.DataBind();
         }
     }
+
+    public void addToFav_Click(object sender, CommandEventArgs e)
+    {
+        PeopleFavoritesCollection favPeopleC;
+        if (Session["favPeopleC"] != null)
+        {
+            favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
+        }
+        else { favPeopleC = new PeopleFavoritesCollection(); }
+        PersonCollection personC;
+        if (Session["PersonCollection"] != null)
+        {
+            personC = (PersonCollection)Session["PersonCollection"];
+        }
+        else
+        {
+            personC = PersonC;  // refresh data on timeout without requerying database.
+        }
+        if (personC.Count > 0)
+        {
+            int i = 0;
+            while (i < personC.Count)
+            {
+                if (personC[i].ID.ToString() == (string)e.CommandArgument)
+                {
+                    // found the person to add to favorites
+
+                    PeopleFavorites personToAdd;
+                    personToAdd = personC[i].MakePersonInstance();
+                    favPeopleC.Add(personToAdd);
+                    Session["favPeopleC"] = favPeopleC;
+                    // Need to add to the collection then  put in session 
+                    Response.Redirect("../Favorites/Favorites.aspx");
+                }
+                i++;
+            }
+        }
+    }
+    public PersonCollection PersonC
+    {
+        get { return _personC; }
+        set { _personC = value; }
+    }
+
 }

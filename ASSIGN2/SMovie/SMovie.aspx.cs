@@ -13,7 +13,7 @@ using Content.Services;
 
 public partial class SMovie : Page
 {
-    private SingleMovie _thisMovie;
+    private MovieCollection _thisMovie; 
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -44,7 +44,6 @@ public partial class SMovie : Page
         {
             topOfPage.DataSource = movieC;
             topOfPage.DataBind();
-            ThisMovie = movieC[0];
         }
         // the following data binds are a result of a visibility issue with nested repeaters.
         rptTitle.DataSource = movieC;
@@ -55,6 +54,9 @@ public partial class SMovie : Page
         rptIMDB.DataBind();
         rptOverview.DataSource = movieC;
         rptOverview.DataBind();
+
+        Session["movieC"] = movieC;
+        ThisMovie = movieC;      // create an instance that won't expire.
 
         if (movieC.FindById(0).Tagline != null) { rptTagline.DataSource = movieC; }
             else { rptTagline.DataSource = null; }
@@ -142,24 +144,32 @@ public partial class SMovie : Page
     }
     public void addToFav_Click(object sender, EventArgs e)
     {
-        MovieFavoritesCollection favMovieC;
-        if (Session["favMovieC"] != null)
+        MovieFavoritesCollection favMoviesC;
+        MovieCollection movieC;
+        if (Session["favMoviesC"] != null)
         {
-            favMovieC = (MovieFavoritesCollection)Session["favMovieC"];
+            favMoviesC = (MovieFavoritesCollection)Session["favMoviesC"];
         }
         else 
         { 
-            favMovieC = new MovieFavoritesCollection(); 
+            favMoviesC = new MovieFavoritesCollection(); 
         }
-
+        if (Session["movieC"] != null)
+        {
+            movieC = (MovieCollection)Session["movieC"];
+        }
+        else
+        {
+            movieC = ThisMovie;  // refresh data on timeout without requerying database.
+        }
         MovieFavorites movieToAdd;
-        movieToAdd = ThisMovie.MakeMovieInstance();
-        favMovieC.Add(movieToAdd);
-        Session["favMovieC"] = favMovieC;
+        movieToAdd = movieC[0].MakeMovieInstance();
+        favMoviesC.Add(movieToAdd);
+        Session["favMoviesC"] = favMoviesC;
         // Need to add to the collection then  put in session 
         Response.Redirect("../Favorites/Favorites.aspx");
     }
-    public SingleMovie ThisMovie
+    public MovieCollection ThisMovie
     {
         get { return  _thisMovie; }
         set { _thisMovie =  value; }

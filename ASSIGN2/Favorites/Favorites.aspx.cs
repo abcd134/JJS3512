@@ -43,7 +43,7 @@ public partial class Favorites : Page
             if (favMoviesC.Count > 1)
             {
                 int i = 0;
-                while (i < favMoviesC.Count - 2)
+                while (i < favMoviesC.Count - 1)
                 {
                     if(favMoviesC[i].MovieID == lastOneAdded.MovieID)
                     {
@@ -63,32 +63,37 @@ public partial class Favorites : Page
         favMovies.DataSource = favMoviesC;
         favMovies.DataBind();
 
-        // Get the current favorite people from session state or set to null
-        // Will implement once favorite movies is working
-
-         /*       PeopleFavoritesCollection favPeopleC;
-                if (Session["favPeopleC"] != null)
+        PeopleFavoritesCollection favPeopleC;
+        if (Session["favPeopleC"] != null)
+        {
+            favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
+            PeopleFavorites lastOneAdded = favPeopleC[favPeopleC.Count - 1];
+            // If last entry is a duplicate, remove it
+            if (favPeopleC.Count > 1)
+            {
+                int i = 0;
+                while (i < favPeopleC.Count - 1)
                 {
-                    favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
+                    if (favPeopleC[i].PersonID == lastOneAdded.PersonID)
+                    {
+                        favPeopleC.RemoveFromCollection(lastOneAdded);
+                        break; // can only have 1 duplicate, no need to check further
+                    }
+                    i++;
                 }
-                else
-                {
-                    favPeopleC = null;
-                }
-                favPeople.DataSource = favPeopleC;
-                favPeople.DataBind();
-          * */
-        noPeople.Visible = true;
-        noPeople.Text = "You don't have any favorite people yet.";
+            }
+        }
+        else
+        {
+            favPeopleC = null;
+            noPeople.Text = "You don't have any favorite people yet";
+            noPeople.Visible = true;
+        }
+        people.DataSource = favPeopleC;
+        people.DataBind();
     }
 
-    /// <summary>
-    /// Method to clear search and filter fields and to make
-    /// their visisibilty = false.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public void remFromFav_Click(object sender, CommandEventArgs e)
+    public void remFromMovieFav_Click(object sender, CommandEventArgs e)
     {
         MovieFavoritesCollection favMoviesC;
         if (Session["favMoviesC"] != null)
@@ -125,6 +130,49 @@ public partial class Favorites : Page
             Session["favMoviesC"] = favMoviesC;
             notFound.Text = "You don't have any movie favorites";
             notFound.Visible =true;
+        }
+        Response.Redirect("../Favorites/Favorites.aspx");
+    }
+
+
+    public void remFromPeopleFav_Click(object sender, CommandEventArgs e)
+    {
+        PeopleFavoritesCollection favPeopleC;
+        if (Session["favPeopleC"] != null)
+        {
+            favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
+        }
+        else
+        {
+            favPeopleC = new PeopleFavoritesCollection();
+            noPeople.Text = "You don't have any favorite people";
+            noPeople.Visible = true;
+        }
+        if (favPeopleC.Count > 1)
+        {
+            int i = 0;
+            while (i < favPeopleC.Count)
+            {
+                if (favPeopleC[i].PersonID.ToString() == (string)e.CommandArgument)
+                {
+                    // found the person to remove from favorites
+
+                    PeopleFavorites personToRemove;
+                    personToRemove = favPeopleC[i];
+                    favPeopleC.RemoveFromCollection(personToRemove);
+                    Session["favPeopleC"] = favPeopleC;
+                    // Need to add to the collection then  put in session 
+                    Response.Redirect("../Favorites/Favorites.aspx");
+                }
+                i++;
+            }
+        }
+        else
+        {
+            favPeopleC = null;
+            Session["favPeopleC"] = favPeopleC;
+            noPeople.Text = "You don't have any movie people yet";
+            noPeople.Visible = true;
         }
         Response.Redirect("../Favorites/Favorites.aspx");
     }

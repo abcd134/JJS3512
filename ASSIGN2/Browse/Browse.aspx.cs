@@ -104,6 +104,7 @@ public partial class Browse : Page
         {
             layout.DataSource = browseC;
             layout.DataBind();
+            BrowseC = browseC; //Preserving lasting state.
         }
 
         Session["BrowseCollection"] = browseC;
@@ -162,8 +163,7 @@ public partial class Browse : Page
         }
         else
         {
-            // how do you get the underlying data on time out?  Below doesnt work.
-            browseC = BrowseC;
+            browseC = BrowseC;  // refresh data on timeout without requerying database.
         }
         if (browseC.Count > 0)
         {
