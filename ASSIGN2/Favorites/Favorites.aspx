@@ -6,15 +6,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
 
-
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-info">
-            <asp:Label ID="notFound" runat="server" Visible="false" ></asp:Label> 
+        
+            <b><asp:Label ID="notFound" runat="server" Visible="false" ></asp:Label></b> 
             <asp:Repeater ID="favMovies" runat="server">
                 <ItemTemplate>
                     <HeaderTemplate>
-                        <div class="panel-title">Favourite Movies</div>
+                        <div class="panel panel-default">
+                        <div class="panel-heading">Favourite Movies</div>
                     </HeaderTemplate>
                     <div class="panel-body">
                         <div class="row">
@@ -28,11 +28,11 @@
                                                 class="thumbnail img-responsive" /></a>
                                 </figure>
                                 <!-- Hard coded movie id for now -->
-                                <asp:Button ID="remFromFav" runat="server" 
+                                <asp:LinkButton ID="remFromFav" runat="server" 
                                     OnCommand="remFromFav_Click" 
-                                    Text ="Remove"
-                                    CommandArgument='<%# Eval("MovieId") %>' >
-                                </asp:Button>
+                                    Text ="Remove" CssClass="btn btn-default"
+                                    CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-remove"></span> Remove
+                                </asp:LinkButton>
                             </div>
                             <div class="col-md-10">
                                 <div class="row">
@@ -47,17 +47,18 @@
                         </div>
                         <hr />
                     </div>
+                    </div>
                 </ItemTemplate>
             </asp:Repeater>
-        </div> 
+         
     </div>                     
 </div>
 
 <!-- Favorite People Repeater Section -->
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-            <asp:Label ID="noPeople" runat="server" Visible="false" ></asp:Label> 
+                   
+            <b><asp:Label ID="noPeople" runat="server" Visible="false" ></asp:Label></b>
             <asp:Repeater ID="people" runat="server">
                 <ItemTemplate>
                     <HeaderTemplate>
@@ -86,7 +87,7 @@
                         <hr />
                 </ItemTemplate>
             </asp:Repeater>  
-        </div> 
+        
    </div>                       
 </div>
 <asp:Label ID="labMsg" runat="server" />    

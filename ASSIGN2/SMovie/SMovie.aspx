@@ -84,12 +84,12 @@
                                 <%# Eval("Title") %>
                             </ItemTemplate>
                         </asp:Repeater><br />
-                            <button type="button" class="btn btn-default" runat="server" ID="addToFav" onclick="addToFav_Click">
+<%--                            <button type="button" class="btn btn-default" runat="server" ID="addToFav" onclick="addToFav_Click">
                                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
-                            </button>
-                            <button type="button" class="btn btn-default" runat="server" ID="writeReview">
-                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
-                            </button>
+                            </button>--%>
+                            <asp:LinkButton runat="server" ID="addToFav" CssClass="btn btn-default"><span class="glyphicon glyphicon-heart"></span> Favorite</asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="writeReview" CssClass="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Write Review</asp:LinkButton>    
+                       
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="rptReleaseRun" runat="server">

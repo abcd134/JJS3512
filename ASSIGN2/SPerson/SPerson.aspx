@@ -34,9 +34,7 @@
                         <div class="panel panel-default personInfoMobile">
                             <div class="panel-heading">
                                 <%# Eval("Name") %> <br />
-                             <button type="button" class="btn btn-default" runat="server" ID="addToFav">
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
-                            </button>
+                                <asp:LinkButton runat="server" ID="addToFav" CssClass="btn btn-default"><span class="glyphicon glyphicon-heart"></span> Favorite</asp:LinkButton>
                             </div>
                             <div class="panel-body">
                                 <%# Eval("Birthday") %><br />
