@@ -84,7 +84,11 @@ namespace Content.Business
             else HomePage = (string)row["home_page"];
 
         }
-        
+        public PeopleFavorites MakePersonInstance()
+        {
+            PeopleFavorites newPersonToAdd = new PeopleFavorites(this.ID, this.Name, this.ProfilePath);
+            return newPersonToAdd;
+        }
         public int ID
         {
             get { return _id; }

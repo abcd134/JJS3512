@@ -89,6 +89,12 @@ namespace Content.Business
                 RoleName = (string)row["role_name"];
 
         }
+        public MovieFavorites MakeMovieInstance()
+        {
+            string year = this.ReleaseDate.ToString().Substring(0,4);
+            MovieFavorites newMovieToAdd = new MovieFavorites(this.MovieId, this.Title, this.PosterPath, year);
+            return newMovieToAdd; 
+        }
 
         public int MovieId
         {

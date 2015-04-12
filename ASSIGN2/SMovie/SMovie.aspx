@@ -84,7 +84,7 @@
                                 <%# Eval("Title") %>
                             </ItemTemplate>
                         </asp:Repeater><br />
-                            <button type="button" class="btn btn-default" runat="server" ID="addToFav">
+                            <button type="button" class="btn btn-default" runat="server" ID="addToFav" onclick="addToFav_Click">
                                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
                             </button>
                             <button type="button" class="btn btn-default" runat="server" ID="writeReview">

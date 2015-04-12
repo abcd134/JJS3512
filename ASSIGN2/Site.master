@@ -94,7 +94,7 @@
                         <li><a class="default-links" runat="server" href="~/Browse/Browse.aspx">Browse</a></li>
                         <li><a runat="server" class="default-links" href="~/Top20/MovieList.aspx?type=nowplaying">Now Playing</a></li>
                         <li><a class="default-links" runat="server" href="~/Top20/MovieList.aspx?type=upcoming">Coming Soon</a></li>
-                        <li><a class="default-links" runat="server" href="#">View Favourites</a></li>
+                        <li><a class="default-links" runat="server" href="~/Favorites/Favorites.aspx">View Favourites</a></li>
                             <!-- Movies sub panel -->
               <%--              <div class="dropdown-menu dropdown-adjust" role="menu">--%>
 <%--                                <div class="col-xs-4 subnav">

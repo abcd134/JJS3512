@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Content.Business;
+using System.Data;
+using System.Data.Common;
+
 
 /// <summary>
 /// Summary description for MovieFavorites
 /// </summary>
-public class MovieFavorites
+public class MovieFavorites : AbstractBusiness
 {
     private int _movieID;
     private string _title;
@@ -19,6 +23,13 @@ public class MovieFavorites
         PosterPath = posterPath;
         Year = year;
 	}
+    public override void PopulateDataMembersFromDataRow(DataRow row)
+    {
+        MovieID = (int) row["movieId"];
+        Title = (string) row["title"];
+        PosterPath = (string) row["posterPath"];
+        Year = (string) row["year"];
+    }
     /// <summary>
     /// Getter and Setter section for th instance variables
     /// </summary>

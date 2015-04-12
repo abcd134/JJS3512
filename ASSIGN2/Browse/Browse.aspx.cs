@@ -13,6 +13,7 @@ using Content.Business;
 
 public partial class Browse : Page
 {
+    private BrowseCollection _browseC;
     protected void Page_Load(object sender, EventArgs e)
     {
         int genreID;
@@ -146,13 +147,47 @@ public partial class Browse : Page
         // Now head back to Browse page, resetting the POSTS to null
         Response.Redirect("../Browse/Browse.aspx");
     }
-    public void movieFavoritesClick(object sender, EventArgs e)
+    public void addToFav_Click(object sender, CommandEventArgs e)
     {
-        // MovieFavoritesCollection thisUser = getTheList()  from session state;
-        // thisMovie.makeInstance();
-        // check if movie instance exists
-        // if not, add to list, if so, ignore request
-        // go to movie favorites page with movie added
-
+        MovieFavoritesCollection favMoviesC;
+        if (Session["favMoviesC"] != null)
+        {
+            favMoviesC = (MovieFavoritesCollection) Session["favMoviesC"];
+        }
+        else { favMoviesC = new MovieFavoritesCollection(); }
+        BrowseCollection browseC;
+        if (Session["BrowseCollection"] != null)
+        {
+            browseC = (BrowseCollection)Session["BrowseCollection"];
+        }
+        else
+        {
+            // how do you get the underlying data on time out?  Below doesnt work.
+            browseC = BrowseC;
+        }
+        if (browseC.Count > 0)
+        {
+            int i = 0;
+            while (i < browseC.Count){
+                if ( browseC[i].MovieId.ToString()  == (string) e.CommandArgument)
+                {
+                    // found the movie to add to favorites
+                    
+                    MovieFavorites movieToAdd;
+                    movieToAdd = browseC[i].MakeMovieInstance();
+                    favMoviesC.Add(movieToAdd);
+                    Session["favMoviesC"] = favMoviesC;
+                    // Need to add to the collection then  put in session 
+                    Response.Redirect("../Favorites/Favorites.aspx");
+                }
+                i++;
+            }   
+        }
     }
+    public BrowseCollection BrowseC
+    {
+        get { return  _browseC; }
+        set { _browseC =  value; }
+    }
+
 }

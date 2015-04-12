@@ -13,6 +13,8 @@ using Content.Services;
 
 public partial class SMovie : Page
 {
+    private SingleMovie _thisMovie;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         //if not postback then display the single movie
@@ -42,6 +44,7 @@ public partial class SMovie : Page
         {
             topOfPage.DataSource = movieC;
             topOfPage.DataBind();
+            ThisMovie = movieC[0];
         }
         // the following data binds are a result of a visibility issue with nested repeaters.
         rptTitle.DataSource = movieC;
@@ -136,5 +139,29 @@ public partial class SMovie : Page
             rptTrailer.DataBind();
         }
         
+    }
+    public void addToFav_Click(object sender, EventArgs e)
+    {
+        MovieFavoritesCollection favMovieC;
+        if (Session["favMovieC"] != null)
+        {
+            favMovieC = (MovieFavoritesCollection)Session["favMovieC"];
+        }
+        else 
+        { 
+            favMovieC = new MovieFavoritesCollection(); 
+        }
+
+        MovieFavorites movieToAdd;
+        movieToAdd = ThisMovie.MakeMovieInstance();
+        favMovieC.Add(movieToAdd);
+        Session["favMovieC"] = favMovieC;
+        // Need to add to the collection then  put in session 
+        Response.Redirect("../Favorites/Favorites.aspx");
+    }
+    public SingleMovie ThisMovie
+    {
+        get { return  _thisMovie; }
+        set { _thisMovie =  value; }
     }
 }
