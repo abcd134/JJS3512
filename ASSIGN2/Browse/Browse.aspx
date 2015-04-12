@@ -40,11 +40,11 @@
                                         alt="<%# Eval("Title") %> backdrop"
                                         class="thumbnail img-responsive" /></a>
                             </figure>--%>
-                            <asp:Button ID="addToFav" runat="server" 
-                                OnCommand="addToFav_Click" 
+                            <asp:LinkButton ID="addToFav" runat="server" 
+                                OnCommand="addToFav_Click" CssClass="btn btn-default"
                                 Text ="Favorite"
-                                CommandArgument='<%# Eval("MovieId") %>' >
-                            </asp:Button>
+                                CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
+                            </asp:LinkButton>
 
                         </div>
                         <div class="col-md-10">
