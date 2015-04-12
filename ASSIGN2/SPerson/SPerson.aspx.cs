@@ -12,7 +12,6 @@ using Content.Business;
 
 public partial class SPerson : Page
 {
-    PersonCollection _personC;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -42,7 +41,6 @@ public partial class SPerson : Page
         {
             rptPerson.DataSource = personC;
             rptPerson.DataBind();
-            PersonC = personC;
         }
 
         Session["PersonCollection"] = personC;
@@ -73,21 +71,22 @@ public partial class SPerson : Page
 
     public void addToFav_Click(object sender, CommandEventArgs e)
     {
+        // Getting the favorite people collection from session stat if it exists
         PeopleFavoritesCollection favPeopleC;
         if (Session["favPeopleC"] != null)
         {
             favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
         }
         else { favPeopleC = new PeopleFavoritesCollection(); }
+
+        // Getting information about current person from session state if it 
+        // exists, other wise sending user to error page with timed out message.
         PersonCollection personC;
-        if (Session["PersonCollection"] != null)
+        if (Session["PersonCollection"] == null)
         {
-            personC = (PersonCollection)Session["PersonCollection"];
+            Response.Redirect("../Error.aspx?error=Sorry, you timed out.  Please browse again.");
         }
-        else
-        {
-            personC = PersonC;  // refresh data on timeout without requerying database.
-        }
+        personC = (PersonCollection)Session["PersonCollection"];
         if (personC.Count > 0)
         {
             int i = 0;
@@ -99,19 +98,13 @@ public partial class SPerson : Page
 
                     PeopleFavorites personToAdd;
                     personToAdd = personC[i].MakePersonInstance();
+                    // Need to add to the collection then  put in session 
                     favPeopleC.Add(personToAdd);
                     Session["favPeopleC"] = favPeopleC;
-                    // Need to add to the collection then  put in session 
                     Response.Redirect("../Favorites/Favorites.aspx");
                 }
                 i++;
             }
         }
     }
-    public PersonCollection PersonC
-    {
-        get { return _personC; }
-        set { _personC = value; }
-    }
-
 }

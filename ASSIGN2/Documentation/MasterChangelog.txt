@@ -895,3 +895,55 @@ Favorites.aspx.cs
 
 Site.master
 						Activated Favorites Link
+
+April 12, 2015       James    Favorites.2
+PeopleFavorites.cs
+17,18,22,28,43,45,46 Changed profile_path to be the actual picture (speed enhnacement?)
+
+SingleMovie.cs
+136                  Created year from release date.
+
+SinglePerson.cs
+89                changed from profile path to profile picture (speed enhancement?)
+
+Favorites.aspx
+12-44             styling
+30-31             changed method name
+66-70             added person data
+72-5              added Button
+79                added link to Sperson.
+
+Favorites.aspx.cs
+66-93             added logic for displaying people in favorites
+136-178              added logic for removal of person from favorites list
+
+SMovie.aspx
+88-92             changed button
+
+SMovie.aspx.cs
+47                removed non working attempt to preserve state
+63-70			  enable genre session state
+147-168           major add to favorites debug.
+				  Lots of documentation
+
+SPerson.aspx
+38-43             Changed the button
+
+SPerson.aspx.cs
+45                Person Collection added to session state
+73-110            addToFav method added
+111-116			  removed all instance varibale stuff
+                  documentation
+
+AbstractBusinessCollection.cs
+23,30			Documentation
+
+MovieFavoritesCollection.cs
+15 +			Documentation & Cleanup
+
+Browse.aspx.cs
+16,107, 185-190		Removed use of instance variable
+149-53, 156, 163-4	Documentation
+171-4, 185
+168					Redirect to error page on timeout
+

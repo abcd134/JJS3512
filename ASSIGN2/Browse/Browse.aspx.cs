@@ -13,7 +13,6 @@ using Content.Business;
 
 public partial class Browse : Page
 {
-    private BrowseCollection _browseC;
     protected void Page_Load(object sender, EventArgs e)
     {
         int genreID;
@@ -104,7 +103,6 @@ public partial class Browse : Page
         {
             layout.DataSource = browseC;
             layout.DataBind();
-            BrowseC = browseC; //Preserving lasting state.
         }
 
         Session["BrowseCollection"] = browseC;
@@ -148,25 +146,34 @@ public partial class Browse : Page
         // Now head back to Browse page, resetting the POSTS to null
         Response.Redirect("../Browse/Browse.aspx");
     }
+    /// <summary>
+    /// Method to add a Movie to the Favorites list
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public void addToFav_Click(object sender, CommandEventArgs e)
     {
+        // Check for existing favorites list, create one if not found
         MovieFavoritesCollection favMoviesC;
         if (Session["favMoviesC"] != null)
         {
             favMoviesC = (MovieFavoritesCollection) Session["favMoviesC"];
         }
         else { favMoviesC = new MovieFavoritesCollection(); }
+
+        //Get the current browse page collection.  If timed out go to error page.
         BrowseCollection browseC;
-        if (Session["BrowseCollection"] != null)
+        if (Session["BrowseCollection"] == null)
         {
-            browseC = (BrowseCollection)Session["BrowseCollection"];
+            Response.Redirect("../Error.aspx?error=Sorry, you timed out.  Please browse again.");
         }
-        else
+        browseC = (BrowseCollection)Session["BrowseCollection"];
+
+        if (browseC.Count > 0)  // this check likely not necessary
+                                // shouldn't be able to get here without 
+                                // at least one moive
         {
-            browseC = BrowseC;  // refresh data on timeout without requerying database.
-        }
-        if (browseC.Count > 0)
-        {
+            // Need to get the data from the movie chosen
             int i = 0;
             while (i < browseC.Count){
                 if ( browseC[i].MovieId.ToString()  == (string) e.CommandArgument)
@@ -175,19 +182,13 @@ public partial class Browse : Page
                     
                     MovieFavorites movieToAdd;
                     movieToAdd = browseC[i].MakeMovieInstance();
+                    // Need to add to the collection then put in session 
                     favMoviesC.Add(movieToAdd);
                     Session["favMoviesC"] = favMoviesC;
-                    // Need to add to the collection then  put in session 
                     Response.Redirect("../Favorites/Favorites.aspx");
                 }
                 i++;
             }   
         }
     }
-    public BrowseCollection BrowseC
-    {
-        get { return  _browseC; }
-        set { _browseC =  value; }
-    }
-
 }
