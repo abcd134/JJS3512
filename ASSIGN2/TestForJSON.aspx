@@ -57,10 +57,10 @@
 
 
         <div id="NUM NUM NUM NUM NUM NUM">
-            <asp:Label ID="Label1" runat="server" Text="First Name"></asp:Label><asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
-            <asp:Label ID="Label2" runat="server" Text="Last Name"></asp:Label><asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+            <asp:Label ID="lblFname" runat="server" Text="First Name"></asp:Label><asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+            <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label><asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
             <br />
-            <input type="text" id="rating" class="rating rating5" />
+            <input type="text" id="rating" class="rating rating5" runat="server" />
             <br />
             <asp:TextBox ID="txtReview" runat="server" placeholder="Enter Review here: " Height="200" Width="400" Wrap="False" TextMode="MultiLine"></asp:TextBox>
             <br />

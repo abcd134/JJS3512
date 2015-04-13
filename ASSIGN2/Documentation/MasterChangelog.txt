@@ -863,3 +863,8 @@ All Lines			Fixed design for trailer, backdrop and additional posters
 					Design for mobile view
 
 Sperson				Added the "Add to Favorites" button
+
+April 12, 2015		Version 12		Joseph
+ReviewDA.cs
+51-76			Added insert functionality
+55-66			Added code to submit button 
