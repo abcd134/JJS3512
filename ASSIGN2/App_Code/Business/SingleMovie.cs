@@ -133,7 +133,8 @@ namespace Content.Business
         }
         public MovieFavorites MakeMovieInstance()
         {
-            return new MovieFavorites(this.MovieId, this.Title, this.PosterPath, this.ReleaseDate);
+            string year = this.ReleaseDate.ToString().Substring(0, 4);
+            return new MovieFavorites(this.MovieId, this.Title, this.PosterPath, year);
         }
 
         public int MovieId

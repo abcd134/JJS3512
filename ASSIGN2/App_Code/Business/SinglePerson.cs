@@ -86,7 +86,7 @@ namespace Content.Business
         }
         public PeopleFavorites MakePersonInstance()
         {
-            PeopleFavorites newPersonToAdd = new PeopleFavorites(this.ID, this.Name, this.ProfilePath);
+            PeopleFavorites newPersonToAdd = new PeopleFavorites(this.ID, this.Name, this.ProfilePic);
             return newPersonToAdd;
         }
         public int ID

@@ -13,7 +13,6 @@ using Content.Services;
 
 public partial class SMovie : Page
 {
-    private SingleMovie _thisMovie;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,7 +24,6 @@ public partial class SMovie : Page
             if (Request.QueryString["id"] == null) { Response.Redirect("../Error.aspx?error=SMovie query string null error"); }
             //this checks to see if the query string is an integer if it is not redirect to the error.aspx 
             else if (!Int32.TryParse(Request.QueryString["id"], out movieID)) { Response.Redirect("../Error.aspx?error=SMovie query string non integer"); }
-
 
             DisplayMovie(movieID);
         }
@@ -44,7 +42,6 @@ public partial class SMovie : Page
         {
             topOfPage.DataSource = movieC;
             topOfPage.DataBind();
-            ThisMovie = movieC[0];
         }
         // the following data binds are a result of a visibility issue with nested repeaters.
         rptTitle.DataSource = movieC;
@@ -56,20 +53,32 @@ public partial class SMovie : Page
         rptOverview.DataSource = movieC;
         rptOverview.DataBind();
 
+        // add just the movieC to session for use with add to favorites later
+        Session["movieC"] = movieC;
+
         if (movieC.FindById(0).Tagline != null) { rptTagline.DataSource = movieC; }
             else { rptTagline.DataSource = null; }
         rptTagline.DataBind();
 
-        GenreCollection genreC = new GenreCollection();
-        genreC.FetchForId(movieID);
-        if (genreC.Count <= 0)
+        // Trying to get genres from session state
+        if (Session["GenreCollection"] != null)
         {
-            Response.Redirect("../Error.aspx?error=No Genres Found");
+            rptGenre.DataSource = Session["GenreCollection"];
+            rptGenre.DataBind();
         }
         else
         {
-            rptGenre.DataSource = genreC;
-            rptGenre.DataBind();
+            GenreCollection genreC = new GenreCollection();
+            genreC.FetchForId(movieID);
+            if (genreC.Count <= 0)
+            {
+                Response.Redirect("../Error.aspx?error=No Genres Found");
+            }
+            else
+            {
+                rptGenre.DataSource = genreC;
+                rptGenre.DataBind();
+            }
         }
 
         KeyWordsCollection kwc = new KeyWordsCollection();
@@ -140,28 +149,37 @@ public partial class SMovie : Page
         }
         
     }
+    /// <summary>
+    /// Method to add a single movie to the movie favorites list
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public void addToFav_Click(object sender, EventArgs e)
     {
-        MovieFavoritesCollection favMovieC;
-        if (Session["favMovieC"] != null)
+        MovieFavoritesCollection favMoviesC;
+        MovieCollection movieC;
+        if (Session["favMoviesC"] != null)
         {
-            favMovieC = (MovieFavoritesCollection)Session["favMovieC"];
+            favMoviesC = (MovieFavoritesCollection)Session["favMoviesC"];
         }
         else 
         { 
-            favMovieC = new MovieFavoritesCollection(); 
+            favMoviesC = new MovieFavoritesCollection(); 
         }
 
+        // Check to see if the movie collection is still in session state
+        // go to error page with timeout message if not.  User timed out.
+        if (Session["movieC"] == null)
+        {
+            Response.Redirect("../Error.aspx?error=Sorry, you timed out.  Please try again.");
+        }
+        movieC = (MovieCollection)Session["movieC"];
+
         MovieFavorites movieToAdd;
-        movieToAdd = ThisMovie.MakeMovieInstance();
-        favMovieC.Add(movieToAdd);
-        Session["favMovieC"] = favMovieC;
+        movieToAdd = movieC[0].MakeMovieInstance();
         // Need to add to the collection then  put in session 
+        favMoviesC.AddToCollection(movieToAdd);
+        Session["favMoviesC"] = favMoviesC;
         Response.Redirect("../Favorites/Favorites.aspx");
-    }
-    public SingleMovie ThisMovie
-    {
-        get { return  _thisMovie; }
-        set { _thisMovie =  value; }
     }
 }

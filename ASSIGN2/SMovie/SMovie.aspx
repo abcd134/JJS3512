@@ -84,9 +84,12 @@
                                 <%# Eval("Title") %>
                             </ItemTemplate>
                         </asp:Repeater><br />
-                            <button type="button" class="btn btn-default" runat="server" ID="addToFav" onclick="addToFav_Click">
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
-                            </button>
+
+                            <asp:Button ID="addToFav" runat="server" 
+                                OnCommand="addToFav_Click" 
+                                Text ="Favorite"
+                                CommandArgument='<%# Eval("MovieId") %>' >
+                            </asp:Button>
                             <button type="button" class="btn btn-default" runat="server" ID="writeReview">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
                             </button>

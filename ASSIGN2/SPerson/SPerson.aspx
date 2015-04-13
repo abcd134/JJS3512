@@ -34,8 +34,13 @@
                         <div class="panel panel-default personInfoMobile">
                             <div class="panel-heading">
                                 <%# Eval("Name") %> <br />
-                             <button type="button" class="btn btn-default" runat="server" ID="addToFav">
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  Favorite
+
+                                <asp:Button ID="addToFav_Click" runat="server" 
+                                    OnCommand="addToFav_Click" 
+                                    Text ="Favorite"
+                                    CommandArgument='<%# Eval("ID") %>' >
+                                </asp:Button>
+                            
                             </button>
                             </div>
                             <div class="panel-body">

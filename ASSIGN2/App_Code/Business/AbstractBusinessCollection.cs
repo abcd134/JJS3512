@@ -20,20 +20,19 @@ namespace Content.Business
         }
 
         /// <summary>
-        /// Add a review object to this collection
+        /// Add an object to this collection
         /// </summary>
         public void AddToCollection(T entity)
         {
             this.Add(entity);
         }
         /// <summary>
-        /// Remove a review from collection
+        /// Remove an object from collection
         /// </summary>        
         public void RemoveFromCollection(T entity)
         {
             this.Remove(entity);
         }
-
 
         /// <summary>
         /// Search for the object with the passed id value

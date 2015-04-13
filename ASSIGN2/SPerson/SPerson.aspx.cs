@@ -43,6 +43,8 @@ public partial class SPerson : Page
             rptPerson.DataBind();
         }
 
+        Session["PersonCollection"] = personC;
+
         CastCollection castC = new CastCollection();
         castC.FetchForMovies(id);
         if (castC.Count <= 0)
@@ -64,6 +66,45 @@ public partial class SPerson : Page
         {
             crewRepeater.DataSource = crewC;
             crewRepeater.DataBind();
+        }
+    }
+
+    public void addToFav_Click(object sender, CommandEventArgs e)
+    {
+        // Getting the favorite people collection from session stat if it exists
+        PeopleFavoritesCollection favPeopleC;
+        if (Session["favPeopleC"] != null)
+        {
+            favPeopleC = (PeopleFavoritesCollection)Session["favPeopleC"];
+        }
+        else { favPeopleC = new PeopleFavoritesCollection(); }
+
+        // Getting information about current person from session state if it 
+        // exists, other wise sending user to error page with timed out message.
+        PersonCollection personC;
+        if (Session["PersonCollection"] == null)
+        {
+            Response.Redirect("../Error.aspx?error=Sorry, you timed out.  Please browse again.");
+        }
+        personC = (PersonCollection)Session["PersonCollection"];
+        if (personC.Count > 0)
+        {
+            int i = 0;
+            while (i < personC.Count)
+            {
+                if (personC[i].ID.ToString() == (string)e.CommandArgument)
+                {
+                    // found the person to add to favorites
+
+                    PeopleFavorites personToAdd;
+                    personToAdd = personC[i].MakePersonInstance();
+                    // Need to add to the collection then  put in session 
+                    favPeopleC.Add(personToAdd);
+                    Session["favPeopleC"] = favPeopleC;
+                    Response.Redirect("../Favorites/Favorites.aspx");
+                }
+                i++;
+            }
         }
     }
 }
