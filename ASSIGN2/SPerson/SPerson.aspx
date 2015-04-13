@@ -35,11 +35,11 @@
                             <div class="panel-heading">
                                 <%# Eval("Name") %> <br />
 
-                                <asp:Button ID="addToFav_Click" runat="server" 
+                                <asp:LinkButton ID="addToFav_Click" runat="server" 
                                     OnCommand="addToFav_Click" 
-                                    Text ="Favorite"
-                                    CommandArgument='<%# Eval("ID") %>' >
-                                </asp:Button>
+                                    Text ="Favorite" CssClass="btn btn-default"
+                                    CommandArgument='<%# Eval("ID") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
+                                </asp:LinkButton>
                             
                             </button>
                             </div>
