@@ -10,6 +10,7 @@ using System.Web.Configuration;
 using System.Data.Common;
 using Content.Business;
 using Content.Services;
+using Content.DataAccess;
 
 public partial class SMovie : Page
 {
@@ -147,6 +148,14 @@ public partial class SMovie : Page
             rptTrailer.DataSource = trailerC.fetchTrailers(movieID);
             rptTrailer.DataBind();
         }
+
+
+        ReviewDA review = new ReviewDA();
+
+        rptReview.DataSource = review.fetchReviewByMovieID(movieID);
+        rptReview.DataBind();
+
+
         
     }
     /// <summary>
