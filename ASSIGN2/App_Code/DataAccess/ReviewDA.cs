@@ -43,7 +43,7 @@ namespace Content.DataAccess
         {
             string sql = SelectStatement + " AND movie_id=@id ORDER BY " + OrderFields;
             DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("@id", movie_id, DbType.Int16)
+			   DataHelper.MakeParameter("@id", movie_id, DbType.Int32)
         };
             return DataHelper.GetDataTable(sql, parameters);
         }
