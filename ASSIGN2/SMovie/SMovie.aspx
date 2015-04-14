@@ -347,7 +347,7 @@
                         <ItemTemplate>
                             <asp:Label ID="lblName" runat="server" Text="Name: "></asp:Label><asp:Label ID="lblDisplayName" runat="server"><%# Eval("first_name" )%> <%# Eval("last_name" )%></asp:Label>
                             <br />
-                            <asp:Label ID="lblDate" runat="server"><%# Eval("review_date" ).ToString().Substring(0,9)%></asp:Label>
+                            <asp:Label ID="lblDate" runat="server"><%# Eval("date" ).ToString().Substring(0,9)%></asp:Label>
                             <br />
                             <asp:Label ID="lblReviewTest" runat="server" ><%# Eval("review_text" )%></asp:Label>
                             <br />

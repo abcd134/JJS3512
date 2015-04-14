@@ -149,12 +149,20 @@ public partial class SMovie : Page
             rptTrailer.DataBind();
         }
 
-
+        ReviewCollection reviewC = new ReviewCollection();
+        reviewC.FetchReviewByID(movieID);
+        if (reviewC.Count > 0)
+        {
+            rptReview.DataSource = reviewC;
+            rptReview.DataBind();
+        }
+       
+        /*
         ReviewDA review = new ReviewDA();
 
         rptReview.DataSource = review.fetchReviewByMovieID(movieID);
         rptReview.DataBind();
-
+        */
 
         
     }

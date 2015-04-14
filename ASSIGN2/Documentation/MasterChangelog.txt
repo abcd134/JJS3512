@@ -951,3 +951,13 @@ April 12, 2015		Version 12		Joseph
 ReviewDA.cs
 51-76			Added insert functionality
 55-66			Added code to submit button 
+
+April 14,2015		Version 13	 and 13b	Joseph
+Review.cs
+	Document Created
+ReviewCollection.cs
+	Docuemtn Creates
+SMovie.aspx
+342-358	- Added review repeater
+SMovie.aspx.cs
+152-157	-Added review repeater databinding
