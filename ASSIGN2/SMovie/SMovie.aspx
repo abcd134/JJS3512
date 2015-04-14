@@ -85,11 +85,11 @@
                             </ItemTemplate>
                         </asp:Repeater><br />
 
-                            <asp:Button ID="addToFav" runat="server" 
+                            <asp:LinkButton ID="addToFav" runat="server" 
                                 OnCommand="addToFav_Click" 
-                                Text ="Favorite"
-                                CommandArgument='<%# Eval("MovieId") %>' >
-                            </asp:Button>
+                                Text ="Favorite" CssClass="btn btn-default"
+                                CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
+                            </asp:LinkButton>
                             <button type="button" class="btn btn-default" runat="server" ID="writeReview">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
                             </button>
