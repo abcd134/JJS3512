@@ -125,7 +125,7 @@
                     <div class="panel-heading">Citations</div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="http://www.sochealth.co.uk/2013/08/09/my-favourite-kitten-pictures-for-internationalcatday/">Image of Joseph from the Socialist Health Association</a></li>
+                            <li class="list-group-item"><a href="http://www.thepetmatchmaker.com/seven-cats-wearing-sunglasses-already-dogs/">Image of Joseph from the Pet Match Maker</a></li>
                             <li class="list-group-item"><a href="http://nyc_dog_blog.downtownpet.com/2007/08/cats-and-ducks.html">Image of Sonia from The NY City Downtown Pets</a></li>
                             <li class="list-group-item"><a href="http://www.inlander.com/imager/b/blog/2201738/bdd7/beabetterfriend.jpg?cb=1383547907">Image of James from The Inlander</a></li>
                             <li class="list-group-item">Will Fowler for GitHub Guidance</li>

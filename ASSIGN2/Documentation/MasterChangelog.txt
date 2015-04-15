@@ -961,3 +961,7 @@ SMovie.aspx
 342-358	- Added review repeater
 SMovie.aspx.cs
 152-157	-Added review repeater databinding
+
+April 14, 2015		James
+About.aspx
+128				Link to Josephs picture was dead, found a new one
