@@ -47,9 +47,14 @@ namespace Content.Business
                 review_text = (string)row["review_text"];
 
             if (row["review_date"] == DBNull.Value)
-                date = Convert.ToDateTime(row["1990-01-01"]);
+                date = "Date Not Available";
             else
-                date = Convert.ToDateTime(row["review_date"]);
+                date = Convert.ToDateTime(row["review_date"]).ToString(;
+
+            if (row["rating"] == DBNull.Value)
+                rating = 0;
+            else
+                rating = (int)row["rating"];
         }
 
         #region
@@ -75,7 +80,13 @@ namespace Content.Business
             get;
             set;
         }
-        public DateTime date
+        public string date
+        {
+            get;
+            set;
+        }
+
+        public int rating
         {
             get;
             set;

@@ -90,9 +90,25 @@
                                 Text ="Favorite" CssClass="btn btn-default"
                                 CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
                             </asp:LinkButton>
-                            <button type="button" class="btn btn-default" runat="server" ID="writeReview">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="review"  runat="server" ID="writeReview">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
                             </button>
+
+                        <!-- Modal Button for write review -->
+                         <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="rptReleaseRun" runat="server">
@@ -353,9 +369,9 @@
                                             <b>
                                                 <asp:Label ID="lblName" runat="server" Text="Reviewer Name: "></asp:Label></b><asp:Label ID="lblDisplayName" runat="server"><%# Eval("first_name" )%> <%# Eval("last_name" )%></asp:Label>
                                             <br />
-                                            <asp:Label ID="lblDate" runat="server"><b>Date of Review:</b> <%# Eval("date" ).ToString().Substring(0,9)%></asp:Label>
+                                            <asp:Label ID="lblDate" runat="server"><b>Date of Review:</b> <%# Eval("date" ).ToString().Substring(0,10)%></asp:Label>
                                             <br />
-                                            <b>Rating:</b> Add rating
+                                             <input type="text" runat="server"  id="rating" readonly="readonly" value='<%# Eval("rating") %>' class="rating rating5" />
                                             <br />
                                         </div>
                                         </div>
@@ -373,7 +389,6 @@
             </div>
         </div>
 
-
     </div>
     
 
@@ -388,5 +403,16 @@
             }
         });
 </script>--%>
+
+                <script type="text/javascript">
+        $(function ()
+        {
+            $('.rating').rating();
+
+            $('.ratingEvent').rating({ rateEnd: function (v) { $('#result').text(v); } });
+        });
+    </script>
+        <script src="../Scripts/rating.js" type="text/javascript"></script>
      <script src="../Scripts/fotorama.js" type="text/javascript"></script>
+
 </asp:Content>

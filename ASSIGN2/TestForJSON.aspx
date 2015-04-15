@@ -75,8 +75,10 @@
                 <%# Eval("review_text" )%>
             </ItemTemplate>
         </asp:Repeater>
-             <script src="../Scripts/rating.js" type="text/javascript"></script>
+
 
     </form>
+     <script src="../Scripts/rating.js" type="text/javascript"></script>
 </body>
+                
 </html>

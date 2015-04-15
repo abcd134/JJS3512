@@ -30,7 +30,9 @@
 
   <!-- JQuery Image Library CSS file -->
     <link href="~/Content/fotorama.css" rel="stylesheet" />
-    <link href="~/Content/rating.css" rel="stylesheet" />
+    <link href="~/Content/rating.css" type="text/css" rel="stylesheet" />
+
+
 </head>
 <body>
     <form runat="server">
