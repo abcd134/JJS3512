@@ -50,6 +50,7 @@
                             </asp:LinkButton>
 
                         </div>
+                    
                         <div class="col-md-10 col-xs-12">
                             <div class="row">
                                 <div class="col-md-10 col-xs-7" id="contentMobile">

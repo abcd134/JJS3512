@@ -345,12 +345,26 @@
                 <div class="panel-body">
                     <asp:Repeater ID="rptReview" runat="server">
                         <ItemTemplate>
-                            <asp:Label ID="lblName" runat="server" Text="Name: "></asp:Label><asp:Label ID="lblDisplayName" runat="server"><%# Eval("first_name" )%> <%# Eval("last_name" )%></asp:Label>
+                            <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+
+                            <div class="col-md-6">
+                            <div class="panel-title">
+                            <b><asp:Label ID="lblName" runat="server" Text="Reviewer Name: "></asp:Label></b><asp:Label ID="lblDisplayName" runat="server"><%# Eval("first_name" )%> <%# Eval("last_name" )%></asp:Label>
                             <br />
-                            <asp:Label ID="lblDate" runat="server"><%# Eval("review_date" ).ToString().Substring(0,9)%></asp:Label>
+                            <asp:Label ID="lblDate" runat="server"><b>Date of Review:</b><%# Eval("review_date" ).ToString().Substring(0,9)%></asp:Label>
+                            <br />
+                            <b>Rating:</b>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <b>Add the title review</b>
                             <br />
                             <asp:Label ID="lblReviewTest" runat="server" ><%# Eval("review_text" )%></asp:Label>
-                            <br />
+                            </div>
+                                </div>
+                                </div>
+                             <hr />
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
