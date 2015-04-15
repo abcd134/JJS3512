@@ -5,7 +5,7 @@
     <%--Begin Carousel --%>
 
 
-    <div class="col-md-12">
+    <div class="col-md-12 col-xs-12">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -63,11 +63,11 @@
         <%--Start of the left hand side of the website--%>
 
         <%--Begin Featured Movie--%>
-        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+        <div class="col-md-12 col-xs-12">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2>Discover our top five featured movies</h2>
+                        Discover our top five featured movies
                         <ul class="list-inline">
                             <li>
                                 <asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1" Height="75px" Width="75px" /></li>
@@ -112,8 +112,9 @@
                             <div class="panel-body">
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <div class="col-md-3 col-md-offset-1">
+                    <div class="col-md-offset-1 col-md-3 col-xs-12">
                         <div class="row">
+                            
                             <img src="http://image.tmdb.org/t/p/w300<%#Eval("ProfilePath")%>"
                                 title="<%# Eval("Name") %> poster"
                                 alt="<%# Eval("Name") %> poster"

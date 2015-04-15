@@ -10,7 +10,9 @@
 
 </style>
 
-<div class="row rowCol">
+
+
+<div class="row">
     <div class="col-md-9 col-xs-12 browsePanel">
         <div class="well well-lg" id="wellMobile">
             <h1 id="wellh1">Browse the Movies</h1>
@@ -43,13 +45,10 @@
                                         alt="<%# Eval("Title") %> backdrop"
                                         class="thumbnail img-responsive" /></a>
                             </figure>--%>
-                            <asp:LinkButton ID="addToFav" runat="server" 
-                                OnCommand="addToFav_Click" CssClass="btn btn-default"
-                                Text ="Favorite"
-                                CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
-                            </asp:LinkButton>
-
+                         
                         </div>
+
+
                     
                         <div class="col-md-10 col-xs-12">
                             <div class="row">
@@ -60,18 +59,19 @@
                                         Visible = '<%# Eval("Tagline").ToString() != "" %>' >
                                         <h5 id="taglineMobile">"<%# Eval("Tagline") %>"</h5>
                                     </asp:Label>
-                                    </div>
+                                </div>
                                 <div class="hidden-xs col-md-2">
                                     <h1><%# Eval("Average") %>/10  </h1>
                                 </div>
                             </div>
-                            <div class="hidden-xs panel panel-info row">
+                            <div class="row">
+                            <div class="hidden-xs panel panel-info">
                                 <div class="panel-heading">
                                     <div class="panel-title"><b><a href="../SPerson/SPerson.aspx?id=<%# Eval("PersonID") %>">
                                             <%# Eval("Name") %></a></b> stars as <%# Eval("RoleName")%></div>
                                 </div>
                             </div>
-                            <div class="panel panel-info row" id="overviewMobile">
+                            <div class="panel panel-info" id="overviewMobile">
                                 <div class="panel-heading">
                                     <div class="panel-title">Overview</div>
                                     <div class="panel-body">
@@ -80,6 +80,14 @@
                                 </div>
                             </div>
                         </div>
+                            </div>
+                                               <div class="col-md-2">
+                              <asp:LinkButton ID="addToFav" runat="server" 
+                                OnCommand="addToFav_Click" CssClass="btn btn-default"
+                                Text ="Favorite"
+                                CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
+                            </asp:LinkButton>
+                       </div>
                     </div>
                 <hr />
                 </ItemTemplate>

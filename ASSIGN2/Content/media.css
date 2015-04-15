@@ -28,11 +28,12 @@
     #wellh1{font-size:14pt;}
     #panelMobile{margin-left:2%; margin-right:2%;}
     #contentMobile{float:right;}
-    #titleMobileh3{font-size:10pt;}
+    /*#titleMobileh3{font-size:10pt;}*/
     #taglineMobile{font-size:9pt;}
     #overviewMobile{margin-left:5%; margin-top:1%;}
     .browsePanel{margin-left:0%;}
-    #titleMobileFavh3{font-size:10pt;}
+    /*#titleMobileFavh3{font-size:10pt;}*/
+    h3{font-size:10pt;}
 }
 
 

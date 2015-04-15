@@ -31,7 +31,7 @@
                                 </asp:LinkButton>
                             </div>
                             <div class="col-md-8 col-xs-6">
-                                <h3 id="titleMobileFavh3"><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>"><%# Eval("Title") %></a></h3>
+                                <h3><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>"><%# Eval("Title") %></a></h3>
                             </div>
                             <div class="col-md-2 col-xs-3">
                                 <h3><%# Eval("Year") %></h3>
@@ -71,7 +71,7 @@
                             </asp:LinkButton>
                         </div>
                         <div class="col-xs-7 col-md-7">
-                            <h3 id="titleMobileh3"><a href="../SPerson/SPerson.aspx?id=<%# Eval("PersonID") %>"><%# Eval("Name") %></a></h3>
+                            <h3><a href="../SPerson/SPerson.aspx?id=<%# Eval("PersonID") %>"><%# Eval("Name") %></a></h3>
                         </div>
                     </div>
                 <hr />
