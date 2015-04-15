@@ -109,7 +109,8 @@
                             the establishment of the look and feel of the site.  Sonia's good
                             nature and drive for success was a key component in ensuring cohesion
                             between the team members.  She will wear a skirt to school if we get
-                            an "A"......  ooops the writer was thinking out loud again. 
+                            an "A".  We are  pleased to announce that Sonia fulfilled her obligation
+                            in spirit at least -- we saw pictures ..... stunning.
                                     </p>
                                 </div>
                             </div>

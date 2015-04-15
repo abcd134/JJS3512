@@ -978,3 +978,20 @@ Browse.aspx
 
 SMovie.aspx
 342 - 374		Did some styling for review 
+
+April 15, 2015			James
+Review.cs			
+52					typo fixed
+
+About.aspx
+112-113				Essential information added
+
+Default.aspx
+70-82				deleted the BIG buttons
+75 and 87			The addition of two BIG divs
+
+default.aspx.cs
+29-53				deleted featured button stuff
+26-29				added new databinding code
+115-125				Deleted bind movie method
+92-112				Added addMovies() method

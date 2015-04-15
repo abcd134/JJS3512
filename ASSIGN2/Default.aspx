@@ -63,27 +63,16 @@
         <%--Start of the left hand side of the website--%>
 
         <%--Begin Featured Movie--%>
-        <div class="col-md-12 col-xs-12">
+       <div class="col-md-12 col-xs-12">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Discover our top five featured movies
-                        <ul class="list-inline">
-                            <li>
-                                <asp:Button ID="FeaturedButton1" runat="server" CssClass="circle" OnClick="FeaturedButton1_Click" Text="1" Height="75px" Width="75px" /></li>
-                            <li>
-                                <asp:Button ID="FeaturedButton2" runat="server" CssClass="circle" OnClick="FeaturedButton2_Click" Text="2" Height="75px" Width="75px" /></li>
-                            <li>
-                                <asp:Button ID="FeaturedButton3" runat="server" CssClass="circle" OnClick="FeaturedButton3_Click" Text="3" Height="75px" Width="75px" /></li>
-                            <li>
-                                <asp:Button ID="FeaturedButton4" runat="server" CssClass="circle" OnClick="FeaturedButton4_Click" Text="4" Height="75px" Width="75px" /></li>
-                            <li>
-                                <asp:Button ID="FeaturedButton5" runat="server" CssClass="circle" OnClick="FeaturedButton5_Click" Text="5" Height="75px" Width="75px" /></li>
-                        </ul>
+                        <div class="panel-title">Discover our top five featured movies</div>                       
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
                             <ItemTemplate>
+                            <div class="row">
                                 <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("MovieId")%>"><%#Eval("Title")%></a></h3>
                                 <div class="col-md-4">
                                     <img src="http://image.tmdb.org/t/p/w300<%#Eval("PosterPath")%>"
@@ -95,6 +84,7 @@
                                     <p>Movie Overview</p>
                                     <p><%#Eval("Overview") %></p>
                                 </div>
+                            </div>
                             </ItemTemplate>
                         </asp:Repeater>
 

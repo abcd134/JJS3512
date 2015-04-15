@@ -49,7 +49,7 @@ namespace Content.Business
             if (row["review_date"] == DBNull.Value)
                 date = "Date Not Available";
             else
-                date = Convert.ToDateTime(row["review_date"]).ToString(;
+                date = Convert.ToDateTime(row["review_date"]).ToString();
 
             if (row["rating"] == DBNull.Value)
                 rating = 0;
