@@ -965,3 +965,16 @@ SMovie.aspx.cs
 April 14, 2015		James
 About.aspx
 128				Link to Josephs picture was dead, found a new one
+
+April 14, 2015		Sonia	
+Upcoming.aspx/Now Playing.aspx
+All Lines		Design for mobile view 
+
+Favorites.aspx
+All Lines		Design for mobile view 
+
+Browse.aspx
+84 - 90			Moved Add to Fav button to fix the mobile view of the button 
+
+SMovie.aspx
+342 - 374		Did some styling for review 
