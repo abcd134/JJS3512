@@ -995,3 +995,22 @@ default.aspx.cs
 26-29				added new databinding code
 115-125				Deleted bind movie method
 92-112				Added addMovies() method
+
+April 15, 2015			James (preGame Cleanup)
+Browse.aspx
+40					Documentation
+80-91				Code Optimization 
+172-5, 8			Code clean up
+
+SMovie.aspx
+57-62				code cleanup & documentation
+108-9,116-7,124-5
+132-3				code clean up
+
+SPerson.aspx.cs
+49-50				documentation
+51-4, 58-61,62-5
+90-1,98				code cleanup
+
+default.aspx
+86-91				documentation

@@ -37,7 +37,7 @@ public partial class Browse : Page
                         Response.Redirect("../Error.aspx?error=Invalid Query String sent to Browse Page");
                     }
                 }
-                // Check Query String for value
+                // Check Query String for search box value
                 if (Request.QueryString["search"] != null && Request.QueryString["search"] != "")
                 {
                     search = Request.QueryString["search"];
@@ -77,21 +77,13 @@ public partial class Browse : Page
         lblGenre.Visible = true;
         string searchOn = Master.SearchKind;
         BrowseCollection browseC = new BrowseCollection();
-        if (search != null && genreID >= 0) // Filter on genre and search criteria
+        browseC = browseC.getData(search, genreID, searchOn);
+        if (search == null && genreID < 0)
         {
-            browseC.FetchForGenreAndSearch(genreID, search, searchOn);
+            removeFilter.Visible = false;
+            lblGenre.Visible = false;
         }
-            else if(search != null){ //Filter on only search box criteria
-                browseC.FetchForSearch(search, searchOn);
-            }
-                else if(genreID >= 0){
-                    browseC.FetchForGenre(genreID); // Filter only on genre
-                }
-                    else { 
-                        browseC.FetchAll();
-                        removeFilter.Visible = false;
-                        lblGenre.Visible = false;
-                    }
+
         if (browseC.Count <= 0)
         {
             // set a label to visible and make text
@@ -169,26 +161,21 @@ public partial class Browse : Page
         }
         browseC = (BrowseCollection)Session["BrowseCollection"];
 
-        if (browseC.Count > 0)  // this check likely not necessary
-                                // shouldn't be able to get here without 
-                                // at least one moive
-        {
-            // Need to get the data from the movie chosen
-            int i = 0;
-            while (i < browseC.Count){
-                if ( browseC[i].MovieId.ToString()  == (string) e.CommandArgument)
-                {
-                    // found the movie to add to favorites
-                    
-                    MovieFavorites movieToAdd;
-                    movieToAdd = browseC[i].MakeMovieInstance();
-                    // Need to add to the collection then put in session 
-                    favMoviesC.Add(movieToAdd);
-                    Session["favMoviesC"] = favMoviesC;
-                    Response.Redirect("../Favorites/Favorites.aspx");
-                }
-                i++;
-            }   
-        }
+        // Need to get the data from the movie chosen
+        int i = 0;
+        while (i < browseC.Count){
+            if ( browseC[i].MovieId.ToString()  == (string) e.CommandArgument)
+            {
+                // found the movie to add to favorites                   
+                MovieFavorites movieToAdd;
+                movieToAdd = browseC[i].MakeMovieInstance();
+
+                // Need to add to the collection then put in session 
+                favMoviesC.Add(movieToAdd);
+                Session["favMoviesC"] = favMoviesC;
+                Response.Redirect("../Favorites/Favorites.aspx");
+            }
+            i++;
+        }   
     }
 }

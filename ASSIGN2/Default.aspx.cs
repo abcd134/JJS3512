@@ -83,12 +83,8 @@ public partial class _Default : Page
         }
     }
     /// <summary>
-    /// Method to create movie collections for a single movie
-    /// Time permitting, this could be made more robust my accepting
-    /// an array of ID's and retrieving a collection of movie objects
-    /// rather than 3 separate data retrievals
+    /// Method to create movie collection for featured movie repeater
     /// </summary>
-    /// <param name="movieID"></param>
     protected MovieCollection addMovies()
     {
         // Creating a movie collection for the our featured section
