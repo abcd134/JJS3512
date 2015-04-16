@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 
 /// <summary>
 /// Summary description for ConfigurationInformation
+/// Used to fetch URL and API key in Webconfig
 /// </summary>
 public static class ConfigurationInformation
 {

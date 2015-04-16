@@ -25,8 +25,8 @@
                         This page is divided into five main sections.  This introduction,
                 followed by a brief bio of each of the developers.  The third section is
                 a summary of the development efforts of each of the members.  The fourth 
-                section involves a more detailed <b><a href="#documentation1">documentation</a></b> of each of the web pages.
-                The final section contains the <b><a href="#citations1">list of citations</a></b> that reflect ideas/efforts
+                section involves a more detailed documentation of each of the web pages.
+                The final section contains the list of citations that reflect ideas/efforts
                 of other people/organizations that we chose to either emulate, access or
                 were just plain inspired by.
                     </p>

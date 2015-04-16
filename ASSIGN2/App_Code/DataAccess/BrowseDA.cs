@@ -50,7 +50,11 @@ public class BrowseDA : AbstractDA
                                      + " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
-
+    /// <summary>
+    /// Returns the filtered movies based on the genre ID
+    /// </summary>
+    /// <param name="genreID"></param>
+    /// <returns></returns>
     public DataTable GetGenreFilteredMovies(int genreID)
     {
         string sql = SelectStatement + " FROM movie, movie_cast, person ,genre, movie_genre " 

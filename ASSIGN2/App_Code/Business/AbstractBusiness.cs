@@ -24,19 +24,7 @@ namespace Content.Business
         /// <param name="table"></param>
         /// <returns></returns>
         public abstract void PopulateDataMembersFromDataRow(DataRow table);
-/*
-        #region public methods
-        /// <summary>
-        /// Fetches a business object's data
-        /// </summary>
-        public bool FetchById(int id)
-        {
-            DataTable table = DataAccess.GetById(id);
 
-            PopulateDataMembersFromDataRow(table.Rows[0]);
-        }
-        #endregion
- */
         #region protected properties
         /// <summary>
         /// The data access class used by this business object

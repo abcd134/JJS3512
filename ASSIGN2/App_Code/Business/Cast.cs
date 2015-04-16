@@ -66,7 +66,8 @@ namespace Content.Business
                 ProfilePath = "http://image.tmdb.org/t/p/w154" + row["profile_path"];
             }
         }
-
+        // getters and setters
+        #region
         public int ActorID
         {
             get { return _actorID; }
@@ -99,5 +100,6 @@ namespace Content.Business
             get { return _actorName; }
             set { _actorName = value; }
         }
+        #endregion
     }
 }
