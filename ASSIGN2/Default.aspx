@@ -113,7 +113,7 @@
                                 class="thumbnail img-responsive" />
                         </div>
                         <div class="row">
-                            <h1><a href="../SPerson/SPerson.aspx?id=<%#Eval("ID") %>"><%# Eval("Name") %></a></h1>
+                            <h1 id="wellh1"><a href="../SPerson/SPerson.aspx?id=<%#Eval("ID") %>"><%# Eval("Name") %></a></h1>
                             <p><%# Eval("Birthday") %></p>
                         </div>
                     </div>
