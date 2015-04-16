@@ -18,7 +18,9 @@ namespace Content.Business
         private int _genreID;
         private string _genreName;
         private GenreDA _genreDA;
-
+        /// <summary>
+        /// Constructor for Genre Object
+        /// </summary>
         public Genre()
         {
             _genreDA = new GenreDA();
@@ -41,7 +43,7 @@ namespace Content.Business
             else
                 GenreID = (int)Convert.ToInt32(row["genre_ID"]);
         }
-
+        #region Getters and Setters
         public int GenreID
         {
             get { return _genreID; }
@@ -53,5 +55,6 @@ namespace Content.Business
             get { return _genreName; }
             set { _genreName = value; }
         }
+        #endregion
     }
 }

@@ -32,7 +32,10 @@ namespace Content.Business
             _browseDA = new BrowseDA();
             base.DataAccess = _browseDA;
         }
-
+        /// <summary>
+        /// Override method to populate an object from a data table row
+        /// </summary>
+        /// <param name="row"></param>
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
             MovieId = (int)row["movie_id"];
@@ -89,6 +92,11 @@ namespace Content.Business
                 RoleName = (string)row["role_name"];
 
         }
+        /// <summary>
+        /// Public class to make a specific instance of a movie favorites object
+        /// from the contents of a browse object
+        /// </summary>
+        /// <returns></returns>
         public MovieFavorites MakeMovieInstance()
         {
             string year = this.ReleaseDate.ToString().Substring(0,4);
@@ -96,6 +104,7 @@ namespace Content.Business
             return newMovieToAdd; 
         }
 
+        #region Getter and Setter methods
         public int MovieId
         {
             get { return _movieId; }
@@ -160,5 +169,6 @@ namespace Content.Business
             get { return _browseDA; }
             set { _browseDA = value; }
         }
+        #endregion
     }
 }

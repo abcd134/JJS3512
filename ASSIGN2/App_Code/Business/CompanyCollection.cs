@@ -15,6 +15,9 @@ namespace Content.Business
     public class CompanyCollection : AbstractBusinessCollection<Company>
     {
         private MovieCompanyDA _da = new MovieCompanyDA();
+        /// <summary>
+        /// Constructor for a CompanyCollection object
+        /// </summary>
         public CompanyCollection()
         {
             //

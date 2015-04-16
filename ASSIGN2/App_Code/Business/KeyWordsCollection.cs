@@ -15,6 +15,9 @@ namespace Content.Business
     public class KeyWordsCollection : AbstractBusinessCollection<KeyWords>
     {
         private MovieKeyWordsDA _da = new MovieKeyWordsDA();
+        /// <summary>
+        /// KeyWords Colloection Constructor
+        /// </summary>
         public KeyWordsCollection()
         {
             //

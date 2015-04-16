@@ -23,7 +23,9 @@ public class Crew : AbstractBusiness
         private string _department;
         private string _job;
         private CrewDA _crewDA;
-
+        /// <summary>
+        /// Constructor for Crew obect - needs a data access variable
+        /// </summary>
         public Crew()
         {
             _crewDA = new CrewDA();
@@ -74,7 +76,7 @@ public class Crew : AbstractBusiness
             }
             else { Job = (string)row["job"]; }
         }
-
+        #region Getters and Setters
         public int PersonID
         {
             get { return _personID; }
@@ -113,5 +115,6 @@ public class Crew : AbstractBusiness
             get { return _movieId; }
             set { _movieId = value; }
         }
+        #endregion
     }
 }

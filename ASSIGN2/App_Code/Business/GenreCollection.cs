@@ -15,6 +15,9 @@ namespace Content.Business
     public class GenreCollection : AbstractBusinessCollection<Genre>
     {
         private GenreDA _da = new GenreDA();
+        /// <summary>
+        /// Genre Collection Constructor
+        /// </summary>
         public GenreCollection()
         {
             //
