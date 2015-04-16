@@ -203,12 +203,58 @@ public partial class SMovie : Page
         DateTime date = DateTime.Now;
         string review_title = txtReviewTitle.Text;
 
+        if (checkForUserInput() == false)
+        {
+            ReviewDA dataToInsert = new ReviewDA();
+            movieID = Convert.ToInt32(Request.QueryString["id"]);
+            dataToInsert.InsertReview(movieID, fname, lname, review, date, rating, review_title);
 
-        ReviewDA dataToInsert = new ReviewDA();
-        movieID =  Convert.ToInt32(Request.QueryString["id"]);
-        dataToInsert.InsertReview(movieID, fname, lname, review, date, rating, review_title);
-
-        Response.Redirect(Request.RawUrl);
+            Response.Redirect(Request.RawUrl);
+        }
+        
     }
 
+    private bool checkIfDataInputExists(string ToCheck)
+    {
+        if (ToCheck == null || ToCheck == "")
+            return true;
+        return false;
+    }
+
+    private bool checkForUserInput()
+    {
+        string errorMessege = "Required Field: ";
+        bool userError = false;
+
+        if (checkIfDataInputExists(txtFirstName.Text))
+        {
+            errorMessege += "First Name ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtLastName.Text))
+        {
+            errorMessege += "Last Name ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtReview.Text))
+        {
+            errorMessege += "Review ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtReviewTitle.Text))
+        {
+            errorMessege += "Review Title ";
+            userError = true;
+        }
+
+        errorMessege += ". Please provide input";
+
+        if (userError)
+        {
+            string script = "alert(\'" + errorMessege +" \');";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                      "ServerControlScript", script, true);
+        }
+        return userError;
+    }
 }

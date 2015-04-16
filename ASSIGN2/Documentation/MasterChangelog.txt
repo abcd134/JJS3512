@@ -1034,3 +1034,13 @@ default.aspx
 April 15, 2015			James
 BrowseDA.cs
 37					distinct bug fix
+
+April 16, 2015		Version 15b		Joseph
+SMovie.aspx.cs
+217-258			Added data checing (for null or no user input)
+
+About.aspx
+142-145			Added references
+
+movies.accdb
+Deleted test casses and added 15 new ones
