@@ -1014,3 +1014,7 @@ SPerson.aspx.cs
 
 default.aspx
 86-91				documentation
+
+April 15, 2015			James
+BrowseDA.cs
+37					distinct bug fix
