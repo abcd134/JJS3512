@@ -25,6 +25,9 @@ namespace Content.Business
         private bool _isPoster;
         private MovieImageDA _movieImageDA;
 
+        /// <summary>
+        /// MovieImage constructor and creating an object
+        /// </summary>
         public MovieImage()
         {
             _movieImageDA = new MovieImageDA();
@@ -38,7 +41,8 @@ namespace Content.Business
         {
             // set the data members to the data retrieved from the database table/query
             MovieID = (int)row["movie_id"];
-
+            //getters and setters
+            #region
             if (row["is_poster"] == DBNull.Value || Convert.ToInt32(row["is_poster"]) == 0)
             {
                 IsPoster = false;
@@ -132,5 +136,6 @@ namespace Content.Business
             get { return _id; }
             set { _id = value; }
         }
-   }
+            #endregion
+    }
 }

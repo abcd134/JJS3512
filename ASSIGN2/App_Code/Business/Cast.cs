@@ -21,7 +21,9 @@ namespace Content.Business
         private string _roleName;
         private string _profilePath;
         private CastDA _castDA;
-
+        /// <summary>
+        /// Costructor for a cast object, need the data access object
+        /// </summary>
         public Cast()
         {
             _castDA = new CastDA();

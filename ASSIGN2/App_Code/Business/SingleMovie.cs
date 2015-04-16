@@ -35,12 +35,19 @@ namespace Content.Business
         private string _roleName;
         private MovieDA _movieDA;
 
+        /// <summary>
+        /// this is a constructor for single movie by creating a new movie object
+        /// </summary>
         public SingleMovie()
         {
             _movieDA = new MovieDA();
             base.DataAccess = _movieDA;
         }
 
+        /// <summary>
+        /// Method to obtain and instanciate and validated data single movie 
+        /// </summary>
+        /// <param name="row"></param>
         public override void PopulateDataMembersFromDataRow(DataRow row)
         {
             MovieId = (int)row["movie_id"];
@@ -131,12 +138,18 @@ namespace Content.Business
                 RoleName = (string)row["role_name"];
 
         }
+        /// <summary>
+        /// This creates a movie favortie
+        /// </summary>
+        /// <returns></returns>
         public MovieFavorites MakeMovieInstance()
         {
             string year = this.ReleaseDate.ToString().Substring(0, 4);
             return new MovieFavorites(this.MovieId, this.Title, this.PosterPath, year);
         }
 
+        //getters and setters 
+        #region 
         public int MovieId
         {
             get { return _movieId; }
@@ -237,5 +250,6 @@ namespace Content.Business
             get { return _movieDA; }
             set { _movieDA = value; }
         }
+        #endregion
     }
 }

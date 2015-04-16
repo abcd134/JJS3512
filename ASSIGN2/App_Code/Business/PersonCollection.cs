@@ -63,7 +63,10 @@ namespace Content.Business
             DataTable dt = _da.GetBy3PersonID(id1, id2, id3);
             PopulateFromDataTable(dt);
         }
-
+        /// <summary>
+        /// populate the data table for the single person and add it to a collection 
+        /// </summary>
+        /// <param name="dt"></param>
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table

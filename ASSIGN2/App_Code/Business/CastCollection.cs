@@ -15,7 +15,9 @@ namespace Content.Business
     public class CastCollection : AbstractBusinessCollection<Cast>
     {
         private CastDA _da = new CastDA();
-
+        /// <summary>
+        /// Unused constructor for a cast collection
+        /// </summary>
 	    public CastCollection()
 	    {
 		    //

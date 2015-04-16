@@ -49,6 +49,10 @@ namespace Content.Business
             DataTable dt = _da.GetByImageID(id);
             PopulateFromDataTable(dt);
         }
+        /// <summary>
+        /// populate data table and add it to movie image collection 
+        /// </summary>
+        /// <param name="dt"></param>
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table

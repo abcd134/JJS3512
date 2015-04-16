@@ -20,6 +20,8 @@ namespace Content.Business
         {
             //
         }
+
+        //getters and setters
         public DataTable dt
         {
             get { return _dt; }
