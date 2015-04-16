@@ -22,7 +22,18 @@ namespace Content.Services
         /// <returns></returns>
         public override DataTable fetchData()
         {
-            return DownloadFromAPI<MoviesCollection>(MovieDBServices.FetchUpcoming()).getDataTable();
+            DataTable UpcomingPlaying;
+            try
+            {
+                UpcomingPlaying = DownloadFromAPI<MoviesCollection>(MovieAPIServices.FetchUpcoming()).getDataTable();
+             }
+            catch(Exception ex)
+            {
+                UpcomingPlaying = null;
+                Console.WriteLine(ex.Message);
+            }
+            return UpcomingPlaying;
+        }
         }
     }
-}
+

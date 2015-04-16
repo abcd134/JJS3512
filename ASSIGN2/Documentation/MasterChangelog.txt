@@ -951,3 +951,126 @@ April 12, 2015		Version 12		Joseph
 ReviewDA.cs
 51-76			Added insert functionality
 55-66			Added code to submit button 
+
+April 14,2015		Version 13	 and 13b	Joseph
+Review.cs
+	Document Created
+ReviewCollection.cs
+	Docuemtn Creates
+SMovie.aspx
+342-358	- Added review repeater
+SMovie.aspx.cs
+152-157	-Added review repeater databinding
+
+April 14, 2015		James
+About.aspx
+128				Link to Josephs picture was dead, found a new one
+
+April 14, 2015		Sonia	
+Upcoming.aspx/Now Playing.aspx
+All Lines		Design for mobile view 
+
+Favorites.aspx
+All Lines		Design for mobile view 
+
+Browse.aspx
+84 - 90			Moved Add to Fav button to fix the mobile view of the button 
+
+SMovie.aspx
+342 - 374		Did some styling for review 
+
+April 15, 2015			James
+Review.cs			
+52					typo fixed
+
+About.aspx
+112-113				Essential information added
+
+Default.aspx
+70-82				deleted the BIG buttons
+75 and 87			The addition of two BIG divs
+
+default.aspx.cs
+29-53				deleted featured button stuff
+26-29				added new databinding code
+115-125				Deleted bind movie method
+92-112				Added addMovies() method
+
+April 15, 2915		Version 15	Joseph
+THIS LINE IS THE 1000th LINE. YEAHHHHHH 1000 kitties :3
+Review.cs
+59-62				Added review title
+67-71				Added review_title Get set
+
+ReviewDA.cs
+16						Added review_title as a field
+
+SMovie.apsx
+68					Added button configuration for review submit form
+98-118				Added Modal and review submit form
+
+SMovie.aspx.cs
+202-219			Added Submit button code behind for review
+
+April 15, 2015			James (preGame Cleanup)
+Browse.aspx
+40					Documentation
+80-91				Code Optimization 
+172-5, 8			Code clean up
+
+SMovie.aspx
+57-62				code cleanup & documentation
+108-9,116-7,124-5
+132-3				code clean up
+
+SPerson.aspx.cs
+49-50				documentation
+51-4, 58-61,62-5
+90-1,98				code cleanup
+
+default.aspx
+86-91				documentation
+
+April 15, 2015			James
+BrowseDA.cs
+37					distinct bug fix
+
+April 16, 2015		Version 15b		Joseph
+SMovie.aspx.cs
+217-258			Added data checing (for null or no user input)
+
+About.aspx
+142-145			Added references
+
+movies.accdb
+Deleted test casses and added 15 new ones
+
+April 16, 2015		Version15c	Joseph
+SMovie - FIxed a bug where rating was returning zero all the time
+109				Changed id of input field
+
+SMovie.aspx.cs
+197				Changed Request ID
+
+Movies.accdb
+Added rating numbers
+
+MovieTrailesDA.cs
+35-37			Added retunrs a null when it cannot connect to movie DB API-
+					Added functionality that allows error handling when connection cannot be established
+
+					April 16, 2015		Clean-up2		James
+About.aspx
+70					typo - changed "top 5 movies" to "top 3 movies"
+
+
+April 16, 2015		Sonia
+browse.aspx			
+All Lines			Design Bug fix
+
+Smovie.aspx
+98 - 129			Modal Design 
+
+
+
+

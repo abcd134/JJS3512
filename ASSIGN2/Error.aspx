@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="row">
-    <div class="well col-xs-12 col-xs-offset-1 col-md-10 col-md-offset-1 rowCol">
+    <div class="well col-xs-10 col-md-10 col-md-offset-1" id="errorPanel">
         <div class="panel panel-danger">
             <div class="panel-body innerWell">
                 <div class="row">

@@ -17,7 +17,18 @@ namespace Content.Services
         /// <returns></returns>
         public override DataTable fetchData()
         {
-            return DownloadFromAPI<MoviesCollection>(MovieDBServices.FetchNowPlaying()).getDataTable();
+            DataTable NowPlaying;
+            try
+            {
+                NowPlaying = DownloadFromAPI<MoviesCollection>(MovieAPIServices.FetchNowPlaying()).getDataTable();
+             }
+            catch(Exception ex)
+            {
+                NowPlaying = null;
+                Console.WriteLine(ex.Message);
+            }
+            return NowPlaying;
         }
+
     }
 }

@@ -13,8 +13,8 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <p>
-                        This hypothetical site was designed by <b><a href="#dev1">Joseph Balabat</a></b>, 
-                    <b><a href="#dev1">James Bergeron</a></b> and <b><a href="#dev1">Sonia Pitrola</a></b>
+                        This hypothetical site was designed by <b>Joseph Balabat</b>, 
+                    <b>James Bergeron</b> and <b>Sonia Pitrola</b>
                         as part of the requirements for the Mount Royal University,
                     Bachelor of Computer Information Systems degree program.  The project
                     was submitted to Professor Randy Connolly in partial
@@ -109,7 +109,8 @@
                             the establishment of the look and feel of the site.  Sonia's good
                             nature and drive for success was a key component in ensuring cohesion
                             between the team members.  She will wear a skirt to school if we get
-                            an "A"......  ooops the writer was thinking out loud again. 
+                            an "A".  We are  pleased to announce that Sonia fulfilled her obligation
+                            in spirit at least -- we saw pictures ..... stunning.
                                     </p>
                                 </div>
                             </div>
@@ -125,7 +126,7 @@
                     <div class="panel-heading">Citations</div>
                     <div class="panel-body">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="http://www.sochealth.co.uk/2013/08/09/my-favourite-kitten-pictures-for-internationalcatday/">Image of Joseph from the Socialist Health Association</a></li>
+                            <li class="list-group-item"><a href="http://www.thepetmatchmaker.com/seven-cats-wearing-sunglasses-already-dogs/">Image of Joseph from the Pet Match Maker</a></li>
                             <li class="list-group-item"><a href="http://nyc_dog_blog.downtownpet.com/2007/08/cats-and-ducks.html">Image of Sonia from The NY City Downtown Pets</a></li>
                             <li class="list-group-item"><a href="http://www.inlander.com/imager/b/blog/2201738/bdd7/beabetterfriend.jpg?cb=1383547907">Image of James from The Inlander</a></li>
                             <li class="list-group-item">Will Fowler for GitHub Guidance</li>
@@ -138,6 +139,9 @@
                             <li class="list-group-item">Jordan and Steve for Guidance</li>
                             <li class="list-group-item"><a href="http://www.uwplatt.edu/distance-education/student-advisory-board-ms-integrated-supply-chain-management">Image of an "Image Not Available"</a></li>
                             <li class="list-group-item"><a href="http://getbootstrap.com/">Bootstrap for customize and javascript</a></li>
+                            <li class="list-group-item"><a href="http://www.codeproject.com/Tips/503495/Simple-rating-control-using-jQuery">Rating Stars Control</a></li>
+                            <li class="list-group-item"><a href="http://fotorama.io/">Fotorama - Jquery Image Library</a></li>
+                            <li class="list-group-item"><a href="http://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table">List to Datatable</a></li>
                         </ul>
                     </div>
                 </div>

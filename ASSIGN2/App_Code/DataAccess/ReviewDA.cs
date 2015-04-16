@@ -13,7 +13,7 @@ namespace Content.DataAccess
 {
     public class ReviewDA : AbstractDA
     {
-        private const string fields = " review.review_id, review.first_name, review.last_name, review.review_text, review.rating, review.review_date, movie_review.movie_id";
+        private const string fields = " review.review_id, review.first_name, review.last_name, review.review_text, review.rating, review.review_date, movie_review.movie_id, review.review_title";
         protected override string SelectStatement
         {
             get
@@ -43,12 +43,12 @@ namespace Content.DataAccess
         {
             string sql = SelectStatement + " AND movie_id=@id ORDER BY " + OrderFields;
             DbParameter[] parameters = new DbParameter[] {
-			   DataHelper.MakeParameter("@id", movie_id, DbType.Int16)
+			   DataHelper.MakeParameter("@id", movie_id, DbType.Int32)
         };
             return DataHelper.GetDataTable(sql, parameters);
         }
 
-        public void InsertReview (int movie_id, string first_name, string last_name, string review_text, DateTime date, int rating)
+        public void InsertReview (int movie_id, string first_name, string last_name, string review_text, DateTime date, int rating, string review_title)
         {
             DbParameter[] parameters = new DbParameter[] 
             {
@@ -56,11 +56,12 @@ namespace Content.DataAccess
                 DataHelper.MakeParameter("@lname" , last_name),
                 DataHelper.MakeParameter("@review" , review_text),
                 DataHelper.MakeParameter("@rate" , rating, DbType.Int16),
-                DataHelper.MakeParameter("@date" , date, DbType.Date)
+                DataHelper.MakeParameter("@date" , date, DbType.Date),
+                DataHelper.MakeParameter("@review_title" , review_title)
 
             };
 
-            string sql = "INSERT INTO review (first_name, last_name, review_text, rating, review_date) VALUES (@fname, @lname, @review, @rate, @date)";
+            string sql = "INSERT INTO review (first_name, last_name, review_text, rating, review_date, review_title) VALUES (@fname, @lname, @review, @rate, @date, @review_title)";
             int reviewID = DataHelper.RunNonQuery(sql, parameters, CommandType.Text, true); 
 
             DbParameter[] MovieReviewParam = new DbParameter[] 

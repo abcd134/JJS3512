@@ -24,17 +24,18 @@ namespace Content.Services
         /// <returns></returns>
         public DataTable fetchTrailers(int movieID)
         {
-            return DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).getDataTable();
-        }
-
-        public bool  checkIfTrailerExists(int movieID)
-        {
-            if (DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).MoviesTrailer == null || DownloadFromAPI<MovieTrailersCollection>(MovieDBServices.FetchTrailer(movieID)).MoviesTrailer.ToString() == "")
+            DataTable trailers;
+            try
             {
-                return true;
+                trailers = DownloadFromAPI<MovieTrailersCollection>(MovieAPIServices.FetchTrailer(movieID)).getDataTable();
             }
-            else return false;
-
+            catch(Exception ex)
+            {
+                trailers = null;
+                Console.WriteLine(ex.Message);
+            }
+            return trailers;
+            
         }
     }
 }
