@@ -54,12 +54,13 @@ public partial class SMovie : Page
         rptOverview.DataSource = movieC;
         rptOverview.DataBind();
 
-        // add just the movieC to session for use with add to favorites later
-        Session["movieC"] = movieC;
-
+        // alternate method to data bind versus the ones above (more memory efficient)
         if (movieC.FindById(0).Tagline != null) { rptTagline.DataSource = movieC; }
             else { rptTagline.DataSource = null; }
         rptTagline.DataBind();
+
+        // add just the movieC to session for use with add to favorites later
+        Session["movieC"] = movieC;
 
         // Trying to get genres from session state
         if (Session["GenreCollection"] != null)
@@ -104,9 +105,7 @@ public partial class SMovie : Page
 
         CastCollection castC = new CastCollection();
         castC.FetchForId(movieID);
-        if (castC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Cast Found");
-        else
+        if (castC.Count > 0)
         {
             rptCast.DataSource = castC;
             rptCast.DataBind();
@@ -114,9 +113,7 @@ public partial class SMovie : Page
 
         CrewCollection crewC = new CrewCollection();
         crewC.FetchForMovieId(movieID);
-        if (crewC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Crew Found");
-        else
+        if (crewC.Count > 0)
         {
             rptCrew.DataSource = crewC;
             rptCrew.DataBind();
@@ -124,9 +121,7 @@ public partial class SMovie : Page
 
         MovieImageCollection backDropC = new MovieImageCollection();
         backDropC.FetchForMovieId(movieID, false);
-        if (backDropC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Back Drop images Found");
-        else
+        if (backDropC.Count > 0)
         {
             rptBackDrop.DataSource = backDropC;
             rptBackDrop.DataBind();
@@ -134,9 +129,7 @@ public partial class SMovie : Page
 
         MovieImageCollection posterC = new MovieImageCollection();
         posterC.FetchForMovieId(movieID, true);
-        if (posterC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Poster images Found");
-        else
+        if (posterC.Count > 0)
         {
             rptPosters.DataSource = posterC;
             rptPosters.DataBind();

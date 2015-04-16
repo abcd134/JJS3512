@@ -45,24 +45,23 @@ public partial class SPerson : Page
 
         Session["PersonCollection"] = personC;
 
+        // Getting information about acting jobs this person
+        // has had.  If none, no data is bound so header doesn't
+        // show up.
         CastCollection castC = new CastCollection();
         castC.FetchForMovies(id);
-        if (castC.Count <= 0)
-        {
-            // if no other roles, what do we do?
-        }
-        else
+        if (castC.Count > 0)
         {
             movieRepeater.DataSource = castC;
             movieRepeater.DataBind();
         }
+
+        // Getting information about non acting jobs this person
+        // has had.  If none, no data is bound so header doesn't
+        // show up.
         CrewCollection crewC = new CrewCollection();
         crewC.FetchForId(id);
-        if (crewC.Count <= 0)
-        {
-            // if no other jobs, what do we do?
-        }
-        else
+        if (crewC.Count > 0)
         {
             crewRepeater.DataSource = crewC;
             crewRepeater.DataBind();
@@ -87,24 +86,23 @@ public partial class SPerson : Page
             Response.Redirect("../Error.aspx?error=Sorry, you timed out.  Please browse again.");
         }
         personC = (PersonCollection)Session["PersonCollection"];
-        if (personC.Count > 0)
-        {
-            int i = 0;
-            while (i < personC.Count)
-            {
-                if (personC[i].ID.ToString() == (string)e.CommandArgument)
-                {
-                    // found the person to add to favorites
+        int i = 0;
 
-                    PeopleFavorites personToAdd;
-                    personToAdd = personC[i].MakePersonInstance();
-                    // Need to add to the collection then  put in session 
-                    favPeopleC.Add(personToAdd);
-                    Session["favPeopleC"] = favPeopleC;
-                    Response.Redirect("../Favorites/Favorites.aspx");
-                }
-                i++;
+        // Getting information required for the person from the person collection
+        while (i < personC.Count)
+        {
+            if (personC[i].ID.ToString() == (string)e.CommandArgument)
+            {
+                // found the person to add to favorites
+                PeopleFavorites personToAdd;
+                personToAdd = personC[i].MakePersonInstance();
+
+                // Need to add to the collection then  put in session 
+                favPeopleC.Add(personToAdd);
+                Session["favPeopleC"] = favPeopleC;
+                Response.Redirect("../Favorites/Favorites.aspx");
             }
+            i++;
         }
     }
 }
