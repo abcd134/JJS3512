@@ -996,6 +996,22 @@ default.aspx.cs
 115-125				Deleted bind movie method
 92-112				Added addMovies() method
 
+April 15, 2915		Version 15	Joseph
+THIS LINE IS THE 1000th LINE. YEAHHHHHH 1000 kitties :3
+Review.cs
+59-62				Added review title
+67-71				Added review_title Get set
+
+ReviewDA.cs
+16						Added review_title as a field
+
+SMovie.apsx
+68					Added button configuration for review submit form
+98-118				Added Modal and review submit form
+
+SMovie.aspx.cs
+202-219			Added Submit button code behind for review
+
 April 15, 2015			James (preGame Cleanup)
 Browse.aspx
 40					Documentation
@@ -1014,3 +1030,17 @@ SPerson.aspx.cs
 
 default.aspx
 86-91				documentation
+
+April 15, 2015			James
+BrowseDA.cs
+37					distinct bug fix
+
+April 16, 2015		Version 15b		Joseph
+SMovie.aspx.cs
+217-258			Added data checing (for null or no user input)
+
+About.aspx
+142-145			Added references
+
+movies.accdb
+Deleted test casses and added 15 new ones
