@@ -67,24 +67,26 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="panel-title">Discover our top five featured movies</div>                       
+                        Discover our top five featured movies                      
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
                             <ItemTemplate>
                             <div class="row">
-                                <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("MovieId")%>"><%#Eval("Title")%></a></h3>
-                                <div class="col-md-4">
+                                
+                                <div class="col-md-2 col-xs-6">
                                     <img src="http://image.tmdb.org/t/p/w300<%#Eval("PosterPath")%>"
                                         title="<%# Eval("Title") %> poster"
                                         alt="<%# Eval("Title") %> poster"
                                         class="thumbnail img-responsive" />
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-10 col-xs-12">
+                                    <h3><a href="../SMovie/SMovie.aspx?id=<%#Eval("MovieId")%>"><%#Eval("Title")%></a></h3>
                                     <p>Movie Overview</p>
                                     <p><%#Eval("Overview") %></p>
                                 </div>
                             </div>
+                            <hr />
                             </ItemTemplate>
                         </asp:Repeater>
 

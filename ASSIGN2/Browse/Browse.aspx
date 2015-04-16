@@ -6,8 +6,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
 <style>
-
-
+    .BrowseMobile{z-index:1;}
 </style>
 
 
@@ -31,7 +30,7 @@
                 <asp:Repeater ID="layout" runat="server">
                     <ItemTemplate>
                     <div class="row">
-                        <div class="col-md-2 col-xs-5">
+                        <div class="col-md-2 col-xs-7 BrowseMobile">
                             <figure>
                                 <a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>">
                                 <img src="http://image.tmdb.org/t/p/w300<%# Eval("PosterPath") %>"
@@ -52,7 +51,7 @@
                     
                         <div class="col-md-10 col-xs-12">
                             <div class="row">
-                                <div class="col-md-10 col-xs-7" id="contentMobile">
+                                <div class="col-md-10 col-xs-5" id="contentMobile">
                                     <h3 id="titleMobileh3"><a href="../SMovie/SMovie.aspx?id=<%# Eval("MovieId") %>"><%# Eval("Title") %></a>
                                         (<%# Eval("ReleaseDate").ToString().Substring(0,4) %>)</h3>
                                     <asp:Label ID="tagLine" runat="server"
