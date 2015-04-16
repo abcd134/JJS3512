@@ -13,8 +13,8 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <p>
-                        This hypothetical site was designed by <b><a href="#dev1">Joseph Balabat</a></b>, 
-                    <b><a href="#dev1">James Bergeron</a></b> and <b><a href="#dev1">Sonia Pitrola</a></b>
+                        This hypothetical site was designed by <b>Joseph Balabat</b>, 
+                    <b>James Bergeron</b> and <b>Sonia Pitrola</b>
                         as part of the requirements for the Mount Royal University,
                     Bachelor of Computer Information Systems degree program.  The project
                     was submitted to Professor Randy Connolly in partial

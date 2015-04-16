@@ -22,6 +22,27 @@ namespace Content.Business
             //
         }
         #region methods
+        public BrowseCollection getData(string search, int genreID, string searchOn)
+        {
+            BrowseCollection browseC = new BrowseCollection();
+            if (search != null && genreID >= 0) // Filter on genre and search criteria
+            {
+                browseC.FetchForGenreAndSearch(genreID, search, searchOn);
+            }
+            else if (search != null)
+                { //Filter on only search box criteria
+                    browseC.FetchForSearch(search, searchOn);
+                }
+                    else if (genreID >= 0)
+                        {
+                            browseC.FetchForGenre(genreID); // Filter only on genre
+                        }
+                        else
+                            {
+                                browseC.FetchAll();
+                            }
+            return browseC;
+        }
         /// <summary>
         /// Fetch all the data for all movies
         /// </summary>

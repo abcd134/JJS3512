@@ -34,7 +34,7 @@ public class BrowseDA : AbstractDA
     {
         get
         {
-            return "movie.movie_id";
+            return "distinct(movie.movie_id)";
         }
     }
     /// <summary>
