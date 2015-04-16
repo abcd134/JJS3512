@@ -1048,3 +1048,12 @@ Deleted test casses and added 15 new ones
 April 16, 2015		Clean-up2		James
 About.aspx
 70					typo - changed "top 5 movies" to "top 3 movies"
+
+
+April 16, 2015		Sonia
+browse.aspx			
+All Lines			Design Bug fix
+
+Smovie.aspx
+98 - 129			Modal Design 
+
