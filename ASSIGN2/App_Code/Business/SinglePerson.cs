@@ -27,6 +27,9 @@ namespace Content.Business
         private string _profilePic;
         private PersonDA _personDA;
 
+        /// <summary>
+        /// This is a constructor of single person 
+        /// </summary>
         public SinglePerson()
         {
             _personDA = new PersonDA();
@@ -34,7 +37,7 @@ namespace Content.Business
         }
 
         /// <summary>
-        /// Method to obtain a row of validated data
+        /// Method to obtain and instanciate and validated data single person 
         /// </summary>
         /// <param name="row"></param>
         public override void PopulateDataMembersFromDataRow(DataRow row)
@@ -84,11 +87,17 @@ namespace Content.Business
             else HomePage = (string)row["home_page"];
 
         }
+        /// <summary>
+        /// This creates a person favortie
+        /// </summary>
+        /// <returns></returns>
         public PeopleFavorites MakePersonInstance()
         {
             PeopleFavorites newPersonToAdd = new PeopleFavorites(this.ID, this.Name, this.ProfilePic);
             return newPersonToAdd;
         }
+        //getters and setters 
+        #region 
         public int ID
         {
             get { return _id; }
@@ -136,5 +145,6 @@ namespace Content.Business
             get { return _profilePic; }
             set { _profilePic = value; }
         }
-    }	
+        #endregion
+    }	 
 }
