@@ -139,6 +139,9 @@
                             <li class="list-group-item">Jordan and Steve for Guidance</li>
                             <li class="list-group-item"><a href="http://www.uwplatt.edu/distance-education/student-advisory-board-ms-integrated-supply-chain-management">Image of an "Image Not Available"</a></li>
                             <li class="list-group-item"><a href="http://getbootstrap.com/">Bootstrap for customize and javascript</a></li>
+                            <li class="list-group-item"><a href="http://www.codeproject.com/Tips/503495/Simple-rating-control-using-jQuery">Rating Stars Control</a></li>
+                            <li class="list-group-item"><a href="http://fotorama.io/">Fotorama - Jquery Image Library</a></li>
+                            <li class="list-group-item"><a href="http://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table">List to Datatable</a></li>
                         </ul>
                     </div>
                 </div>
