@@ -106,7 +106,7 @@
                                         <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label><asp:TextBox ID="txtLastName" placeholder="Enter Last Name" runat="server"></asp:TextBox>
                                         <asp:Label ID="lblTItle" runat="server" Text="Review Title"></asp:Label><asp:TextBox ID="txtReviewTitle" placeholder="Enter Review Title Here" runat="server"></asp:TextBox>
                                         <br />
-                                        <input type="text" id="rating" class="rating rating5" runat="server" />
+                                        <input type="text" id="rating1" class="rating rating5" runat="server" />
                                         <br />
                                         <asp:TextBox ID="txtReview" runat="server" placeholder="Enter Review here: " Height="200" Width="400" Wrap="False" TextMode="MultiLine"></asp:TextBox>
                                         <br />

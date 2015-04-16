@@ -1044,3 +1044,21 @@ About.aspx
 
 movies.accdb
 Deleted test casses and added 15 new ones
+
+April 16, 2015		Version15c	Joseph
+SMovie - FIxed a bug where rating was returning zero all the time
+109				Changed id of input field
+
+SMovie.aspx.cs
+197				Changed Request ID
+
+Movies.accdb
+Added rating numbers
+
+MovieTrailesDA.cs
+35-37			Added retunrs a null when it cannot connect to movie DB API-
+					Added functionality that allows error handling when connection cannot be established
+
+
+
+

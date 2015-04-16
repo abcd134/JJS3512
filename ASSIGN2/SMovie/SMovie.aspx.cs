@@ -135,11 +135,10 @@ public partial class SMovie : Page
         }
 
         MovieTrailersDA trailerC = new MovieTrailersDA();
-        if (trailerC.checkIfTrailerExists(movieID) == false)
-        {
+        
             rptTrailer.DataSource = trailerC.fetchTrailers(movieID);
             rptTrailer.DataBind();
-        }
+        
 
         ReviewCollection reviewC = new ReviewCollection();
         reviewC.FetchReviewByID(movieID);
@@ -195,7 +194,7 @@ public partial class SMovie : Page
     protected void btnReviewSubmit_Click(object sender, EventArgs e)
     {
         int movieID = 0;
-        string d = Request["rating"];
+        string d = Request["ctl00$MainContent$rating1"];
         int rating = Convert.ToInt16(d);
         string fname = txtFirstName.Text;
         string lname = txtLastName.Text;
