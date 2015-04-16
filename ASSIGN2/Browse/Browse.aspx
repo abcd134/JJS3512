@@ -11,7 +11,7 @@
 
 
     <div class="row">
-        <div class="col-md-9 col-xs-12 col-sm-11 browsePanel">
+        <div class="col-md-9 col-xs-12 col-sm-11 spaceabove browsePanel">
             <div class="well well-lg" id="wellMobile">
                 <h1 id="wellh1">Browse the Movies</h1>
                 <asp:Label ID="lblGenre" runat="server"
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-1 hidden-xs">
+        <div class="col-md-2 col-sm-1 spaceabove hidden-xs">
             <!-- Alternate list box -->
             <asp:Repeater ID="drpGenres" runat="server">
                 <HeaderTemplate>
