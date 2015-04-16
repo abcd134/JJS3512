@@ -14,7 +14,6 @@ using Content.DataAccess;
 
 public partial class SMovie : Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
         //if not postback then display the single movie
@@ -25,8 +24,8 @@ public partial class SMovie : Page
             if (Request.QueryString["id"] == null) { Response.Redirect("../Error.aspx?error=SMovie query string null error"); }
             //this checks to see if the query string is an integer if it is not redirect to the error.aspx 
             else if (!Int32.TryParse(Request.QueryString["id"], out movieID)) { Response.Redirect("../Error.aspx?error=SMovie query string non integer"); }
-
             DisplayMovie(movieID);
+            
         }
     }
 
@@ -199,4 +198,24 @@ public partial class SMovie : Page
         Session["favMoviesC"] = favMoviesC;
         Response.Redirect("../Favorites/Favorites.aspx");
     }
+
+    protected void btnReviewSubmit_Click(object sender, EventArgs e)
+    {
+        int movieID = 0;
+        string d = Request["rating"];
+        int rating = Convert.ToInt16(d);
+        string fname = txtFirstName.Text;
+        string lname = txtLastName.Text;
+        string review = txtReview.Text;
+        DateTime date = DateTime.Now;
+        string review_title = txtReviewTitle.Text;
+
+
+        ReviewDA dataToInsert = new ReviewDA();
+        movieID =  Convert.ToInt32(Request.QueryString["id"]);
+        dataToInsert.InsertReview(movieID, fname, lname, review, date, rating, review_title);
+
+        Response.Redirect(Request.RawUrl);
+    }
+
 }

@@ -90,19 +90,27 @@
                                 Text ="Favorite" CssClass="btn btn-default"
                                 CommandArgument='<%# Eval("MovieId") %>' ><span class="glyphicon glyphicon-heart"></span>  Favorite
                             </asp:LinkButton>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="review"  runat="server" ID="writeReview">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#review"  runat="server" ID="writeReview">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Write Review
                             </button>
 
-                        <!-- Modal Button for write review -->
-                         <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="posterModal" aria-hidden="true">
+                        <!-- Modal for write review -->
+                         <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="review" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                     <div class="modal-body">
-                                       
+                                        <asp:Label ID="lblFname" runat="server" Text="First Name"></asp:Label><asp:TextBox ID="txtFirstName" placeholder="Enter First Name" runat="server"></asp:TextBox>
+                                        <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label><asp:TextBox ID="txtLastName" placeholder="Enter Last Name" runat="server"></asp:TextBox>
+                                        <asp:Label ID="lblTItle" runat="server" Text="Review Title"></asp:Label><asp:TextBox ID="txtReviewTitle" placeholder="Enter Review Title Here" runat="server"></asp:TextBox>
+                                        <br />
+                                        <input type="text" id="rating" class="rating rating5" runat="server" />
+                                        <br />
+                                        <asp:TextBox ID="txtReview" runat="server" placeholder="Enter Review here: " Height="200" Width="400" Wrap="False" TextMode="MultiLine"></asp:TextBox>
+                                        <br />
+                                        <asp:Button ID="btnReviewSubmit" runat="server" Text="Submit" OnClick="btnReviewSubmit_Click" OnClientClick="RefreshPage()" />
                                     </div>
                                 </div>
                             </div>
@@ -369,14 +377,15 @@
                                             <b>
                                                 <asp:Label ID="lblName" runat="server" Text="Reviewer Name: "></asp:Label></b><asp:Label ID="lblDisplayName" runat="server"><%# Eval("first_name" )%> <%# Eval("last_name" )%></asp:Label>
                                             <br />
-                                            <asp:Label ID="lblDate" runat="server"><b>Date of Review:</b> <%# Eval("date" ).ToString().Substring(0,10)%></asp:Label>
+                                            <asp:Label ID="lblDate" runat="server"><b>Date of Review:</b> <%# Eval("date" )%></asp:Label>
                                             <br />
                                              <input type="text" runat="server"  id="rating" readonly="readonly" value='<%# Eval("rating") %>' class="rating rating5" />
                                             <br />
                                         </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <b>Add title of review</b><br />
+                                            <asp:Label ID="lblReviewTtile" runat="server"><%# Eval("review_title" )%></asp:Label>
+                                            <br />
                                             <asp:Label ID="lblReviewTest" runat="server"><%# Eval("review_text" )%></asp:Label>
                                         </div>
                                     
@@ -411,6 +420,10 @@
 
             $('.ratingEvent').rating({ rateEnd: function (v) { $('#result').text(v); } });
         });
+
+        function RefreshPage() {
+            window.location.reload()
+        }
     </script>
         <script src="../Scripts/rating.js" type="text/javascript"></script>
      <script src="../Scripts/fotorama.js" type="text/javascript"></script>

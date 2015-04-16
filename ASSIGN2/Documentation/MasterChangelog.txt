@@ -995,3 +995,19 @@ default.aspx.cs
 26-29				added new databinding code
 115-125				Deleted bind movie method
 92-112				Added addMovies() method
+
+April 15, 2915		Version 15	Joseph
+THIS LINE IS THE 1000th LINE. YEAHHHHHH 10000 kitties :3
+Review.cs
+59-62				Added review title
+67-71				Added review_title Get set
+
+ReviewDA.cs
+16						Added review_title as a field
+
+SMovie.apsx
+68					Added button configuration for review submit form
+98-118				Added Modal and review submit form
+
+SMovie.aspx.cs
+202-219			Added Submit button code behind for review

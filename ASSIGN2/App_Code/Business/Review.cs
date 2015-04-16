@@ -34,7 +34,7 @@ namespace Content.Business
             if (row["first_name"] == DBNull.Value)
                 first_name = null;
             else
-                first_name = (string)  row["first_name"];
+                first_name = (string)row["first_name"];
 
             if (row["last_name"] == DBNull.Value)
                 last_name = null;
@@ -49,15 +49,26 @@ namespace Content.Business
             if (row["review_date"] == DBNull.Value)
                 date = "Date Not Available";
             else
-                date = Convert.ToDateTime(row["review_date"]).ToString();
+                date = Convert.ToDateTime(row["review_date"]).ToString().Substring(0, 10);
 
             if (row["rating"] == DBNull.Value)
                 rating = 0;
             else
                 rating = (int)row["rating"];
-        }
 
+            if (row["review_title"] == DBNull.Value)
+                review_title = null;
+            else
+                review_title = (string)row["review_title"];
+            
+        }
         #region
+
+        public string review_title
+        {
+            get;
+            set;
+        }
         public int Movie_ID
         {
             get;
