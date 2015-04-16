@@ -62,6 +62,7 @@ namespace Content.Business
                 review_title = (string)row["review_title"];
             
         }
+        //getter and setters
         #region
 
         public string review_title

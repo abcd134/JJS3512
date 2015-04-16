@@ -13,7 +13,7 @@ namespace Content.Services
 {
     public class Movie
     {
-        #region
+        #region Getters and Setters
         [JsonProperty("backdrop_path")]
         public string Backdrop_path
         {

@@ -18,7 +18,9 @@ namespace Content.Business
         private int _movieId;
         private string _companyName;
         private MovieCompanyDA _movieCompanyDA;
-
+        /// <summary>
+        /// Constructor for a MovieCompany object, including a MovieCompany Data access object
+        /// </summary>
         public Company()
         {
             _movieCompanyDA = new MovieCompanyDA();
@@ -42,7 +44,7 @@ namespace Content.Business
             else
                 CompanyName = (string)row["company_name"];
         }
-
+        #region Getters and Setters
         public string CompanyName
         {
             get { return _companyName; }
@@ -53,5 +55,6 @@ namespace Content.Business
             get { return _movieId; }
             set { _movieId = value; }
         }
+        #endregion
     }
 }

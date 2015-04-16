@@ -23,6 +23,7 @@ namespace Content.Services
         /// Returns a data table of List<movies>>
         /// </summary>
         /// <returns></returns>
+        /// 
         public DataTable getDataTable()
         {
             return ToDataTable<MovieTrailers>(MoviesTrailer);

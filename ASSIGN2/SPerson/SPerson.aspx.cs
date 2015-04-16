@@ -67,7 +67,11 @@ public partial class SPerson : Page
             crewRepeater.DataBind();
         }
     }
-
+    /// <summary>
+    /// Used for adding favourites
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public void addToFav_Click(object sender, CommandEventArgs e)
     {
         // Getting the favorite people collection from session stat if it exists

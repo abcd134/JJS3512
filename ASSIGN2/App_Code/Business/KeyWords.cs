@@ -18,7 +18,9 @@ namespace Content.Business
         private int _movieId;
         private string _keyWordName;
         private MovieKeyWordsDA _movieKeyWordsDA;
-
+        /// <summary>
+        /// Key Word Constructor
+        /// </summary>
         public KeyWords()
         {
             _movieKeyWordsDA = new MovieKeyWordsDA();
@@ -42,7 +44,7 @@ namespace Content.Business
                 KeyWordName = (string)row["name"];
 
         }
-
+        #region Getters and Setters
         public string KeyWordName
         {
             get { return _keyWordName; }
@@ -54,5 +56,6 @@ namespace Content.Business
             get { return _movieId; }
             set { _movieId = value; }
         }
+        #endregion
     }
 }

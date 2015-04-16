@@ -21,7 +21,9 @@ namespace Content.Business
     public class MovieCollection : AbstractBusinessCollection<SingleMovie>
     {
         private MovieDA _da = new MovieDA();
-
+        /// <summary>
+        /// Movie Collection constructor
+        /// </summary>
         public MovieCollection()
         {
 

@@ -65,7 +65,9 @@ namespace Content.Services
             //put a breakpoint here and check datatable
             return dataTable;
         }
-
+        /// <summary>
+        /// Check if a poster is available
+        /// </summary>
         private void checkPoster ()
         {
             foreach(Movie movieToCheck in Movies)

@@ -21,7 +21,9 @@ namespace Content.Business
         private string _roleName;
         private string _profilePath;
         private CastDA _castDA;
-
+        /// <summary>
+        /// Costructor for a cast object, need the data access object
+        /// </summary>
         public Cast()
         {
             _castDA = new CastDA();
@@ -66,7 +68,8 @@ namespace Content.Business
                 ProfilePath = "http://image.tmdb.org/t/p/w154" + row["profile_path"];
             }
         }
-
+        // getters and setters
+        #region
         public int ActorID
         {
             get { return _actorID; }
@@ -99,5 +102,6 @@ namespace Content.Business
             get { return _actorName; }
             set { _actorName = value; }
         }
+        #endregion
     }
 }

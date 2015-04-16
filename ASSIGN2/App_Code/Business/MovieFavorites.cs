@@ -16,6 +16,13 @@ public class MovieFavorites : AbstractBusiness
     private string _title;
     private string _posterPath;
     private string _year;
+    /// <summary>
+    /// Movie Favorites Object Constructor
+    /// </summary>
+    /// <param name="movieId"></param>
+    /// <param name="title"></param>
+    /// <param name="posterPath"></param>
+    /// <param name="year"></param>
 	public MovieFavorites(int movieId, string title, string posterPath, string year)
 	{
         MovieID = movieId;
@@ -30,9 +37,7 @@ public class MovieFavorites : AbstractBusiness
         PosterPath = (string) row["posterPath"];
         Year = (string) row["year"];
     }
-    /// <summary>
-    /// Getter and Setter section for th instance variables
-    /// </summary>
+    #region Getters and Setters
     public int MovieID 
     {
         get {return _movieID;}
@@ -53,4 +58,5 @@ public class MovieFavorites : AbstractBusiness
         get { return _year; }
         set { _year = value; }
     }
+    #endregion
 }

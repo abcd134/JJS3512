@@ -37,7 +37,11 @@ public class CastDA : AbstractDA
             return "movie.movie_id";
         }
     }
-
+    /// <summary>
+    /// returns the cast based on the movie id
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
     public DataTable GetByMovieID(int movieID)
     {
         string sql = SelectStatement + " AND movie.movie_id=@id  ORDER BY " + OrderFields + dataOrder(true);
@@ -46,6 +50,11 @@ public class CastDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
+    /// <summary>
+    /// get the list of movies the person worked in
+    /// </summary>
+    /// <param name="personID"></param>
+    /// <returns></returns>
     public DataTable GetMovies(int personID)
     {
         string sql = SelectStatement + " AND person.person_id=" + personID + " ORDER BY " + OrderFields + dataOrder(true);
@@ -54,6 +63,11 @@ public class CastDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
+    /// <summary>
+    /// Toogles the data order
+    /// </summary>
+    /// <param name="ISAscending"></param>
+    /// <returns></returns>
     private string dataOrder(bool ISAscending)
     {
         if (ISAscending) return "ASC";

@@ -41,11 +41,20 @@ namespace Content.Services
             string link = "movie/upcoming";
             return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
         }
+        /// <summary>
+        /// Used to retrive the trailers
+        /// </summary>
+        /// <param name="movieID"></param>
+        /// <returns></returns>
         public static string FetchTrailer(int movieID)
         {
             string link = "movie/" + movieID + "/videos";
             return ConfigurationInformation.MovieDBURL + link + MakeAuthenticationIdQueryString();
         }
+        /// <summary>
+        /// fetech all the playing movies
+        /// </summary>
+        /// <returns></returns>
         public static string FetchNowPlaying()
         {
             string link = "movie/now_playing";

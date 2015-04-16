@@ -37,7 +37,10 @@ namespace Content.Business
             DataTable dt = _da.fetchReviewByMovieID(movie_id);
             PopulateFromDataTable(dt);
         }
-
+        /// <summary>
+        /// populate the data table for the reviews and add it to a collection 
+        /// </summary>
+        /// <param name="dt"></param>
         private void PopulateFromDataTable(DataTable dt)
         {
             // population this collection from this data table

@@ -37,15 +37,7 @@
                                                 alt="<%# Eval("Title") %> poster"
                                                 class="thumbnail img-responsive" /></a>
                                     </figure>
-                                    <%--                            <figure>
-                                <img src="http://image.tmdb.org/t/p/w300<%# Eval("BackDropPath") %>"
-                                        title="<%# Eval("Title")%> backdrop"
-                                        alt="<%# Eval("Title") %> backdrop"
-                                        class="thumbnail img-responsive" /></a>
-                            </figure>--%>
                                 </div>
-
-
 
                                 <div class="col-md-10 col-sm-8 col-xs-12">
                                     <div class="row">

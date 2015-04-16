@@ -40,7 +40,7 @@ public class BrowseDA : AbstractDA
     /// <summary>
     /// Returns a data table of all movies sorted by release date
     /// </summary>
-    /// <returns></returns>
+    /// <returns>returns a data table with movies</returns>
     public DataTable GetAllMovies()
     {
         string sql = SelectStatement + " FROM movie, movie_cast, person WHERE "
@@ -50,7 +50,11 @@ public class BrowseDA : AbstractDA
                                      + " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
-
+    /// <summary>
+    /// Returns the filtered movies based on the genre ID
+    /// </summary>
+    /// <param name="genreID">used to filter movie results by genre id</param>
+    /// <returns>returns the list of movies based on filter</returns>
     public DataTable GetGenreFilteredMovies(int genreID)
     {
         string sql = SelectStatement + " FROM movie, movie_cast, person ,genre, movie_genre " 
@@ -66,7 +70,12 @@ public class BrowseDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
-
+    /// <summary>
+    /// returns the list of movies based on the filter
+    /// </summary>
+    /// <param name="search">filter by text</param>
+    /// <param name="searchBy">filter by search type</param>
+    /// <returns></returns>
     public DataTable GetSearchFilteredMovies(string search, string searchBy)
     {
         string sql = SelectStatement + " FROM movie, movie_cast, person ";
@@ -78,7 +87,13 @@ public class BrowseDA : AbstractDA
         sql += " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="genreID">genre type</param>
+    /// <param name="searchFor">search keyword</param>
+    /// <param name="searchBy">search type</param>
+    /// <returns></returns>
     public DataTable GetGenreAndSearchFilteredMovies(int genreID, string searchFor, string searchBy)
     {
         string sql  = SelectStatement + " FROM movie, movie_cast, person, genre, movie_genre ";
@@ -95,12 +110,21 @@ public class BrowseDA : AbstractDA
         sql += " ORDER BY " + OrderFields + dataOrder(false);
         return DataHelper.GetDataTable(sql, null);
     }
-
+    /// <summary>
+    /// Toogle for "order by" to change data order
+    /// </summary>
+    /// <param name="ISAscending"></param>
+    /// <returns></returns>
     private string dataOrder(bool ISAscending)
     {
         if (ISAscending) return "ASC";
         else return "DESC";
     }
+    /// <summary>
+    /// Used by the search function to filter results if its from a company or keyword
+    /// </summary>
+    /// <param name="searchBy"></param>
+    /// <returns></returns>
     private string getOtherTables(string searchBy)
     {
         string sqlPiece="";
@@ -118,6 +142,12 @@ public class BrowseDA : AbstractDA
         }
         return sqlPiece;
     }
+    /// <summary>
+    /// Helper method used to build sql statement
+    /// </summary>
+    /// <param name="searchFor"></param>
+    /// <param name="searchBy"></param>
+    /// <returns></returns>
     private string getSearchBySql(string searchFor, string searchBy)
     {
         string sqlPiece ="";

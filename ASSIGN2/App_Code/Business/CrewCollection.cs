@@ -15,6 +15,9 @@ namespace Content.Business
     public class CrewCollection : AbstractBusinessCollection<Crew>
     {
         private CrewDA _da = new CrewDA();
+        /// <summary>
+        /// Crew object constructor
+        /// </summary>
         public CrewCollection()
         {
             //
