@@ -6,7 +6,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
 <style>
-    .BrowseMobile{z-index:1;}
 </style>
 
 

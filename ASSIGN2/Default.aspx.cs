@@ -103,11 +103,11 @@ public partial class _Default : Page
         int matrix = 603;
         newMovieC.FetchForId(matrix);
 
-        int lionKing = 8587;
-        newMovieC.FetchForId(lionKing);
+        //int lionKing = 8587;
+        //newMovieC.FetchForId(lionKing);
 
-        int hungerGames = 131631;
-        newMovieC.FetchForId(hungerGames);
+        //int hungerGames = 131631;
+        //newMovieC.FetchForId(hungerGames);
 
         return newMovieC;
     }  
