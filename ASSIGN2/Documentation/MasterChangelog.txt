@@ -997,7 +997,7 @@ default.aspx.cs
 92-112				Added addMovies() method
 
 April 15, 2915		Version 15	Joseph
-THIS LINE IS THE 1000th LINE. YEAHHHHHH 10000 kitties :3
+THIS LINE IS THE 1000th LINE. YEAHHHHHH 1000 kitties :3
 Review.cs
 59-62				Added review title
 67-71				Added review_title Get set
