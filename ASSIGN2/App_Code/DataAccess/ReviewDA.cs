@@ -38,7 +38,11 @@ namespace Content.DataAccess
                 return "review.review_id";
             }
         }
-        
+        /// <summary>
+        /// returns the reviews based on the movie id
+        /// </summary>
+        /// <param name="movie_id"></param>
+        /// <returns></returns>
         public DataTable fetchReviewByMovieID(int movie_id)
         {
             string sql = SelectStatement + " AND movie_id=@id ORDER BY " + OrderFields;
@@ -47,7 +51,16 @@ namespace Content.DataAccess
         };
             return DataHelper.GetDataTable(sql, parameters);
         }
-
+        /// <summary>
+        /// used to insert data to the database
+        /// </summary>
+        /// <param name="movie_id"></param>
+        /// <param name="first_name"></param>
+        /// <param name="last_name"></param>
+        /// <param name="review_text"></param>
+        /// <param name="date"></param>
+        /// <param name="rating"></param>
+        /// <param name="review_title"></param>
         public void InsertReview (int movie_id, string first_name, string last_name, string review_text, DateTime date, int rating, string review_title)
         {
             DbParameter[] parameters = new DbParameter[] 
@@ -60,7 +73,7 @@ namespace Content.DataAccess
                 DataHelper.MakeParameter("@review_title" , review_title)
 
             };
-
+            //inserts to the review class
             string sql = "INSERT INTO review (first_name, last_name, review_text, rating, review_date, review_title) VALUES (@fname, @lname, @review, @rate, @date, @review_title)";
             int reviewID = DataHelper.RunNonQuery(sql, parameters, CommandType.Text, true); 
 
@@ -70,7 +83,7 @@ namespace Content.DataAccess
                 DataHelper.MakeParameter("@rid" , reviewID)
   
             };
-
+            //inserts to the movie_review class
             string MovieReviewSql = "INSERT INTO movie_review (movie_id, review_id) VALUES (@mid, @rid)";
             DataHelper.RunNonQuery(MovieReviewSql, MovieReviewParam, CommandType.Text, true);
                 

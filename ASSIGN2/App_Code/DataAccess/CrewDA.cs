@@ -38,7 +38,11 @@ public class CrewDA : AbstractDA
             return "movie.movie_id";
         }
     }
-
+    /// <summary>
+    /// used to fetch the movies based on the person
+    /// </summary>
+    /// <param name="personID"></param>
+    /// <returns></returns>
     public DataTable GetMoviesByPersonID(int personID)
     {
         string sql = SelectStatement + " AND person.person_id=" + personID + " ORDER BY " + OrderFields + dataOrder(true);
@@ -47,6 +51,11 @@ public class CrewDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
+    /// <summary>
+    /// returns the crew for the specific movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
     public DataTable GetByMovieID(int movieID)
     {
         string sql = SelectStatement + " AND movie.movie_id=@id  ORDER BY " + OrderFields + dataOrder(true);
@@ -55,7 +64,7 @@ public class CrewDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
-
+    // toogls the data order for "orderby"
     private string dataOrder(bool ISAscending)
     {
         if (ISAscending) return "ASC";

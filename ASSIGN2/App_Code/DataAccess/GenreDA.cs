@@ -36,7 +36,11 @@ public class GenreDA : AbstractDA
             return "movie.movie_id";
         }
     }
-
+    /// <summary>
+    /// Used to return the genres of a movie
+    /// </summary>
+    /// <param name="movieID"></param>
+    /// <returns></returns>
     public DataTable GetGenresByMovieID(int movieID)
     {
         string sql = SelectStatement + " WHERE movie.movie_id=@id  AND "
@@ -48,11 +52,20 @@ public class GenreDA : AbstractDA
         };
         return DataHelper.GetDataTable(sql, parameters);
     }
+    /// <summary>
+    /// returns the list of genre names
+    /// </summary>
+    /// <returns></returns>
     public DataTable GetGenreNames()
     {
         string sql = "Select name, genre_id from genre";
         return DataHelper.GetDataTable(sql, null);
     }
+    /// <summary>
+    /// returns the first 10 genres or last 10 genres
+    /// </summary>
+    /// <param name="top"></param>
+    /// <returns></returns>
     public DataTable GetTenGenreNames(Boolean top)
     {
         string sql;
@@ -66,6 +79,11 @@ public class GenreDA : AbstractDA
         }
         return DataHelper.GetDataTable(sql, null);
     }
+    /// <summary>
+    /// used to toogle the order of data returned
+    /// </summary>
+    /// <param name="ISAscending"></param>
+    /// <returns></returns>
     private string dataOrder(bool ISAscending)
     {
         if (ISAscending) return "ASC";

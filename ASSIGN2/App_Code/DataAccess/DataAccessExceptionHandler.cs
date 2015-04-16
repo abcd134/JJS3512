@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 namespace Content.DataAccess
 {
    /// <summary>
-   /// Summary description for DataAccessExceptionHandler
+   /// Used to handle exception errors during SQL transactions
    /// </summary>
    public static class DataAccessExceptionHandler
    {
