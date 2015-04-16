@@ -1059,6 +1059,18 @@ MovieTrailesDA.cs
 35-37			Added retunrs a null when it cannot connect to movie DB API-
 					Added functionality that allows error handling when connection cannot be established
 
+					April 16, 2015		Clean-up2		James
+About.aspx
+70					typo - changed "top 5 movies" to "top 3 movies"
+
+
+April 16, 2015		Sonia
+browse.aspx			
+All Lines			Design Bug fix
+
+Smovie.aspx
+98 - 129			Modal Design 
+
 
 
 
