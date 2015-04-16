@@ -14,7 +14,6 @@ using Content.DataAccess;
 
 public partial class SMovie : Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
         //if not postback then display the single movie
@@ -25,8 +24,8 @@ public partial class SMovie : Page
             if (Request.QueryString["id"] == null) { Response.Redirect("../Error.aspx?error=SMovie query string null error"); }
             //this checks to see if the query string is an integer if it is not redirect to the error.aspx 
             else if (!Int32.TryParse(Request.QueryString["id"], out movieID)) { Response.Redirect("../Error.aspx?error=SMovie query string non integer"); }
-
             DisplayMovie(movieID);
+            
         }
     }
 
@@ -54,12 +53,13 @@ public partial class SMovie : Page
         rptOverview.DataSource = movieC;
         rptOverview.DataBind();
 
-        // add just the movieC to session for use with add to favorites later
-        Session["movieC"] = movieC;
-
+        // alternate method to data bind versus the ones above (more memory efficient)
         if (movieC.FindById(0).Tagline != null) { rptTagline.DataSource = movieC; }
             else { rptTagline.DataSource = null; }
         rptTagline.DataBind();
+
+        // add just the movieC to session for use with add to favorites later
+        Session["movieC"] = movieC;
 
         // Trying to get genres from session state
         if (Session["GenreCollection"] != null)
@@ -104,9 +104,7 @@ public partial class SMovie : Page
 
         CastCollection castC = new CastCollection();
         castC.FetchForId(movieID);
-        if (castC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Cast Found");
-        else
+        if (castC.Count > 0)
         {
             rptCast.DataSource = castC;
             rptCast.DataBind();
@@ -114,9 +112,7 @@ public partial class SMovie : Page
 
         CrewCollection crewC = new CrewCollection();
         crewC.FetchForMovieId(movieID);
-        if (crewC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Crew Found");
-        else
+        if (crewC.Count > 0)
         {
             rptCrew.DataSource = crewC;
             rptCrew.DataBind();
@@ -124,9 +120,7 @@ public partial class SMovie : Page
 
         MovieImageCollection backDropC = new MovieImageCollection();
         backDropC.FetchForMovieId(movieID, false);
-        if (backDropC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Back Drop images Found");
-        else
+        if (backDropC.Count > 0)
         {
             rptBackDrop.DataSource = backDropC;
             rptBackDrop.DataBind();
@@ -134,20 +128,17 @@ public partial class SMovie : Page
 
         MovieImageCollection posterC = new MovieImageCollection();
         posterC.FetchForMovieId(movieID, true);
-        if (posterC.Count <= 0)
-            Response.Redirect("../Error.aspx?error=No Poster images Found");
-        else
+        if (posterC.Count > 0)
         {
             rptPosters.DataSource = posterC;
             rptPosters.DataBind();
         }
 
         MovieTrailersDA trailerC = new MovieTrailersDA();
-        if (trailerC.checkIfTrailerExists(movieID) == false)
-        {
+        
             rptTrailer.DataSource = trailerC.fetchTrailers(movieID);
             rptTrailer.DataBind();
-        }
+        
 
         ReviewCollection reviewC = new ReviewCollection();
         reviewC.FetchReviewByID(movieID);
@@ -198,5 +189,71 @@ public partial class SMovie : Page
         favMoviesC.AddToCollection(movieToAdd);
         Session["favMoviesC"] = favMoviesC;
         Response.Redirect("../Favorites/Favorites.aspx");
+    }
+
+    protected void btnReviewSubmit_Click(object sender, EventArgs e)
+    {
+        int movieID = 0;
+        string d = Request["ctl00$MainContent$rating1"];
+        int rating = Convert.ToInt16(d);
+        string fname = txtFirstName.Text;
+        string lname = txtLastName.Text;
+        string review = txtReview.Text;
+        DateTime date = DateTime.Now;
+        string review_title = txtReviewTitle.Text;
+
+        if (checkForUserInput() == false)
+        {
+            ReviewDA dataToInsert = new ReviewDA();
+            movieID = Convert.ToInt32(Request.QueryString["id"]);
+            dataToInsert.InsertReview(movieID, fname, lname, review, date, rating, review_title);
+
+            Response.Redirect(Request.RawUrl);
+        }
+        
+    }
+
+    private bool checkIfDataInputExists(string ToCheck)
+    {
+        if (ToCheck == null || ToCheck == "")
+            return true;
+        return false;
+    }
+
+    private bool checkForUserInput()
+    {
+        string errorMessege = "Required Field: ";
+        bool userError = false;
+
+        if (checkIfDataInputExists(txtFirstName.Text))
+        {
+            errorMessege += "First Name ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtLastName.Text))
+        {
+            errorMessege += "Last Name ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtReview.Text))
+        {
+            errorMessege += "Review ";
+            userError = true;
+        }
+        if (checkIfDataInputExists(txtReviewTitle.Text))
+        {
+            errorMessege += "Review Title ";
+            userError = true;
+        }
+
+        errorMessege += ". Please provide input";
+
+        if (userError)
+        {
+            string script = "alert(\'" + errorMessege +" \');";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                      "ServerControlScript", script, true);
+        }
+        return userError;
     }
 }

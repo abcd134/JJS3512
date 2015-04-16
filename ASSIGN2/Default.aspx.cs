@@ -23,34 +23,11 @@ public partial class _Default : Page
 
     protected void initializeDatabases()
     {
-        int theHobbit = 122917;
-        bindMovie(theHobbit);
+        MovieCollection movieC = addMovies();
+        FeaturedRepeater.DataSource = movieC;
+        FeaturedRepeater.DataBind();
     }
-    protected void FeaturedButton1_Click(object sender, EventArgs e)
-    {
-        int theHobbit = 122917;
-        bindMovie(theHobbit);
-    }
-    protected void FeaturedButton2_Click(object sender, EventArgs e)
-    {
-        int interstellar = 157336;
-        bindMovie(interstellar);
-    }
-    protected void FeaturedButton3_Click(object sender, EventArgs e)
-    {
-        int matrix = 603;
-        bindMovie(matrix);
-    }
-    protected void FeaturedButton4_Click(object sender, EventArgs e)
-    {
-        int lionKing = 8587;
-        bindMovie(lionKing);
-    }
-    protected void FeaturedButton5_Click(object sender, EventArgs e)
-    {
-        int hungerGames = 131631;
-        bindMovie(hungerGames);
-    }
+ 
     // Featured person code
     protected void createFeaturedPerson()
     {
@@ -106,22 +83,28 @@ public partial class _Default : Page
         }
     }
     /// <summary>
-    /// Method to create movie collections for a single movie
-    /// Time permitting, this could be made more robust my accepting
-    /// an array of ID's and retrieving a collection of movie objects
-    /// rather than 3 separate data retrievals
+    /// Method to create movie collection for featured movie repeater
     /// </summary>
-    /// <param name="movieID"></param>
-    protected void bindMovie(int movieID)
+    protected MovieCollection addMovies()
     {
-        MovieCollection movieC = new MovieCollection();
-        movieC.FetchForId(movieID);
-        if (movieC.Count <= 0)
-            Response.Redirect("Error.aspx?error=Movie Not Found");
-        else
-        {
-            FeaturedRepeater.DataSource = movieC;
-            FeaturedRepeater.DataBind();
-        }
+        // Creating a movie collection for the our featured section
+        MovieCollection newMovieC = new MovieCollection();
+        // the five movies we have chosen to feature
+        int theHobbit = 122917;
+        newMovieC.FetchForId(theHobbit);
+
+        int interstellar = 157336;
+        newMovieC.FetchForId(interstellar);
+
+        int matrix = 603;
+        newMovieC.FetchForId(matrix);
+
+        //int lionKing = 8587;
+        //newMovieC.FetchForId(lionKing);
+
+        //int hungerGames = 131631;
+        //newMovieC.FetchForId(hungerGames);
+
+        return newMovieC;
     }  
 }

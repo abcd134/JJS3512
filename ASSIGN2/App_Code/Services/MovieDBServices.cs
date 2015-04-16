@@ -11,9 +11,9 @@ using Content.Services;
 
 namespace Content.Services
 {
-    public class MovieDBServices
+    public class MovieAPIServices
     {
-        public MovieDBServices() { }
+        public MovieAPIServices() { }
         /// <summary>
         /// Used to add the api key with the ap query string
         /// </summary>

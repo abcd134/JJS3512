@@ -52,16 +52,15 @@ public partial class TestForJSON : System.Web.UI.Page
     }
     protected void btnReviewSubmit_Click(object sender, EventArgs e)
     {
-       
+        int movieID = 122917;
         string d = Request["rating"];
         int rating = Convert.ToInt16(d);
         string fname = txtFirstName.Text;
         string lname = txtLastName.Text;
         string review = txtReview.Text;
-        DateTime date = DateTime.Now ;
-       
-
+        DateTime date = DateTime.Now;
+        string review_title = "asd";
         ReviewDA dataToInsert = new ReviewDA();
-        dataToInsert.InsertReview(122917, fname, lname, review, date, rating);
+        dataToInsert.InsertReview(movieID, fname, lname, review, date, rating, review_title);
     }
 }
