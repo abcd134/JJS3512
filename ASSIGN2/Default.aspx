@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Discover our top five featured movies                      
+                        Discover our top three featured movies                      
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="FeaturedRepeater" runat="server">
