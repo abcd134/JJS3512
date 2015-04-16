@@ -34,7 +34,7 @@ namespace Content.Business
             if (row["first_name"] == DBNull.Value)
                 first_name = null;
             else
-                first_name = (string)row["first_name"];
+                first_name = (string)row["first_name"] + " ";
 
             if (row["last_name"] == DBNull.Value)
                 last_name = null;
