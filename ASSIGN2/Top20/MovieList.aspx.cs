@@ -26,7 +26,9 @@ public partial class MovieList : Page
 
        
     }
-
+    /// <summary>
+    /// used to build the repeater for upcoming movies
+    /// </summary>
     private void buildUpcomingRepeater()
     {
         lblTitle.Text = "Upcoming Movies";
@@ -34,7 +36,9 @@ public partial class MovieList : Page
         layout.DataSource = upcoming.fetchData();
         layout.DataBind();
     }
-
+    /// <summary>
+    /// used to build the repeater for now playing movies
+    /// </summary>
     private void buildNowPlayingRepeater()
     {
         lblTitle.Text = "Now Playing Movies";

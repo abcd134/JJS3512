@@ -147,15 +147,6 @@ public partial class SMovie : Page
             rptReview.DataSource = reviewC;
             rptReview.DataBind();
         }
-       
-        /*
-        ReviewDA review = new ReviewDA();
-
-        rptReview.DataSource = review.fetchReviewByMovieID(movieID);
-        rptReview.DataBind();
-        */
-
-        
     }
     /// <summary>
     /// Method to add a single movie to the movie favorites list
@@ -190,7 +181,11 @@ public partial class SMovie : Page
         Session["favMoviesC"] = favMoviesC;
         Response.Redirect("../Favorites/Favorites.aspx");
     }
-
+    /// <summary>
+    /// Pushes Reviews to the ReviewDA
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnReviewSubmit_Click(object sender, EventArgs e)
     {
         int movieID = 0;
