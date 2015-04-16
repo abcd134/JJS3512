@@ -96,22 +96,34 @@
 
                         <!-- Modal for write review -->
                          <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="review" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
+                            <div class="modal-dialog modalSize">
+                                <div class="modal-content modalSize">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        Write Review<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                     <div class="modal-body">
-                                        <asp:Label ID="lblFname" runat="server" Text="First Name"></asp:Label><asp:TextBox ID="txtFirstName" placeholder="Enter First Name" runat="server"></asp:TextBox>
-                                        <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label><asp:TextBox ID="txtLastName" placeholder="Enter Last Name" runat="server"></asp:TextBox>
-                                        <asp:Label ID="lblTItle" runat="server" Text="Review Title"></asp:Label><asp:TextBox ID="txtReviewTitle" placeholder="Enter Review Title Here" runat="server"></asp:TextBox>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                
+                                        <asp:Label ID="lblFname" runat="server" Text="First Name"></asp:Label><br />
+                                            <asp:TextBox ID="txtFirstName" placeholder="Enter First Name" runat="server"></asp:TextBox><br /><br />
+                                                                                         <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label><br />
+                                            <asp:TextBox ID="txtLastName" placeholder="Enter Last Name" runat="server"></asp:TextBox><br /><br />
+
+                                        <asp:Label ID="lblTItle" runat="server" Text="Review Title"></asp:Label><br />
+                                            <asp:TextBox ID="txtReviewTitle" placeholder="Enter Review Title Here" runat="server"></asp:TextBox><br /><br />
+                                       
+                                        Rating: <input type="text" id="rating" class="rating rating5" runat="server" />
+                                                
                                         <br />
-                                        <input type="text" id="rating" class="rating rating5" runat="server" />
-                                        <br />
-                                        <asp:TextBox ID="txtReview" runat="server" placeholder="Enter Review here: " Height="200" Width="400" Wrap="False" TextMode="MultiLine"></asp:TextBox>
-                                        <br />
-                                        <asp:Button ID="btnReviewSubmit" runat="server" Text="Submit" OnClick="btnReviewSubmit_Click" OnClientClick="RefreshPage()" />
-                                    </div>
+                                        <asp:TextBox ID="txtReview" runat="server" placeholder="Enter Review here: " Height="138" Width="400" Wrap="False" TextMode="MultiLine"></asp:TextBox>
+                                                
+                                            </div>
+                                        </div>
+                                       <br />
+                                            <asp:Button ID="btnReviewSubmit" runat="server" Text="Submit" OnClick="btnReviewSubmit_Click" OnClientClick="RefreshPage()" CssClass="btn-primary" />
+                                        </div>
+                                                                       
                                 </div>
                             </div>
                         </div>
@@ -318,30 +330,7 @@
                     </div>
                     <div class="panel-body">
                         <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
-                            <%--<div class="display">--%>
 
-
-<%--                                <asp:Repeater ID="rptPosters" runat="server">
-                                    <ItemTemplate>
-                                        <div class="col-md-3">
-                                            <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal2<%# Eval ("MovieImageID") %>">
-                                                <img src="<%# Eval("FilePath154") %>" alt="" />
-                                            </a>
-                                             <div class="modal fade" id="myModal2<%# Eval ("MovieImageID") %>" tabindex="-1" role="dialog" aria-labelledby="backDropModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-                                               <img src="<%# Eval("FilePath500") %>" alt="" class="thumbnail" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>--%>
 
                                 <asp:Repeater ID="rptPosters" runat="server">
                                     <HeaderTemplate>
@@ -384,7 +373,7 @@
                                         </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <asp:Label ID="lblReviewTtile" runat="server"><%# Eval("review_title" )%></asp:Label>
+                                            <b><asp:Label ID="lblReviewTtile" runat="server"><%# Eval("review_title" )%></asp:Label></b>
                                             <br />
                                             <asp:Label ID="lblReviewTest" runat="server"><%# Eval("review_text" )%></asp:Label>
                                         </div>

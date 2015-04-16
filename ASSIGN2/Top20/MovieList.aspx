@@ -16,7 +16,7 @@
                 <asp:Repeater ID="layout" runat="server">
                     <ItemTemplate>
                     <div class="row">
-                        <div class="col-md-6 col-xs-6">
+                        <div class="col-md-6 col-xs-6 figureImg">
                             <figure>
                                 <a href="https://www.themoviedb.org/movie/<%# Eval("MovieId") %>">
                                 <img src="<%# Eval("PosterPath") %>"

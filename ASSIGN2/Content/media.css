@@ -20,7 +20,6 @@
     .imageResize{margin-left:21%;}
     .crewResize{margin-left:4%; margin-right:4%;}
     .castResize{margin-left:4%; margin-right:4%;}
-    .BrowseMobile{z-index:1;}
     .btn{font-size:12px;}
     .panel-default > .panel-heading{font-size:14pt;}
     #wellMobile{margin-left:1%; margin-right:1%;}
@@ -38,8 +37,7 @@
     .body-content {
         padding: 0;
     }   
-
-
+    .modalSize{font-size:12pt;}
 }
 
 
